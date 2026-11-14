@@ -1,0 +1,106 @@
+footer#bottom:has(.o_fur_footer) {
+    background: var(--fur-navy) !important;
+    color: rgba(255, 255, 255, .78);
+    .o_footer_copyright {
+        background: #0D1B3B !important;
+        color: rgba(255, 255, 255, .6);
+        border-top: 0;
+        a { color: rgba(255, 255, 255, .8); }
+    }
+}
+
+footer#bottom .o_fur_footer {
+    padding: 2.75rem 0 2rem;
+    font-family: var(--fur-font);
+    color: rgba(255, 255, 255, .78);
+    font-size: .9rem;
+    h6 {
+        margin-bottom: .9rem;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--fur-yellow);
+    }
+    a {
+        color: rgba(255, 255, 255, .82);
+        text-decoration: none;
+        &:hover { color: var(--fur-yellow); }
+    }
+    li + li { margin-top: .45rem; }
+    .o_fur_brand { margin-bottom: 1rem; }
+    .o_fur_brand .o_fur_logo { height: 3.6rem; }
+}
+.o_fur_footer_about {
+    max-width: 22rem;
+    line-height: 1.6;
+}
+footer#bottom .o_fur_footer .o_fur_footer_hours_title {
+    margin-top: 1.5rem;
+}
+
+.o_fur_footer_contact {
+    li {
+        display: flex;
+        align-items: flex-start;
+        gap: .6rem;
+    }
+    .o_fur_icon {
+        width: 1.1rem;
+        height: 1.1rem;
+        margin-top: .15rem;
+        color: var(--fur-yellow);
+    }
+}
+
+// Copyright bar (layout.xml): languages | copyright | Powered by Odoo.
+// Three columns where the long Vietnamese "Powered by" line fits on one line
+// next to a centred copyright (from 1280px), else three centred lines.
+$fur-copyright-columns: 1280px;
+.o_fur_copyright_row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .55rem;
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+    font-size: .85rem;
+    line-height: 1.5;
+    text-align: center;
+    @media (min-width: $fur-copyright-columns) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: center;
+        gap: 2rem;
+        text-align: left;
+    }
+}
+.o_fur_copyright_langs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    a {
+        text-decoration: none;
+        &:hover { color: var(--fur-yellow) !important; }
+        &.active { color: #fff !important; font-weight: 600; }
+    }
+    .o_fur_copyright_sep { color: rgba(255, 255, 255, .3); }
+    @media (min-width: $fur-copyright-columns) { justify-content: flex-start; }
+}
+.o_fur_copyright_name {
+    white-space: nowrap;
+    text-align: center;
+}
+.o_fur_copyright_brand {
+    font-size: .8rem;
+    color: rgba(255, 255, 255, .5);
+    .o_brand_promotion, p { margin: 0; }
+    a { color: rgba(255, 255, 255, .75); }
+    @media (min-width: $fur-copyright-columns) {
+        justify-self: end;
+        white-space: nowrap;
+        text-align: right;
+    }
+}

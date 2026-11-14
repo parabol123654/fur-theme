@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- "Delivery & installation" page linked from the footer and the product
+     page. A sample text to adapt: noupdate, edit it with the website builder. -->
+<odoo noupdate="1">
+    <record id="policy_delivery_view" model="ir.ui.view">
+        <field name="name">Delivery &amp; Installation</field>
+        <field name="type">qweb</field>
+        <field name="key">fur_theme.policy_delivery</field>
+        <field name="arch" type="xml">
+            <t t-name="fur_theme.policy_delivery">
+                <t t-call="website.layout">
+                    <t t-set="additional_title">Delivery &amp; Installation</t>
+                    <div id="wrap" class="oe_structure o_fur_policy">
+                        <section class="s_text_block pt40 pb40" data-snippet="s_text_block">
+                            <div class="container o_fur_policy_body">
+                                <h1>Delivery &amp; installation</h1>
+                                <nav class="o_fur_policy_toc">
+                                    <p><strong>Contents</strong></p>
+                                    <ol>
+                                        <li><a href="#delivery-times">Delivery times</a></li>
+                                        <li><a href="#installation">Installation</a></li>
+                                        <li><a href="#receiving">Receiving your order</a></li>
+                                    </ol>
+                                </nav>
+
+                                <h2 id="delivery-times">1. Delivery times</h2>
+                                <ul>
+                                    <li><strong>We deliver from Monday to Saturday, 8:00 to 18:00.</strong></li>
+                                    <li>Products in stock: delivered within 1 to 3 working days.</li>
+                                    <li>Made-to-order products: delivered within 2 to 4 weeks; the exact date is confirmed with your order.</li>
+                                </ul>
+                                <p>Orders are delivered once the payment is confirmed. We call you the day before to agree on a time slot.</p>
+
+                                <h2 id="installation">2. Installation</h2>
+                                <ul>
+                                    <li>Our team assembles and installs the furniture on site, free of charge in our delivery area.</li>
+                                    <li>Packaging is taken away after the installation.</li>
+                                    <li>Please make sure the room is accessible and the furniture can go through doors and stairways.</li>
+                                </ul>
+
+                                <h2 id="receiving">3. Receiving your order</h2>
+                                <p>Please check the goods before signing the delivery note, and tell us straight away about any damage so that we can replace the item.</p>
+                                <p>If you cancel an order after it has been delivered, the delivery costs are charged.</p>
+                                <p><strong>Thank you for choosing us!</strong></p>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+    <record id="policy_delivery_page" model="website.page">
+        <field name="url">/delivery-installation</field>
+        <field name="is_published" eval="True"/>
+        <field name="view_id" ref="policy_delivery_view"/>
+        <field name="track" eval="True"/>
+    </record>
+</odoo>

@@ -1,0 +1,300 @@
+// Homepage sections.
+.o_fur_home {
+    padding-bottom: 1.5rem;
+}
+
+// Hero --------------------------------------------------------------------
+.o_fur_hero_section {
+    padding-top: 1rem;
+}
+.o_fur_hero {
+    overflow: hidden;
+    border-radius: var(--fur-radius);
+    box-shadow: var(--fur-shadow);
+    .carousel-item {
+        transition-duration: .7s;
+    }
+    // Odoo evens out the slide heights with an inline min-height on the
+    // items: let every slide fill it so no white strip shows under it.
+    .carousel-item[style*="min-height"] > .o_fur_hero_slide {
+        min-height: inherit;
+    }
+}
+.o_fur_hero_slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: unquote("clamp(16rem, 34vw, 27rem)");
+    padding: unquote("clamp(1.25rem, 3.5vw, 3.25rem)");
+    padding-bottom: unquote("clamp(2.5rem, 4.5vw, 4rem)");
+    background-color: #F7F6F3;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::before { // keep the copy readable on any picture
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(247, 246, 243, .96) 0%, rgba(247, 246, 243, .82) 32%, rgba(247, 246, 243, 0) 58%);
+    }
+}
+.o_fur_hero_content {
+    position: relative;
+    max-width: unquote("min(30rem, 62%)");
+}
+.o_fur_hero_eyebrow {
+    margin-bottom: .5rem;
+    font-size: .85rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    color: var(--fur-navy);
+    b {
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: 0;
+    }
+}
+.o_fur_hero_title {
+    margin-bottom: .75rem;
+    font-size: unquote("clamp(1.9rem, 1rem + 3.6vw, 3.6rem)");
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    color: var(--fur-navy);
+}
+.o_fur_hero_lead {
+    margin-bottom: 1.25rem;
+    font-size: unquote("clamp(.85rem, .75rem + .4vw, 1.05rem)");
+    line-height: 1.55;
+    color: var(--fur-navy-2);
+}
+.o_fur_hero_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+.o_fur_hero_dots {
+    left: unquote("clamp(1.25rem, 3.5vw, 3.25rem)");
+    right: auto;
+    bottom: unquote("clamp(.7rem, 1.6vw, 1.25rem)");
+    justify-content: flex-start;
+    margin: 0;
+    gap: .55rem;
+    [data-bs-target] {
+        width: .7rem;
+        height: .7rem;
+        margin: 0;
+        border: 0;
+        border-radius: 50%;
+        background-color: #E9DDB3;
+        opacity: 1;
+        &.active { background-color: var(--fur-accent); }
+    }
+}
+@include media-breakpoint-down(sm) {
+    .o_fur_hero_slide {
+        background-position: 72% center;
+        &::before {
+            background: linear-gradient(90deg, rgba(247, 246, 243, .95) 0%, rgba(247, 246, 243, .78) 50%, rgba(247, 246, 243, .12) 100%);
+        }
+    }
+    .o_fur_banner {
+        background-position: 70% center;
+        &::before {
+            background: linear-gradient(90deg, rgba(247, 242, 232, .97) 0%, rgba(247, 242, 232, .9) 55%, rgba(247, 242, 232, .3) 100%);
+        }
+    }
+    .o_fur_hero_content { max-width: 78%; }
+    .o_fur_hero_actions .btn { min-height: 2.3rem; padding: .4rem .9rem; font-size: .8rem; }
+}
+
+// Services strip ------------------------------------------------------------
+.o_fur_services {
+    padding: 1rem 0 .5rem;
+}
+.o_fur_services_inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: .9rem;
+    padding: .9rem .5rem;
+    border-radius: var(--fur-radius);
+    background: #fff;
+    box-shadow: var(--fur-shadow);
+    @include media-breakpoint-up(sm) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+.o_fur_service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .65rem;
+    padding: 0 .5rem;
+    @include media-breakpoint-up(sm) {
+        & + & { border-left: 1px solid var(--fur-line); }
+    }
+}
+.o_fur_service_icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 2.85rem;
+    height: 2.85rem;
+    border-radius: 50%;
+    background: var(--fur-yellow);
+    color: var(--fur-navy-2);
+    .o_fur_icon { width: 1.45rem; height: 1.45rem; }
+}
+.o_fur_service_text {
+    font-size: .85rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--fur-navy-2);
+}
+
+// Categories ---------------------------------------------------------------
+.o_fur_category_grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .5rem;
+    @include media-breakpoint-up(md) { gap: .9rem; }
+    @include media-breakpoint-up(xl) { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+    @include media-breakpoint-down(md) {
+        .o_fur_category_foot { padding: .4rem .35rem; }
+        .o_fur_category_name { font-size: .72rem; }
+        .o_fur_round_btn { display: none; }
+    }
+}
+.o_fur_category_card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--fur-line);
+    border-radius: var(--fur-radius-sm);
+    background: #fff;
+    color: var(--fur-navy-2);
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(19, 37, 78, .04);
+    transition: box-shadow .2s, transform .2s;
+    &:hover {
+        color: var(--fur-navy);
+        box-shadow: var(--fur-shadow-hover);
+        transform: translateY(-2px);
+        .o_fur_round_btn { transform: translateX(2px); }
+    }
+}
+.o_fur_category_img {
+    display: block;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.o_fur_category_foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .35rem;
+    min-height: 3.4rem;
+    padding: .5rem .6rem;
+}
+.o_fur_category_name {
+    font-size: .8rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+// Office banner --------------------------------------------------------------
+.o_fur_banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: unquote("clamp(13rem, 26vw, 20rem)");
+    padding: unquote("clamp(1.25rem, 3.5vw, 3rem)");
+    overflow: hidden;
+    border-radius: var(--fur-radius);
+    background-color: var(--fur-cream);
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: var(--fur-shadow);
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(247, 242, 232, .97) 0%, rgba(247, 242, 232, .85) 34%, rgba(247, 242, 232, 0) 62%);
+    }
+}
+.o_fur_banner_content {
+    position: relative;
+    max-width: unquote("min(26rem, 60%)");
+    p {
+        margin-bottom: 1.1rem;
+        font-size: unquote("clamp(.82rem, .75rem + .35vw, 1rem)");
+        color: var(--fur-navy-2);
+    }
+}
+.o_fur_banner_title {
+    margin-bottom: .6rem;
+    font-size: unquote("clamp(1.4rem, .9rem + 2vw, 2.4rem)");
+    font-weight: 800;
+    line-height: 1.12;
+    color: var(--fur-navy);
+}
+
+// One block per homepage category (source-site layout): title + sub-category
+// pills, 8 products, "see all".
+.o_fur_home_block {
+    & + & { padding-top: 0; }
+    .o_fur_block_head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: .6rem 1rem;
+        margin-bottom: 1rem;
+        padding: .55rem .9rem;
+        border: 1px solid var(--fur-yellow);
+        border-radius: var(--fur-radius-sm);
+        background: #fff;
+    }
+    .o_fur_block_title {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        a { color: var(--fur-navy); text-decoration: none; }
+        a:hover { color: var(--fur-accent); }
+    }
+    .o_fur_block_pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .4rem;
+        margin: 0;
+        a {
+            display: inline-block;
+            padding: .3rem .8rem;
+            border-radius: 2rem;
+            background: var(--fur-cream);
+            font-size: .82rem;
+            font-weight: 500;
+            color: var(--fur-navy-2);
+            text-decoration: none;
+            &:hover { background: var(--fur-yellow); color: var(--fur-navy); }
+        }
+    }
+    .o_fur_block_foot {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.1rem;
+        .btn { border-radius: 2rem; padding: .45rem 1.4rem; font-weight: 600; }
+    }
+    @include media-breakpoint-down(md) {
+        .o_fur_block_pills { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; scrollbar-width: none; }
+        .o_fur_block_pills li { flex: 0 0 auto; }
+    }
+}

@@ -1,0 +1,11 @@
+Fur - Furniture eCommerce Theme
+Copyright (c) 2026 Sanxus Lab <contact.sanxus@gmail.com>
+
+Licensed under the Odoo Proprietary License v1.0 (see LICENSE).
+
+Third-party material:
+- Be Vietnam Pro font (static/src/fonts), SIL Open Font License 1.1 (static/src/fonts/OFL.txt).
+- The demo catalogue uses pictures of Odoo's own modules (product, website,
+  website_sale; LGPL-3), loaded from those modules: none is copied into this module.
+- Fur Theme logo and icon (static/src/img/logo*.svg, favicon.png, static/description/icon.png):
+  property of Sanxus Lab.

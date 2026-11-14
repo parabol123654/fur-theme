@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- /shop and /shop/category/<slug>: Fur banner with breadcrumb above the grid,
+     sub-category pills and the service strip below. -->
+<template id="products" inherit_id="website_sale.products" name="Fur Shop Page">
+    <xpath expr="//div[@id='oe_structure_website_sale_products_1']" position="after">
+      <t t-if="website.fur_enabled">
+        <t t-set="fur_products_label">Products</t>
+        <t t-set="fur_all_products_label">All products</t>
+        <t t-set="fur_crumbs" t-value="[(fur_products_label, '/shop' if category else None)] + [
+            (c.name, None if c == category else c.website_url) for c in (category.parents_and_self if category else [])
+        ]"/>
+        <t t-call="fur_theme.page_banner"
+           banner_title="category.name if category else fur_all_products_label"
+           banner_crumbs="fur_crumbs"/>
+        <div t-if="category and category.child_id.filtered_domain(website.website_domain())" class="container o_fur_subcategs">
+            <div class="o_fur_filter_pills">
+                <a t-att-href="keep(category.website_url)" class="o_fur_pill_filter active" t-out="category.name"/>
+                <t t-foreach="category.child_id.filtered_domain(website.website_domain())" t-as="child_categ">
+                    <a t-att-href="keep(child_categ.website_url)" class="o_fur_pill_filter" t-field="child_categ.name"/>
+                </t>
+            </div>
+        </div>
+      </t>
+    </xpath>
+    <xpath expr="//div[@id='wrap']" position="attributes">
+        <!-- static class: every rule of fur_shop.scss is scoped under .o_fur -->
+        <attribute name="class" add="o_fur_shop" separator=" "/>
+    </xpath>
+    <xpath expr="//div[@id='o_wsale_container']" position="after">
+        <t t-if="website.fur_enabled" t-call="fur_theme.services_strip"/>
+    </xpath>
+</template>
+
+<!-- Product tile: short name clamped to two lines + the reference on its own line -->
+<template id="products_item" inherit_id="website_sale.product_title_and_details" name="Fur Tile Name">
+    <xpath expr="//h6[hasclass('o_wsale_products_item_title')]" position="attributes">
+        <attribute name="t-att-title">product.name if website.fur_enabled else None</attribute>
+    </xpath>
+    <xpath expr="//h6[hasclass('o_wsale_products_item_title')]//span[@t-field='product.name']" position="replace">
+        <span t-if="website.fur_enabled" class="o_fur_tile_name" t-out="product._fur_short_name()"/>
+        <span t-else="" t-field="product.name"/>
+    </xpath>
+    <xpath expr="//h6[hasclass('o_wsale_products_item_title')]" position="after">
+        <div t-if="website.fur_enabled and product.default_code" class="o_fur_product_code">Code: <t t-out="product.default_code"/></div>
+    </xpath>
+</template>
+
+<!-- Product tile: Fur cart button look (icon only) -->
+<template id="shop_product_buttons" inherit_id="website_sale.shop_product_buttons" name="Fur Tile Buttons">
+    <xpath expr="//button[@name='add_to_cart']/i" position="replace">
+        <t t-if="website.fur_enabled" t-call="fur_theme.icon" icon="'cart'"/>
+        <t t-else="">$0</t>
+    </xpath>
+</template>
+
+</odoo>

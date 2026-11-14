@@ -1,0 +1,68 @@
+// /projects list and detail pages.
+.o_fur_projects_page {
+    .o_fur_project_grid_page {
+        row-gap: 1.5rem;
+    }
+}
+.o_fur_project_item {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+}
+.o_fur_project_summary {
+    margin: .35rem 0 0;
+    font-size: .88rem;
+    line-height: 1.5;
+    color: var(--fur-navy-2);
+}
+.o_fur_project_meta {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    margin: 0;
+    font-size: .8rem;
+    color: var(--fur-muted);
+}
+.o_fur_pager .pagination {
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.o_fur_project_page {
+    .o_fur_project_cover {
+        overflow: hidden;
+        border-radius: var(--fur-radius);
+        box-shadow: var(--fur-shadow);
+        img { width: 100%; max-height: 32rem; object-fit: cover; }
+    }
+    .o_fur_project_lead {
+        margin: 1.25rem 0 .75rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--fur-navy);
+    }
+    .o_fur_project_description {
+        line-height: 1.7;
+    }
+}
+.o_fur_project_facts {
+    position: sticky;
+    top: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--fur-line);
+    border-radius: var(--fur-radius);
+    background: #fff;
+    box-shadow: var(--fur-shadow);
+    h5 {
+        font-weight: 700;
+        color: var(--fur-navy);
+    }
+    dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: .5rem 1rem;
+        margin: 1rem 0 1.25rem;
+        font-size: .9rem;
+    }
+    dt { font-weight: 500; color: var(--fur-muted); }
+    dd { margin: 0; font-weight: 600; color: var(--fur-navy-2); }
+}

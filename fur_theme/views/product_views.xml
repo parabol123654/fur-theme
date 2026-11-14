@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_fur" model="ir.ui.view">
+        <field name="name">product.template.form.fur</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="website_sale.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="public_categ_ids" position="after">
+                <field name="fur_featured"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_public_category_form_view_fur" model="ir.ui.view">
+        <field name="name">product.public.category.form.fur</field>
+        <field name="model">product.public.category</field>
+        <field name="inherit_id" ref="website_sale.product_public_category_form_view"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="fur_show_on_home"/>
+                <field name="fur_product_categ_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_website_form_fur" model="ir.ui.view">
+        <field name="name">website.form.fur</field>
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Fur Theme" name="page_fur_theme">
+                    <group>
+                        <field name="fur_enabled"/>
+                        <field name="fur_brand_name" placeholder="Website name"/>
+                        <field name="fur_hotline"/>
+                        <field name="fur_footer_logo" widget="image" class="oe_avatar" options="{'size': [180, 90]}"/>
+                        <field name="fur_whatsapp" placeholder="+1 555 0100 200 or https://wa.me/..."/>
+                        <field name="fur_zalo" placeholder="0901234567 or https://zalo.me/..."/>
+                        <field name="fur_zalo_2"/>
+                        <field name="fur_messenger" widget="url" placeholder="https://m.me/yourpage"/>
+                        <field name="fur_opening_hours"/>
+                    </group>
+                    <separator string="Buying &amp; Payment Guide"/>
+                    <field name="fur_buy_guide" nolabel="1"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

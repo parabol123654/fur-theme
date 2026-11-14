@@ -1,0 +1,2879 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fur_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-10 19:20+0000\n"
+"PO-Revision-Date: 2026-10-10 19:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fur_theme
+#: model:ir.module.module,description:base.module_fur_theme
+msgid ""
+"\n"
+"Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.\n"
+"\n"
+"* Header with logo, instant product search, hotline, cart, account and flag language switcher\n"
+"* Homepage: hero slider, service strip, category grid, one product block per category,\n"
+"  featured projects\n"
+"* Shop and category pages with banner, sub-category pills and product cards\n"
+"* Product page with sticky buy box, perks, hotline card, description and buying guide tabs\n"
+"* One-step checkout on the cart page (bank transfer, cash on delivery)\n"
+"* Projects showcase (/projects) with list, filters and detail pages\n"
+"* Floating call, Zalo and Messenger buttons\n"
+"* English and Vietnamese\n"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
+msgid "+1 555 0100 200 or https://wa.me/..."
+msgstr ""
+
+#. module: fur_theme
+#: model:website.page,url:fur_theme.policy_delivery_page
+msgid "/delivery-installation"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
+msgid "0901234567 or https://zalo.me/..."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+msgid "1 door, lock"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+msgid "1 drawer"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "1. Delivery times"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_glass
+msgid "12 mm tempered glass"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+msgid "120 kg"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+msgid "120 x 60 x 75 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_glass
+#: model_terms:product.template,website_description:fur_theme.product_desk_walnut
+msgid "140 x 70 x 75 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+msgid "148 x 85 x 80 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
+msgid "150 x 150 x 140 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+msgid "160 x 140 x 75 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+msgid "160 x 45 x 70 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid "160 x 82 x 78 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_divider
+msgid "180 x 160 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+msgid "190 x 88 x 76 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+msgid "2 doors, 1 shelf"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+msgid "2 doors, 2 adjustable shelves"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+msgid "2 drawers"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+msgid "2 sliding doors, 4 compartments"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+msgid "2, quiet operation"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "2. Installation"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
+msgid "200 x 100 x 75 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+msgid "280 x 140 x 75 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+msgid "3 lockable drawers"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "3. Receiving your order"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+msgid "32 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+msgid "33 x 33 x 33 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+msgid "360 x 120 x 75 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+msgid "4 drawers"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+msgid "4 woven armchairs"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+msgid "40 x 50 x 60 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+msgid "40 x 55 x 70 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+msgid "43 - 53 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+msgid "44 - 54 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+msgid "45 - 55 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
+msgid "45 x 50 x 88 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+msgid "47 x 52 x 82 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+msgid "5 years"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_monitor_stand
+msgid "55 x 22 x 10 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+msgid "62 - 127 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_pad
+msgid "80 x 40 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+msgid "80 x 40 x 110 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+msgid "80 x 45 x 75 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+msgid "90 x 45 x 85 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.services_strip
+msgid "<span class=\"o_fur_service_text\">Free<br/>consultation</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.services_strip
+msgid "<span class=\"o_fur_service_text\">Long-term<br/>warranty</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.services_strip
+msgid "<span class=\"o_fur_service_text\">Nationwide<br/>delivery</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.services_strip
+msgid "<span class=\"o_fur_service_text\">Professional<br/>installation</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_contact
+msgid ""
+"<span class=\"o_fur_zalo_mark\">Zalo</span>\n"
+"            <span>Chat on Zalo</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_perks
+msgid "<span><b>Long-term warranty</b>Up to 24 months</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_perks
+msgid "<span><b>On-site assembly</b>By our professional team</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_sticky_buy
+msgid "<span>Add to cart</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_contact
+msgid "<span>Chat on WhatsApp</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.checkout_layout
+msgid "<span>Long-term warranty</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.checkout_layout
+msgid "<span>Nationwide delivery</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.checkout_layout
+msgid "<span>Secure payment</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.section_title
+msgid "<span>See all</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "<strong>Contents</strong>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "<strong>Thank you for choosing us!</strong>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "<strong>We deliver from Monday to Saturday, 8:00 to 18:00.</strong>"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,summary:fur_theme.project_meeting_room
+msgid ""
+"A boardroom for twelve with a conference table, executive chairs and "
+"integrated screens."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_chair_task
+#: model_terms:product.template,description_ecommerce:fur_theme.product_chair_task
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+msgid "A cheerful swivel task chair with a mustard shell and padded seat."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_desk_white
+#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+msgid "A clean white desk with a slim drawer and a black steel frame."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,description_ecommerce:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+msgid ""
+"A comfortable moulded shell chair on slim black legs, stackable for small "
+"spaces."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_sofa_teal
+#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_teal
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid ""
+"A compact two-seater upholstered in deep teal velvet, with a solid oak base "
+"and generous foam cushions."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_desk_pad
+#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_pad
+#: model_terms:product.template,website_description:fur_theme.product_desk_pad
+msgid ""
+"A large black desk pad that protects the top and keeps the mouse precise."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_chest_oak
+#: model_terms:product.template,description_ecommerce:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+msgid "A light oak chest with two deep drawers."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_desk_glass
+#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_glass
+#: model_terms:product.template,website_description:fur_theme.product_desk_glass
+msgid ""
+"A light, airy desk in tempered glass that keeps small rooms feeling open."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_meeting_table
+#: model_terms:product.template,description_ecommerce:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+msgid ""
+"A long conference table for ten with cable management built into the frame."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_sideboard_low
+#: model_terms:product.template,description_ecommerce:fur_theme.product_sideboard_low
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+msgid ""
+"A long, low sideboard with sliding doors, perfect under a TV or along a "
+"dining room wall."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_desk_walnut
+#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_walnut
+#: model_terms:product.template,website_description:fur_theme.product_desk_walnut
+msgid ""
+"A minimalist desk with a walnut top and waterfall sides for a clean home "
+"office."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_apartment
+msgid ""
+"A palette of oak, sand and teal ties the living room, dining area and "
+"bedrooms together."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_sofa_navy
+#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+msgid ""
+"A relaxed loveseat in a durable navy linen blend with tapered wooden legs."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_booth
+#: model_terms:product.template,description_ecommerce:fur_theme.product_booth
+#: model_terms:product.template,website_description:fur_theme.product_booth
+msgid "A semi-enclosed booth for focused work or calls in open offices."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_dining_table_oak
+#: model_terms:product.template,description_ecommerce:fur_theme.product_dining_table_oak
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
+msgid ""
+"A soft oval table in solid oak that seats six comfortably and has no corners"
+" to bump into."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_pedestal_black
+#: model_terms:product.template,description_ecommerce:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+msgid ""
+"A tall pedestal with a wooden top: personal storage that doubles as a side "
+"table."
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,summary:fur_theme.project_apartment
+msgid ""
+"A warm, modern three-bedroom apartment with natural oak, linen and plenty of"
+" hidden storage."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
+msgid "About the Acoustic Work Booth"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+msgid "About the Architect Desk Lamp"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+msgid "About the Bench Workstation for Four"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+msgid "About the Conference Table, 10 Seats"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+msgid "About the Corner Desk with Pedestal"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
+msgid "About the Cross-Back Wooden Chair"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+msgid "About the Electric Standing Desk Frame"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+msgid "About the Executive Ergonomic Chair"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+msgid "About the Felt Storage Basket"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_divider
+msgid "About the Folding Acoustic Divider"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+msgid "About the Four-Drawer Chest"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_glass
+msgid "About the Glass Desk"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+msgid "About the Herringbone Oak Cabinet"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_pad
+msgid "About the Leather Desk Pad"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+msgid "About the Leather Two-Seat Sofa, Camel"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+msgid "About the Leather Two-Seat Sofa, Cognac"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+msgid "About the Linen Loveseat, Navy"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+msgid "About the Locker Pedestal"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+msgid "About the Low Oak Sideboard"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_organizer
+msgid "About the Mesh Desk Organizer"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+msgid "About the Mesh Office Chair"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+msgid "About the Mobile Pedestal, Oak &amp; Black"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+msgid "About the Natural Wood Storage Cabinet"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+msgid "About the Oak Frame Lounge Sofa"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
+msgid "About the Oval Oak Dining Table"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+msgid "About the Ribbed Glass Table Lamp"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+msgid "About the Round Garden Dining Set"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+msgid "About the Shell Dining Chair, Teal"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+msgid "About the Task Chair, Mustard"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+msgid "About the Two-Drawer Oak Chest"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid "About the Velvet Two-Seat Sofa"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_monitor_stand
+msgid "About the Walnut Monitor Stand"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_walnut
+msgid "About the Walnut Writing Desk"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+msgid "About the White Desk with Drawer"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_booth
+msgid "Acoustic Work Booth"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
+msgid "Acoustic fabric, teal"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_divider
+msgid "Acoustic felt panels"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+msgid "Acoustic felt, olive"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__active
+msgid "Active"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_card
+msgid "Add to cart"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_card
+msgid "Add to wishlist"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+#: model_terms:ir.ui.view,arch_db:fur_theme.projects_page
+msgid "All"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.products
+msgid "All products"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+msgid "Aluminium, 5 castors"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,summary:fur_theme.project_tech_office
+msgid ""
+"An open office for 120 people with bench workstations, ergonomic chairs and "
+"flexible meeting corners."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+msgid "Aniline leather, camel"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+msgid "Aniline leather, cognac"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__fur_project__project_type__apartment
+msgid "Apartment"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_lamp_desk
+msgid "Architect Desk Lamp"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
+msgid "Archived"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "Area"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__area
+msgid "Area (m²)"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,location:fur_theme.project_tech_office
+msgid "Austin, Texas"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__publish_on
+msgid "Auto publish on"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_fur_project__publish_on
+msgid "Automatically publish the page on the chosen date and time."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+msgid "Back"
+msgstr ""
+
+#. module: fur_theme
+#: model:payment.provider,name:fur_theme.payment_provider_wire_transfer
+msgid "Bank transfer"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+msgid "Base"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_bench_desk
+msgid "Bench Workstation for Four"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,location:fur_theme.project_coworking
+msgid "Berlin, Germany"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,summary:fur_theme.project_cafe
+msgid ""
+"Bistro chairs, oak tables and warm lighting for a busy neighbourhood café."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+msgid "Black lacquered MDF"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_organizer
+#: model_terms:product.template,description_ecommerce:fur_theme.product_organizer
+#: model_terms:product.template,website_description:fur_theme.product_organizer
+msgid "Black steel mesh pot for pens, scissors and the rest."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+msgid "Black steel, oak top"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,name:fur_theme.project_meeting_room
+msgid "Boardroom Renovation"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_brand_name
+msgid "Brand Name"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+msgid "Breathable fabric, black"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_chair_mesh
+#: model_terms:product.template,description_ecommerce:fur_theme.product_chair_mesh
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+msgid ""
+"Breathable mesh back, synchro tilt and adjustable arms for long working "
+"days."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+msgid "Bulb"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_sticky_buy
+msgid "Buy now"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_buy_guide
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
+msgid "Buying & Payment Guide"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
+msgid "Buying &amp; payment guide"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_cabinets
+msgid "Cabinets & Sideboards"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_tech_office
+msgid ""
+"Cable management is built into every desk, so the floor stays clear and the "
+"team can rearrange the space as it grows."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__fur_project__project_type__hospitality
+msgid "Café & Hospitality"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_cafe
+msgid "Café and bakery, Toronto"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
+msgid "Call us"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__can_publish
+msgid "Can Publish"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Cart"
+msgstr ""
+
+#. module: fur_theme
+#: model:payment.provider,name:fur_theme.payment_provider_cash_on_delivery
+msgid "Cash on delivery"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_title
+msgid "Category:"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+msgid "Chairs"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
+msgid "Chat on Messenger"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
+msgid "Chat on WhatsApp"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
+msgid "Chat on Zalo"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_fur_project__location
+msgid "City or district, e.g. 'Brooklyn, New York'."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__client_name
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "Client"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Close"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_card
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_sticky_buy
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_title
+#: model_terms:ir.ui.view,arch_db:fur_theme.products_item
+msgid "Code:"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "Completed"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__completion_date
+msgid "Completion Date"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_meeting_table
+msgid "Conference Table, 10 Seats"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_meeting_room
+msgid "Consulting firm, London"
+msgstr ""
+
+#. module: fur_theme
+#. odoo-python
+#: code:addons/fur_theme/controllers/shop.py:0
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Contact"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,summary:fur_theme.project_townhouse
+msgid ""
+"Coordinated furniture from the living room to the bedrooms, chosen to last "
+"for a young family."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.copyright_bar
+msgid "Copyright &amp;copy;"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_corner
+msgid "Corner Desk with Pedestal"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,name:fur_theme.project_coworking
+msgid "Coworking Space"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Create your<br/>living <span class=\"o_fur_accent\">space</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_dining_chair_cross
+msgid "Cross-Back Wooden Chair"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_cafe
+msgid ""
+"Cross-back chairs and oval oak tables give the café a relaxed, timeless "
+"feel; ribbed glass lamps finish the look."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_sale_order__fur_customer_note
+msgid "Customer Request"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+msgid "Dark oak melamine, black steel"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_booth
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_glass
+#: model_terms:product.template,website_description:fur_theme.product_desk_pad
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+#: model_terms:product.template,website_description:fur_theme.product_desk_walnut
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+#: model_terms:product.template,website_description:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_monitor_stand
+#: model_terms:product.template,website_description:fur_theme.product_organizer
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid ""
+"Delivered assembled or assembled on site by our team. Contact us for other "
+"sizes, colours or finishes."
+msgstr ""
+
+#. module: fur_theme
+#: model:website.page,name:fur_theme.policy_delivery_page
+msgid "Delivery & Installation"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "Delivery &amp; Installation"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "Delivery &amp; installation"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+msgid "Delivery &amp; installation policy"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
+msgid "Delivery address"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "Delivery times"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__description
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+msgid "Description"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_accessories
+msgid "Desk Accessories"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
+msgid "Desk, chair and lamp"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_desks
+msgid "Desks"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_booth
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_glass
+#: model_terms:product.template,website_description:fur_theme.product_desk_pad
+#: model_terms:product.template,website_description:fur_theme.product_desk_walnut
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
+#: model_terms:product.template,website_description:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_monitor_stand
+#: model_terms:product.template,website_description:fur_theme.product_organizer
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid "Dimensions"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_dining_chairs
+msgid "Dining Chairs"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_dining
+msgid "Dining Room"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_dining_tables
+msgid "Dining Tables"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__display_name
+#: model:ir.model.fields,field_description:fur_theme.field_ir_http__display_name
+#: model:ir.model.fields,field_description:fur_theme.field_ir_module_module__display_name
+#: model:ir.model.fields,field_description:fur_theme.field_payment_provider__display_name
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__display_name
+#: model:ir.model.fields,field_description:fur_theme.field_product_template__display_name
+#: model:ir.model.fields,field_description:fur_theme.field_sale_order__display_name
+#: model:ir.model.fields,field_description:fur_theme.field_website__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+msgid "Dividers"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_desk_standing
+#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_standing
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+msgid ""
+"Dual-motor sit-stand frame with memory presets; pair it with any desktop."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_townhouse
+msgid ""
+"Durable fabrics, rounded corners and solid wood were the brief. Every room "
+"got storage at child height."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+msgid "E14 LED, included"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+msgid "E27 LED, included"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_standing
+msgid "Electric Standing Desk Frame"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
+msgid "Email (optional)"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Ergonomic desks, chairs and cabinets<br/>installed turnkey."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_chair_executive
+msgid "Executive Ergonomic Chair"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_messenger
+msgid "Facebook / Messenger link of the floating Messenger button."
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_townhouse
+msgid "Family home, Melbourne"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
+msgid "Featured"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Featured <span class=\"o_fur_accent\">projects</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__is_featured
+#: model:ir.model.fields,field_description:fur_theme.field_product_product__fur_featured
+#: model:ir.model.fields,field_description:fur_theme.field_product_template__fur_featured
+msgid "Featured on Homepage"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.projects_page
+msgid "Featured projects"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_basket
+msgid "Felt Storage Basket"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+msgid "Finish"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_divider
+msgid "Folding Acoustic Divider"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_footer_logo
+msgid "Footer Logo"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_cabinet_black
+msgid "Four-Drawer Chest"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid "Frame"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_contact
+msgid "Free consultation"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_divider
+#: model_terms:product.template,description_ecommerce:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_divider
+msgid "Free-standing folding screen that absorbs sound and zones open spaces."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
+msgid "Full name"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+msgid "Full story of the project…"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.module.module,shortdesc:base.module_fur_theme
+msgid "Fur - Furniture eCommerce Theme"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_fur_project
+msgid "Fur Interior Project"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
+msgid "Fur Theme"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.module.module,summary:base.module_fur_theme
+msgid ""
+"Furniture & interior design eCommerce theme: homepage, shop, product page, "
+"one-step checkout, projects showcase, instant search"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,name:fur_theme.project_townhouse
+msgid "Garden Townhouse"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Get a quote"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "Get free advice"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_glass
+msgid "Glass Desk"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+msgid "Glass, steel"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_lamp_glass
+#: model_terms:product.template,description_ecommerce:fur_theme.product_lamp_glass
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+msgid "Green ribbed glass shade on a black base for a soft, warm light."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_ir_http
+msgid "HTTP Routing"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+msgid "Height"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_sideboard_oak
+msgid "Herringbone Oak Cabinet"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_chair_executive
+#: model_terms:product.template,description_ecommerce:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+msgid ""
+"High-back ergonomic chair with adjustable headrest, armrests and lumbar "
+"support."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.page_banner
+msgid "Home"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,summary:fur_theme.project_coworking
+msgid ""
+"Hot desks, focus booths and a lounge for a coworking space open seven days a"
+" week."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_hotline
+msgid "Hotline"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Hotline support"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Hotline:"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__id
+#: model:ir.model.fields,field_description:fur_theme.field_ir_http__id
+#: model:ir.model.fields,field_description:fur_theme.field_ir_module_module__id
+#: model:ir.model.fields,field_description:fur_theme.field_payment_provider__id
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__id
+#: model:ir.model.fields,field_description:fur_theme.field_product_template__id
+#: model:ir.model.fields,field_description:fur_theme.field_sale_order__id
+#: model:ir.model.fields,field_description:fur_theme.field_website__id
+msgid "ID"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"If you cancel an order after it has been delivered, the delivery costs are "
+"charged."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
+msgid "Includes"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "Installation"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+msgid "Integrated pedestal"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__fur_product_categ_id
+msgid "Inventory Category"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.title_my_invoices
+msgid "Invoices &amp; payments"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__is_published
+msgid "Is Published"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+msgid "Kiln-dried hardwood"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_desk_corner
+#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+msgid ""
+"L-shaped desk with a walnut top, steel frame and an integrated storage "
+"pedestal."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_lamps
+msgid "Lamps"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_pad
+msgid "Leather Desk Pad"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_sofa_camel
+msgid "Leather Two-Seat Sofa, Camel"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_sofa_cognac
+msgid "Leather Two-Seat Sofa, Cognac"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+msgid "Legs"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_decor
+msgid "Lighting & Decor"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_sofa_navy
+msgid "Linen Loveseat, Navy"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+msgid "Linen blend, navy"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,location:fur_theme.project_apartment
+msgid "Lisbon, Portugal"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_living
+msgid "Living Room"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+msgid "Load"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__location
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "Location"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_pedestal_black
+msgid "Locker Pedestal"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_footer_logo
+msgid ""
+"Logo version for the dark footer (light text). Empty: the website logo on a "
+"white card."
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,location:fur_theme.project_meeting_room
+msgid "London, United Kingdom"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_sideboard_low
+msgid "Low Oak Sideboard"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_cabinet_black
+#: model_terms:product.template,description_ecommerce:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+msgid "Low chest of four wide drawers for files, samples or supplies."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_apartment
+msgid ""
+"Low sideboards and built-in cabinets keep surfaces clear, while a velvet "
+"sofa adds a touch of colour."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Made-to-order products: delivered within 2 to 4 weeks; the exact date is "
+"confirmed with your order."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Main"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid ""
+"Matching beds, wardrobes and accessories<br/>for a perfect night’s sleep."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_glass
+#: model_terms:product.template,website_description:fur_theme.product_desk_pad
+#: model_terms:product.template,website_description:fur_theme.product_desk_walnut
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+#: model_terms:product.template,website_description:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_monitor_stand
+#: model_terms:product.template,website_description:fur_theme.product_organizer
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+msgid "Material"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+msgid "Matte black"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+msgid "Mechanism"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_meeting
+msgid "Meeting Rooms"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,location:fur_theme.project_townhouse
+msgid "Melbourne, Australia"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Menu"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_organizer
+msgid "Mesh Desk Organizer"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_chair_mesh
+msgid "Mesh Office Chair"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+msgid "Mesh, black"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_messenger
+msgid "Messenger"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_pedestal_wood
+msgid "Mobile Pedestal, Oak & Black"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+msgid ""
+"Modern, refined furniture for your home and office. Designed, made\n"
+"                        and installed turnkey nationwide."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Modern, refined furniture<br/>for your home and office."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_ir_module_module
+msgid "Module"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+msgid "Motors"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__name
+msgid "Name"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_cabinet_wood
+msgid "Natural Wood Storage Cabinet"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,name:fur_theme.project_cafe
+msgid "Neighbourhood Café"
+msgstr ""
+
+#. module: fur_theme
+#. odoo-python
+#: code:addons/fur_theme/controllers/shop.py:0
+msgid "No product found"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.projects_page
+msgid "No project published yet."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_sofa_beige
+msgid "Oak Frame Lounge Sofa"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+msgid "Oak front, black steel body"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+msgid "Oak veneer"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+msgid "Oak veneer, solid oak legs"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__fur_project__project_type__office
+#: model:product.public.category,name:fur_theme.categ_office
+msgid "Office"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_office_chairs
+msgid "Office Chairs"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_office_storage
+msgid "Office Storage"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Offices that<br/>really <span class=\"o_fur_accent\">work</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+msgid "One or two sentences shown on project cards…"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
+msgid "Online ordering is not available yet, please call us to order."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_bench_desk
+#: model_terms:product.template,description_ecommerce:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+msgid "Open-plan bench desk for four people with acoustic dividers."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_opening_hours
+msgid "Opening Hours"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+msgid "Opening hours"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.confirmation
+msgid "Order"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
+msgid "Order information"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Orders are delivered once the payment is confirmed. We call you the day "
+"before to agree on a time slot."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "Other <span class=\"o_fur_accent\">projects</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
+msgid "Other requests"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_cash_on_delivery
+msgid ""
+"Our sales staff will call you to confirm the order and the delivery time."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_wire_transfer
+msgid ""
+"Our staff will call you to confirm the order and arrange the delivery once "
+"the payment is received."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Our team assembles and installs the furniture on site, free of charge in our"
+" delivery area."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_dining_table_oak
+msgid "Oval Oak Dining Table"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "Packaging is taken away after the installation."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.title_404
+msgid "Page not found"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
+msgid "Panels"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_cash_on_delivery
+msgid "Pay in cash to the delivery staff when you receive the goods."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_payment_provider
+msgid "Payment Provider"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
+msgid "Payment method"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
+msgid "Phone"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_whatsapp
+msgid ""
+"Phone number in international format (e.g. +1 555 0100 200) or wa.me link of"
+" the floating WhatsApp button. Empty: no WhatsApp button."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_zalo_2
+msgid ""
+"Phone number or zalo.me link of a second floating Zalo button (the number "
+"itself is not shown)."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_zalo
+msgid ""
+"Phone number or zalo.me link of the floating Zalo button. Empty: no Zalo "
+"button."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
+msgid "Place order"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Please check the goods before signing the delivery note, and tell us "
+"straight away about any damage so that we can replace the item."
+msgstr ""
+
+#. module: fur_theme
+#. odoo-python
+#: code:addons/fur_theme/controllers/cart.py:0
+msgid "Please choose a payment method."
+msgstr ""
+
+#. module: fur_theme
+#. odoo-python
+#: code:addons/fur_theme/controllers/cart.py:0
+msgid "Please enter a valid email address."
+msgstr ""
+
+#. module: fur_theme
+#. odoo-python
+#: code:addons/fur_theme/controllers/cart.py:0
+msgid "Please enter a valid phone number."
+msgstr ""
+
+#. module: fur_theme
+#. odoo-python
+#: code:addons/fur_theme/controllers/cart.py:0
+msgid "Please enter your delivery address."
+msgstr ""
+
+#. module: fur_theme
+#. odoo-python
+#: code:addons/fur_theme/controllers/cart.py:0
+msgid "Please enter your full name."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Please make sure the room is accessible and the furniture can go through "
+"doors and stairways."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.provider,pending_msg:fur_theme.payment_provider_wire_transfer
+msgid ""
+"Please transfer the order amount using the details below. We will call you "
+"to confirm the order as soon as the payment is received."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+msgid "Polyester felt"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+msgid "Polypropylene shell, teal"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+msgid "Polypropylene, mustard"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_organizer
+msgid "Powder-coated steel"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+msgid "Powder-coated steel, sintered stone top"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
+msgid "Price:"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_product_template
+msgid "Product"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Product <span class=\"o_fur_accent\">categories</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_title
+msgid "Product Name"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Product categories"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_product_public_category__fur_product_categ_id
+msgid ""
+"Product category (inventory, accounting) copied from this website category "
+"and given to its products."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
+msgid "Product information"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+#: model_terms:ir.ui.view,arch_db:fur_theme.products
+msgid "Products"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "Products <span class=\"o_fur_accent\">used</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__product_tmpl_ids
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+msgid "Products Used"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "Products in stock: delivered within 1 to 3 working days."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+msgid "Project"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "Project details"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.actions.act_window,name:fur_theme.fur_project_action
+#: model:ir.ui.menu,name:fur_theme.menu_fur_projects
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_list
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+#: model_terms:ir.ui.view,arch_db:fur_theme.projects_page
+msgid "Projects"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.actions.act_window,help:fur_theme.fur_project_action
+msgid ""
+"Projects appear on the /projects page and on the homepage of the Fur theme."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
+msgid "Published"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__published_date
+msgid "Published date"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_monitor_stand
+#: model_terms:product.template,description_ecommerce:fur_theme.product_monitor_stand
+#: model_terms:product.template,website_description:fur_theme.product_monitor_stand
+msgid "Raises your screen to eye level and frees space for the keyboard."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid "Receiving your order"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
+msgid "Related <span class=\"o_fur_accent\">products</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_fur_project__website_id
+msgid "Restrict to a specific website."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_lamp_glass
+msgid "Ribbed Glass Table Lamp"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,name:fur_theme.project_apartment
+msgid "Riverside Apartment"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_dining_table_round
+msgid "Round Garden Dining Set"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_dining_table_round
+#: model_terms:product.template,description_ecommerce:fur_theme.product_dining_table_round
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+msgid ""
+"Round table with a stone-look top and four woven armchairs, at home indoors "
+"or on the terrace."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__is_seo_optimized
+msgid "SEO optimized"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_sofa_beige
+#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_beige
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+msgid ""
+"Scandinavian lounge sofa with an exposed oak frame and removable beige "
+"cushions."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Search"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Search furniture"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Search furniture..."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+msgid "Seat"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+msgid "Seat height"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid "Seats"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_fur_project__subtitle
+msgid ""
+"Second line of the title on the homepage card, e.g. 'Tech startup, Austin'."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_buy_guide
+msgid ""
+"Second tab of the product page. Can also be edited on the page with the "
+"website builder."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "See all"
+msgstr ""
+
+#. module: fur_theme
+#. odoo-python
+#: code:addons/fur_theme/controllers/shop.py:0
+msgid "See all %(count)s results"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__seo_name
+msgid "Seo name"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_coworking
+msgid "Shared offices, Berlin"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+msgid "Shell"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_dining_chair_teal
+msgid "Shell Dining Chair, Teal"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+msgid "Shop"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__fur_show_on_home
+msgid "Show on Homepage"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Show sub-categories"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_product_public_category__fur_show_on_home
+msgid ""
+"Show this category in the 'Product categories' grid of the Fur homepage."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_product_product__fur_featured
+#: model:ir.model.fields,help:fur_theme.field_product_template__fur_featured
+msgid ""
+"Show this product in the 'Featured products' section of the Fur homepage."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_fur_project__is_featured
+msgid "Show this project in the 'Featured projects' section of the homepage."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.actions.act_window,help:fur_theme.fur_project_action
+msgid "Showcase your first interior project"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_opening_hours
+msgid "Shown in the footer."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_hotline
+msgid "Shown in the header menu and footer."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_brand_name
+msgid ""
+"Shown next to the logo when the website has none, in the homepage slides and"
+" on the thank-you page. Empty: the website name."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+msgid "Sign in"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.title_signup
+msgid "Sign up"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_cabinet_wood
+#: model_terms:product.template,description_ecommerce:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+msgid ""
+"Simple, versatile cabinet in natural wood for living rooms, entrances or "
+"offices."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_coworking
+msgid ""
+"Sixty hot desks, four acoustic booths and a lounge with sofas make this "
+"space work for both focus and community."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Slide 1"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Slide 2"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Slide 3"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_sofas
+msgid "Sofas"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_sofa_camel
+#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_camel
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+msgid ""
+"Soft aniline leather in a warm camel tone on a slim metal base: a sofa that "
+"ages beautifully."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_basket
+#: model_terms:product.template,description_ecommerce:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_basket
+msgid "Soft felt basket for blankets, magazines or toys."
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_tech_office
+msgid "Software company, Austin"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+msgid "Solid beech"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
+msgid "Solid beech, woven paper cord seat"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+msgid "Solid oak"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid "Solid oak, brass-finish feet"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
+msgid "Solid oak, oiled"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_booth
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_glass
+#: model_terms:product.template,website_description:fur_theme.product_desk_pad
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+#: model_terms:product.template,website_description:fur_theme.product_desk_walnut
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+#: model_terms:product.template,website_description:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_monitor_stand
+#: model_terms:product.template,website_description:fur_theme.product_organizer
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid "Specifications"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+msgid "Steel, 5 castors"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+msgid "Storage"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__subtitle
+msgid "Subtitle"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__summary
+msgid "Summary"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.checkout_layout
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+msgid "Support"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_mesh
+msgid "Synchro tilt"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+msgid "Table"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_chair_task
+msgid "Task Chair, Mustard"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,name:fur_theme.project_tech_office
+msgid "Tech Startup Headquarters"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+msgid "Terms"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.confirmation
+msgid "Thank you for shopping at"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_lamp_desk
+#: model_terms:product.template,description_ecommerce:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+msgid "The adjustable architect lamp in matte black, with a weighted base."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_dining_chair_cross
+#: model_terms:product.template,description_ecommerce:fur_theme.product_dining_chair_cross
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
+msgid ""
+"The bistro classic: a cross-back chair in solid beech with a woven seat."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_fur_project__website_absolute_url
+msgid "The full absolute URL to access the document through the website."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_fur_project__website_url
+msgid "The full relative URL to access the document through the website."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_meeting_room
+msgid ""
+"The new boardroom seats twelve around a dark oak table with power and video "
+"connections in the top."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_sofa_cognac
+#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_cognac
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+msgid ""
+"The same tailored silhouette in rich cognac leather, for a classic library "
+"look."
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_apartment
+msgid "Three-bedroom flat, Lisbon"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_pedestal_wood
+#: model_terms:product.template,description_ecommerce:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+msgid "Three-drawer pedestal on castors that slides under any desk."
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,location:fur_theme.project_cafe
+msgid "Toronto, Canada"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__fur_project__project_type__house
+msgid "Townhouse & Villa"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+msgid "Track my order"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_wire_transfer
+msgid ""
+"Transfer the order amount to our bank account: the account details and the "
+"payment reference are shown as soon as the order is placed."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_chest_oak
+msgid "Two-Drawer Oak Chest"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_sideboard_oak
+#: model_terms:product.template,description_ecommerce:fur_theme.product_sideboard_oak
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+msgid ""
+"Two-door cabinet with a herringbone oak front and splayed legs: storage that"
+" doubles as a statement piece."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__project_type
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "Type"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+msgid "Up to 65 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
+#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid "Upholstery"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_enabled
+msgid "Use Fur Theme"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_enabled
+msgid ""
+"Use the Fur header, footer, homepage and shop layout on this website. Untick"
+" it to give this website back Odoo's own layout."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_pad
+msgid "Vegan leather"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_sofa_teal
+msgid "Velvet Two-Seat Sofa"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid "Velvet, teal"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_card
+msgid "View product"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "View products"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_published
+msgid "Visible on current website"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_monitor_stand
+msgid "Walnut"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_monitor_stand
+msgid "Walnut Monitor Stand"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_walnut
+msgid "Walnut Writing Desk"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+msgid "Walnut melamine, black steel frame"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_walnut
+msgid "Walnut veneer"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid "Warm and<br/>refined <span class=\"o_fur_accent\">bedrooms</span>"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+msgid "Warranty"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_tech_office
+msgid ""
+"We designed and fitted out 680 m² in six weeks: bench desks in white and "
+"steel, acoustic booths for calls and a ten-seat boardroom in dark oak."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_website
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_id
+msgid "Website"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_absolute_url
+msgid "Website Absolute URL"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_product_public_category
+msgid "Website Product Category"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_url
+msgid "Website URL"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_meta_description
+msgid "Website meta description"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_meta_keywords
+msgid "Website meta keywords"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_meta_title
+msgid "Website meta title"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
+msgid "Website name"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_meta_og_img
+msgid "Website opengraph image"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_whatsapp
+msgid "WhatsApp"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_white
+msgid "White Desk with Drawer"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+msgid "White lacquered MDF, steel frame"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+msgid "White melamine, steel frame"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
+msgid "Woven fabric, beige (removable covers)"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_sale_order__fur_customer_note
+msgid "Written by the customer on the Fur cart page."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart
+msgid "Your cart"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.provider,pending_msg:fur_theme.payment_provider_cash_on_delivery
+msgid ""
+"Your order has been received. Please pay the delivery staff when you receive"
+" the goods; we will call you to confirm the delivery time."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.provider,auth_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.provider,auth_msg:fur_theme.payment_provider_wire_transfer
+msgid "Your payment has been authorized."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.provider,cancel_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.provider,cancel_msg:fur_theme.payment_provider_wire_transfer
+msgid "Your payment has been cancelled."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.provider,done_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.provider,done_msg:fur_theme.payment_provider_wire_transfer
+msgid "Your payment has been processed."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_zalo
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
+msgid "Zalo"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_zalo_2
+msgid "Zalo (2nd)"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.page_banner
+msgid "breadcrumb"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+msgid "e.g. Công nghệ tại TP.HCM"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+msgid "e.g. Văn phòng công ty"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.confirmation
+msgid ""
+"has been received. We will call you to confirm it and deliver as soon as "
+"possible."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
+msgid "https://m.me/yourpage"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+msgid "m²"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_organizer
+msgid "Ø 10 x 12 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_round
+msgid "Ø 120 x 75 cm"
+msgstr ""

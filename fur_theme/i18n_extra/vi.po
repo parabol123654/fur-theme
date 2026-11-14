@@ -1,0 +1,1432 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fur_theme\n"
+"Language: vi_VN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.products
+msgid "\" category"
+msgstr "\" danh mục"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.list_hybrid
+msgid ""
+"' did not match anything.\n"
+"                                Results are displayed for '"
+msgstr ""
+"' không có kết quả.\n"
+"                                Đang hiển thị kết quả cho '"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/interactions/a11y_new_tab_link.js:0
+msgid "(Open in new tab)"
+msgstr "(Mở trong thẻ mới)"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "50,000+ companies use our services <br/>to grow their businesses."
+msgstr ""
+"Hơn 50.000 doanh nghiệp tin dùng dịch vụ của chúng tôi <br/>để phát triển "
+"kinh doanh."
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.footer_cookie_policy_link
+msgid ""
+"<a href=\"/website/cookie-policy\" class=\"oe_unremovable small o_translate_inline\">Cookie Policy</a>\n"
+"                <span class=\"text-muted  mx-2\">•</span>\n"
+"                <a href=\"#\" class=\"o_cookies_bar_toggle oe_unremovable small o_translate_inline\">Update Cookie Preferences</a>"
+msgstr ""
+"<a href=\"/website/cookie-policy\" class=\"oe_unremovable small o_translate_inline\">Chính sách cookie</a>\n"
+"                <span class=\"text-muted  mx-2\">•</span>\n"
+"                <a href=\"#\" class=\"o_cookies_bar_toggle oe_unremovable small o_translate_inline\">Cập nhật tuỳ chọn cookie</a>"
+
+#. module: payment_custom
+#: model_terms:ir.ui.view,arch_db:payment_custom.custom_payment_transfer_details
+msgid "<b>Amount:</b>"
+msgstr "<b>Số tiền:</b>"
+
+#. module: payment_custom
+#: model_terms:ir.ui.view,arch_db:payment_custom.custom_payment_transfer_details
+msgid "<b>Bank Account:</b>"
+msgstr "<b>Số tài khoản:</b>"
+
+#. module: payment_custom
+#: model_terms:ir.ui.view,arch_db:payment_custom.custom_payment_transfer_details
+msgid "<b>Beneficiary:</b>"
+msgstr "<b>Người thụ hưởng:</b>"
+
+#. module: payment_custom
+#: model_terms:ir.ui.view,arch_db:payment_custom.custom_payment_transfer_details
+msgid "<b>Communication:</b>"
+msgstr "<b>Nội dung chuyển khoản:</b>"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.suggested_products_list
+msgid ""
+"<i class=\"oi d-md-none\" data-icon=\"shopping_cart\" role=\"presentation\"/>\n"
+"                                <span class=\"d-none d-md-inline\">Add to cart</span>"
+msgstr ""
+"<i class=\"oi d-md-none\" data-icon=\"shopping_cart\" role=\"presentation\"/>\n"
+"                                <span class=\"d-none d-md-inline\">Thêm vào giỏ</span>"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_contact
+msgid ""
+"<i class=\"oi m-auto ms-auto me-3\" data-icon=\"mail\" role=\"img\" aria-"
+"label=\"Send Message\"/>"
+msgstr ""
+"<i class=\"oi m-auto ms-auto me-3\" data-icon=\"mail\" role=\"img\" aria-"
+"label=\"Gửi tin nhắn\"/>"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.billing_address_list
+#: model_terms:ir.ui.view,arch_db:website_sale.delivery_address_list
+msgid "<i class=\"oi me-1\" data-icon=\"add\"/>Add"
+msgstr "<i class=\"oi me-1\" data-icon=\"add\"/>Thêm"
+
+#. module: account
+#: model_terms:ir.ui.view,arch_db:account.address_form_additional_identifiers
+msgid "<i class=\"oi me-1\" data-icon=\"add\"/>Add identifier"
+msgstr "<i class=\"oi me-1\" data-icon=\"add\"/>Thêm mã định danh"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "<i class=\"oi me-1\" data-icon=\"refresh\"/>Order Again"
+msgstr "<i class=\"oi me-1\" data-icon=\"refresh\"/>Đặt lại đơn này"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.s_add_to_cart
+msgid "<i class=\"oi me-2\" data-icon=\"add_shopping_cart\"/>Add to Cart"
+msgstr "<i class=\"oi me-2\" data-icon=\"add_shopping_cart\"/>Thêm vào giỏ hàng"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.cta_wrapper
+msgid ""
+"<i class=\"oi me-2\" data-icon=\"mail\"/>\n"
+"                    Notify me"
+msgstr ""
+"<i class=\"oi me-2\" data-icon=\"mail\"/>\n"
+"                    Báo cho tôi khi có hàng"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.confirmation
+msgid "<i class=\"oi me-2\" data-icon=\"shopping_cart_checkout\"/>Order"
+msgstr "<i class=\"oi me-2\" data-icon=\"shopping_cart_checkout\"/>Đặt hàng"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.quick_reorder_button
+msgid "<i class=\"oi me-2\" data-icon=\"undo\"/>Quick reorder"
+msgstr "<i class=\"oi me-2\" data-icon=\"undo\"/>Đặt lại nhanh"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_compare
+msgid ""
+"<i class=\"oi oi-filled me-2 text-danger\" data-icon=\"circle\" aria-hidden=\"true\"/>\n"
+"                                            Out of stock"
+msgstr ""
+"<i class=\"oi oi-filled me-2 text-danger\" data-icon=\"circle\" aria-hidden=\"true\"/>\n"
+"                                            Hết hàng"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.cta_wrapper
+msgid ""
+"<i class=\"oi oi-filled me-2\" data-icon=\"notifications\"/>\n"
+"                    Subscribed"
+msgstr ""
+"<i class=\"oi oi-filled me-2\" data-icon=\"notifications\"/>\n"
+"                    Đã đăng ký nhận tin"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_wishlist
+msgid ""
+"<i class=\"oi oi-filled text-danger me-1\" data-icon=\"circle\" aria-hidden=\"true\"/>\n"
+"                                            Out of stock"
+msgstr ""
+"<i class=\"oi oi-filled text-danger me-1\" data-icon=\"circle\" aria-hidden=\"true\"/>\n"
+"                                            Hết hàng"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.user_dropdown
+msgid ""
+"<i class=\"oi oi-fw small text-primary-emphasis\" data-icon=\"logout\"/> "
+"Logout"
+msgstr ""
+"<i class=\"oi oi-fw small text-primary-emphasis\" data-icon=\"logout\"/> "
+"Đăng xuất"
+
+#. module: payment_custom
+#: model_terms:ir.ui.view,arch_db:payment_custom.custom_payment_transfer_details
+msgid ""
+"<small class=\"text-center text-wrap lh-sm\">\n"
+"                            Scan me in your banking app\n"
+"                        </small>"
+msgstr ""
+"<small class=\"text-center text-wrap lh-sm\">\n"
+"                            Quét mã bằng ứng dụng ngân hàng\n"
+"                        </small>"
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.amount_input
+msgid "<small>Amount</small>"
+msgstr "<small>Số tiền</small>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<span class=\"badge text-bg-info\">Billing</span>"
+msgstr "<span class=\"badge text-bg-info\">Thanh toán</span>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<span class=\"badge text-bg-info\">Delivery &amp; Billing</span>"
+msgstr "<span class=\"badge text-bg-info\">Giao hàng &amp; thanh toán</span>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<span class=\"badge text-bg-info\">Delivery</span>"
+msgstr "<span class=\"badge text-bg-info\">Giao hàng</span>"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "<span class=\"flex-grow-1\">By Bike</span>"
+msgstr "<span class=\"flex-grow-1\">Bằng xe đạp</span>"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "<span class=\"flex-grow-1\">By Car</span>"
+msgstr "<span class=\"flex-grow-1\">Bằng ô tô</span>"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "<span class=\"flex-grow-1\">By Train</span>"
+msgstr "<span class=\"flex-grow-1\">Bằng tàu hoả</span>"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.website_search_box
+msgid ""
+"<span class=\"o_search_spinner d-none spinner-border spinner-border-sm text-500\" style=\"--spinner-border-width: 0.1em;\" role=\"status\">\n"
+"                <span class=\"visually-hidden\">Loading...</span>\n"
+"            </span>"
+msgstr ""
+"<span class=\"o_search_spinner d-none spinner-border spinner-border-sm text-500\" style=\"--spinner-border-width: 0.1em;\" role=\"status\">\n"
+"                <span class=\"visually-hidden\">Đang tải...</span>\n"
+"            </span>"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.comparison_button
+msgid ""
+"<span class=\"oi oi-fw o_not-animable\" data-icon=\"swap_horiz\"/>\n"
+"            <span class=\"o_label small ms-2\">Compare</span>"
+msgstr ""
+"<span class=\"oi oi-fw o_not-animable\" data-icon=\"swap_horiz\"/>\n"
+"            <span class=\"o_label small ms-2\">So sánh</span>"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.pager
+msgid ""
+"<span class=\"oi\" data-icon=\"chevron_backward\" role=\"img\" aria-"
+"label=\"Previous\" title=\"Previous\"/>"
+msgstr ""
+"<span class=\"oi\" data-icon=\"chevron_backward\" role=\"img\" aria-"
+"label=\"Trang trước\" title=\"Trang trước\"/>"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.pager
+msgid ""
+"<span class=\"oi\" data-icon=\"chevron_forward\" role=\"img\" aria-"
+"label=\"Next\" title=\"Next\"/>"
+msgstr ""
+"<span class=\"oi\" data-icon=\"chevron_forward\" role=\"img\" aria-"
+"label=\"Trang sau\" title=\"Trang sau\"/>"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid ""
+"<span class=\"s_website_form_field_description small form-text text-"
+"muted\">We typically respond within 1-2 business days.</span>"
+msgstr ""
+"<span class=\"s_website_form_field_description small form-text text-"
+"muted\">Chúng tôi thường phản hồi trong vòng 1–2 ngày làm việc.</span>"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid ""
+"<span class=\"s_website_form_label_content\">Message</span>\n"
+"                                                        <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">Nội dung</span>\n"
+"                                                        <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_contact
+msgid "<span class=\"small text-muted\">Your Contact</span>"
+msgstr "<span class=\"small text-muted\">Người liên hệ</span>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "<span class=\"text-muted fw-normal\">saved</span>"
+msgstr "<span class=\"text-muted fw-normal\">tiết kiệm</span>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_pay_modal
+msgid "<span id=\"o_sale_portal_use_amount_total\">By paying,</span>"
+msgstr "<span id=\"o_sale_portal_use_amount_total\">Khi thanh toán,</span>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<span>Discount</span>"
+msgstr "<span>Chiết khấu</span>"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.documents
+msgid "<span>Documents</span>"
+msgstr "<span>Tài liệu</span>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<span>Tax:</span>"
+msgstr "<span>Thuế:</span>"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.cookies_bar
+msgid ""
+"<span>We use cookies to provide you a better user experience on this website.</span>\n"
+"                                            <a href=\"/website/cookie-policy\" class=\"o_cookies_bar_text_policy small o_translate_inline\">Cookie Policy</a>"
+msgstr ""
+"<span>Chúng tôi dùng cookie để mang lại trải nghiệm tốt hơn cho bạn trên website này.</span>\n"
+"                                            <a href=\"/website/cookie-policy\" class=\"o_cookies_bar_text_policy small o_translate_inline\">Chính sách cookie</a>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "<strong class=\"smaller text-uppercase text-muted\">Invoices</strong>"
+msgstr "<strong class=\"smaller text-uppercase text-muted\">Hoá đơn</strong>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid ""
+"<strong class=\"smaller text-uppercase text-muted\">Your advantage</strong>"
+msgstr ""
+"<strong class=\"smaller text-uppercase text-muted\">Ưu đãi của bạn</strong>"
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.no_pms_available_warning
+msgid "<strong>No payment methods are available</strong>"
+msgstr "<strong>Hiện chưa có phương thức thanh toán nào</strong>"
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.no_pms_available_warning
+msgid "<strong>No payment providers are configured</strong>"
+msgstr "<strong>Chưa cấu hình nhà cung cấp thanh toán</strong>"
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.no_pms_available_warning
+msgid "Account"
+msgstr "Tài khoản"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_breadcrumbs
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_details
+msgid "Account Details"
+msgstr "Thông tin tài khoản"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/interactions/image_gallery.edit.xml:0
+msgid "Add Images"
+msgstr "Thêm hình ảnh"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.my_addresses
+msgid "Add an address"
+msgstr "Thêm địa chỉ"
+
+#. module: account
+#. odoo-javascript
+#: code:addons/account/static/src/interactions/portal_additional_identifiers.js:0
+msgid "Add identifier"
+msgstr "Thêm mã định danh"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/js/send_mail_form.js:0
+msgid "Add multiple emails separated by commas"
+msgstr "Nhập nhiều email, cách nhau bằng dấu phẩy"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/website_builder/donation/donation.edit.xml:0
+#: model_terms:ir.ui.view,arch_db:website_sale.s_donation_form
+#: model_terms:ir.ui.view,arch_db:website_sale.s_donation_inline
+msgid "Amount"
+msgstr "Số tiền"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/interactions/portal_profile_editor.js:0
+msgid "An error occurred while saving your profile."
+msgstr "Đã xảy ra lỗi khi lưu hồ sơ của bạn."
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/product_image/attribute_value_selector/attribute_value_selector.xml:0
+msgid "And"
+msgstr "Và"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.o_wsale_offcanvas
+msgid "Apply Filters"
+msgstr "Áp dụng bộ lọc"
+
+#. module: website_sale
+#: model:website.checkout.step,back_button_label:website_sale.checkout_step_delivery
+msgid "Back to address"
+msgstr "Quay lại địa chỉ"
+
+#. module: website_sale
+#: model:website.checkout.step,back_button_label:website_sale.checkout_step_extra
+msgid "Back to extra info"
+msgstr "Quay lại thông tin bổ sung"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.my_addresses
+msgid "Billing addresses"
+msgstr "Địa chỉ thanh toán"
+
+#. module: web
+#. odoo-javascript
+#: code:addons/web/static/src/public/caps_lock_warning.xml:0
+msgid "Caps Lock is on!"
+msgstr "Phím Caps Lock đang bật!"
+
+#. module: website_sale
+#: model:ir.actions.server,name:website_sale.dynamic_snippet_category_list
+#: model:website.snippet.filter,name:website_sale.dynamic_filter_category_list
+#: model_terms:ir.ui.view,arch_db:website_sale.snippets
+msgid "Category List"
+msgstr "Danh sách danh mục"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/client_actions/configurator/productPageSelectionScreen.xml:0
+#: code:addons/website_sale/static/src/js/client_actions/configurator/shopPageSelectionScreen.xml:0
+msgid "Choose your"
+msgstr "Chọn"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.address_form_fields
+msgid "City..."
+msgstr "Tỉnh/Thành phố..."
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.products
+msgid "Clear search for this category"
+msgstr "Xoá tìm kiếm trong danh mục này"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_whatsapp/whatsapp_chatbox.xml:0
+msgid "Close chat"
+msgstr "Đóng cửa sổ chat"
+
+#. module: sale
+#. odoo-javascript
+#: code:addons/sale/static/src/xml/combo_menu_widget.xml:0
+msgid "Combo"
+msgstr "Combo"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Combo Product"
+msgstr "Sản phẩm combo"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "Come Visit Us"
+msgstr "Đến thăm chúng tôi"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.message_thread
+msgid "Communication History"
+msgstr "Lịch sử trao đổi"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.address_form_fields
+msgid "Company"
+msgstr "Công ty"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/product_comparison_bottom_bar/product_comparison_bottom_bar.xml:0
+#: code:addons/website_sale/static/src/website_builder/product_page_option.xml:0
+#: code:addons/website_sale/static/src/website_builder/products_design_panel.xml:0
+#: model_terms:ir.ui.view,arch_db:website_sale.comparison_button
+msgid "Compare"
+msgstr "So sánh"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_compare
+msgid "Compare Products"
+msgstr "So sánh sản phẩm"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/product_comparison_bottom_bar/product_comparison_bottom_bar.xml:0
+msgid "Compare products"
+msgstr "So sánh sản phẩm"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/interactions/checkout.js:0
+msgid "Computed after delivery"
+msgstr "Tính sau khi chọn giao hàng"
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.no_pms_available_warning
+msgid "Connect"
+msgstr "Kết nối"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_compare
+msgid "Continue shopping"
+msgstr "Tiếp tục mua sắm"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.cookies_bar
+msgid "Cookie bar"
+msgstr "Thanh thông báo cookie"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/interactions/portal_security.js:0
+msgid "Copied to clipboard"
+msgstr "Đã sao chép"
+
+#. module: auth_signup
+#. odoo-javascript
+#: code:addons/auth_signup/static/src/components/signup.xml:0
+msgid "Copy Reset Password Link"
+msgstr "Sao chép link đặt lại mật khẩu"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.footer_copyright_company_name
+msgid "Copyright &amp;copy;"
+msgstr "Bản quyền &amp;copy;"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/interactions/portal_composer.js:0
+msgid "Could not save file %s"
+msgstr "Không thể lưu tệp %s"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.address_form_fields
+msgid "Country..."
+msgstr "Quốc gia..."
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.no_pms_available_warning
+msgid "Create"
+msgstr "Tạo"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/interactions/portal_security.js:0
+msgid "Create Key"
+msgstr "Tạo khoá"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.address_on_checkout
+msgid "Delivery &amp; Billing"
+msgstr "Giao hàng &amp; thanh toán"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.my_addresses
+msgid "Delivery addresses"
+msgstr "Địa chỉ giao hàng"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "Describe your request"
+msgstr "Mô tả yêu cầu của bạn"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.portal_my_security
+msgid "Discard"
+msgstr "Huỷ"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "Down payment:"
+msgstr "Đặt cọc:"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.confirmation
+msgid "Download"
+msgstr "Tải xuống"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.confirmation
+msgid "Download Invoice"
+msgstr "Tải hoá đơn"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.confirmation
+msgid "Download Sale Order"
+msgstr "Tải đơn hàng"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "Easy ways to reach us, no matter your favorite transport."
+msgstr "Dễ dàng tìm đến chúng tôi, dù bạn đi bằng phương tiện nào."
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.login
+msgid "Enter your email"
+msgstr "Nhập email của bạn"
+
+#. module: web
+#. odoo-javascript
+#: code:addons/web/static/src/core/session/check_identity.xml:0
+#: model_terms:ir.ui.view,arch_db:web.login
+msgid "Enter your password"
+msgstr "Nhập mật khẩu"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/interactions/http_error_demo_card.edit.xml:0
+msgid "Error message:"
+msgstr "Thông báo lỗi:"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "Excl. Tax)"
+msgstr "chưa gồm thuế)"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/xml/portal_security.xml:0
+msgid "Expires"
+msgstr "Hết hạn"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.ribbon_filter_pills
+msgid "Filter by in stock products"
+msgstr "Chỉ hiện sản phẩm còn hàng"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.ribbon_filter_pills
+msgid "Filter by on sale products"
+msgstr "Chỉ hiện sản phẩm đang giảm giá"
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.no_pms_available_warning
+msgid "Find a Payment Provider"
+msgstr "Tìm nhà cung cấp thanh toán"
+
+#. module: website_sale
+#. odoo-python
+#: code:addons/website_sale/models/website_snippet_filter.py:0
+#: model:product.public.category,name:website_sale.public_category_furnitures
+#: model_terms:ir.ui.view,arch_db:website_sale.s_dynamic_snippet_category_preview_data
+msgid "Furniture"
+msgstr "Nội thất"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/interactions/website_auth_form.js:0
+msgid "Go back to the homepage"
+msgstr "Quay về trang chủ"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/combo_configurator_dialog/combo_configurator_dialog.xml:0
+#: code:addons/website_sale/static/src/js/product_configurator_dialog/product_configurator_dialog.xml:0
+msgid "Go to Checkout"
+msgstr "Tiến hành thanh toán"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.wishlist_button
+msgid "Handle your wishlist from the menu icon."
+msgstr "Xem danh sách yêu thích từ biểu tượng trên menu."
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.address_form_fields
+msgid "If you want to modify it, update"
+msgstr "Nếu muốn thay đổi, hãy cập nhật"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.ribbon_filter_pills
+msgid "In stock"
+msgstr "Còn hàng"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.wishlist_button
+msgid "In your wishlist"
+msgstr "Đã có trong danh sách yêu thích"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.order_tax_lines
+msgid "Including"
+msgstr "Bao gồm"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/interactions/product_page.js:0
+#: model_terms:ir.ui.view,arch_db:website_sale.cta_wrapper
+msgid "Invalid email"
+msgstr "Email không hợp lệ"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/xml/portal_security.xml:0
+msgid "Key Name — your only way to identify that key"
+msgstr "Tên khoá — cách duy nhất để bạn nhận ra khoá này"
+
+#. module: auth_signup
+#. odoo-javascript
+#: code:addons/auth_signup/static/src/components/signup.js:0
+msgid "Link copied to clipboard!"
+msgstr "Đã sao chép link!"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.list_hybrid
+msgid "Load More"
+msgstr "Xem thêm"
+
+#. module: portal_rating
+#. odoo-javascript
+#: code:addons/portal_rating/static/src/xml/portal_tools.xml:0
+msgid "Log in"
+msgstr "Đăng nhập"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.quick_reorder_button
+msgid "Login to reorder"
+msgstr "Đăng nhập để đặt lại"
+
+#. module: web
+#: model_terms:ir.ui.view,arch_db:web.login_successful
+msgid "Logout"
+msgstr "Đăng xuất"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.address_card
+msgid "Main Address"
+msgstr "Địa chỉ chính"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.cookie_policy
+msgid "Manage Your Cookie Preferences"
+msgstr "Quản lý tuỳ chọn cookie"
+
+#. module: sale
+#. odoo-javascript
+#: code:addons/sale/static/src/xml/discount_menu_widget.xml:0
+msgid "Manual Discount"
+msgstr "Chiết khấu thủ công"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_google_map/google_map.js:0
+msgid "Map Marker"
+msgstr "Vị trí trên bản đồ"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_whatsapp/whatsapp_chatbox.xml:0
+msgid "Messaging is not available. Please contact us by another way."
+msgstr ""
+"Tính năng nhắn tin hiện không khả dụng. Vui lòng liên hệ với chúng tôi bằng "
+"cách khác."
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_wishlist
+msgid "My Wishlist"
+msgstr "Danh sách yêu thích"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.address_form_fields
+msgid "Name"
+msgstr "Họ và tên"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/builder/plugins/options/image_gallery.edit.xml:0
+#: code:addons/website/static/src/interactions/image_lightbox.xml:0
+#: model_terms:ir.ui.view,arch_db:website.s_carousel
+#: model_terms:ir.ui.view,arch_db:website.s_carousel_cards
+#: model_terms:ir.ui.view,arch_db:website.s_carousel_intro
+#: model_terms:ir.ui.view,arch_db:website.s_image_gallery
+#: model_terms:ir.ui.view,arch_db:website.s_quotes_carousel
+#: model_terms:ir.ui.view,arch_db:website.s_quotes_carousel_compact
+#: model_terms:ir.ui.view,arch_db:website.s_quotes_carousel_minimal
+msgid "Next slide"
+msgstr "Ảnh tiếp theo"
+
+#. module: sale
+#. odoo-javascript
+#: code:addons/sale/static/src/xml/combo_menu_widget.xml:0
+msgid "No Combo Product Available"
+msgstr "Không có sản phẩm combo"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/website_sale_utils.js:0
+#: model_terms:ir.ui.view,arch_db:website_sale.quick_reorder_button
+msgid "No previous products available for reorder."
+msgstr "Chưa có sản phẩm nào đã mua để đặt lại."
+
+#. module: website_payment
+#. odoo-javascript
+#: code:addons/website_payment/static/src/snippets/s_supported_payment_methods/000.edit.xml:0
+msgid "No published payment methods"
+msgstr "Chưa có phương thức thanh toán nào được bật"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.portal_my_orders
+msgid "Not Available"
+msgstr "Không có sẵn"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/product/product.xml:0
+msgid "Not available for sale"
+msgstr "Không bán"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.ribbon_filter_pills
+msgid "On sale"
+msgstr "Đang giảm giá"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/xml/portal_chatter.xml:0
+msgid "Oops! Something went wrong. Try to reload the page and log in."
+msgstr "Rất tiếc, đã có lỗi xảy ra. Hãy tải lại trang và đăng nhập."
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.price_dynamic_filter_template_product_product
+#: model_terms:ir.ui.view,arch_db:website_sale.product_wishlist
+#: model_terms:ir.ui.view,arch_db:website_sale.products_item
+msgid "Original price"
+msgstr "Giá gốc"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.accordion_specs_item
+#: model_terms:ir.ui.view,arch_db:website_sale.specifications_table
+msgid "Others"
+msgstr "Khác"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.template_footer_website_sale
+msgid "Our payment methods"
+msgstr "Phương thức thanh toán"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/xml/website_sale_product_availability.xml:0
+msgid "Out of Stock"
+msgstr "Hết hàng"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.total
+msgid "Paid"
+msgstr "Đã thanh toán"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "Paid:"
+msgstr "Đã trả:"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/builder/plugins/options/image_gallery.edit.xml:0
+#: code:addons/website/static/src/interactions/carousel/carousel_slider.js:0
+#: model_terms:ir.ui.view,arch_db:website.s_carousel
+#: model_terms:ir.ui.view,arch_db:website.s_carousel_cards
+#: model_terms:ir.ui.view,arch_db:website.s_carousel_intro
+#: model_terms:ir.ui.view,arch_db:website.s_image_gallery
+#: model_terms:ir.ui.view,arch_db:website.s_quotes_carousel
+#: model_terms:ir.ui.view,arch_db:website.s_quotes_carousel_compact
+#: model_terms:ir.ui.view,arch_db:website.s_quotes_carousel_minimal
+msgid "Pause slides"
+msgstr "Tạm dừng trình chiếu"
+
+#. module: website_sale
+#: model:website.checkout.step,name:website_sale.checkout_step_confirmation
+msgid "Payment Confirmation"
+msgstr "Xác nhận thanh toán"
+
+#. module: payment
+#. odoo-javascript
+#: code:addons/payment/static/src/interactions/payment_form.js:0
+msgid "Payment method unavailable"
+msgstr "Phương thức thanh toán không khả dụng"
+
+#. module: website_sale_stock
+#: model_terms:ir.ui.view,arch_db:website_sale_stock.pickup_address_on_checkout
+msgid "Pickup point"
+msgstr "Điểm nhận hàng"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/interactions/carousel/carousel_slider.js:0
+msgid "Play slides"
+msgstr "Phát trình chiếu"
+
+#. module: payment
+#. odoo-javascript
+#: code:addons/payment/static/src/interactions/payment_form.js:0
+msgid "Please choose another payment method."
+msgstr "Vui lòng chọn phương thức thanh toán khác."
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.quick_reorder_history
+msgid "Press 'Enter' to add to cart"
+msgstr "Nhấn 'Enter' để thêm vào giỏ"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/builder/plugins/options/image_gallery.edit.xml:0
+#: code:addons/website/static/src/interactions/image_lightbox.xml:0
+#: model_terms:ir.ui.view,arch_db:website.s_carousel
+#: model_terms:ir.ui.view,arch_db:website.s_carousel_cards
+#: model_terms:ir.ui.view,arch_db:website.s_carousel_intro
+#: model_terms:ir.ui.view,arch_db:website.s_image_gallery
+#: model_terms:ir.ui.view,arch_db:website.s_quotes_carousel
+#: model_terms:ir.ui.view,arch_db:website.s_quotes_carousel_compact
+#: model_terms:ir.ui.view,arch_db:website.s_quotes_carousel_minimal
+msgid "Previous slide"
+msgstr "Ảnh trước"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.filter_products_price
+msgid "Price Range"
+msgstr "Khoảng giá"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.dynamic_filter_template_product_product_products_item
+#: model_terms:ir.ui.view,arch_db:website_sale.products_item
+msgid "Price information"
+msgstr "Thông tin giá"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.pricelist_selector
+msgid "Pricelist: {{0}}"
+msgstr "Bảng giá: {{0}}"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_compare
+msgid "Product image"
+msgstr "Ảnh sản phẩm"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "Provide feedback"
+msgstr "Gửi góp ý"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.quick_reorder_sidebar
+msgid "Quick reorder"
+msgstr "Đặt lại nhanh"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Quotation for"
+msgstr "Báo giá cho"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/js/send_mail_form.js:0
+msgid "Recipient Emails"
+msgstr "Email người nhận"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Ref:"
+msgstr "Mã tham chiếu:"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "Reject this quotation"
+msgstr "Từ chối báo giá này"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.cookie_policy
+msgid ""
+"Remember information about the preferred look or behavior of the website, "
+"such as your preferred language, region or timezone."
+msgstr ""
+"Ghi nhớ các tuỳ chọn về giao diện hoặc cách hiển thị của website, như ngôn "
+"ngữ, khu vực hay múi giờ bạn chọn."
+
+#. module: account
+#. odoo-javascript
+#: code:addons/account/static/src/interactions/portal_additional_identifiers.js:0
+#: model_terms:ir.ui.view,arch_db:account.address_form_additional_identifiers
+msgid "Remove"
+msgstr "Xoá"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/product_comparison_bottom_bar/product_comparison_bottom_bar.xml:0
+msgid "Remove All"
+msgstr "Xoá tất cả"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_compare
+msgid "Remove all"
+msgstr "Xoá tất cả"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/product_comparison_bottom_bar/product_comparison_bottom_bar.xml:0
+#: model_terms:ir.ui.view,arch_db:website_sale.product_compare
+msgid "Remove all products from comparison"
+msgstr "Xoá tất cả sản phẩm khỏi so sánh"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_wishlist
+msgid "Remove from wishlist"
+msgstr "Xoá khỏi danh sách yêu thích"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/product_row/product_row.xml:0
+#: model_terms:ir.ui.view,arch_db:website_sale.product_compare
+msgid "Remove product from comparison"
+msgstr "Xoá sản phẩm khỏi so sánh"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.address_card
+msgid "Remove this address"
+msgstr "Xoá địa chỉ này"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_wishlist
+#: model_terms:ir.ui.view,arch_db:website_sale.products_item
+msgid "Sale price"
+msgstr "Giá bán"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Sales Order for"
+msgstr "Đơn hàng cho"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/website_builder/checkout_page_option.xml:0
+#: model_terms:ir.ui.view,arch_db:website_sale.product_cart_lines
+msgid "Save for Later"
+msgstr "Để dành mua sau"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.products
+msgid "Search in {{0}}"
+msgstr "Tìm trong {{0}}"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.filter_radio_and_multi_attributes
+msgid "Search {{0}} ({{1}})"
+msgstr "Tìm {{0}} ({{1}})"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.products
+msgid "Search {{0}} globally"
+msgstr "Tìm {{0}} trên toàn cửa hàng"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.theme_colors_preview
+#: model_terms:ir.ui.view,arch_db:website.website_search_box_input
+msgid "Search..."
+msgstr "Tìm kiếm..."
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Section Summary"
+msgstr "Tổng hợp mục"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_whatsapp/whatsapp_chatbox.xml:0
+msgid "Send message"
+msgstr "Gửi tin nhắn"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.portal_my_orders
+msgid "Shipping Status"
+msgstr "Tình trạng giao hàng"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_compare
+msgid "Shop Comparator"
+msgstr "So sánh sản phẩm"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_wishlist
+msgid "Shop Wishlist"
+msgstr "Danh sách yêu thích"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/product_comparison_bottom_bar/product_comparison_bottom_bar.xml:0
+msgid "Show products added to comparison"
+msgstr "Xem các sản phẩm đang so sánh"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_searchbar/000.xml:0
+msgid ""
+"Showing results for\n"
+"                '"
+msgstr ""
+"Đang hiển thị kết quả cho\n"
+"                '"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.confirmation
+msgid "Sign Up"
+msgstr "Đăng ký"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/builder/plugins/options/image_gallery_option_plugin.js:0
+#: code:addons/website/static/src/interactions/image_popup.js:0
+#: code:addons/website/static/src/snippets/s_image_gallery/gallery.js:0
+msgid "Slide %(itemPosition)s of %(total)s"
+msgstr "Ảnh %(itemPosition)s / %(total)s"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.accordion_specs_item
+#: model_terms:ir.ui.view,arch_db:website_sale.product_attributes_body
+msgid "Specifications"
+msgstr "Thông số kỹ thuật"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.address_form_fields
+msgid "State / Province..."
+msgstr "Tỉnh / Thành phố..."
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.cta_wrapper
+msgid "Subscribe"
+msgstr "Đăng ký"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "Tax Included"
+msgstr "Đã gồm thuế"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_website_form/form.js:0
+msgid ""
+"The following file(s) have invalid type: %(fileNames)s. Allowed type(s): "
+"%(allowedMimeTypesLabels)s."
+msgstr ""
+"Tệp sau có định dạng không hợp lệ: %(fileNames)s. Định dạng cho phép: "
+"%(allowedMimeTypesLabels)s."
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_website_form/form.xml:0
+msgid "The form has been sent successfully."
+msgstr "Đã gửi thông tin thành công."
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_website_form/form.js:0
+msgid "This field must contain one of the keyword(s): '%s'"
+msgstr "Trường này phải chứa một trong các từ khoá: '%s'"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_website_form/form.js:0
+msgid "This field must have one of these email domain(s): %s."
+msgstr "Email phải thuộc một trong các tên miền: %s."
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_website_form/form.js:0
+msgid "This field must not include the keyword(s): '%s'"
+msgstr "Trường này không được chứa các từ khoá: '%s'"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/xml/portal_security.xml:0
+msgid ""
+"This key won't be shown again. Please copy it and store it securely. Treat "
+"it like a password, it grants full access to your account."
+msgstr ""
+"Khoá này sẽ không hiển thị lại. Hãy sao chép và cất giữ cẩn thận. Hãy coi nó"
+" như mật khẩu: nó cho toàn quyền truy cập tài khoản của bạn."
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/interactions/add_to_comparison.js:0
+msgid "This product has already been added to the comparison."
+msgstr "Sản phẩm này đã có trong danh sách so sánh."
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_countdown/000.xml:0
+msgid "Time's up! You can now visit"
+msgstr "Hết giờ! Giờ bạn có thể vào"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/xml/portal_security.xml:0
+msgid "To login, use the following parameters (Python):"
+msgstr "Để đăng nhập, dùng các tham số sau (Python):"
+
+#. module: portal_rating
+#. odoo-javascript
+#: code:addons/portal_rating/static/src/xml/portal_tools.xml:0
+msgid "To post a review"
+msgstr "Để viết đánh giá"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/interactions/cookies/cookies_warning.xml:0
+msgid "To see the interactive content, you need to accept optional cookies."
+msgstr "Để xem nội dung tương tác, bạn cần chấp nhận cookie tuỳ chọn."
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/interactions/add_to_comparison.js:0
+msgid "Too many products to compare"
+msgstr "Quá nhiều sản phẩm để so sánh"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.products
+msgid "Try to refine your search criteria."
+msgstr "Hãy thử thu hẹp điều kiện tìm kiếm."
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_compare
+msgid "Uncategorized"
+msgstr "Chưa phân loại"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.cookie_policy
+msgid "Update My Cookie Preferences"
+msgstr "Cập nhật tuỳ chọn cookie của tôi"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Valid until"
+msgstr "Hiệu lực đến"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_website_form/form.js:0
+msgid ""
+"Value of this field does not lie within character limit.(Min: %(minChars)s, "
+"Max: %(maxChars)s)"
+msgstr ""
+"Độ dài không hợp lệ (tối thiểu: %(minChars)s, tối đa: %(maxChars)s ký tự)"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/interactions/shop_page.js:0
+msgid "View Less"
+msgstr "Thu gọn"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/js/cart_notification/item_added_notification/item_added_notification.xml:0
+msgid "View cart"
+msgstr "Xem giỏ hàng"
+
+#. module: website_payment
+#. odoo-javascript
+#: code:addons/website_payment/static/src/snippets/s_supported_payment_methods/000.edit.xml:0
+msgid "View providers"
+msgstr "Xem nhà cung cấp"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "Write down your message"
+msgstr "Nhập nội dung tin nhắn"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/xml/website_sale_product_availability.xml:0
+msgid "You already added all the available product in your cart"
+msgstr "Bạn đã thêm hết số lượng còn có của sản phẩm này vào giỏ"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/interactions/website_auth_form.js:0
+msgid "You are already logged in."
+msgstr "Bạn đã đăng nhập rồi."
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/interactions/website_auth_form.js:0
+msgid "You are already signed in."
+msgstr "Bạn đã đăng nhập rồi."
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/interactions/add_to_comparison.js:0
+msgid "You can compare up to 4 products at a time."
+msgstr "Bạn có thể so sánh tối đa 4 sản phẩm cùng lúc."
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/xml/portal_chatter.xml:0
+msgid "You must be"
+msgstr "Bạn cần"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus_thanks_ir_ui_view
+msgid "Your message has been sent. <br/>We will get back to you shortly."
+msgstr "Tin nhắn của bạn đã được gửi. <br/>Chúng tôi sẽ phản hồi sớm nhất."
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.payment_status
+msgid "Your order is being processed."
+msgstr "Đơn hàng của bạn đang được xử lý."
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.payment_status
+msgid "Your payment is being processed."
+msgstr "Thanh toán của bạn đang được xử lý."
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.payment_form_hide_tokens_heading
+msgid "Your payment methods"
+msgstr "Phương thức thanh toán của bạn"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_website_form/form.js:0
+msgid ""
+"Your upload is too large for the server to accept. Please choose smaller "
+"files."
+msgstr "Tệp tải lên quá lớn. Vui lòng chọn tệp nhỏ hơn."
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.product_wishlist
+msgid "Your wishlist is empty!"
+msgstr "Danh sách yêu thích của bạn đang trống!"
+
+#. module: website_sale_stock
+#. odoo-javascript
+#: code:addons/website_sale_stock/static/src/js/location_selector/location_selector_dialog/location_selector_dialog.xml:0
+msgid "Zip or City"
+msgstr "Mã bưu chính hoặc thành phố"
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/xml/portal_security.xml:0
+msgid "e.g. \"Odoo MCP\""
+msgstr "VD: \"Odoo MCP\""
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/xml/website_sale_product_availability.xml:0
+msgid "in stock"
+msgstr "còn hàng"
+
+#. module: website_sale
+#. odoo-javascript
+#: code:addons/website_sale/static/src/xml/website_sale_product_availability.xml:0
+msgid "in your cart)"
+msgstr "trong giỏ hàng)"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.checkout_layout
+msgid ""
+"items - Scroll for more\n"
+"                                    <i class=\"oi ms-1\" data-icon=\"south\" aria-hidden=\"true\"/>"
+msgstr ""
+"sản phẩm - Cuộn để xem thêm\n"
+"                                    <i class=\"oi ms-1\" data-icon=\"south\" aria-hidden=\"true\"/>"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.cart_summary_content
+msgid ""
+"items - Scroll for more\n"
+"                        <i class=\"oi ms-1\" data-icon=\"south\" aria-hidden=\"true\"/>"
+msgstr ""
+"sản phẩm - Cuộn để xem thêm\n"
+"                        <i class=\"oi ms-1\" data-icon=\"south\" aria-hidden=\"true\"/>"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_searchbar/000.xml:0
+#: model_terms:ir.ui.view,arch_db:website.website_search_box
+msgid "result(s)"
+msgstr "kết quả"
+
+#. module: portal_rating
+#. odoo-javascript
+#: code:addons/portal_rating/static/src/xml/portal_tools.xml:0
+msgid "review"
+msgstr "đánh giá"
+
+#. module: portal_rating
+#. odoo-javascript
+#: code:addons/portal_rating/static/src/xml/portal_tools.xml:0
+msgid "reviews"
+msgstr "đánh giá"
+
+#. module: payment
+#: model_terms:ir.ui.view,arch_db:payment.no_pms_available_warning
+msgid "the website administrator."
+msgstr "quản trị viên website."
+
+#. module: portal
+#. odoo-javascript
+#: code:addons/portal/static/src/xml/portal_chatter.xml:0
+msgid "to post a comment."
+msgstr "để bình luận."
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_pay_modal
+msgid "you confirm acceptance on behalf of"
+msgstr "bạn xác nhận chấp thuận thay mặt cho"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.cta_wrapper
+msgid "youremail@gmail.com"
+msgstr "email.cua.ban@gmail.com"
+
+#. module: portal
+#: model_terms:ir.ui.view,arch_db:portal.my_addresses
+msgid "<i class=\"oi me-1\" data-icon=\"add\"/>Add"
+msgstr "<i class=\"oi me-1\" data-icon=\"add\"/>Thêm"
+
+#. module: website_sale
+#: model_terms:ir.ui.view,arch_db:website_sale.suggested_products_list
+msgid "Wishlist"
+msgstr "Yêu thích"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "ACME Corp"
+msgstr "Công ty ABC"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "John Doe"
+msgstr "Nguyễn Văn A"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.contactus
+msgid "example@mail.com"
+msgstr "email@congty.vn"

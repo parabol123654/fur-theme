@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- Browser-tab titles. Pages without a title of their own fall back to the
+     template's internal name ("Sign up login", "Page Not Found"...), which is
+     not translatable; give them a real, translatable one. -->
+
+<template id="title_signup" inherit_id="auth_signup.signup" name="Fur Title: Sign up">
+    <xpath expr="//t[@t-call='web.login_layout']" position="before">
+        <t t-set="additional_title">Sign up</t>
+    </xpath>
+</template>
+
+<template id="title_404" inherit_id="http_routing.404" name="Fur Title: 404">
+    <xpath expr="//t[@t-call='web.frontend_layout']" position="before">
+        <t t-set="additional_title">Page not found</t>
+    </xpath>
+</template>
+
+<template id="title_my_invoices" inherit_id="account.portal_my_invoices" name="Fur Title: My Invoices">
+    <xpath expr="//t[@t-call='portal.portal_layout']" position="before">
+        <t t-set="additional_title">Invoices &amp; payments</t>
+    </xpath>
+</template>
+
+</odoo>

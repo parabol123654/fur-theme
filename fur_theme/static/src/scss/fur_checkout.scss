@@ -1,0 +1,181 @@
+// Cart, address, delivery, payment and confirmation pages.
+.o_fur .o_fur_checkout {
+    .o_wizard, .o_wizard_steplist, .o_wizard_step_active, .progress-wizard {
+        font-family: var(--fur-font);
+    }
+    .o_total_card {
+        border: 1px solid var(--fur-line);
+        border-radius: var(--fur-radius);
+        box-shadow: var(--fur-shadow);
+    }
+    .btn-primary {
+        border-radius: 2rem;
+        font-weight: 700;
+        color: var(--fur-navy-2);
+    }
+    .btn-secondary, .btn-light {
+        border-radius: 2rem;
+    }
+    h3, h4, .h3, .h4 {
+        font-weight: 700;
+        color: var(--fur-navy);
+    }
+    .o_cart_product img, .o_wsale_cart_line img {
+        border-radius: var(--fur-radius-sm);
+    }
+    .oe_cart .card, .o_payment_option_card, .o_delivery_carrier_select {
+        border-radius: var(--fur-radius-sm);
+    }
+    .o_payment_option_card.active, .o_delivery_carrier_select:has(input:checked) {
+        border-color: var(--fur-yellow) !important;
+        box-shadow: 0 0 0 1px var(--fur-yellow);
+    }
+    .monetary_field, .oe_currency_value {
+        font-variant-numeric: tabular-nums;
+    }
+    #order_total .monetary_field, .o_cart_total .monetary_field {
+        color: var(--fur-price);
+    }
+}
+.o_fur_trustbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem 1.75rem;
+    margin: .25rem 0 1.25rem;
+    padding: .7rem 1rem;
+    border-radius: var(--fur-radius-sm);
+    background: var(--fur-cream);
+    font-size: .82rem;
+    font-weight: 500;
+    color: var(--fur-navy-2);
+    li { display: flex; align-items: center; gap: .45rem; }
+    .o_fur_icon { width: 1.15rem; height: 1.15rem; color: var(--fur-accent); }
+}
+.o_fur_thanks {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--fur-radius);
+    background: linear-gradient(90deg, var(--fur-yellow), #FBE27A);
+    color: var(--fur-navy);
+    > div { display: flex; align-items: center; gap: 1rem; }
+    h1 { margin: 0 0 .25rem; font-size: 1.35rem; font-weight: 800; }
+    p { margin: 0; }
+}
+.o_fur_thanks_icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--fur-navy);
+    color: var(--fur-yellow);
+    .o_fur_icon { width: 1.6rem; height: 1.6rem; }
+}
+// Odoo's own "Thank you" heading repeats the Fur banner right above it.
+.o_fur_thanks ~ .d-flex > h3 {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+}
+
+// One-step checkout on the cart page (fur_theme.cart_checkout_form).
+.o_fur .o_fur_checkout {
+    .o_fur_cart_title, .o_fur_qc_title {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--fur-navy);
+    }
+    #shop_cart > .d-flex:has(.o_fur_cart_title), .o_fur_qc_title {
+        padding-bottom: .6rem;
+        border-bottom: 1px solid var(--fur-line);
+    }
+    .o_fur_qc_title {
+        margin-bottom: 1rem;
+        &:not(:first-of-type) { margin-top: 1.5rem; }
+    }
+    #shop_cart #cart_products {
+        gap: 1rem;
+        margin-bottom: 1rem !important;
+        padding: 1rem;
+        border: 1px solid var(--fur-line);
+        border-radius: var(--fur-radius-sm);
+        .o_cart_product {
+            padding-bottom: 1rem !important;
+            border-bottom: 1px dashed var(--fur-line);
+            &:last-of-type { padding-bottom: 0 !important; border-bottom: 0; }
+        }
+    }
+    .o_fur_cart_total {
+        padding: .75rem 1rem;
+        border-radius: var(--fur-radius-sm);
+        background: var(--fur-surface);
+        table, td { background: transparent; }
+        // delivery is arranged by phone after the order
+        tr[name="o_order_delivery"] { display: none; }
+    }
+    @include media-breakpoint-up(lg) {
+        .o_wsale_shorter_cart_summary:has(.o_fur_quick_checkout) {
+            flex: 0 0 45%;
+            max-width: 45%;
+            margin-left: 0;
+            padding-left: 1.75rem;
+            border-left: 1px solid var(--fur-line);
+        }
+    }
+}
+.o_fur_quick_checkout {
+    .o_fur_pm {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: .4rem .75rem;
+        margin-bottom: .5rem;
+        > input {
+            width: 1.15rem;
+            height: 1.15rem;
+            margin: 0;
+            accent-color: var(--fur-navy);
+            cursor: pointer;
+        }
+    }
+    .o_fur_pm_label {
+        margin: 0;
+        padding: .65rem 1rem;
+        border: 1px solid transparent;
+        border-radius: var(--fur-radius-sm);
+        background: var(--fur-surface);
+        cursor: pointer;
+    }
+    .o_fur_pm_desc {
+        display: none;
+        grid-column: 2;
+        padding: .75rem 1rem;
+        border-radius: var(--fur-radius-sm);
+        background: var(--fur-cream);
+        font-size: .9rem;
+        color: var(--fur-text);
+        p:last-child { margin-bottom: 0; }
+    }
+    input:checked + .o_fur_pm_label {
+        border-color: var(--fur-yellow);
+        font-weight: 600;
+    }
+    input:checked ~ .o_fur_pm_desc { display: block; }
+    .form-control {
+        padding: .65rem .9rem;
+        border-radius: var(--fur-radius-sm);
+    }
+    .o_fur_qc_submit {
+        margin-top: 1.25rem;
+        padding: .8rem;
+        text-transform: uppercase;
+    }
+}

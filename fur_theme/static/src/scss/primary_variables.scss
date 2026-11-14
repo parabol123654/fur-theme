@@ -1,0 +1,47 @@
+// Fur Furniture Theme — website values. Loaded right after website's own
+// primary_variables.scss, so everything here yields to the user's choices
+// saved from the website builder (user_values.scss comes later).
+
+$o-theme-font-configs: map-merge($o-theme-font-configs, (
+    'Be Vietnam Pro': (
+        // Bundled in static/src/fonts (see fonts.scss): no Google Fonts call.
+        'family': ('Be Vietnam Pro', 'Segoe UI', Roboto, sans-serif),
+    ),
+));
+
+$o-color-palettes: map-merge($o-color-palettes, (
+    'fur': (
+        'o-color-1': #F8CB0C, // Fur yellow (primary)
+        'o-color-2': #13254E, // Fur navy (secondary)
+        'o-color-3': #F5F6F8, // light surface
+        'o-color-4': #FFFFFF, // page
+        'o-color-5': #1F2B49, // text
+        // links in navy: yellow text on white is not readable
+        'o-cc1-link': 'o-color-2',
+        'o-cc2-link': 'o-color-2',
+        'o-cc3-link': 'o-color-2',
+        'menu': 1,
+        'footer': 5,
+        'copyright': 5,
+    ),
+));
+
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'fur');
+
+$o-website-values-palettes: (
+    (
+        'color-palettes-name': 'fur',
+        'font': 'Be Vietnam Pro',
+        'headings-font': 'Be Vietnam Pro',
+        'navbar-font': 'Be Vietnam Pro',
+        'buttons-font': 'Be Vietnam Pro',
+        'btn-padding-x': 1.25rem,
+        'btn-border-radius': 2rem,
+        'btn-border-radius-sm': 2rem,
+        'btn-border-radius-lg': 2rem,
+        'input-border-radius': .75rem,
+        'input-border-radius-sm': .5rem,
+        'input-border-radius-lg': 1rem,
+        'link-underline': 'never',
+    ),
+);

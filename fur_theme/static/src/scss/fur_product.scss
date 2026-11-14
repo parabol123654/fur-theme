@@ -1,0 +1,391 @@
+// Product page (/shop/<product>).
+.o_fur .o_wsale_product_page {
+    #product_detail {
+        .o_wsale_breadcrumb {
+            font-size: .82rem;
+            a { color: var(--fur-muted); text-decoration: none; }
+        }
+    }
+    .o_wsale_product_images {
+        img { border-radius: var(--fur-radius-sm); }
+    }
+    #o_wsale_product_details_content {
+        h1 {
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--fur-navy);
+        }
+    }
+    .product_price .oe_price,
+    .product_price .oe_price_h4,
+    .o_wsale_product_details_content_section_price .oe_price {
+        font-size: 1.85rem;
+        font-weight: 800;
+        color: var(--fur-price);
+    }
+    .product_price .oe_default_price,
+    .o_wsale_product_details_content_section_price del {
+        color: #9CA3AF;
+    }
+    #add_to_cart,
+    .o_we_buy_now,
+    #o_wsale_cta_wrapper .btn-primary {
+        border-radius: 2rem;
+        font-weight: 700;
+        min-height: 3rem;
+    }
+    #o_wsale_cta_wrapper .btn-outline-primary,
+    .o_we_buy_now {
+        border: 1.5px solid var(--fur-navy-2);
+        background: #fff;
+        color: var(--fur-navy-2);
+        &:hover { background: var(--fur-navy-2); color: #fff; }
+    }
+    .css_quantity {
+        border-radius: 2rem;
+        overflow: hidden;
+    }
+}
+
+.o_fur_perks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .75rem;
+    margin: 0 0 .9rem;
+    padding: 1rem;
+    border: 1px solid var(--fur-line);
+    border-radius: var(--fur-radius-sm);
+    background: var(--fur-surface);
+    li, li > a {
+        display: flex;
+        align-items: flex-start;
+        gap: .6rem;
+        font-size: .8rem;
+        line-height: 1.35;
+        color: var(--fur-muted);
+    }
+    li > a { text-decoration: none; }
+    li > a:hover b { color: var(--fur-accent); }
+    b {
+        display: block;
+        font-size: .86rem;
+        font-weight: 600;
+        color: var(--fur-navy-2);
+    }
+    .o_fur_icon {
+        width: 1.4rem;
+        height: 1.4rem;
+        color: var(--fur-accent);
+    }
+}
+.o_fur_hotline_cta {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .75rem 1rem;
+    border-radius: var(--fur-radius-sm);
+    background: var(--fur-cream);
+    color: var(--fur-navy-2);
+    font-size: .85rem;
+    text-decoration: none;
+    b { display: block; font-size: 1.05rem; color: var(--fur-navy); }
+    &:hover { color: var(--fur-navy); background: #F2E9D6; }
+}
+.o_fur_description_head {
+    margin-top: 1rem;
+}
+.o_fur_full_description,
+.o_fur_product_description {
+    color: var(--fur-navy-2);
+    line-height: 1.7;
+    h5 {
+        margin: 1.25rem 0 .75rem;
+        font-weight: 700;
+        color: var(--fur-navy);
+    }
+}
+.o_fur_spec_table {
+    max-width: 48rem;
+    border: 1px solid var(--fur-line);
+    th {
+        width: 35%;
+        background: var(--fur-surface);
+        font-weight: 600;
+        color: var(--fur-navy-2);
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Product page layout (product.xml): title block, price row, colour swatches,
+// description + sticky buy box.
+// ---------------------------------------------------------------------------
+.o_fur .o_wsale_product_page {
+    .o_fur_pdp_title {
+        margin-bottom: .35rem;
+    }
+    .o_fur_pdp_meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .25rem 1.25rem;
+        margin: 0 0 .9rem;
+        font-size: .82rem;
+        color: var(--fur-muted);
+        b { color: var(--fur-navy-2); }
+        a { color: var(--fur-navy-2); }
+    }
+    // short description, boxed like a note
+    .o_fur_pdp_short {
+        padding: .8rem 1rem;
+        border-left: 3px solid var(--fur-yellow);
+        border-radius: 0 var(--fur-radius-sm) var(--fur-radius-sm) 0;
+        background: var(--fur-surface);
+        color: var(--fur-navy-2) !important; // over Odoo's text-muted
+        font-size: .9rem;
+        line-height: 1.6;
+        p:last-child { margin-bottom: 0; }
+    }
+    .o_wsale_product_details_content_section_price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: .35rem .6rem;
+    }
+    .o_fur_price_label {
+        font-weight: 600;
+        color: var(--fur-navy-2);
+    }
+
+    // colour swatches (attribute display type "image")
+    .css_attribute_image {
+        width: 3rem;
+        height: 3rem;
+        border: 2px solid var(--fur-line);
+        border-radius: .5rem !important;
+        transition: border-color .15s, transform .15s;
+        &:hover { transform: translateY(-1px); border-color: var(--fur-muted); }
+        &.active {
+            border-color: var(--fur-accent);
+            box-shadow: 0 0 0 2px rgba(246, 170, 0, .25);
+        }
+    }
+
+    // long description beside the sticky box
+    .o_fur_pdp_lower {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .o_fur_pdp_desc_col {
+        // the description snippets carry their own .container
+        .container { max-width: none; padding-left: 0; padding-right: 0; }
+        img { max-width: 100%; height: auto; }
+    }
+}
+
+.o_fur .o_fur_btn_navy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-height: 2.75rem;
+    padding: .55rem 1.35rem;
+    border: 1.5px solid var(--fur-navy-2);
+    border-radius: 2rem;
+    background: var(--fur-navy-2);
+    color: #fff;
+    font-weight: 600;
+    &:hover, &:focus-visible { background: var(--fur-navy); border-color: var(--fur-navy); color: #fff; }
+}
+
+// Call, WhatsApp and Zalo buttons
+.o_fur_pdp_contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: .6rem;
+}
+.o_fur_zalo_cta {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .75rem 1rem;
+    border-radius: var(--fur-radius-sm);
+    background: #E8F1FF;
+    color: #0050C8;
+    font-size: .85rem;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover { background: #D6E6FF; color: #0041A3; }
+}
+.o_fur_whatsapp_cta {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .75rem 1rem;
+    border-radius: var(--fur-radius-sm);
+    background: #E7F8EE;
+    color: #128C4B;
+    font-size: .85rem;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover { background: #D2F2DF; color: #0E6E3B; }
+}
+.o_fur_whatsapp_mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    svg { width: 60%; height: 60%; }
+}
+.o_fur_zalo_mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: #0068FF;
+    color: #fff;
+    font-size: .72rem;
+    font-weight: 700;
+}
+.o_fur_pdp_contact_compact {
+    grid-template-columns: 1fr;
+    .o_fur_hotline_cta, .o_fur_zalo_cta, .o_fur_whatsapp_cta { padding: .55rem .75rem; font-size: .8rem; }
+    .o_fur_service_icon, .o_fur_zalo_mark, .o_fur_whatsapp_mark { width: 2rem; height: 2rem; }
+    .o_fur_hotline_cta b { font-size: .95rem; }
+}
+
+// Sticky buy box
+.o_fur_sticky_buy {
+    position: sticky;
+    top: 9rem; // below the sticky header
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+    padding: 1rem;
+    border: 1px solid var(--fur-line);
+    border-radius: var(--fur-radius);
+    background: #fff;
+    box-shadow: var(--fur-shadow);
+}
+.o_fur_sticky_head {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    img {
+        flex: 0 0 auto;
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+        border-radius: .5rem;
+        background: var(--fur-surface);
+    }
+}
+.o_fur_sticky_name {
+    font-size: .88rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--fur-navy);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.o_fur_sticky_price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .5rem;
+    del { font-size: .85rem; color: #9CA3AF; }
+}
+.o_fur_sticky_price_new {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--fur-price);
+}
+.o_fur_sticky_attr_name {
+    margin-bottom: .45rem;
+    font-size: .82rem;
+    color: var(--fur-muted);
+    b { color: var(--fur-navy-2); }
+}
+.o_fur_sticky_swatches {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: .35rem;
+}
+.o_fur_sticky_swatch {
+    aspect-ratio: 1;
+    padding: 0;
+    border: 2px solid var(--fur-line);
+    border-radius: .4rem;
+    background-color: var(--fur-surface);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    &:hover { border-color: var(--fur-muted); }
+    &.active {
+        border-color: var(--fur-accent);
+        box-shadow: 0 0 0 2px rgba(246, 170, 0, .25);
+    }
+}
+.o_fur_sticky_actions {
+    display: grid;
+    gap: .5rem;
+    .btn { width: 100%; justify-content: center; }
+}
+
+// Description / buying guide tabs
+.o_fur .o_wsale_product_page {
+    .o_fur_pdp_tabs {
+        gap: .25rem;
+        border-bottom: 2px solid var(--fur-line);
+        .nav-link {
+            border: 0;
+            border-radius: var(--fur-radius-sm) var(--fur-radius-sm) 0 0;
+            padding: .7rem 1.2rem;
+            font-weight: 600;
+            color: var(--fur-muted);
+            background: var(--fur-surface);
+            &.active { background: var(--fur-yellow); color: var(--fur-navy-2); }
+            &:hover:not(.active) { color: var(--fur-navy-2); }
+        }
+    }
+    .o_fur_pdp_tab_content {
+        padding-top: 1.25rem;
+        #product_full_description { margin-top: 0 !important; }
+        .o_fur_product_description { padding-top: 0 !important; }
+    }
+    .o_fur_product_description {
+        h2 { font-size: 1.35rem; font-weight: 700; color: var(--fur-navy); margin: 1.5rem 0 .75rem; }
+        h2:first-child { margin-top: 0; }
+        h3 { font-size: 1.15rem; font-weight: 700; color: var(--fur-navy); }
+        ul, ol { padding-left: 1.25rem; }
+        li p { margin-bottom: .35rem; }
+    }
+    .o_fur_spec_table {
+        td, th { vertical-align: top; }
+        td p, th p { margin: 0; }
+        tr > td:first-child { width: 35%; background: var(--fur-surface); font-weight: 600; }
+    }
+    .o_fur_buy_guide {
+        line-height: 1.7;
+        h3 { font-size: 1.15rem; font-weight: 700; color: var(--fur-navy); margin: 1.25rem 0 .6rem; }
+        h3:first-child { margin-top: 0; }
+        ol, ul { padding-left: 1.25rem; }
+    }
+}
+
+// Product photos of the long description
+.o_fur .o_fur_product_description img.o_fur_desc_img {
+    display: block;
+    width: auto;
+    max-width: #{"min(100%, 40rem)"};
+    height: auto;
+    margin: 1.25rem auto;
+    border-radius: var(--fur-radius-sm, .5rem);
+}

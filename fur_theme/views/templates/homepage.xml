@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Product card shared by the homepage, related products and project pages.
+     Params: product (product.template), prices (dict from website._fur_product_prices) -->
+<template id="product_card" name="Fur Product Card">
+    <t t-set="variant" t-value="product.product_variant_id"/>
+    <t t-set="price_vals" t-value="prices.get(product.id, {}) if prices else {}"/>
+    <article class="o_fur_product_card oe_product_cart" t-att-data-publish="product.website_published and 'on' or 'off'">
+        <a t-att-href="product.website_url" class="o_fur_product_img" t-att-title="product.name">
+            <img t-att-src="website.image_url(product, 'image_512')" t-att-alt="product.name" loading="lazy"/>
+        </a>
+        <t t-set="in_wish" t-value="variant.id in (fur_wishlist_ids or ())"/>
+        <button t-if="variant and is_view_active('website_sale.add_to_wishlist')" type="button"
+                t-attf-class="o_add_wishlist o_fur_wish btn #{'o_in_wishlist' if in_wish else ''}"
+                t-att-disabled="in_wish or None"
+                t-att-data-product-id="variant.id" t-att-data-product-template-id="product.id"
+                title="Add to wishlist" aria-label="Add to wishlist">
+            <t t-call="fur_theme.icon" icon="'heart'"/>
+        </button>
+        <div class="o_fur_product_body">
+            <div class="o_fur_product_text">
+                <h3 class="o_fur_product_name" t-att-title="product.name">
+                    <a t-att-href="product.website_url" t-out="product._fur_short_name()"/>
+                </h3>
+                <div t-if="product.default_code" class="o_fur_product_code">Code: <t t-out="product.default_code"/></div>
+                <div class="o_fur_product_price" t-if="price_vals">
+                    <span t-out="price_vals['price_reduce']"
+                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <del t-if="not hide_compare and price_vals.get('base_price') and price_vals['base_price'] &gt; price_vals['price_reduce']"
+                         t-out="price_vals['base_price']"
+                         t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                </div>
+            </div>
+            <button t-if="variant and product._website_show_quick_add()" type="button" name="add_to_cart"
+                    class="o_fur_cart_btn btn"
+                    t-att-data-product-id="variant.id"
+                    t-att-data-product-template-id="product.id"
+                    t-att-data-product-type="product.type"
+                    t-att-data-show-quantity="is_view_active('website_sale.product_quantity')"
+                    title="Add to cart" aria-label="Add to cart">
+                <t t-call="fur_theme.icon" icon="'cart'"/>
+            </button>
+            <a t-else="" t-att-href="product.website_url" class="o_fur_cart_btn btn" aria-label="View product">
+                <t t-call="fur_theme.icon" icon="'arrow'"/>
+            </a>
+        </div>
+    </article>
+</template>
+
+<!-- Project card (homepage + /projects). Params: project -->
+<template id="project_card" name="Fur Project Card">
+    <a t-att-href="project.website_url" class="o_fur_project_card">
+        <img t-att-src="website.image_url(project, 'image_1024')" t-att-alt="project.name" loading="lazy"/>
+        <span class="o_fur_project_caption">
+            <span class="o_fur_project_title">
+                <span t-field="project.name"/>
+                <span t-if="project.subtitle" class="d-block" t-field="project.subtitle"/>
+            </span>
+            <span class="o_fur_round_btn o_fur_round_btn_light">
+                <t t-call="fur_theme.icon" icon="'chevron'"/>
+            </span>
+        </span>
+    </a>
+</template>
+
+<template id="services_strip" name="Fur Services Strip">
+    <section class="o_fur_services">
+        <div class="container">
+            <div class="o_fur_services_inner">
+                <div class="o_fur_service">
+                    <span class="o_fur_service_icon"><t t-call="fur_theme.icon" icon="'truck'"/></span>
+                    <span class="o_fur_service_text">Nationwide<br/>delivery</span>
+                </div>
+                <div class="o_fur_service">
+                    <span class="o_fur_service_icon"><t t-call="fur_theme.icon" icon="'shield'"/></span>
+                    <span class="o_fur_service_text">Long-term<br/>warranty</span>
+                </div>
+                <div class="o_fur_service">
+                    <span class="o_fur_service_icon"><t t-call="fur_theme.icon" icon="'gear'"/></span>
+                    <span class="o_fur_service_text">Professional<br/>installation</span>
+                </div>
+                <div class="o_fur_service">
+                    <span class="o_fur_service_icon"><t t-call="fur_theme.icon" icon="'headset'"/></span>
+                    <span class="o_fur_service_text">Free<br/>consultation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<template id="homepage" inherit_id="website.homepage" name="Fur Homepage">
+    <xpath expr="//div[@id='wrap']" position="attributes">
+        <attribute name="t-if">not website.fur_enabled</attribute>
+    </xpath>
+    <xpath expr="//div[@id='wrap']" position="before">
+        <div t-if="website.fur_enabled" id="wrap" class="o_fur_home">
+            <!-- ============ Hero ============ -->
+            <section class="o_fur_hero_section">
+                <div class="container">
+                    <div id="o_fur_hero" class="carousel slide o_fur_hero" data-bs-ride="carousel" data-bs-interval="6000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="o_fur_hero_slide" style="background-image: url('/website/static/src/img/snippets_demo/s_banner_categories_default_image_1.webp');">
+                                    <div class="o_fur_hero_content">
+                                        <p class="o_fur_hero_eyebrow"><b t-out="website._fur_brand()"/></p>
+                                        <h1 class="o_fur_hero_title">Create your<br/>living <span class="o_fur_accent">space</span></h1>
+                                        <p class="o_fur_hero_lead">Modern, refined furniture<br/>for your home and office.</p>
+                                        <div class="o_fur_hero_actions">
+                                            <a href="/shop" class="btn o_fur_btn_primary">View products <t t-call="fur_theme.icon" icon="'arrow'" icon_class="'o_fur_icon_sm'"/></a>
+                                            <a href="/contactus" class="btn o_fur_btn_outline">Get a quote</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="o_fur_hero_slide" style="background-image: url('/website/static/src/img/snippets_demo/s_parallax.jpg');">
+                                    <div class="o_fur_hero_content">
+                                        <p class="o_fur_hero_eyebrow"><b t-out="website._fur_brand()"/></p>
+                                        <h1 class="o_fur_hero_title">Warm and<br/>refined <span class="o_fur_accent">bedrooms</span></h1>
+                                        <p class="o_fur_hero_lead">Matching beds, wardrobes and accessories<br/>for a perfect night’s sleep.</p>
+                                        <div class="o_fur_hero_actions">
+                                            <a href="/shop" class="btn o_fur_btn_primary">View products <t t-call="fur_theme.icon" icon="'arrow'" icon_class="'o_fur_icon_sm'"/></a>
+                                            <a href="/contactus" class="btn o_fur_btn_outline">Get a quote</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="o_fur_hero_slide" style="background-image: url('/website_sale/static/src/img/products_demo/product_product_46-image_02.jpg');">
+                                    <div class="o_fur_hero_content">
+                                        <p class="o_fur_hero_eyebrow"><b t-out="website._fur_brand()"/></p>
+                                        <h1 class="o_fur_hero_title">Offices that<br/>really <span class="o_fur_accent">work</span></h1>
+                                        <p class="o_fur_hero_lead">Ergonomic desks, chairs and cabinets<br/>installed turnkey.</p>
+                                        <div class="o_fur_hero_actions">
+                                            <a href="/shop" class="btn o_fur_btn_primary">View products <t t-call="fur_theme.icon" icon="'arrow'" icon_class="'o_fur_icon_sm'"/></a>
+                                            <a href="/contactus" class="btn o_fur_btn_outline">Get a quote</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-indicators o_fur_hero_dots">
+                            <button type="button" data-bs-target="#o_fur_hero" data-bs-slide-to="0" class="active" aria-selected="true" aria-label="Slide 1"/>
+                            <button type="button" data-bs-target="#o_fur_hero" data-bs-slide-to="1" aria-selected="false" aria-label="Slide 2"/>
+                            <button type="button" data-bs-target="#o_fur_hero" data-bs-slide-to="2" aria-selected="false" aria-label="Slide 3"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <t t-call="fur_theme.services_strip"/>
+
+            <div class="oe_structure" id="oe_structure_fur_home_1"/>
+
+            <!-- ============ Categories ============ -->
+            <t t-set="fur_categories" t-value="website._fur_home_categories()"/>
+            <section t-if="fur_categories" class="o_fur_section o_fur_categories o_not_editable" t-ignore="true">
+                <div class="container">
+                    <t t-call="fur_theme.section_title" see_all_url="'/shop'">Product <span class="o_fur_accent">categories</span></t>
+                    <t t-set="fur_category_images" t-value="website._fur_category_images(fur_categories)"/>
+                    <div class="o_fur_category_grid">
+                        <t t-foreach="fur_categories" t-as="categ">
+                            <a t-att-href="categ.website_url" class="o_fur_category_card">
+                                <span class="o_fur_category_img">
+                                    <img t-att-src="website.image_url(fur_category_images[categ.id], 'image_512')" t-att-alt="categ.name" loading="lazy"/>
+                                </span>
+                                <span class="o_fur_category_foot">
+                                    <span class="o_fur_category_name" t-field="categ.name"/>
+                                    <span class="o_fur_round_btn"><t t-call="fur_theme.icon" icon="'arrow'" icon_class="'o_fur_icon_sm'"/></span>
+                                </span>
+                            </a>
+                        </t>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ One block per category: sub-category pills, 8 products ============ -->
+            <t t-set="fur_sections" t-value="website._fur_home_sections()"/>
+            <t t-if="fur_sections">
+                <t t-set="fur_wishlist_ids" t-value="website._fur_wishlist_variant_ids()"/>
+                <t t-set="prices" t-value="website._fur_product_prices(website._fur_home_section_products(fur_sections))"/>
+            </t>
+            <section t-foreach="fur_sections" t-as="fur_section"
+                     class="o_fur_section o_fur_home_block oe_website_sale o_not_editable" t-ignore="true">
+                <t t-set="fur_block_categ" t-value="fur_section['category']"/>
+                <div class="container">
+                    <div class="o_fur_block_head">
+                        <h2 class="o_fur_block_title">
+                            <a t-att-href="fur_block_categ.website_url" t-field="fur_block_categ.name"/>
+                        </h2>
+                        <ul t-if="fur_section['children']" class="o_fur_block_pills list-unstyled">
+                            <li t-foreach="fur_section['children']" t-as="fur_pill">
+                                <a t-att-href="fur_pill.website_url" t-field="fur_pill.name"/>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="o_fur_product_grid">
+                        <t t-foreach="fur_section['products']" t-as="home_product">
+                            <t t-call="fur_theme.product_card" product="home_product"/>
+                        </t>
+                    </div>
+                    <div class="o_fur_block_foot">
+                        <a t-att-href="fur_block_categ.website_url" class="btn o_fur_btn_primary">
+                            See all <t t-call="fur_theme.icon" icon="'arrow'" icon_class="'o_fur_icon_sm'"/>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ Projects ============ -->
+            <t t-set="fur_projects" t-value="website._fur_featured_projects()"/>
+            <section t-if="fur_projects" class="o_fur_section o_fur_projects o_not_editable" t-ignore="true">
+                <div class="container">
+                    <t t-call="fur_theme.section_title" see_all_url="'/projects'">Featured <span class="o_fur_accent">projects</span></t>
+                    <div class="o_fur_project_grid">
+                        <t t-foreach="fur_projects" t-as="project">
+                            <t t-call="fur_theme.project_card"/>
+                        </t>
+                    </div>
+                </div>
+            </section>
+
+            <div class="oe_structure" id="oe_structure_fur_home_2"/>
+        </div>
+    </xpath>
+</template>
+
+</odoo>

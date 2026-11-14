@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fur_project_view_list" model="ir.ui.view">
+        <field name="name">fur.project.list</field>
+        <field name="model">fur.project</field>
+        <field name="arch" type="xml">
+            <list string="Projects">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="project_type"/>
+                <field name="location"/>
+                <field name="completion_date" optional="show"/>
+                <field name="website_id" groups="website.group_multi_website" optional="show"/>
+                <field name="is_featured" widget="boolean_toggle"/>
+                <field name="is_published" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="fur_project_view_kanban" model="ir.ui.view">
+        <field name="name">fur.project.kanban</field>
+        <field name="model">fur.project</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="card" class="flex-row">
+                        <aside class="o_kanban_aside_full">
+                            <field name="image_128" widget="image" options="{'img_class': 'object-fit-cover'}"/>
+                        </aside>
+                        <main class="ms-2">
+                            <field name="name" class="fw-bold fs-5"/>
+                            <field name="location" class="text-muted"/>
+                            <field name="project_type" class="badge text-bg-light mt-1"/>
+                        </main>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="fur_project_view_form" model="ir.ui.view">
+        <field name="name">fur.project.form</field>
+        <field name="model">fur.project</field>
+        <field name="arch" type="xml">
+            <form string="Project">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="is_published" widget="website_redirect_button"/>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. Văn phòng công ty"/></h1>
+                        <field name="subtitle" placeholder="e.g. Công nghệ tại TP.HCM"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="project_type"/>
+                            <field name="location"/>
+                            <field name="client_name"/>
+                        </group>
+                        <group>
+                            <field name="area"/>
+                            <field name="completion_date"/>
+                            <field name="is_featured"/>
+                            <field name="website_id" options="{'no_create': True}" groups="website.group_multi_website" placeholder="All"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field name="summary" placeholder="One or two sentences shown on project cards…"/>
+                            <field name="description" placeholder="Full story of the project…"/>
+                        </page>
+                        <page string="Products Used" name="products">
+                            <field name="product_tmpl_ids" widget="many2many_tags"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fur_project_view_search" model="ir.ui.view">
+        <field name="name">fur.project.search</field>
+        <field name="model">fur.project</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="location"/>
+                <filter string="Published" name="published" domain="[('is_published', '=', True)]"/>
+                <filter string="Featured" name="featured" domain="[('is_featured', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <group>
+                    <filter string="Type" name="group_type" context="{'group_by': 'project_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="fur_project_action" model="ir.actions.act_window">
+        <field name="name">Projects</field>
+        <field name="res_model">fur.project</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Showcase your first interior project</p>
+            <p>Projects appear on the /projects page and on the homepage of the Fur theme.</p>
+        </field>
+    </record>
+</odoo>

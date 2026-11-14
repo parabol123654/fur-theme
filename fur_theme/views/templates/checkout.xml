@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Cart, address, delivery, payment: trust bar under the step wizard. -->
+<template id="checkout_layout" inherit_id="website_sale.checkout_layout" name="Fur Checkout Layout">
+    <xpath expr="//div[@id='wrap']" position="attributes">
+        <!-- static class: every rule of fur_checkout.scss is scoped under .o_fur -->
+        <attribute name="class" add="o_fur_checkout" separator=" "/>
+    </xpath>
+    <xpath expr="//div[@id='checkout_alerts']" position="before">
+        <div t-if="website.fur_enabled" class="col-12">
+            <ul class="o_fur_trustbar list-unstyled">
+                <li><t t-call="fur_theme.icon" icon="'lock'"/><span>Secure payment</span></li>
+                <li><t t-call="fur_theme.icon" icon="'truck'"/><span>Nationwide delivery</span></li>
+                <li><t t-call="fur_theme.icon" icon="'shield'"/><span>Long-term warranty</span></li>
+                <li class="d-none d-md-flex"><t t-call="fur_theme.icon" icon="'headset'"/>
+                    <span>Support <b t-out="website.fur_hotline or res_company.phone or ''"/></span></li>
+            </ul>
+        </div>
+    </xpath>
+</template>
+
+<!-- Cart page = one-step checkout: cart lines and total on the left,
+     payment method + contact form on the right (controllers/cart.py). -->
+<template id="cart" inherit_id="website_sale.cart" name="Fur One-step Checkout Cart">
+    <xpath expr="//t[@t-call='website_sale.checkout_layout']" position="attributes">
+        <attribute name="show_wizard_checkout">not website.fur_enabled</attribute>
+    </xpath>
+    <xpath expr="//div[@id='shop_cart']//h4" position="replace">
+        <h4 t-if="website.fur_enabled" class="mb-0 o_fur_cart_title">Your cart</h4>
+        <t t-else="">$0</t>
+    </xpath>
+    <xpath expr="//div[@id='shop_cart']/t[@t-call='website_sale.cart_lines']" position="after">
+        <t t-if="website.fur_enabled" t-call="website_sale.total" _cart_total_classes.f="o_fur_cart_total"/>
+    </xpath>
+</template>
+
+<template id="shorter_cart_summary" inherit_id="website_sale.shorter_cart_summary" name="Fur Cart Checkout Form">
+    <xpath expr="//div[hasclass('o_total_card')]" position="replace">
+        <t t-if="website.fur_enabled and fur_checkout" t-call="fur_theme.cart_checkout_form"/>
+        <t t-else="">$0</t>
+    </xpath>
+</template>
+
+<template id="cart_checkout_form" name="Fur Cart Checkout Form Content">
+    <t t-set="fur_form" t-value="fur_checkout['form']"/>
+    <t t-set="fur_errors" t-value="fur_checkout['errors']"/>
+    <form action="/shop/fur/checkout" method="post" class="o_fur_quick_checkout">
+        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+        <h5 class="o_fur_qc_title">Payment method</h5>
+        <div t-if="not fur_checkout['providers']" class="alert alert-warning">
+            Online ordering is not available yet, please call us to order.
+        </div>
+        <div class="o_fur_pm_list" role="radiogroup">
+            <div t-foreach="fur_checkout['providers']" t-as="provider" class="o_fur_pm">
+                <input type="radio" name="provider_id" required="required"
+                       t-att-id="'o_fur_pm_%s' % provider.id" t-att-value="provider.id"
+                       t-att-checked="provider.id == fur_checkout['provider_id']"
+                       t-att-data-mode="provider.custom_mode"/>
+                <label class="o_fur_pm_label" t-att-for="'o_fur_pm_%s' % provider.id" t-out="provider.name"/>
+                <div class="o_fur_pm_desc">
+                    <t t-out="provider.pre_msg"/>
+                </div>
+            </div>
+        </div>
+        <div t-if="fur_errors.get('provider_id')" class="invalid-feedback d-block" t-out="fur_errors['provider_id']"/>
+
+        <h5 class="o_fur_qc_title">Order information</h5>
+        <div class="row g-2">
+            <div class="col-sm-6">
+                <input type="text" name="name" required="required" autocomplete="name" placeholder="Full name"
+                       t-att-value="fur_form.get('name')" aria-label="Full name"
+                       t-attf-class="form-control #{'is-invalid' if fur_errors.get('name') else ''}"/>
+                <div class="invalid-feedback" t-out="fur_errors.get('name')"/>
+            </div>
+            <div class="col-sm-6">
+                <input type="tel" name="phone" required="required" autocomplete="tel" placeholder="Phone"
+                       t-att-value="fur_form.get('phone')" aria-label="Phone"
+                       t-attf-class="form-control #{'is-invalid' if fur_errors.get('phone') else ''}"/>
+                <div class="invalid-feedback" t-out="fur_errors.get('phone')"/>
+            </div>
+            <div class="col-12">
+                <input type="email" name="email" autocomplete="email" placeholder="Email (optional)"
+                       t-att-value="fur_form.get('email')" aria-label="Email (optional)"
+                       t-attf-class="form-control #{'is-invalid' if fur_errors.get('email') else ''}"/>
+                <div class="invalid-feedback" t-out="fur_errors.get('email')"/>
+            </div>
+            <div class="col-12">
+                <input type="text" name="street" required="required" autocomplete="street-address" placeholder="Delivery address"
+                       t-att-value="fur_form.get('street')" aria-label="Delivery address"
+                       t-attf-class="form-control #{'is-invalid' if fur_errors.get('street') else ''}"/>
+                <div class="invalid-feedback" t-out="fur_errors.get('street')"/>
+            </div>
+            <div class="col-12">
+                <textarea name="note" rows="3" class="form-control" placeholder="Other requests"
+                          aria-label="Other requests" t-out="fur_form.get('note')"/>
+            </div>
+        </div>
+        <button type="submit" name="o_fur_checkout" class="btn btn-primary w-100 o_fur_qc_submit"
+                t-att-disabled="not fur_checkout['providers'] or website_sale_order._has_blocking_alerts()">
+            Place order
+        </button>
+    </form>
+</template>
+
+<!-- Order confirmation: Fur thank-you banner. -->
+<template id="confirmation" inherit_id="website_sale.confirmation" name="Fur Order Confirmation">
+    <xpath expr="//t[@t-set='tx_sudo']" position="after">
+        <!-- same condition as Odoo's own "Thank you for your order" -->
+        <section t-if="website.fur_enabled and (tx_sudo.state in ['pending', 'done'] or not order.amount_total)"
+                 class="o_fur_thanks">
+            <div>
+                <span class="o_fur_thanks_icon"><t t-call="fur_theme.icon" icon="'check'" icon_stroke="3"/></span>
+                <div>
+                    <h1>Thank you for shopping at <t t-out="website._fur_brand()"/>!</h1>
+                    <p>Order <b t-out="order.name"/> has been received. We will call you to confirm it and deliver as soon as possible.</p>
+                </div>
+            </div>
+        </section>
+    </xpath>
+</template>
+
+</odoo>

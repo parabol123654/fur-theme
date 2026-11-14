@@ -1,0 +1,497 @@
+// Fur design tokens (scoped to Fur pages) and shared components.
+.o_fur {
+    --fur-yellow: #F8CB0C;
+    --fur-yellow-hover: #F2BE00;
+    --fur-accent: #F6AA00;        // second word of titles, prices
+    --fur-price: #F29B00;
+    --fur-navy: #13254E;
+    --fur-navy-2: #1F2B49;
+    --fur-text: #1F2B49;
+    --fur-muted: #6B7280;
+    --fur-line: #ECEEF2;
+    --fur-surface: #F6F7F9;
+    --fur-cream: #F7F2E8;
+    --fur-radius: 14px;
+    --fur-radius-sm: 10px;
+    --fur-shadow: 0 6px 24px rgba(19, 37, 78, .07);
+    --fur-shadow-hover: 0 12px 32px rgba(19, 37, 78, .12);
+    --fur-font: 'Be Vietnam Pro', 'Segoe UI', Roboto, sans-serif;
+}
+
+.o_fur {
+    font-family: var(--fur-font);
+    color: var(--fur-text);
+
+    .o_fur_icon {
+        width: 1.35rem;
+        height: 1.35rem;
+        flex: 0 0 auto;
+        vertical-align: middle;
+    }
+    .o_fur_icon_sm {
+        width: 1rem;
+        height: 1rem;
+    }
+    .o_fur_accent {
+        color: var(--fur-accent);
+    }
+
+    // Buttons ------------------------------------------------------------
+    .o_fur_btn_primary,
+    .o_fur_btn_outline {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        min-height: 2.75rem;
+        padding: .55rem 1.35rem;
+        border-radius: 2rem;
+        font-weight: 600;
+        font-size: .95rem;
+        line-height: 1.2;
+        transition: background-color .15s, box-shadow .15s, transform .15s;
+    }
+    .o_fur_btn_primary {
+        background: var(--fur-yellow);
+        border: 1.5px solid var(--fur-yellow);
+        color: var(--fur-navy-2);
+        &:hover, &:focus-visible {
+            background: var(--fur-yellow-hover);
+            border-color: var(--fur-yellow-hover);
+            color: var(--fur-navy-2);
+            box-shadow: 0 6px 16px rgba(248, 203, 12, .45);
+        }
+    }
+    .o_fur_btn_outline {
+        background: #fff;
+        border: 1.5px solid var(--fur-navy-2);
+        color: var(--fur-navy-2);
+        &:hover, &:focus-visible {
+            background: var(--fur-navy-2);
+            color: #fff;
+        }
+    }
+    .o_fur_round_btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
+        background: var(--fur-yellow);
+        color: var(--fur-navy-2);
+        transition: transform .15s;
+        .o_fur_icon { width: 1rem; height: 1rem; }
+    }
+    .o_fur_round_btn_light {
+        width: 2.25rem;
+        height: 2.25rem;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+    }
+
+    // Sections -----------------------------------------------------------
+    .o_fur_section {
+        padding: 1.25rem 0;
+    }
+    .o_fur_section_head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    .o_fur_section_title {
+        margin: 0;
+        font-size: unquote("clamp(1.3rem, 1rem + 1.2vw, 1.85rem)");
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -.01em;
+        text-transform: uppercase;
+        color: var(--fur-navy);
+    }
+    .o_fur_see_all {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        font-size: .85rem;
+        font-weight: 600;
+        color: var(--fur-navy-2);
+        white-space: nowrap;
+        text-decoration: none;
+        &:hover { color: var(--fur-accent); }
+    }
+
+    // Page banner (shop, projects, checkout) ------------------------------
+    .o_fur_page_banner {
+        padding: 1.1rem 0 1.25rem;
+        background: linear-gradient(180deg, var(--fur-cream), #fff);
+        .breadcrumb {
+            margin-bottom: .35rem;
+            font-size: .8rem;
+            a { color: var(--fur-muted); text-decoration: none; }
+            .active { color: var(--fur-navy-2); }
+        }
+    }
+    .o_fur_page_title {
+        margin: 0;
+        font-size: unquote("clamp(1.4rem, 1.1rem + 1.2vw, 2rem)");
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--fur-navy);
+    }
+    .o_fur_empty {
+        padding: 3rem 1rem;
+        text-align: center;
+        color: var(--fur-muted);
+    }
+
+    // Filter pills (projects, shop categories) ----------------------------
+    .o_fur_filter_pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        margin-bottom: 1.25rem;
+    }
+    .o_fur_pill_filter {
+        padding: .45rem 1rem;
+        border: 1px solid var(--fur-line);
+        border-radius: 2rem;
+        background: #fff;
+        color: var(--fur-navy-2);
+        font-size: .875rem;
+        font-weight: 500;
+        text-decoration: none;
+        &:hover { border-color: var(--fur-yellow); }
+        &.active {
+            background: var(--fur-yellow);
+            border-color: var(--fur-yellow);
+            font-weight: 600;
+        }
+    }
+
+    // Product card (homepage, related products) ---------------------------
+    .o_fur_product_grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .75rem;
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+    }
+    .o_fur_product_card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+        border: 1px solid var(--fur-line);
+        border-radius: var(--fur-radius-sm);
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(19, 37, 78, .04);
+        transition: box-shadow .2s, transform .2s;
+        &:hover {
+            box-shadow: var(--fur-shadow-hover);
+            transform: translateY(-2px);
+            .o_fur_product_img img { transform: scale(1.04); }
+        }
+    }
+    // square frame, whole product visible (the pictures are mostly square)
+    .o_fur_product_img {
+        display: block;
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: #fff;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform .35s;
+        }
+    }
+    .o_fur_wish {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #fff;
+        color: var(--fur-navy-2);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+        .o_fur_icon { width: 1.05rem; height: 1.05rem; }
+        &:hover { color: #E5484D; }
+        &.o_in_wishlist, &:disabled {
+            opacity: 1;
+            color: #E5484D;
+            .o_fur_icon { fill: currentColor; }
+        }
+    }
+    .o_fur_product_body {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: .5rem;
+        padding: .6rem .7rem .75rem;
+        margin-top: auto;
+    }
+    .o_fur_product_text {
+        min-width: 0;
+    }
+    .o_fur_product_name {
+        margin: 0 0 .25rem;
+        font-size: .82rem;
+        font-weight: 500;
+        line-height: 1.35;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        a { color: var(--fur-navy-2); text-decoration: none; }
+    }
+    .o_fur_product_code {
+        margin: 0 0 .3rem;
+        font-size: .72rem;
+        color: var(--fur-muted);
+    }
+    .o_fur_product_price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        column-gap: .4rem;
+        font-size: 1.02rem;
+        font-weight: 700;
+        color: var(--fur-price);
+        del {
+            font-size: .75rem;
+            font-weight: 400;
+            color: #9CA3AF;
+        }
+    }
+    .o_fur_cart_btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        border: 0;
+        border-radius: .6rem;
+        background: var(--fur-yellow);
+        color: var(--fur-navy-2);
+        &:hover { background: var(--fur-yellow-hover); color: var(--fur-navy-2); }
+    }
+
+    // Project card ------------------------------------------------------
+    .o_fur_project_grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: .75rem;
+        @include media-breakpoint-up(sm) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+    }
+    .o_fur_project_card {
+        position: relative;
+        display: block;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        border-radius: var(--fur-radius-sm);
+        color: #fff;
+        text-decoration: none;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 35% 0 0;
+            background: linear-gradient(180deg, rgba(10, 18, 40, 0), rgba(10, 18, 40, .78));
+        }
+        &:hover img { transform: scale(1.05); }
+    }
+    .o_fur_project_caption {
+        position: absolute;
+        inset: auto .75rem .7rem;
+        z-index: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: .5rem;
+    }
+    .o_fur_project_title {
+        font-size: .88rem;
+        font-weight: 600;
+        line-height: 1.35;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+    }
+    .o_fur_project_card .o_fur_round_btn_light {
+        color: var(--fur-navy-2);
+    }
+}
+
+// The mockup runs almost edge to edge: wider containers on tablet/desktop.
+@include media-breakpoint-up(md) {
+    .o_fur .container {
+        max-width: 1320px;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+// Floating contact buttons (layout.xml: contact_float) ----------------------
+.o_fur .o_fur_contact_float {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.5rem;
+    // same layer as the sticky header: above the page, below offcanvas/modals
+    z-index: $zindex-fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .o_fur_contact_btn {
+        --fur-contact-size: 3.5rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--fur-contact-size);
+        height: var(--fur-contact-size);
+        border-radius: 50%;
+        box-shadow: 0 6px 18px rgba(19, 37, 78, .22);
+        text-decoration: none;
+        transition: transform .15s;
+        &:hover, &:focus-visible {
+            transform: scale(1.08);
+        }
+        // pulsing halo behind the button
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: 50%;
+            background: var(--fur-contact-halo);
+            animation: o_fur_contact_pulse 1.8s ease-out infinite;
+        }
+    }
+    .o_fur_contact_phone {
+        --fur-contact-halo: var(--fur-yellow);
+        background: var(--fur-yellow);
+        color: var(--fur-navy-2);
+        .o_fur_icon {
+            width: 1.6rem;
+            height: 1.6rem;
+            animation: o_fur_contact_ring 2.4s ease-in-out infinite;
+        }
+    }
+    .o_fur_contact_zalo {
+        --fur-contact-halo: #0068FF;
+        background: #fff;
+        color: #0068FF; // Zalo blue
+        svg {
+            width: 2.35rem;
+            height: 2.35rem;
+        }
+        &::before {
+            animation-delay: .9s;
+        }
+    }
+    .o_fur_contact_whatsapp {
+        --fur-contact-halo: #25D366;
+        background: #25D366; // WhatsApp green
+        color: #fff;
+        svg {
+            width: 1.9rem;
+            height: 1.9rem;
+        }
+        &::before {
+            animation-delay: .65s;
+        }
+    }
+    .o_fur_contact_messenger {
+        --fur-contact-halo: #A033FF;
+        background: #fff;
+        svg {
+            width: 2rem;
+            height: 2rem;
+        }
+        &::before {
+            animation-delay: .45s;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        right: .85rem;
+        bottom: 1rem;
+        gap: .75rem;
+        .o_fur_contact_btn {
+            --fur-contact-size: 3rem;
+        }
+        .o_fur_contact_messenger svg,
+        .o_fur_contact_whatsapp svg {
+            width: 1.7rem;
+            height: 1.7rem;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .o_fur_contact_btn::before,
+        .o_fur_contact_phone .o_fur_icon {
+            animation: none;
+        }
+    }
+}
+
+@keyframes o_fur_contact_pulse {
+    0% { transform: scale(1); opacity: .45; }
+    100% { transform: scale(1.55); opacity: 0; }
+}
+@keyframes o_fur_contact_ring {
+    0%, 40%, 100% { transform: rotate(0); }
+    8%, 24% { transform: rotate(-14deg); }
+    16%, 32% { transform: rotate(14deg); }
+}
+
+// Policy pages (data/fur_policy_page.xml)
+.o_fur_policy_body {
+    max-width: 58rem;
+    h1 { margin-bottom: 1.25rem; font-weight: 800; color: var(--fur-navy); }
+    h2 { margin: 2rem 0 .9rem; font-size: 1.3rem; font-weight: 700; color: var(--fur-navy); scroll-margin-top: 7rem; }
+    li { margin-bottom: .35rem; }
+    .o_fur_policy_toc {
+        display: inline-block;
+        margin-bottom: .5rem;
+        padding: .9rem 1.4rem .5rem;
+        border-radius: var(--fur-radius-sm);
+        background: var(--fur-cream);
+        ol { padding-left: 1.2rem; }
+    }
+}
+
+// /terms (Odoo accounting's terms page)
+.o_fur .oe_website_terms_conditions {
+    padding: 2.5rem 0 3.5rem;
+    color: var(--fur-text);
+    h1 {
+        margin-bottom: 1.5rem;
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--fur-navy);
+        @include media-breakpoint-down(md) { font-size: 1.35rem; }
+    }
+    ol { padding-left: 1.25rem; }
+    li { margin-bottom: .75rem; line-height: 1.65; }
+    li p { margin: 0; }
+}

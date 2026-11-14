@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sample projects of the demo shop (pictures: Odoo demo pictures, LGPL-3). -->
+<odoo>
+    <record id="project_tech_office" model="fur.project">
+        <field name="name">Tech Startup Headquarters</field>
+        <field name="subtitle">Software company, Austin</field>
+        <field name="project_type">office</field>
+        <field name="location">Austin, Texas</field>
+        <field name="client_name">Northwind Labs</field>
+        <field name="area">680</field>
+        <field name="completion_date" eval="(DateTime.today() - relativedelta(months=3)).strftime('%Y-%m-01')"/>
+        <field name="sequence">10</field>
+        <field name="is_featured" eval="True"/>
+        <field name="is_published" eval="True"/>
+        <field name="summary">An open office for 120 people with bench workstations, ergonomic chairs and flexible meeting corners.</field>
+        <field name="description" type="html"><p>We designed and fitted out 680 m² in six weeks: bench desks in white and steel, acoustic booths for calls and a ten-seat boardroom in dark oak.</p><p>Cable management is built into every desk, so the floor stays clear and the team can rearrange the space as it grows.</p></field>
+        <field name="product_tmpl_ids" eval="[Command.set([ref('product_bench_desk'), ref('product_chair_executive'), ref('product_booth'), ref('product_meeting_table')])]"/>
+        <field name="image_1920" type="bytes" file="product/static/img/office_combo.jpg"/>
+    </record>
+    <record id="project_apartment" model="fur.project">
+        <field name="name">Riverside Apartment</field>
+        <field name="subtitle">Three-bedroom flat, Lisbon</field>
+        <field name="project_type">apartment</field>
+        <field name="location">Lisbon, Portugal</field>
+        <field name="area">120</field>
+        <field name="completion_date" eval="(DateTime.today() - relativedelta(months=5)).strftime('%Y-%m-01')"/>
+        <field name="sequence">20</field>
+        <field name="is_featured" eval="True"/>
+        <field name="is_published" eval="True"/>
+        <field name="summary">A warm, modern three-bedroom apartment with natural oak, linen and plenty of hidden storage.</field>
+        <field name="description" type="html"><p>A palette of oak, sand and teal ties the living room, dining area and bedrooms together.</p><p>Low sideboards and built-in cabinets keep surfaces clear, while a velvet sofa adds a touch of colour.</p></field>
+        <field name="product_tmpl_ids" eval="[Command.set([ref('product_sofa_beige'), ref('product_sideboard_low'), ref('product_dining_table_oak'), ref('product_lamp_glass')])]"/>
+        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/s_banner_categories_default_image_1.webp"/>
+    </record>
+    <record id="project_townhouse" model="fur.project">
+        <field name="name">Garden Townhouse</field>
+        <field name="subtitle">Family home, Melbourne</field>
+        <field name="project_type">house</field>
+        <field name="location">Melbourne, Australia</field>
+        <field name="area">210</field>
+        <field name="completion_date" eval="(DateTime.today() - relativedelta(months=8)).strftime('%Y-%m-01')"/>
+        <field name="sequence">30</field>
+        <field name="is_featured" eval="True"/>
+        <field name="is_published" eval="True"/>
+        <field name="summary">Coordinated furniture from the living room to the bedrooms, chosen to last for a young family.</field>
+        <field name="description" type="html"><p>Durable fabrics, rounded corners and solid wood were the brief. Every room got storage at child height.</p></field>
+        <field name="product_tmpl_ids" eval="[Command.set([ref('product_sofa_navy'), ref('product_cabinet_wood'), ref('product_dining_table_round'), ref('product_dining_chair_cross')])]"/>
+        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/s_parallax.jpg"/>
+    </record>
+    <record id="project_meeting_room" model="fur.project">
+        <field name="name">Boardroom Renovation</field>
+        <field name="subtitle">Consulting firm, London</field>
+        <field name="project_type">office</field>
+        <field name="location">London, United Kingdom</field>
+        <field name="client_name">Fabrikam Consulting</field>
+        <field name="area">75</field>
+        <field name="completion_date" eval="(DateTime.today() - relativedelta(months=10)).strftime('%Y-%m-01')"/>
+        <field name="sequence">40</field>
+        <field name="is_featured" eval="False"/>
+        <field name="is_published" eval="True"/>
+        <field name="summary">A boardroom for twelve with a conference table, executive chairs and integrated screens.</field>
+        <field name="description" type="html"><p>The new boardroom seats twelve around a dark oak table with power and video connections in the top.</p></field>
+        <field name="product_tmpl_ids" eval="[Command.set([ref('product_meeting_table'), ref('product_chair_executive')])]"/>
+        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_46-image_02.jpg"/>
+    </record>
+    <record id="project_coworking" model="fur.project">
+        <field name="name">Coworking Space</field>
+        <field name="subtitle">Shared offices, Berlin</field>
+        <field name="project_type">office</field>
+        <field name="location">Berlin, Germany</field>
+        <field name="client_name">Hive Coworking</field>
+        <field name="area">450</field>
+        <field name="completion_date" eval="(DateTime.today() - relativedelta(months=12)).strftime('%Y-%m-01')"/>
+        <field name="sequence">50</field>
+        <field name="is_featured" eval="False"/>
+        <field name="is_published" eval="True"/>
+        <field name="summary">Hot desks, focus booths and a lounge for a coworking space open seven days a week.</field>
+        <field name="description" type="html"><p>Sixty hot desks, four acoustic booths and a lounge with sofas make this space work for both focus and community.</p></field>
+        <field name="product_tmpl_ids" eval="[Command.set([ref('product_desk_white'), ref('product_chair_mesh'), ref('product_booth'), ref('product_sofa_teal')])]"/>
+        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_d01_image_02.jpg"/>
+    </record>
+    <record id="project_cafe" model="fur.project">
+        <field name="name">Neighbourhood Café</field>
+        <field name="subtitle">Café and bakery, Toronto</field>
+        <field name="project_type">hospitality</field>
+        <field name="location">Toronto, Canada</field>
+        <field name="client_name">Maple &amp; Crumb</field>
+        <field name="area">90</field>
+        <field name="completion_date" eval="(DateTime.today() - relativedelta(months=14)).strftime('%Y-%m-01')"/>
+        <field name="sequence">60</field>
+        <field name="is_featured" eval="False"/>
+        <field name="is_published" eval="True"/>
+        <field name="summary">Bistro chairs, oak tables and warm lighting for a busy neighbourhood café.</field>
+        <field name="description" type="html"><p>Cross-back chairs and oval oak tables give the café a relaxed, timeless feel; ribbed glass lamps finish the look.</p></field>
+        <field name="product_tmpl_ids" eval="[Command.set([ref('product_dining_chair_cross'), ref('product_dining_table_oak'), ref('product_lamp_glass')])]"/>
+        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/s_images_mosaic_default_image_3.jpg"/>
+    </record>
+</odoo>

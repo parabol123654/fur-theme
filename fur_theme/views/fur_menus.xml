@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_fur_projects"
+        name="Projects"
+        parent="website.menu_content"
+        action="fur_project_action"
+        groups="website.group_website_designer"
+        sequence="45"/>
+</odoo>
