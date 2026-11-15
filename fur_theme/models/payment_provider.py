@@ -1,6 +1,8 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
-from odoo import api, models
-from odoo.tools import BinaryBytes, file_open
+import base64
+
+from odoo import api, fields, models
+from odoo.tools import file_open
 
 # Payment modes offered by the Fur one-step checkout (cart page), in display order.
 FUR_PAYMENT_MODES = ("wire_transfer", "cash_on_delivery")
@@ -9,7 +11,7 @@ FUR_PAYMENT_MODES = ("wire_transfer", "cash_on_delivery")
 # (confirmation page) of each mode, in English then Vietnamese.
 _FUR_PROVIDER_TEXTS = {
     "wire_transfer": {
-        "image": "payment_custom/static/img/wire_transfer.png",
+        "image": "payment_custom/static/description/icon.png",
         "name": ("Bank transfer", "Thanh toán bằng chuyển khoản"),
         "pre_msg": (
             "<p>Transfer the order amount to our bank account: the account details and the"
@@ -29,7 +31,7 @@ _FUR_PROVIDER_TEXTS = {
         ),
     },
     "cash_on_delivery": {
-        "image": "delivery/static/src/img/payment_method_cash_on_delivery.png",
+        "image": "fur_theme/static/src/img/payment_method_cash_on_delivery.png",
         "name": ("Cash on delivery", "Thanh toán tại điểm giao hàng"),
         "pre_msg": (
             "<p>Pay in cash to the delivery staff when you receive the goods.</p>"
@@ -57,10 +59,11 @@ def _terms(field, value):
 class PaymentProvider(models.Model):
     _inherit = "payment.provider"
 
-    def _fur_checkout_payment_method(self):
-        """The payment method the Fur checkout records transactions with."""
-        self.ensure_one()
-        return self.payment_method_ids.filtered(lambda pm: pm.active and pm.is_primary)[:1]
+    # Odoo 16's payment_custom only knows the wire transfer mode.
+    custom_mode = fields.Selection(
+        selection_add=[("cash_on_delivery", "Cash On Delivery")],
+        ondelete={"cash_on_delivery": "set null"},
+    )
 
     @api.model
     def _fur_setup_checkout_providers(self):
@@ -77,42 +80,23 @@ class PaymentProvider(models.Model):
         for company in websites.company_id:
             for sequence, mode in enumerate(FUR_PAYMENT_MODES, start=1):
                 texts = _FUR_PROVIDER_TEXTS[mode]
-                provider = self.with_context(active_test=False).search([
+                provider = self.search([
                     ("code", "=", "custom"), ("custom_mode", "=", mode), ("company_id", "=", company.id),
-                ], order="is_published desc, active desc, id", limit=1)
+                ]).sorted(lambda p: (not p.is_published, p.state != "enabled", p.id))[:1]
                 if not provider:
+                    # Odoo 16 has no payment methods: the picture is the provider's
+                    with file_open(texts["image"], "rb") as image:
+                        image = image.read()
                     provider = self.create({
                         "name": texts["name"][0],
                         "code": "custom",
                         "custom_mode": mode,
                         "company_id": company.id,
-                        "redirect_form_view_id": self.env.ref("payment.generic_redirect_form").id,
-                        # the company's bank account is set by hand: never publish a guess
-                        "partner_bank_id": False,
+                        "redirect_form_view_id": self.env.ref("payment_custom.redirect_form").id,
+                        "image_128": base64.b64encode(image),
                     })
-                if not provider._fur_checkout_payment_method():
-                    method = self.env["payment.method"].with_context(active_test=False).search([
-                        ("provider_id", "=", provider.id), ("code", "=", mode),
-                    ], limit=1)
-                    if method:
-                        method.active = True
-                    else:
-                        with file_open(texts["image"], "rb") as image:
-                            image = image.read()
-                        self.env["payment.method"].create({
-                            "name": texts["name"][0],
-                            "code": mode,
-                            "provider_id": provider.id,
-                            "image": BinaryBytes(image, filename=texts["image"].rsplit("/", 1)[-1]),
-                            "active": True,
-                            "support_tokenization": False,
-                            "support_express_checkout": False,
-                            "support_manual_capture": "none",
-                            "support_refund": "none",
-                        })
                 provider.with_context(lang="en_US").write({
-                    "active": True,
-                    "is_live": True,
+                    "state": "enabled",
                     "is_published": True,
                     "sequence": sequence,
                     "name": texts["name"][0],
@@ -127,7 +111,6 @@ class PaymentProvider(models.Model):
                             translation = dict(zip(
                                 _terms(field, provider.with_context(lang="en_US")[fname]),
                                 _terms(field, translation),
-                                strict=True,
                             ))
                         provider.update_field_translations(fname, {"vi_VN": translation})
                 if company == main_company:

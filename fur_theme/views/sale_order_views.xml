@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <group name="partner_details" position="inside">
-                <field name="fur_customer_note" invisible="not fur_customer_note"/>
+                <field name="fur_customer_note" attrs="{'invisible': [('fur_customer_note', '=', False)]}"/>
             </group>
         </field>
     </record>

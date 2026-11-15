@@ -1,4 +1,4 @@
-# Fur - Furniture eCommerce Theme (`fur_theme`) — Odoo 20.0
+# Fur - Furniture eCommerce Theme (`fur_theme`) — Odoo 16.0
 
 Yellow and navy eCommerce theme for furniture and interior design shops:
 homepage, mega menu, shop and category pages, product page, one-step checkout
@@ -8,11 +8,13 @@ floating call / WhatsApp / Zalo / Messenger buttons. English and Vietnamese.
 ## Install
 
 ```bash
-odoo -d <db> -i fur_theme              # theme only
-odoo -d <db> -i fur_theme --with-demo  # + sample furniture shop
+odoo -d <db> -i fur_theme --without-demo=all  # theme only
+odoo -d <db> -i fur_theme                     # + sample furniture shop (database with demo data)
 ```
 
 Dependencies: `website_sale`, `payment_custom`, `auth_signup`, `account`.
+The wishlist heart on the product cards shows up when `website_sale_wishlist`
+is installed (optional).
 
 ## Configure
 
@@ -29,7 +31,7 @@ Dependencies: `website_sale`, `payment_custom`, `auth_signup`, `account`.
 
 ## Demo data
 
-4 categories with 10 sub-categories, 34 products and 6 projects, plus a demo
+4 categories with 10 sub-categories, 31 products and 6 projects, plus a demo
 menu, logo and contacts. Pictures come from Odoo's own demo pictures
 (`product`, `website`, `website_sale` modules), referenced, not copied.
 
@@ -41,4 +43,4 @@ odoo -d <testdb> --db-filter='^<testdb>$' -i fur_theme --test-tags /fur_theme --
 
 The checkout tour needs Chrome and the `websocket-client` Python package.
 
-License: OPL-1 (see LICENSE). Author: Sanxus Lab.
+License: LGPL-3 (see LICENSE). Author: Manh Nguyen.

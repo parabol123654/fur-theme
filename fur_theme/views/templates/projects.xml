@@ -25,7 +25,7 @@
         <div id="wrap" class="o_fur_projects_page">
             <t t-set="fur_banner_title">Featured projects</t>
             <t t-set="fur_banner_crumb">Projects</t>
-            <t t-call="fur_theme.page_banner" banner_title="fur_banner_title" banner_crumbs="[(fur_banner_crumb, None)]"/>
+            <t t-call="fur_theme.page_banner"><t t-set="banner_title" t-value="fur_banner_title"/><t t-set="banner_crumbs" t-value="[(fur_banner_crumb, None)]"/></t>
             <div class="oe_structure" id="oe_structure_fur_projects_top"/>
             <section class="o_fur_section">
                 <div class="container">
@@ -43,7 +43,7 @@
                                 <t t-call="fur_theme.project_card"/>
                                 <p t-if="project.summary" class="o_fur_project_summary" t-field="project.summary"/>
                                 <p class="o_fur_project_meta">
-                                    <t t-call="fur_theme.icon" icon="'pin'" icon_class="'o_fur_icon_sm'"/>
+                                    <t t-call="fur_theme.icon"><t t-set="icon" t-value="'pin'"/><t t-set="icon_class" t-value="'o_fur_icon_sm'"/></t>
                                     <span t-field="project.location"/>
                                 </p>
                             </div>
@@ -66,7 +66,7 @@
     <t t-call="website.layout">
         <div id="wrap" class="o_fur_project_page">
             <t t-set="fur_banner_crumb">Projects</t>
-            <t t-call="fur_theme.page_banner" banner_title="project.name" banner_crumbs="[(fur_banner_crumb, '/projects'), (project.name, None)]"/>
+            <t t-call="fur_theme.page_banner"><t t-set="banner_title" t-value="project.name"/><t t-set="banner_crumbs" t-value="[(fur_banner_crumb, '/projects'), (project.name, None)]"/></t>
             <section class="o_fur_section">
                 <div class="container">
                     <div class="row g-4">
@@ -98,17 +98,16 @@
                 <div class="container">
                     <t t-call="fur_theme.section_title">Products <span class="o_fur_accent">used</span></t>
                     <t t-set="prices" t-value="website._fur_product_prices(used_products)"/>
-                    <t t-set="fur_wishlist_ids" t-value="website._fur_wishlist_variant_ids()"/>
                     <div class="o_fur_product_grid">
-                        <t t-foreach="used_products" t-as="used_product"><t t-call="fur_theme.product_card" product="used_product"/></t>
+                        <t t-foreach="used_products" t-as="used_product"><t t-call="fur_theme.product_card"><t t-set="product" t-value="used_product"/></t></t>
                     </div>
                 </div>
             </section>
             <section t-if="other_projects" class="o_fur_section">
                 <div class="container">
-                    <t t-call="fur_theme.section_title" see_all_url="'/projects'">Other <span class="o_fur_accent">projects</span></t>
+                    <t t-call="fur_theme.section_title"><t t-set="see_all_url" t-value="'/projects'"/>Other <span class="o_fur_accent">projects</span></t>
                     <div class="o_fur_project_grid">
-                        <t t-foreach="other_projects" t-as="other_project"><t t-call="fur_theme.project_card" project="other_project"/></t>
+                        <t t-foreach="other_projects" t-as="other_project"><t t-call="fur_theme.project_card"><t t-set="project" t-value="other_project"/></t></t>
                     </div>
                 </div>
             </section>

@@ -61,7 +61,13 @@ class TestFurModels(FurCommon):
         self.assertTrue(self.website._fur_flag_url(vi).endswith("flag_vn.svg"))
         self.assertTrue(self.website._fur_flag_url(en).endswith("flag_gb.svg"))
         self.assertEqual(self.website._fur_flag_url(fr), "/fr.png")
-        self.assertEqual(self.website._fur_header_languages({"vi_VN": vi}), [], "No pills for one language")
+        self.assertEqual(self.website._fur_header_languages([("vi_VN", "vi", "Tiếng Việt", True, "/vn.png")]), [],
+                         "No pills for one language")
+        pills = self.website._fur_header_languages([
+            ("vi_VN", "vi", "Tiếng Việt", True, "/vn.png"), ("en_US", "en", "English (US)", True, "/us.png"),
+        ])
+        self.assertEqual([lg.code for lg in pills], ["en_US", "vi_VN"], "Default language first")
+        self.assertTrue(self.website._fur_flag_url(pills[1]).endswith("flag_vn.svg"))
 
     def test_project_url_and_access(self):
         self.assertTrue(self.project.website_url.startswith("/projects/"))
@@ -77,10 +83,10 @@ class TestFurModels(FurCommon):
         Website = self.env["website"].sudo()
         custom = Website.create({"name": "Custom grid", "shop_ppr": 2, "shop_ppg": 8})
         default = Website.create({"name": "Default grid", **ODOO_SHOP_LAYOUT})
-        post_init_hook(Website.env)
+        post_init_hook(self.env.cr, self.registry)
         self.assertEqual((default.shop_ppr, default.shop_ppg), tuple(FUR_SHOP_LAYOUT.values()))
         self.assertEqual((custom.shop_ppr, custom.shop_ppg), (2, 8))
-        uninstall_hook(Website.env)
+        uninstall_hook(self.env.cr, self.registry)
         self.assertEqual((default.shop_ppr, default.shop_ppg), tuple(ODOO_SHOP_LAYOUT.values()))
         self.assertEqual((custom.shop_ppr, custom.shop_ppg), (2, 8))
 

@@ -1,44 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<!-- Cart, address, delivery, payment: trust bar under the step wizard. -->
-<template id="checkout_layout" inherit_id="website_sale.checkout_layout" name="Fur Checkout Layout">
+<!-- Cart, address, payment: trust bar under the step wizard (Odoo 16 has no
+     layout shared by the checkout pages, the wizard is the part they all call).
+     On the cart page the wizard is hidden: with Fur it is the whole checkout. -->
+<template id="checkout_layout" inherit_id="website_sale.wizard_checkout" name="Fur Checkout Layout">
+    <xpath expr="//div[hasclass('wizard')]" position="attributes">
+        <attribute name="t-if">not (website.fur_enabled and step == 10)</attribute>
+    </xpath>
+    <xpath expr="//div[hasclass('row')]" position="after">
+        <ul t-if="website.fur_enabled" class="o_fur_trustbar list-unstyled">
+            <li><t t-call="fur_theme.icon"><t t-set="icon" t-value="'lock'"/></t><span>Secure payment</span></li>
+            <li><t t-call="fur_theme.icon"><t t-set="icon" t-value="'truck'"/></t><span>Nationwide delivery</span></li>
+            <li><t t-call="fur_theme.icon"><t t-set="icon" t-value="'shield'"/></t><span>Long-term warranty</span></li>
+            <li class="d-none d-md-flex"><t t-call="fur_theme.icon"><t t-set="icon" t-value="'headset'"/></t>
+                <span>Support <b t-out="website.fur_hotline or res_company.phone or ''"/></span></li>
+        </ul>
+    </xpath>
+</template>
+
+<!-- static class: every rule of fur_checkout.scss is scoped under .o_fur -->
+<template id="checkout_wrap_checkout" inherit_id="website_sale.checkout" name="Fur Checkout Page">
     <xpath expr="//div[@id='wrap']" position="attributes">
-        <!-- static class: every rule of fur_checkout.scss is scoped under .o_fur -->
         <attribute name="class" add="o_fur_checkout" separator=" "/>
     </xpath>
-    <xpath expr="//div[@id='checkout_alerts']" position="before">
-        <div t-if="website.fur_enabled" class="col-12">
-            <ul class="o_fur_trustbar list-unstyled">
-                <li><t t-call="fur_theme.icon" icon="'lock'"/><span>Secure payment</span></li>
-                <li><t t-call="fur_theme.icon" icon="'truck'"/><span>Nationwide delivery</span></li>
-                <li><t t-call="fur_theme.icon" icon="'shield'"/><span>Long-term warranty</span></li>
-                <li class="d-none d-md-flex"><t t-call="fur_theme.icon" icon="'headset'"/>
-                    <span>Support <b t-out="website.fur_hotline or res_company.phone or ''"/></span></li>
-            </ul>
-        </div>
+</template>
+<template id="checkout_wrap_address" inherit_id="website_sale.address" name="Fur Address Page">
+    <xpath expr="//div[@id='wrap']" position="attributes">
+        <attribute name="class" add="o_fur_checkout" separator=" "/>
+    </xpath>
+</template>
+<template id="checkout_wrap_extra_info" inherit_id="website_sale.extra_info" name="Fur Extra Info Page">
+    <xpath expr="//div[@id='wrap']" position="attributes">
+        <attribute name="class" add="o_fur_checkout" separator=" "/>
+    </xpath>
+</template>
+<template id="checkout_wrap_payment" inherit_id="website_sale.payment" name="Fur Payment Page">
+    <xpath expr="//div[@id='wrap']" position="attributes">
+        <attribute name="class" add="o_fur_checkout" separator=" "/>
     </xpath>
 </template>
 
 <!-- Cart page = one-step checkout: cart lines and total on the left,
      payment method + contact form on the right (controllers/cart.py). -->
 <template id="cart" inherit_id="website_sale.cart" name="Fur One-step Checkout Cart">
-    <xpath expr="//t[@t-call='website_sale.checkout_layout']" position="attributes">
-        <attribute name="show_wizard_checkout">not website.fur_enabled</attribute>
+    <xpath expr="//div[@id='wrap']" position="attributes">
+        <attribute name="class" add="o_fur_checkout" separator=" "/>
     </xpath>
-    <xpath expr="//div[@id='shop_cart']//h4" position="replace">
-        <h4 t-if="website.fur_enabled" class="mb-0 o_fur_cart_title">Your cart</h4>
+    <!-- Odoo 16's cart column has no id: Fur's styles and tests use the one of later versions -->
+    <xpath expr="//div[hasclass('oe_cart')]" position="attributes">
+        <attribute name="id">shop_cart</attribute>
+    </xpath>
+    <xpath expr="//div[hasclass('oe_cart')]//t[@t-call='website_sale.cart_lines']" position="before">
+        <div t-if="website.fur_enabled" class="d-flex mb-4"><h4 class="mb-0 o_fur_cart_title">Your cart</h4></div>
+    </xpath>
+    <!-- The total: Odoo's summary card, which website_sale replaces
+         (.js_cart_summary) when a quantity changes -->
+    <xpath expr="//div[hasclass('oe_cart')]//div[@id='o_cart_summary']" position="replace">
+        <div t-if="website.fur_enabled" class="o_fur_cart_total"><t t-call="website_sale.short_cart_summary"/></div>
         <t t-else="">$0</t>
     </xpath>
-    <xpath expr="//div[@id='shop_cart']/t[@t-call='website_sale.cart_lines']" position="after">
-        <t t-if="website.fur_enabled" t-call="website_sale.total" _cart_total_classes.f="o_fur_cart_total"/>
+    <!-- "Continue Shopping" / "Process Checkout": the form is the checkout -->
+    <xpath expr="//div[hasclass('oe_cart')]//t[@t-call='payment.express_checkout']/../.." position="attributes">
+        <attribute name="t-if">not website.fur_enabled</attribute>
+    </xpath>
+    <xpath expr="//div[@id='o_cart_summary'][hasclass('col-xl-4')]" position="attributes">
+        <attribute name="class"/>
+        <attribute name="t-attf-class">#{'col-12 col-lg-5' if website.fur_enabled else 'd-none d-xl-block col-xl-4'}</attribute>
+    </xpath>
+    <xpath expr="//div[@id='o_cart_summary'][@t-attf-class]/t[@t-call='website_sale.short_cart_summary']" position="replace">
+        <t t-if="website.fur_enabled and fur_checkout" t-call="fur_theme.cart_checkout_form"/>
+        <t t-elif="not website.fur_enabled">$0</t>
     </xpath>
 </template>
 
-<template id="shorter_cart_summary" inherit_id="website_sale.shorter_cart_summary" name="Fur Cart Checkout Form">
-    <xpath expr="//div[hasclass('o_total_card')]" position="replace">
-        <t t-if="website.fur_enabled and fur_checkout" t-call="fur_theme.cart_checkout_form"/>
-        <t t-else="">$0</t>
+<!-- Odoo 16: the "Proceed to Checkout" button of the summary card -->
+<template id="shorter_cart_summary" inherit_id="website_sale.short_cart_summary" name="Fur Cart Checkout Form">
+    <xpath expr="//a[@t-attf-href='{{redirect_url}}']" position="attributes">
+        <attribute name="t-if">website_sale_order and website_sale_order.website_order_line and not website.fur_enabled</attribute>
     </xpath>
 </template>
 
@@ -97,7 +136,7 @@
             </div>
         </div>
         <button type="submit" name="o_fur_checkout" class="btn btn-primary w-100 o_fur_qc_submit"
-                t-att-disabled="not fur_checkout['providers'] or website_sale_order._has_blocking_alerts()">
+                t-att-disabled="not fur_checkout['providers'] or None">
             Place order
         </button>
     </form>
@@ -105,12 +144,16 @@
 
 <!-- Order confirmation: Fur thank-you banner. -->
 <template id="confirmation" inherit_id="website_sale.confirmation" name="Fur Order Confirmation">
-    <xpath expr="//t[@t-set='tx_sudo']" position="after">
-        <!-- same condition as Odoo's own "Thank you for your order" -->
-        <section t-if="website.fur_enabled and (tx_sudo.state in ['pending', 'done'] or not order.amount_total)"
+    <xpath expr="//div[@id='wrap']" position="attributes">
+        <attribute name="class" add="o_fur_checkout" separator=" "/>
+    </xpath>
+    <xpath expr="//div[hasclass('oe_website_sale')]/h1" position="before">
+        <t t-set="tx_sudo" t-value="order.get_portal_last_transaction()"/>
+        <!-- Odoo 16 only thanks for a paid order: also for one waiting for its payment -->
+        <section t-if="website.fur_enabled and tx_sudo.state in ['pending', 'done']"
                  class="o_fur_thanks">
             <div>
-                <span class="o_fur_thanks_icon"><t t-call="fur_theme.icon" icon="'check'" icon_stroke="3"/></span>
+                <span class="o_fur_thanks_icon"><t t-call="fur_theme.icon"><t t-set="icon" t-value="'check'"/><t t-set="icon_stroke" t-value="3"/></t></span>
                 <div>
                     <h1>Thank you for shopping at <t t-out="website._fur_brand()"/>!</h1>
                     <p>Order <b t-out="order.name"/> has been received. We will call you to confirm it and deliver as soon as possible.</p>

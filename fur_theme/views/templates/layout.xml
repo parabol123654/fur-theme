@@ -55,7 +55,7 @@
         <h2 class="o_fur_section_title"><t t-out="0"/></h2>
         <a t-if="see_all_url" t-att-href="see_all_url" class="o_fur_see_all">
             <span>See all</span>
-            <t t-call="fur_theme.icon" icon="'arrow'" icon_class="'o_fur_icon_sm'"/>
+            <t t-call="fur_theme.icon"><t t-set="icon" t-value="'arrow'"/><t t-set="icon_class" t-value="'o_fur_icon_sm'"/></t>
         </a>
     </div>
 </template>
@@ -63,25 +63,24 @@
 <!-- =====================================================================
      Header
      ===================================================================== -->
+<!-- Odoo 16 caches whole pages (the product page, t-cache): what depends on
+     the visitor or on the request is in a t-nocache, where only the values
+     given to the page are known (website, request, user_id, languages...). -->
 <template id="header" name="Fur Header">
-    <t t-set="fur_cart_qty" t-value="(
-        request.session['website_sale_cart_quantity']
-        if 'website_sale_cart_quantity' in request.session
-        else request.cart.cart_quantity
-    ) or 0"/>
     <div class="o_fur_topbar">
         <div class="container o_fur_topbar_inner">
             <button type="button" class="o_fur_burger btn" data-bs-toggle="offcanvas"
                     data-bs-target="#o_fur_offcanvas" aria-controls="o_fur_offcanvas" aria-label="Menu">
-                <t t-call="fur_theme.icon" icon="'menu'"/>
+                <t t-call="fur_theme.icon"><t t-set="icon" t-value="'menu'"/></t>
             </button>
             <t t-call="fur_theme.brand"/>
             <form class="o_fur_search" action="/shop" method="get" role="search">
-                <t t-call="fur_theme.icon" icon="'search'" icon_class="'o_fur_search_icon'"/>
+                <t t-call="fur_theme.icon"><t t-set="icon" t-value="'search'"/><t t-set="icon_class" t-value="'o_fur_search_icon'"/></t>
                 <input type="search" name="search" class="form-control" t-att-value="search"
+                       t-nocache="The searched text is the visitor's."
                        placeholder="Search furniture..." aria-label="Search furniture"/>
                 <button type="submit" class="o_fur_search_btn btn" aria-label="Search">
-                    <t t-call="fur_theme.icon" icon="'search'"/>
+                    <t t-call="fur_theme.icon"><t t-set="icon" t-value="'search'"/></t>
                 </button>
             </form>
             <!-- right side, two rows on large screens:
@@ -89,9 +88,10 @@
             <ul class="o_fur_toplinks list-unstyled">
                 <li class="o_fur_toplink"><a href="/projects">Projects</a></li>
                 <li class="o_fur_toplink"><a href="/contactus">Contact</a></li>
-                <t t-foreach="website._fur_header_languages(frontend_languages)" t-as="lg">
+                <t t-nocache="The language links hold the URL of the page."
+                   t-foreach="website._fur_header_languages(languages)" t-as="lg">
                     <li class="o_fur_lang_item">
-                        <a t-att-href="url_localized(lang_code=lg.code, prefetch_langs=True, force_default_lang=True)"
+                        <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang_code=lg.code)"
                            t-attf-class="o_fur_pill_flag js_change_lang #{'active' if lg.code == lang else ''}"
                            t-att-data-url_code="lg.url_code" t-att-title="lg.name.split('/').pop()"
                            t-att-aria-label="lg.name.split('/').pop()">
@@ -102,70 +102,78 @@
             </ul>
             <ul class="o_fur_actions list-unstyled">
                 <li t-if="website._fur_tel_url()" class="o_fur_action_hotline">
-                    <a t-att-href="website._fur_tel_url()" class="o_fur_action">
-                        <span class="o_fur_pill o_fur_pill_round"><t t-call="fur_theme.icon" icon="'phone'"/></span>
+                    <a t-att-href="website._fur_tel_url()" class="o_fur_action" data-no-post-process="1">
+                        <span class="o_fur_pill o_fur_pill_round"><t t-call="fur_theme.icon"><t t-set="icon" t-value="'phone'"/></t></span>
                         <div class="o_fur_action_text">
                             <div class="o_fur_action_kicker">Hotline support</div>
                             <b t-out="website._fur_hotline()"/>
                         </div>
                     </a>
                 </li>
-                <li t-attf-class="o_wsale_my_cart #{'' if website.has_ecommerce_access() else 'd-none'}">
+                <li class="o_wsale_my_cart">
                     <a href="/shop/cart" class="o_fur_action" aria-label="Cart">
                         <span class="o_fur_pill o_fur_pill_round o_fur_pill_cart">
-                            <t t-call="fur_theme.icon" icon="'cart'"/>
-                            <sup class="my_cart_quantity o_fur_badge" t-out="fur_cart_qty"
-                                 t-att-data-order-id="request.session.get('sale_order_id') if fur_cart_qty else None"/>
+                            <t t-call="fur_theme.icon"><t t-set="icon" t-value="'cart'"/></t>
+                            <t t-nocache="The number of products is dynamic, this rendering cannot be cached.">
+                                <t t-set="fur_cart_qty" t-value="(
+                                    request.session['website_sale_cart_quantity']
+                                    if 'website_sale_cart_quantity' in request.session
+                                    else website.sale_get_order().cart_quantity
+                                ) or 0"/>
+                                <sup class="my_cart_quantity o_fur_badge" t-out="fur_cart_qty"
+                                     t-att-data-order-id="request.session.get('sale_order_id') if fur_cart_qty else None"/>
+                            </t>
                         </span>
                         <div class="o_fur_action_text o_fur_action_label">Cart</div>
                     </a>
                 </li>
-                <t t-if="user_id._is_public()">
+                <t t-nocache="Signed in or not, whatever the page cache." t-if="user_id._is_public()">
                     <li>
                         <a href="/web/login" class="o_fur_action" aria-label="Sign in">
-                            <span class="o_fur_pill o_fur_pill_round"><t t-call="fur_theme.icon" icon="'user'"/></span>
+                            <span class="o_fur_pill o_fur_pill_round"><t t-call="fur_theme.icon"><t t-set="icon" t-value="'user'"/></t></span>
                             <div class="o_fur_action_text o_fur_action_label">Sign in</div>
                         </a>
                     </li>
                 </t>
-                <t t-else="">
-                    <t t-call="portal.user_dropdown"
-                        _item_class.f="dropdown o_fur_user"
-                        _no_caret="True"
-                        _link_class.f="o_fur_pill o_fur_pill_round"
-                        _dropdown_menu_class.f="dropdown-menu-end">
-                    </t>
+                <!-- renders nothing for a visitor, in a t-nocache of its own -->
+                <t t-call="portal.user_dropdown">
+                    <t t-set="_item_class" t-valuef="dropdown o_fur_user"/>
+                    <t t-set="_no_caret" t-value="True"/>
+                    <t t-set="_icon" t-value="True"/>
+                    <t t-set="_link_class" t-valuef="o_fur_pill o_fur_pill_round"/>
+                    <t t-set="_dropdown_menu_class" t-valuef="dropdown-menu-end"/>
                 </t>
             </ul>
         </div>
     </div>
     <nav class="o_fur_menubar" aria-label="Main">
         <div class="container">
-            <ul class="o_fur_menu top_menu list-unstyled" role="menu">
+            <!-- id: Odoo 16's menu script looks for #top_menu in the header -->
+            <ul id="top_menu" class="o_fur_menu top_menu list-unstyled" role="menu">
                 <t t-foreach="website.menu_id.child_id.filtered(lambda m: m.is_visible)" t-as="submenu">
                     <!-- An entry linking to a shop category drops its sub-categories down on hover -->
                     <t t-set="fur_sub_categs" t-value="website._fur_menu_categories(submenu) if not submenu.child_id else []"/>
                     <li role="presentation" t-attf-class="o_fur_menu_item #{submenu.child_id and 'dropdown' or ''} #{fur_sub_categs and 'o_fur_menu_has_panel' or ''}">
                         <t t-if="submenu.child_id">
                             <a href="#" role="menuitem" data-bs-toggle="dropdown"
-                               t-attf-class="o_fur_menu_link dropdown-toggle #{submenu._is_active() and 'active' or ''}">
+                               t-attf-class="o_fur_menu_link dropdown-toggle #{website._fur_menu_is_active(submenu) and 'active' or ''}">
                                 <span t-field="submenu.name"/>
                             </a>
                             <div class="dropdown-menu">
                                 <t t-foreach="submenu.child_id.filtered(lambda m: m.is_visible)" t-as="child">
-                                    <a t-att-href="child._clean_url()" t-attf-class="dropdown-item #{child._is_active() and 'active' or ''}"
+                                    <a t-att-href="child.clean_url()" t-attf-class="dropdown-item #{website._fur_menu_is_active(child) and 'active' or ''}"
                                        t-att-target="'_blank' if child.new_window else None" t-field="child.name"/>
                                 </t>
                             </div>
                         </t>
                         <t t-else="">
                             <a t-if="submenu.url == '/'" href="/" role="menuitem"
-                               t-attf-class="o_fur_menu_link o_fur_menu_home #{submenu._is_active() and 'active' or ''}"
+                               t-attf-class="o_fur_menu_link o_fur_menu_home #{website._fur_menu_is_active(submenu) and 'active' or ''}"
                                t-att-title="submenu.name" t-att-aria-label="submenu.name">
-                                <t t-call="fur_theme.icon" icon="'home'"/>
+                                <t t-call="fur_theme.icon"><t t-set="icon" t-value="'home'"/></t>
                             </a>
-                            <a t-else="" t-att-href="submenu._clean_url()" role="menuitem"
-                               t-attf-class="o_fur_menu_link #{submenu._is_active() and 'active' or ''}"
+                            <a t-else="" t-att-href="submenu.clean_url()" role="menuitem"
+                               t-attf-class="o_fur_menu_link #{website._fur_menu_is_active(submenu) and 'active' or ''}"
                                t-att-target="'_blank' if submenu.new_window else None"
                                t-att-aria-haspopup="'true' if fur_sub_categs else None">
                                 <span t-field="submenu.name"/>
@@ -175,7 +183,7 @@
                                     t-attf-class="o_fur_menu_panel_item #{categ.child_id and 'o_fur_menu_panel_parent' or ''}">
                                     <a t-att-href="categ.website_url" role="menuitem" class="o_fur_menu_panel_link">
                                         <span t-field="categ.name"/>
-                                        <t t-if="categ.child_id" t-call="fur_theme.icon" icon="'chevron'" icon_class="'o_fur_icon_sm'"/>
+                                        <t t-if="categ.child_id" t-call="fur_theme.icon"><t t-set="icon" t-value="'chevron'"/><t t-set="icon_class" t-value="'o_fur_icon_sm'"/></t>
                                     </a>
                                     <ul t-if="categ.child_id" class="o_fur_menu_flyout list-unstyled" role="menu">
                                         <li t-foreach="categ.child_id.sorted(lambda c: (c.sequence, c.id))" t-as="grandchild">
@@ -198,7 +206,7 @@
         <div class="offcanvas-header">
             <t t-call="fur_theme.brand"/>
             <button type="button" class="btn o_fur_offcanvas_close" data-bs-dismiss="offcanvas" aria-label="Close">
-                <t t-call="fur_theme.icon" icon="'close'"/>
+                <t t-call="fur_theme.icon"><t t-set="icon" t-value="'close'"/></t>
             </button>
         </div>
         <div class="offcanvas-body">
@@ -206,17 +214,17 @@
                 <t t-foreach="website.menu_id.child_id.filtered(lambda m: m.is_visible)" t-as="submenu">
                     <t t-set="fur_sub_categs" t-value="website._fur_menu_categories(submenu) if not submenu.child_id else []"/>
                     <li t-attf-class="#{fur_sub_categs and 'o_fur_offcanvas_has_sub' or ''}">
-                        <a t-att-href="submenu._clean_url() if not submenu.child_id else '#'"
-                           t-attf-class="#{submenu._is_active() and 'active' or ''}" t-field="submenu.name"/>
+                        <a t-att-href="submenu.clean_url() if not submenu.child_id else '#'"
+                           t-attf-class="#{website._fur_menu_is_active(submenu) and 'active' or ''}" t-field="submenu.name"/>
                         <button t-if="fur_sub_categs" type="button" class="btn o_fur_offcanvas_toggle collapsed"
                                 data-bs-toggle="collapse" t-attf-data-bs-target="#o_fur_offcanvas_sub_#{submenu.id}"
                                 aria-expanded="false" t-attf-aria-controls="o_fur_offcanvas_sub_#{submenu.id}"
                                 aria-label="Show sub-categories">
-                            <t t-call="fur_theme.icon" icon="'chevron'" icon_class="'o_fur_icon_sm'"/>
+                            <t t-call="fur_theme.icon"><t t-set="icon" t-value="'chevron'"/><t t-set="icon_class" t-value="'o_fur_icon_sm'"/></t>
                         </button>
                         <ul t-if="submenu.child_id" class="list-unstyled">
                             <li t-foreach="submenu.child_id.filtered(lambda m: m.is_visible)" t-as="child">
-                                <a t-att-href="child._clean_url()" t-field="child.name"/>
+                                <a t-att-href="child.clean_url()" t-field="child.name"/>
                             </li>
                         </ul>
                         <ul t-if="fur_sub_categs" class="list-unstyled collapse" t-attf-id="o_fur_offcanvas_sub_#{submenu.id}">
@@ -240,14 +248,14 @@
                     <li t-foreach="fur_nav_categories" t-as="categ">
                         <a t-att-href="categ.website_url">
                             <span t-field="categ.name"/>
-                            <t t-call="fur_theme.icon" icon="'chevron'" icon_class="'o_fur_icon_sm'"/>
+                            <t t-call="fur_theme.icon"><t t-set="icon" t-value="'chevron'"/><t t-set="icon_class" t-value="'o_fur_icon_sm'"/></t>
                         </a>
                     </li>
                 </ul>
             </div>
             <a t-if="website.fur_hotline or res_company.phone"
-               t-attf-href="tel:#{website.fur_hotline or res_company.phone}" class="o_fur_offcanvas_hotline">
-                <t t-call="fur_theme.icon" icon="'phone'"/>
+               t-attf-href="tel:#{website.fur_hotline or res_company.phone}" data-no-post-process="1" class="o_fur_offcanvas_hotline">
+                <t t-call="fur_theme.icon"><t t-set="icon" t-value="'phone'"/></t>
                 <span>Hotline: <b t-out="website.fur_hotline or res_company.phone"/></span>
             </a>
         </div>
@@ -262,7 +270,7 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <t t-call="fur_theme.brand" _logo_bg="'navy'"/>
+                    <t t-call="fur_theme.brand"><t t-set="_logo_bg" t-value="'navy'"/></t>
                     <p class="o_fur_footer_about">
                         Modern, refined furniture for your home and office. Designed, made
                         and installed turnkey nationwide.
@@ -291,11 +299,11 @@
                     <h6>Contact</h6>
                     <ul class="list-unstyled o_fur_footer_contact">
                         <li t-if="website.fur_hotline or res_company.phone">
-                            <t t-call="fur_theme.icon" icon="'phone'"/>
-                            <a t-attf-href="tel:#{website.fur_hotline or res_company.phone}" t-out="website.fur_hotline or res_company.phone"/>
+                            <t t-call="fur_theme.icon"><t t-set="icon" t-value="'phone'"/></t>
+                            <a t-attf-href="tel:#{website.fur_hotline or res_company.phone}" data-no-post-process="1" t-out="website.fur_hotline or res_company.phone"/>
                         </li>
                         <li t-if="res_company.email">
-                            <t t-call="fur_theme.icon" icon="'mail'"/>
+                            <t t-call="fur_theme.icon"><t t-set="icon" t-value="'mail'"/></t>
                             <a t-attf-href="mailto:#{res_company.email}" t-out="res_company.email"/>
                         </li>
                     </ul>
@@ -303,7 +311,7 @@
                         <h6 class="o_fur_footer_hours_title">Opening hours</h6>
                         <ul class="list-unstyled o_fur_footer_contact o_fur_footer_hours">
                             <li>
-                                <t t-call="fur_theme.icon" icon="'clock'"/>
+                                <t t-call="fur_theme.icon"><t t-set="icon" t-value="'clock'"/></t>
                                 <span t-field="website.fur_opening_hours"/>
                             </li>
                         </ul>
@@ -318,6 +326,8 @@
      Floating contact buttons (bottom right): Messenger, chat on Zalo (one
      button per Zalo number), call the hotline
      ===================================================================== -->
+<!-- data-no-post-process on the "tel:" links: Odoo 16 rewrites the links of a
+     page and takes a digits-only "tel:0901234567" for a relative URL. -->
 <template id="contact_float" name="Fur Floating Contact Buttons">
     <t t-set="fur_tel_url" t-value="website._fur_tel_url()"/>
     <t t-set="fur_zalo_urls" t-value="website._fur_zalo_urls()"/>
@@ -353,9 +363,9 @@
                       font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Zalo</text>
             </svg>
         </a>
-        <a t-if="fur_tel_url" t-att-href="fur_tel_url"
+        <a t-if="fur_tel_url" t-att-href="fur_tel_url" data-no-post-process="1"
            class="o_fur_contact_btn o_fur_contact_phone" title="Call us" aria-label="Call us">
-            <t t-call="fur_theme.icon" icon="'phone'"/>
+            <t t-call="fur_theme.icon"><t t-set="icon" t-value="'phone'"/></t>
         </a>
     </div>
 </template>
@@ -368,10 +378,11 @@
     <div class="o_footer_copyright o_fur_copyright">
         <div class="container o_fur_copyright_row">
             <div class="o_fur_copyright_langs d-print-none">
-                <t t-if="len(frontend_languages) &gt; 1">
-                    <t t-foreach="website._fur_header_languages(frontend_languages)" t-as="lg">
+                <!-- the footer is cached, these links depend on the page -->
+                <t t-nocache="The language links hold the URL of the page." t-if="len(languages) &gt; 1">
+                    <t t-foreach="website._fur_header_languages(languages)" t-as="lg">
                         <span t-if="not lg_first" class="o_fur_copyright_sep" aria-hidden="true">|</span>
-                        <a t-att-href="url_localized(lang_code=lg.code, prefetch_langs=True, force_default_lang=True)"
+                        <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang_code=lg.code)"
                            t-attf-class="js_change_lang #{'active' if lg.code == lang else ''}"
                            t-att-data-url_code="lg.url_code" t-out="lg.name.split('/').pop().strip()"/>
                     </t>

@@ -4,236 +4,263 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 20.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-10 19:20+0000\n"
 "PO-Revision-Date: 2026-10-10 19:20+0000\n"
 "Last-Translator: \n"
-"Language: vi\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.10.3\n"
 
 #. module: fur_theme
-msgid ""
-"\n"
-"Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.\n"
-"\n"
-"* Header with logo, instant product search, hotline, cart, account and flag language switcher\n"
-"* Homepage: hero slider, service strip, category grid, one product block per category,\n"
-"  featured projects\n"
-"* Shop and category pages with banner, sub-category pills and product cards\n"
-"* Product page with sticky buy box, perks, hotline card, description and buying guide tabs\n"
-"* One-step checkout on the cart page (bank transfer, cash on delivery)\n"
-"* Projects showcase (/projects) with list, filters and detail pages\n"
-"* Floating call, Zalo and Messenger buttons\n"
-"* English and Vietnamese\n"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
 msgid "+1 555 0100 200 or https://wa.me/..."
 msgstr "+84 909 123 456 hoặc https://wa.me/..."
 
 #. module: fur_theme
-msgid "/delivery-installation"
-msgstr "/delivery-installation"
-
-#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
 msgid "0901234567 or https://zalo.me/..."
 msgstr "0901234567 hoặc https://zalo.me/..."
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 msgid "1 door, lock"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
 msgid "1 drawer"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "1. Delivery times"
 msgstr "1. Thời gian giao hàng"
 
 #. module: fur_theme
-msgid "12 mm tempered glass"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
 msgid "120 kg"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
 msgid "120 x 60 x 75 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak_writing
 msgid "140 x 70 x 75 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 msgid "148 x 85 x 80 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
 msgid "150 x 150 x 140 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
 msgid "160 x 140 x 75 cm"
 msgstr ""
 
 #. module: fur_theme
-msgid "160 x 45 x 70 cm"
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+msgid "160 x 75 x 74 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+msgid "160 x 80 x 75 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "160 x 82 x 78 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_divider
 msgid "180 x 160 cm"
 msgstr ""
 
 #. module: fur_theme
-msgid "190 x 88 x 76 cm"
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+msgid "180 x 90 x 75 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
 msgid "2 doors, 1 shelf"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
 msgid "2 doors, 2 adjustable shelves"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
 msgid "2 drawers"
 msgstr ""
 
 #. module: fur_theme
-msgid "2 sliding doors, 4 compartments"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
 msgid "2, quiet operation"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "2. Installation"
 msgstr "2. Lắp đặt"
 
 #. module: fur_theme
-msgid "200 x 100 x 75 cm"
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+msgid "20 L"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
 msgid "280 x 140 x 75 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+msgid "280 x 160 x 75 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
 msgid "3 lockable drawers"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "3. Receiving your order"
 msgstr "3. Nhận hàng"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
 msgid "32 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
 msgid "33 x 33 x 33 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_storage_box
+msgid "36 x 26 x 15 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
 msgid "360 x 120 x 75 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
 msgid "4 drawers"
 msgstr ""
 
 #. module: fur_theme
-msgid "4 woven armchairs"
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+msgid "40 L"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+msgid "40 x 35 x 65 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
 msgid "40 x 50 x 60 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 msgid "40 x 55 x 70 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
 msgid "43 - 53 cm"
 msgstr ""
 
 #. module: fur_theme
-msgid "44 - 54 cm"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
 msgid "45 - 55 cm"
 msgstr ""
 
 #. module: fur_theme
-msgid "45 x 50 x 88 cm"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
 msgid "47 x 52 x 82 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
 msgid "5 years"
 msgstr ""
 
 #. module: fur_theme
-msgid "55 x 22 x 10 cm"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
 msgid "62 - 127 cm"
 msgstr ""
 
 #. module: fur_theme
-msgid "80 x 40 cm"
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+msgid "70 x 100 cm, magnetic"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
 msgid "80 x 40 x 110 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
 msgid "80 x 45 x 75 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
 msgid "90 x 45 x 85 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.services_strip
 msgid "<span class=\"o_fur_service_text\">Free<br/>consultation</span>"
 msgstr "<span class=\"o_fur_service_text\">Tư vấn<br/>miễn phí</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.services_strip
 msgid "<span class=\"o_fur_service_text\">Long-term<br/>warranty</span>"
 msgstr "<span class=\"o_fur_service_text\">Bảo hành<br/>dài hạn</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.services_strip
 msgid "<span class=\"o_fur_service_text\">Nationwide<br/>delivery</span>"
 msgstr "<span class=\"o_fur_service_text\">Giao hàng<br/>toàn quốc</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.services_strip
 msgid "<span class=\"o_fur_service_text\">Professional<br/>installation</span>"
 msgstr "<span class=\"o_fur_service_text\">Thi công<br/>chuyên nghiệp</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_contact
 msgid ""
 "<span class=\"o_fur_zalo_mark\">Zalo</span>\n"
 "            <span>Chat on Zalo</span>"
@@ -242,976 +269,1353 @@ msgstr ""
 "            <span>Chat qua Zalo</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_perks
 msgid "<span><b>Long-term warranty</b>Up to 24 months</span>"
 msgstr "<span><b>Bảo hành dài hạn</b>Lên đến 24 tháng</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_perks
 msgid "<span><b>On-site assembly</b>By our professional team</span>"
 msgstr "<span><b>Lắp đặt tận nơi</b>Đội thi công chuyên nghiệp</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_sticky_buy
 msgid "<span>Add to cart</span>"
 msgstr "<span>Thêm vào giỏ hàng</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_contact
 msgid "<span>Chat on WhatsApp</span>"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.checkout_layout
 msgid "<span>Long-term warranty</span>"
 msgstr "<span>Bảo hành dài hạn</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.checkout_layout
 msgid "<span>Nationwide delivery</span>"
 msgstr "<span>Giao hàng toàn quốc</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.checkout_layout
 msgid "<span>Secure payment</span>"
 msgstr "<span>Thanh toán an toàn</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.section_title
 msgid "<span>See all</span>"
 msgstr "<span>Xem tất cả</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "<strong>Contents</strong>"
 msgstr "<strong>Nội dung</strong>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "<strong>Thank you for choosing us!</strong>"
 msgstr "<strong>Cảm ơn quý khách đã tin chọn chúng tôi!</strong>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "<strong>We deliver from Monday to Saturday, 8:00 to 18:00.</strong>"
-msgstr "<strong>Chúng tôi giao hàng từ thứ 2 đến thứ 7, 8h00 đến 18h00.</strong>"
+msgstr ""
+"<strong>Chúng tôi giao hàng từ thứ 2 đến thứ 7, 8h00 đến 18h00.</strong>"
 
 #. module: fur_theme
-msgid "A boardroom for twelve with a conference table, executive chairs and integrated screens."
+#: model:fur.project,summary:fur_theme.project_meeting_room
+msgid ""
+"A boardroom for twelve with a conference table, executive chairs and "
+"integrated screens."
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_chair_task
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
 msgid "A cheerful swivel task chair with a mustard shell and padded seat."
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
 msgid "A clean white desk with a slim drawer and a black steel frame."
 msgstr ""
 
 #. module: fur_theme
-msgid "A comfortable moulded shell chair on slim black legs, stackable for small spaces."
+#: model:product.template,description_sale:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+msgid ""
+"A comfortable moulded shell chair on slim black legs, stackable for small "
+"spaces."
 msgstr ""
 
 #. module: fur_theme
-msgid "A compact two-seater upholstered in deep teal velvet, with a solid oak base and generous foam cushions."
+#: model:product.template,description_sale:fur_theme.product_sofa_teal
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+msgid ""
+"A compact two-seater upholstered in deep teal velvet, with a solid oak base "
+"and generous foam cushions."
 msgstr ""
 
 #. module: fur_theme
-msgid "A large black desk pad that protects the top and keeps the mouse precise."
+#: model:product.template,description_sale:fur_theme.product_dining_table_black
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+msgid ""
+"A generous dining table with a matt black top on slim steel trestle legs, "
+"seating six."
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_flipchart
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+msgid ""
+"A height-adjustable flipchart with a magnetic whiteboard surface and a pen "
+"tray."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
 msgid "A light oak chest with two deep drawers."
 msgstr ""
 
 #. module: fur_theme
-msgid "A light, airy desk in tempered glass that keeps small rooms feeling open."
+#: model:product.template,description_sale:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+msgid ""
+"A long conference table for ten with cable management built into the frame."
 msgstr ""
 
 #. module: fur_theme
-msgid "A long conference table for ten with cable management built into the frame."
+#: model:product.template,description_sale:fur_theme.product_desk_frame
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+msgid ""
+"A minimalist desk with a white top on an open white steel frame, with a "
+"cable outlet in the top."
 msgstr ""
 
 #. module: fur_theme
-msgid "A long, low sideboard with sliding doors, perfect under a TV or along a dining room wall."
+#: model:product.template,description_sale:fur_theme.product_desk_oak_writing
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak_writing
+msgid ""
+"A minimalist desk with an oak top on black steel legs for a clean home "
+"office."
 msgstr ""
 
 #. module: fur_theme
-msgid "A minimalist desk with a walnut top and waterfall sides for a clean home office."
+#: model_terms:fur.project,description:fur_theme.project_apartment
+msgid ""
+"A palette of oak, sand and teal ties the living room, dining area and "
+"bedrooms together."
 msgstr ""
 
 #. module: fur_theme
-msgid "A palette of oak, sand and teal ties the living room, dining area and bedrooms together."
+#: model:product.template,description_sale:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+msgid ""
+"A relaxed loveseat in a durable navy linen blend with tapered wooden legs."
 msgstr ""
 
 #. module: fur_theme
-msgid "A relaxed loveseat in a durable navy linen blend with tapered wooden legs."
+#: model:product.template,description_sale:fur_theme.product_bin_steel
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+msgid "A round waste paper bin in perforated galvanised steel."
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_booth
+#: model_terms:product.template,website_description:fur_theme.product_booth
 msgid "A semi-enclosed booth for focused work or calls in open offices."
 msgstr ""
 
 #. module: fur_theme
-msgid "A soft oval table in solid oak that seats six comfortably and has no corners to bump into."
+#: model:product.template,description_sale:fur_theme.product_bin_pedal
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+msgid "A soft-close pedal bin with a removable inner bucket."
 msgstr ""
 
 #. module: fur_theme
-msgid "A tall pedestal with a wooden top: personal storage that doubles as a side table."
+#: model:product.template,description_sale:fur_theme.product_storage_box
+#: model_terms:product.template,website_description:fur_theme.product_storage_box
+msgid "A stackable storage box with handles, for shelves and drawers."
 msgstr ""
 
 #. module: fur_theme
-msgid "A warm, modern three-bedroom apartment with natural oak, linen and plenty of hidden storage."
+#: model:product.template,description_sale:fur_theme.product_desk_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+msgid ""
+"A sturdy desk with an oak top and modesty panel on a black steel frame."
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+msgid ""
+"A tall pedestal with a wooden top: personal storage that doubles as a side "
+"table."
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,summary:fur_theme.project_apartment
+msgid ""
+"A warm, modern three-bedroom apartment with natural oak, linen and plenty of"
+" hidden storage."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
 msgid "About the Acoustic Work Booth"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
 msgid "About the Architect Desk Lamp"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+msgid "About the Bench Desk for Four, Black"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
 msgid "About the Bench Workstation for Four"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
 msgid "About the Conference Table, 10 Seats"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
 msgid "About the Corner Desk with Pedestal"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Cross-Back Wooden Chair"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
 msgid "About the Electric Standing Desk Frame"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
 msgid "About the Executive Ergonomic Chair"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
 msgid "About the Felt Storage Basket"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_divider
 msgid "About the Folding Acoustic Divider"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
 msgid "About the Four-Drawer Chest"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Glass Desk"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
 msgid "About the Herringbone Oak Cabinet"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Leather Desk Pad"
-msgstr ""
-
-#. module: fur_theme
-msgid "About the Leather Two-Seat Sofa, Camel"
-msgstr ""
-
-#. module: fur_theme
-msgid "About the Leather Two-Seat Sofa, Cognac"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 msgid "About the Linen Loveseat, Navy"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 msgid "About the Locker Pedestal"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Low Oak Sideboard"
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+msgid "About the Mobile Flipchart Easel"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Mesh Desk Organizer"
-msgstr ""
-
-#. module: fur_theme
-msgid "About the Mesh Office Chair"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
 msgid "About the Mobile Pedestal, Oak &amp; Black"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
 msgid "About the Natural Wood Storage Cabinet"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Oak Frame Lounge Sofa"
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+msgid "About the Oak Desk with Modesty Panel"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Oval Oak Dining Table"
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak_writing
+msgid "About the Oak Writing Desk"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+msgid "About the Pedal Bin, Anthracite"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+msgid "About the Perforated Steel Bin"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
 msgid "About the Ribbed Glass Table Lamp"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Round Garden Dining Set"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
 msgid "About the Shell Dining Chair, Teal"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_storage_box
+msgid "About the Storage Box, Blue"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
 msgid "About the Task Chair, Mustard"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+msgid "About the Trestle Dining Table, Black"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+msgid "About the Trestle Dining Table, White"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
 msgid "About the Two-Drawer Oak Chest"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "About the Velvet Two-Seat Sofa"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Walnut Monitor Stand"
-msgstr ""
-
-#. module: fur_theme
-msgid "About the Walnut Writing Desk"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
 msgid "About the White Desk with Drawer"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+msgid "About the White Frame Desk"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_booth
 msgid "Acoustic Work Booth"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
 msgid "Acoustic fabric, teal"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_divider
 msgid "Acoustic felt panels"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
 msgid "Acoustic felt, olive"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__active
 msgid "Active"
 msgstr "Đang hoạt động"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_card
+#: model_terms:ir.ui.view,arch_db:fur_theme.shop_product_buttons
 msgid "Add to cart"
 msgstr "Thêm vào giỏ"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_card
 msgid "Add to wishlist"
 msgstr "Thêm vào yêu thích"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+msgid "Adjustable up to 190 cm"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+#: model_terms:ir.ui.view,arch_db:fur_theme.projects_page
 msgid "All"
 msgstr "Tất cả"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.products
 msgid "All products"
 msgstr "Tất cả sản phẩm"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+msgid "Aluminium"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
 msgid "Aluminium, 5 castors"
 msgstr ""
 
 #. module: fur_theme
-msgid "An open office for 120 people with bench workstations, ergonomic chairs and flexible meeting corners."
+#: model:fur.project,summary:fur_theme.project_tech_office
+msgid ""
+"An open office for 120 people with bench workstations, ergonomic chairs and "
+"flexible meeting corners."
 msgstr ""
 
 #. module: fur_theme
-msgid "Aniline leather, camel"
-msgstr ""
-
-#. module: fur_theme
-msgid "Aniline leather, cognac"
-msgstr ""
-
-#. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__fur_project__project_type__apartment
 msgid "Apartment"
 msgstr "Căn hộ"
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_lamp_desk
 msgid "Architect Desk Lamp"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
 msgid "Archived"
 msgstr "Đã lưu trữ"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Area"
 msgstr "Diện tích"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__area
 msgid "Area (m²)"
 msgstr "Diện tích (m²)"
 
 #. module: fur_theme
+#: model:fur.project,location:fur_theme.project_tech_office
 msgid "Austin, Texas"
 msgstr ""
 
 #. module: fur_theme
-msgid "Auto publish on"
-msgstr "Tự động đăng vào"
-
-#. module: fur_theme
-msgid "Automatically publish the page on the chosen date and time."
-msgstr "Tự động đăng trang vào ngày giờ đã chọn."
-
-#. module: fur_theme
-msgid "Back"
-msgstr ""
-
-#. module: fur_theme
+#: model:payment.provider,name:fur_theme.payment_provider_wire_transfer
 msgid "Bank transfer"
 msgstr "Thanh toán bằng chuyển khoản"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
 msgid "Base"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_bench_black
+msgid "Bench Desk for Four, Black"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_bench_desk
 msgid "Bench Workstation for Four"
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,location:fur_theme.project_coworking
 msgid "Berlin, Germany"
 msgstr ""
 
 #. module: fur_theme
-msgid "Bistro chairs, oak tables and warm lighting for a busy neighbourhood café."
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
 msgid "Black lacquered MDF"
 msgstr ""
 
 #. module: fur_theme
-msgid "Black steel mesh pot for pens, scissors and the rest."
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 msgid "Black steel, oak top"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+msgid "Board"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,name:fur_theme.project_meeting_room
 msgid "Boardroom Renovation"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_brand_name
 msgid "Brand Name"
 msgstr "Tên thương hiệu"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
 msgid "Breathable fabric, black"
 msgstr ""
 
 #. module: fur_theme
-msgid "Breathable mesh back, synchro tilt and adjustable arms for long working days."
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
 msgid "Bulb"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_sticky_buy
 msgid "Buy now"
 msgstr "Mua ngay"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_buy_guide
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
 msgid "Buying & Payment Guide"
 msgstr "Hướng dẫn mua hàng & thanh toán"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
 msgid "Buying &amp; payment guide"
 msgstr "Hướng dẫn mua hàng và thanh toán"
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_cabinets
 msgid "Cabinets & Sideboards"
 msgstr ""
 
 #. module: fur_theme
-msgid "Cable management is built into every desk, so the floor stays clear and the team can rearrange the space as it grows."
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+msgid "Cable management"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_tech_office
+msgid ""
+"Cable management is built into every desk, so the floor stays clear and the "
+"team can rearrange the space as it grows."
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__fur_project__project_type__hospitality
 msgid "Café & Hospitality"
 msgstr "Café & nhà hàng"
 
 #. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_cafe
 msgid "Café and bakery, Toronto"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
 msgid "Call us"
 msgstr "Gọi ngay"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__can_publish
 msgid "Can Publish"
 msgstr "Có thể đăng"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+msgid "Capacity"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Cart"
 msgstr "Giỏ hàng"
 
 #. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__payment_provider__custom_mode__cash_on_delivery
+msgid "Cash On Delivery"
+msgstr "Thanh toán khi nhận hàng"
+
+#. module: fur_theme
+#: model:payment.provider,name:fur_theme.payment_provider_cash_on_delivery
 msgid "Cash on delivery"
 msgstr "Thanh toán khi nhận hàng"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_title
 msgid "Category:"
 msgstr "Danh mục:"
 
 #. module: fur_theme
-msgid "Chairs"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
 msgid "Chat on Messenger"
 msgstr "Chat qua Messenger"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
 msgid "Chat on WhatsApp"
 msgstr "Chat qua WhatsApp"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
 msgid "Chat on Zalo"
 msgstr "Chat qua Zalo"
 
 #. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_fur_project__location
 msgid "City or district, e.g. 'Brooklyn, New York'."
 msgstr "Thành phố hoặc quận, ví dụ 'Quận 2, TP.HCM'."
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__client_name
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Client"
 msgstr "Khách hàng"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Close"
 msgstr "Đóng"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_card
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_sticky_buy
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_title
+#: model_terms:ir.ui.view,arch_db:fur_theme.products_item
 msgid "Code:"
 msgstr "Mã SP:"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Completed"
 msgstr "Hoàn thành"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__completion_date
 msgid "Completion Date"
 msgstr "Ngày hoàn thành"
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_meeting_table
 msgid "Conference Table, 10 Seats"
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_meeting_room
 msgid "Consulting firm, London"
 msgstr ""
 
 #. module: fur_theme
 #. odoo-python
-#: code:addons/fur_theme/controllers/shop.py
+#: code:addons/fur_theme/controllers/shop.py:0
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+#, python-format
 msgid "Contact"
 msgstr "Liên hệ"
 
 #. module: fur_theme
-msgid "Coordinated furniture from the living room to the bedrooms, chosen to last for a young family."
+#: model:fur.project,summary:fur_theme.project_townhouse
+msgid ""
+"Coordinated furniture from the living room to the bedrooms, chosen to last "
+"for a young family."
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.copyright_bar
 msgid "Copyright &amp;copy;"
 msgstr "Bản quyền &amp;copy;"
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_corner
 msgid "Corner Desk with Pedestal"
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,name:fur_theme.project_coworking
 msgid "Coworking Space"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Create your<br/>living <span class=\"o_fur_accent\">space</span>"
 msgstr "Kiến tạo<br/>không gian <span class=\"o_fur_accent\">sống</span>"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__create_uid
 msgid "Created by"
 msgstr "Được tạo bởi"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__create_date
 msgid "Created on"
 msgstr "Được tạo vào"
 
 #. module: fur_theme
-msgid "Cross-Back Wooden Chair"
-msgstr ""
+#: model:ir.model.fields,field_description:fur_theme.field_payment_provider__custom_mode
+msgid "Custom Mode"
+msgstr "Chế độ tùy chỉnh"
 
 #. module: fur_theme
-msgid "Cross-back chairs and oval oak tables give the café a relaxed, timeless feel; ribbed glass lamps finish the look."
-msgstr ""
-
-#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_sale_order__fur_customer_note
 msgid "Customer Request"
 msgstr "Yêu cầu của khách hàng"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
 msgid "Dark oak melamine, black steel"
 msgstr ""
 
 #. module: fur_theme
-msgid "Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes."
+#: model_terms:product.template,website_description:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+#: model_terms:product.template,website_description:fur_theme.product_booth
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak_writing
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+#: model_terms:product.template,website_description:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+#: model_terms:product.template,website_description:fur_theme.product_storage_box
+msgid ""
+"Delivered assembled or assembled on site by our team. Contact us for other "
+"sizes, colours or finishes."
 msgstr ""
 
 #. module: fur_theme
-msgid "Delivery & Installation"
-msgstr "Giao hàng & lắp đặt"
-
-#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "Delivery &amp; Installation"
 msgstr "Giao hàng &amp; lắp đặt"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "Delivery &amp; installation"
 msgstr "Giao hàng &amp; lắp đặt"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
 msgid "Delivery &amp; installation policy"
 msgstr "Chính sách giao hàng và lắp đặt"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Delivery address"
 msgstr "Địa chỉ giao hàng"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "Delivery times"
 msgstr "Thời gian giao hàng"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__description
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
 msgid "Description"
 msgstr "Mô tả"
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_accessories
 msgid "Desk Accessories"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
 msgid "Desk, chair and lamp"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_desks
 msgid "Desks"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+#: model_terms:product.template,website_description:fur_theme.product_booth
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak_writing
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+#: model_terms:product.template,website_description:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+#: model_terms:product.template,website_description:fur_theme.product_storage_box
 msgid "Dimensions"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_dining_chairs
 msgid "Dining Chairs"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_dining
 msgid "Dining Room"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_dining_tables
 msgid "Dining Tables"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__display_name
 msgid "Display Name"
 msgstr "Tên hiển thị"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
 msgid "Dividers"
 msgstr ""
 
 #. module: fur_theme
-msgid "Dual-motor sit-stand frame with memory presets; pair it with any desktop."
+#: model:product.template,description_sale:fur_theme.product_desk_standing
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+msgid ""
+"Dual-motor sit-stand frame with memory presets; pair it with any desktop."
 msgstr ""
 
 #. module: fur_theme
-msgid "Durable fabrics, rounded corners and solid wood were the brief. Every room got storage at child height."
+#: model_terms:fur.project,description:fur_theme.project_townhouse
+msgid ""
+"Durable fabrics, rounded corners and solid wood were the brief. Every room "
+"got storage at child height."
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
 msgid "E14 LED, included"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
 msgid "E27 LED, included"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_standing
 msgid "Electric Standing Desk Frame"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Email (optional)"
 msgstr "Email (không bắt buộc)"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Ergonomic desks, chairs and cabinets<br/>installed turnkey."
 msgstr "Bàn, ghế công thái học và tủ hồ sơ<br/>thi công trọn gói."
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_chair_executive
 msgid "Executive Ergonomic Chair"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_messenger
 msgid "Facebook / Messenger link of the floating Messenger button."
 msgstr "Link Facebook / Messenger của nút Messenger nổi."
 
 #. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_townhouse
 msgid "Family home, Melbourne"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
 msgid "Featured"
 msgstr "Nổi bật"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Featured <span class=\"o_fur_accent\">projects</span>"
 msgstr "DỰ ÁN <span class=\"o_fur_accent\">TIÊU BIỂU</span>"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__is_featured
+#: model:ir.model.fields,field_description:fur_theme.field_product_product__fur_featured
+#: model:ir.model.fields,field_description:fur_theme.field_product_template__fur_featured
 msgid "Featured on Homepage"
 msgstr "Nổi bật trên trang chủ"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.projects_page
 msgid "Featured projects"
 msgstr "Dự án tiêu biểu"
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_basket
 msgid "Felt Storage Basket"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
 msgid "Finish"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_divider
 msgid "Folding Acoustic Divider"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_footer_logo
 msgid "Footer Logo"
 msgstr "Logo chân trang"
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_bench_black
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+msgid ""
+"Four workstations on one black steel frame, with a central rail for screens "
+"and cables."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_cabinet_black
 msgid "Four-Drawer Chest"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Frame"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_contact
 msgid "Free consultation"
 msgstr "Tư vấn miễn phí"
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_divider
 msgid "Free-standing folding screen that absorbs sound and zones open spaces."
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Full name"
 msgstr "Họ tên"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
 msgid "Full story of the project…"
 msgstr "Câu chuyện đầy đủ của dự án…"
 
 #. module: fur_theme
-msgid "Fur - Furniture eCommerce Theme"
-msgstr ""
-
-#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_fur_project
 msgid "Fur Interior Project"
 msgstr "Dự án nội thất Fur"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
 msgid "Fur Theme"
 msgstr "Giao diện Fur"
 
 #. module: fur_theme
-msgid "Furniture & interior design eCommerce theme: homepage, shop, product page, one-step checkout, projects showcase, instant search"
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+msgid "Galvanised steel"
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,name:fur_theme.project_townhouse
 msgid "Garden Townhouse"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Get a quote"
 msgstr "Nhận báo giá"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Get free advice"
 msgstr "Nhận tư vấn miễn phí"
 
 #. module: fur_theme
-msgid "Glass Desk"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
 msgid "Glass, steel"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_lamp_glass
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
 msgid "Green ribbed glass shade on a black base for a soft, warm light."
 msgstr ""
 
 #. module: fur_theme
-msgid "HTTP Routing"
-msgstr "Định tuyến HTTP"
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
+msgid "Group By"
+msgstr "Nhóm theo"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
 msgid "Height"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_sideboard_oak
 msgid "Herringbone Oak Cabinet"
 msgstr ""
 
 #. module: fur_theme
-msgid "High-back ergonomic chair with adjustable headrest, armrests and lumbar support."
+#: model:product.template,description_sale:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+msgid ""
+"High-back ergonomic chair with adjustable headrest, armrests and lumbar "
+"support."
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.page_banner
 msgid "Home"
 msgstr "Trang chủ"
 
 #. module: fur_theme
-msgid "Hot desks, focus booths and a lounge for a coworking space open seven days a week."
+#: model:fur.project,summary:fur_theme.project_coworking
+msgid ""
+"Hot desks, focus booths and a lounge for a coworking space open seven days a"
+" week."
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_hotline
 msgid "Hotline"
 msgstr "Hotline"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Hotline support"
 msgstr "Hotline hỗ trợ"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Hotline:"
 msgstr "Hotline:"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__id
 msgid "ID"
 msgstr "ID"
 
 #. module: fur_theme
-msgid "If you cancel an order after it has been delivered, the delivery costs are charged."
-msgstr "Nếu quý khách hủy đơn sau khi hàng đã được giao tới, phí vận chuyển sẽ được tính."
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"If you cancel an order after it has been delivered, the delivery costs are "
+"charged."
+msgstr ""
+"Nếu quý khách hủy đơn sau khi hàng đã được giao tới, phí vận chuyển sẽ được "
+"tính."
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_1920
 msgid "Image"
 msgstr "Hình ảnh"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_1024
 msgid "Image 1024"
 msgstr "Hình ảnh 1024"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_128
 msgid "Image 128"
 msgstr "Hình ảnh 128"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_256
 msgid "Image 256"
 msgstr "Hình ảnh 256"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__image_512
 msgid "Image 512"
 msgstr "Hình ảnh 512"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
 msgid "Includes"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "Installation"
 msgstr "Lắp đặt"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
 msgid "Integrated pedestal"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__fur_product_categ_id
 msgid "Inventory Category"
 msgstr "Danh mục kho"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.title_my_invoices
 msgid "Invoices &amp; payments"
 msgstr "Hoá đơn &amp; thanh toán"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__is_published
 msgid "Is Published"
 msgstr "Đã đăng"
 
 #. module: fur_theme
-msgid "Kiln-dried hardwood"
+#: model:product.template,description_sale:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+msgid ""
+"L-shaped desk with a walnut top, steel frame and an integrated storage "
+"pedestal."
 msgstr ""
 
 #. module: fur_theme
-msgid "L-shaped desk with a walnut top, steel frame and an integrated storage pedestal."
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+msgid "Laminate, black"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+msgid "Laminate, matt black"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+msgid "Laminate, warm white"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+msgid "Laminate, white"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_lamps
 msgid "Lamps"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__write_uid
 msgid "Last Updated by"
 msgstr "Cập nhật lần cuối bởi"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__write_date
 msgid "Last Updated on"
 msgstr "Cập nhật lần cuối vào"
 
 #. module: fur_theme
-msgid "Leather Desk Pad"
-msgstr ""
-
-#. module: fur_theme
-msgid "Leather Two-Seat Sofa, Camel"
-msgstr ""
-
-#. module: fur_theme
-msgid "Leather Two-Seat Sofa, Cognac"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 msgid "Legs"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_decor
 msgid "Lighting & Decor"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_sofa_navy
 msgid "Linen Loveseat, Navy"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 msgid "Linen blend, navy"
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,location:fur_theme.project_apartment
 msgid "Lisbon, Portugal"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_living
 msgid "Living Room"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
 msgid "Load"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__location
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Location"
 msgstr "Địa điểm"
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_pedestal_black
 msgid "Locker Pedestal"
 msgstr ""
 
 #. module: fur_theme
-msgid "Logo version for the dark footer (light text). Empty: the website logo on a white card."
-msgstr "Phiên bản logo cho chân trang nền tối (chữ sáng). Để trống: dùng logo website trên nền thẻ trắng."
+#: model:ir.model.fields,help:fur_theme.field_website__fur_footer_logo
+msgid ""
+"Logo version for the dark footer (light text). Empty: the website logo on a "
+"white card."
+msgstr ""
+"Phiên bản logo cho chân trang nền tối (chữ sáng). Để trống: dùng logo "
+"website trên nền thẻ trắng."
 
 #. module: fur_theme
+#: model:fur.project,location:fur_theme.project_meeting_room
 msgid "London, United Kingdom"
 msgstr ""
 
 #. module: fur_theme
-msgid "Low Oak Sideboard"
-msgstr ""
-
-#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
 msgid "Low chest of four wide drawers for files, samples or supplies."
 msgstr ""
 
 #. module: fur_theme
-msgid "Low sideboards and built-in cabinets keep surfaces clear, while a velvet sofa adds a touch of colour."
+#: model_terms:fur.project,description:fur_theme.project_apartment
+msgid ""
+"Low sideboards and built-in cabinets keep surfaces clear, while a velvet "
+"sofa adds a touch of colour."
 msgstr ""
 
 #. module: fur_theme
-msgid "Made-to-order products: delivered within 2 to 4 weeks; the exact date is confirmed with your order."
-msgstr "Sản phẩm đặt sản xuất: giao trong 2 đến 4 tuần; ngày giao cụ thể được xác nhận cùng đơn hàng."
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Made-to-order products: delivered within 2 to 4 weeks; the exact date is "
+"confirmed with your order."
+msgstr ""
+"Sản phẩm đặt sản xuất: giao trong 2 đến 4 tuần; ngày giao cụ thể được xác "
+"nhận cùng đơn hàng."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Main"
 msgstr "Chính"
 
 #. module: fur_theme
-msgid "Matching beds, wardrobes and accessories<br/>for a perfect night’s sleep."
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+msgid ""
+"Matching beds, wardrobes and accessories<br/>for a perfect night’s sleep."
 msgstr "Giường, tủ và phụ kiện đồng bộ<br/>cho giấc ngủ trọn vẹn."
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak_writing
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+#: model_terms:product.template,website_description:fur_theme.product_storage_box
 msgid "Material"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
 msgid "Matte black"
 msgstr ""
 
 #. module: fur_theme
-msgid "Mechanism"
-msgstr ""
-
-#. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_meeting
 msgid "Meeting Rooms"
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,location:fur_theme.project_townhouse
 msgid "Melbourne, Australia"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Menu"
 msgstr "Menu"
 
 #. module: fur_theme
-msgid "Mesh Desk Organizer"
-msgstr ""
-
-#. module: fur_theme
-msgid "Mesh Office Chair"
-msgstr ""
-
-#. module: fur_theme
-msgid "Mesh, black"
-msgstr ""
-
-#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_messenger
 msgid "Messenger"
 msgstr "Messenger"
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_flipchart
+msgid "Mobile Flipchart Easel"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_pedestal_wood
 msgid "Mobile Pedestal, Oak & Black"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
 msgid ""
 "Modern, refined furniture for your home and office. Designed, made\n"
 "                        and installed turnkey nationwide."
@@ -1220,809 +1624,1146 @@ msgstr ""
 "                        và thi công trọn gói trên toàn quốc."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Modern, refined furniture<br/>for your home and office."
 msgstr "Nội thất hiện đại, tinh tế<br/>cho ngôi nhà và văn phòng của bạn."
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+msgid "Modesty panel"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_ir_module_module
 msgid "Module"
 msgstr "Phân hệ"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
 msgid "Motors"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__name
 msgid "Name"
 msgstr "Tên"
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_cabinet_wood
 msgid "Natural Wood Storage Cabinet"
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,name:fur_theme.project_cafe
 msgid "Neighbourhood Café"
 msgstr ""
 
 #. module: fur_theme
 #. odoo-python
-#: code:addons/fur_theme/controllers/shop.py
+#: code:addons/fur_theme/controllers/shop.py:0
+#, python-format
 msgid "No product found"
 msgstr "Không tìm thấy sản phẩm"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.projects_page
 msgid "No project published yet."
 msgstr "Chưa có dự án nào được công bố."
 
 #. module: fur_theme
-msgid "Oak Frame Lounge Sofa"
+#: model:product.template,name:fur_theme.product_desk_oak
+msgid "Oak Desk with Modesty Panel"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_oak_writing
+msgid "Oak Writing Desk"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
 msgid "Oak front, black steel body"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak_writing
 msgid "Oak veneer"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
 msgid "Oak veneer, solid oak legs"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__fur_project__project_type__office
+#: model:product.public.category,name:fur_theme.categ_office
 msgid "Office"
 msgstr "Văn phòng"
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_office_chairs
 msgid "Office Chairs"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_office_storage
 msgid "Office Storage"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Offices that<br/>really <span class=\"o_fur_accent\">work</span>"
 msgstr "Văn phòng<br/>làm việc <span class=\"o_fur_accent\">hiệu quả</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
 msgid "One or two sentences shown on project cards…"
 msgstr "Một hai câu hiển thị trên thẻ dự án…"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Online ordering is not available yet, please call us to order."
-msgstr "Hiện chưa thể đặt hàng trực tuyến, quý khách vui lòng gọi điện để đặt hàng."
+msgstr ""
+"Hiện chưa thể đặt hàng trực tuyến, quý khách vui lòng gọi điện để đặt hàng."
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
 msgid "Open-plan bench desk for four people with acoustic dividers."
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_opening_hours
 msgid "Opening Hours"
 msgstr "Thời gian hoạt động"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
 msgid "Opening hours"
 msgstr "Thời gian hoạt động"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.confirmation
 msgid "Order"
 msgstr "Đơn hàng"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Order information"
 msgstr "Thông tin đặt hàng"
 
 #. module: fur_theme
-msgid "Orders are delivered once the payment is confirmed. We call you the day before to agree on a time slot."
-msgstr "Đơn hàng được giao sau khi thanh toán được xác nhận. Chúng tôi sẽ gọi trước một ngày để hẹn giờ giao."
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Orders are delivered once the payment is confirmed. We call you the day "
+"before to agree on a time slot."
+msgstr ""
+"Đơn hàng được giao sau khi thanh toán được xác nhận. Chúng tôi sẽ gọi trước "
+"một ngày để hẹn giờ giao."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Other <span class=\"o_fur_accent\">projects</span>"
 msgstr "DỰ ÁN <span class=\"o_fur_accent\">KHÁC</span>"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Other requests"
 msgstr "Yêu cầu khác"
 
 #. module: fur_theme
-msgid "Our sales staff will call you to confirm the order and the delivery time."
-msgstr "Nhân viên kinh doanh sẽ gọi điện xác nhận đơn hàng và thời gian giao hàng."
+#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_cash_on_delivery
+msgid ""
+"Our sales staff will call you to confirm the order and the delivery time."
+msgstr ""
+"Nhân viên kinh doanh sẽ gọi điện xác nhận đơn hàng và thời gian giao hàng."
 
 #. module: fur_theme
-msgid "Our staff will call you to confirm the order and arrange the delivery once the payment is received."
-msgstr "Nhân viên sẽ gọi điện xác nhận đơn hàng và sắp xếp giao hàng ngay khi nhận được thanh toán."
+#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_wire_transfer
+msgid ""
+"Our staff will call you to confirm the order and arrange the delivery once "
+"the payment is received."
+msgstr ""
+"Nhân viên sẽ gọi điện xác nhận đơn hàng và sắp xếp giao hàng ngay khi nhận "
+"được thanh toán."
 
 #. module: fur_theme
-msgid "Our team assembles and installs the furniture on site, free of charge in our delivery area."
-msgstr "Đội ngũ của chúng tôi lắp ráp và lắp đặt tận nơi, miễn phí trong khu vực giao hàng."
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Our team assembles and installs the furniture on site, free of charge in our"
+" delivery area."
+msgstr ""
+"Đội ngũ của chúng tôi lắp ráp và lắp đặt tận nơi, miễn phí trong khu vực "
+"giao hàng."
 
 #. module: fur_theme
-msgid "Oval Oak Dining Table"
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+msgid "Outlet in the top"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "Packaging is taken away after the installation."
 msgstr "Bao bì được thu dọn sau khi lắp đặt."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.title_404
 msgid "Page not found"
 msgstr "Không tìm thấy trang"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_booth
 msgid "Panels"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_cash_on_delivery
 msgid "Pay in cash to the delivery staff when you receive the goods."
-msgstr "Quý khách thanh toán bằng tiền mặt cho nhân viên giao hàng khi nhận hàng."
+msgstr ""
+"Quý khách thanh toán bằng tiền mặt cho nhân viên giao hàng khi nhận hàng."
 
 #. module: fur_theme
+#: model:ir.model,name:fur_theme.model_payment_provider
 msgid "Payment Provider"
 msgstr "Nhà cung cấp dịch vụ thanh toán"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Payment method"
 msgstr "Hình thức thanh toán"
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_bin_pedal
+msgid "Pedal Bin, Anthracite"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_bin_steel
+msgid "Perforated Steel Bin"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Phone"
 msgstr "Điện thoại"
 
 #. module: fur_theme
-msgid "Phone number in international format (e.g. +1 555 0100 200) or wa.me link of the floating WhatsApp button. Empty: no WhatsApp button."
-msgstr "Số điện thoại theo định dạng quốc tế (ví dụ +84 909 123 456) hoặc link wa.me của nút WhatsApp nổi. Để trống: không hiện nút WhatsApp."
+#: model:ir.model.fields,help:fur_theme.field_website__fur_whatsapp
+msgid ""
+"Phone number in international format (e.g. +1 555 0100 200) or wa.me link of"
+" the floating WhatsApp button. Empty: no WhatsApp button."
+msgstr ""
+"Số điện thoại theo định dạng quốc tế (ví dụ +84 909 123 456) hoặc link wa.me"
+" của nút WhatsApp nổi. Để trống: không hiện nút WhatsApp."
 
 #. module: fur_theme
-msgid "Phone number or zalo.me link of a second floating Zalo button (the number itself is not shown)."
-msgstr "Số điện thoại hoặc link zalo.me của nút Zalo nổi thứ hai (không hiển thị số)."
+#: model:ir.model.fields,help:fur_theme.field_website__fur_zalo_2
+msgid ""
+"Phone number or zalo.me link of a second floating Zalo button (the number "
+"itself is not shown)."
+msgstr ""
+"Số điện thoại hoặc link zalo.me của nút Zalo nổi thứ hai (không hiển thị "
+"số)."
 
 #. module: fur_theme
-msgid "Phone number or zalo.me link of the floating Zalo button. Empty: no Zalo button."
-msgstr "Số điện thoại hoặc link zalo.me của nút Zalo nổi. Để trống: không hiện nút Zalo."
+#: model:ir.model.fields,help:fur_theme.field_website__fur_zalo
+msgid ""
+"Phone number or zalo.me link of the floating Zalo button. Empty: no Zalo "
+"button."
+msgstr ""
+"Số điện thoại hoặc link zalo.me của nút Zalo nổi. Để trống: không hiện nút "
+"Zalo."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Place order"
 msgstr "Thanh toán"
 
 #. module: fur_theme
-msgid "Please check the goods before signing the delivery note, and tell us straight away about any damage so that we can replace the item."
-msgstr "Quý khách vui lòng kiểm tra hàng trước khi ký nhận và báo ngay cho chúng tôi nếu có hư hỏng để được đổi sản phẩm."
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Please check the goods before signing the delivery note, and tell us "
+"straight away about any damage so that we can replace the item."
+msgstr ""
+"Quý khách vui lòng kiểm tra hàng trước khi ký nhận và báo ngay cho chúng tôi"
+" nếu có hư hỏng để được đổi sản phẩm."
 
 #. module: fur_theme
 #. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please choose a payment method."
 msgstr "Vui lòng chọn hình thức thanh toán."
 
 #. module: fur_theme
 #. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please enter a valid email address."
 msgstr "Email không hợp lệ."
 
 #. module: fur_theme
 #. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please enter a valid phone number."
 msgstr "Số điện thoại không hợp lệ."
 
 #. module: fur_theme
 #. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please enter your delivery address."
 msgstr "Vui lòng nhập địa chỉ giao hàng."
 
 #. module: fur_theme
 #. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please enter your full name."
 msgstr "Vui lòng nhập họ tên."
 
 #. module: fur_theme
-msgid "Please make sure the room is accessible and the furniture can go through doors and stairways."
-msgstr "Quý khách vui lòng đảm bảo lối vào phòng thông thoáng và đồ nội thất đi qua được cửa, cầu thang."
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+msgid ""
+"Please make sure the room is accessible and the furniture can go through "
+"doors and stairways."
+msgstr ""
+"Quý khách vui lòng đảm bảo lối vào phòng thông thoáng và đồ nội thất đi qua "
+"được cửa, cầu thang."
 
 #. module: fur_theme
-msgid "Please transfer the order amount using the details below. We will call you to confirm the order as soon as the payment is received."
-msgstr "Quý khách vui lòng chuyển khoản theo thông tin bên dưới. Nhân viên sẽ gọi điện xác nhận đơn hàng ngay khi nhận được thanh toán."
+#: model_terms:payment.provider,pending_msg:fur_theme.payment_provider_wire_transfer
+msgid ""
+"Please transfer the order amount using the details below. We will call you "
+"to confirm the order as soon as the payment is received."
+msgstr ""
+"Quý khách vui lòng chuyển khoản theo thông tin bên dưới. Nhân viên sẽ gọi "
+"điện xác nhận đơn hàng ngay khi nhận được thanh toán."
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
 msgid "Polyester felt"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
 msgid "Polypropylene shell, teal"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
 msgid "Polypropylene, mustard"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
 msgid "Powder-coated steel"
 msgstr ""
 
 #. module: fur_theme
-msgid "Powder-coated steel, sintered stone top"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
 msgid "Price:"
 msgstr "Giá:"
 
 #. module: fur_theme
+#: model:ir.model,name:fur_theme.model_product_template
 msgid "Product"
 msgstr "Sản phẩm"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Product <span class=\"o_fur_accent\">categories</span>"
 msgstr "DANH MỤC <span class=\"o_fur_accent\">SẢN PHẨM</span>"
 
 #. module: fur_theme
-msgid "Product Name"
-msgstr "Tên sản phẩm"
-
-#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Product categories"
 msgstr "Danh mục sản phẩm"
 
 #. module: fur_theme
-msgid "Product category (inventory, accounting) copied from this website category and given to its products."
-msgstr "Danh mục sản phẩm (kho, kế toán) sao chép từ danh mục website này và gán cho các sản phẩm của nó."
+#: model:ir.model.fields,help:fur_theme.field_product_public_category__fur_product_categ_id
+msgid ""
+"Product category (inventory, accounting) copied from this website category "
+"and given to its products."
+msgstr ""
+"Danh mục sản phẩm (kho, kế toán) sao chép từ danh mục website này và gán cho"
+" các sản phẩm của nó."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
 msgid "Product information"
 msgstr "Thông tin sản phẩm"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+#: model_terms:ir.ui.view,arch_db:fur_theme.products
 msgid "Products"
 msgstr "Sản phẩm"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Products <span class=\"o_fur_accent\">used</span>"
 msgstr "SẢN PHẨM <span class=\"o_fur_accent\">SỬ DỤNG</span>"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__product_tmpl_ids
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
 msgid "Products Used"
 msgstr "Sản phẩm sử dụng"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "Products in stock: delivered within 1 to 3 working days."
 msgstr "Sản phẩm có sẵn: giao trong 1 đến 3 ngày làm việc."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
 msgid "Project"
 msgstr "Dự án"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Project details"
 msgstr "Thông tin dự án"
 
 #. module: fur_theme
+#: model:ir.actions.act_window,name:fur_theme.fur_project_action
+#: model:ir.ui.menu,name:fur_theme.menu_fur_projects
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_list
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
+#: model_terms:ir.ui.view,arch_db:fur_theme.projects_page
 msgid "Projects"
 msgstr "Dự án"
 
 #. module: fur_theme
-msgid "Projects appear on the /projects page and on the homepage of the Fur theme."
+#: model_terms:ir.actions.act_window,help:fur_theme.fur_project_action
+msgid ""
+"Projects appear on the /projects page and on the homepage of the Fur theme."
 msgstr "Dự án hiển thị trên trang /projects và trang chủ của theme Fur."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
 msgid "Published"
 msgstr "Đã công bố"
 
 #. module: fur_theme
-msgid "Published date"
-msgstr "Ngày đăng"
-
-#. module: fur_theme
-msgid "Raises your screen to eye level and frees space for the keyboard."
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
 msgid "Receiving your order"
 msgstr "Nhận hàng"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_storage_box
+msgid "Recycled plastic, blue"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
 msgid "Related <span class=\"o_fur_accent\">products</span>"
 msgstr "SẢN PHẨM <span class=\"o_fur_accent\">LIÊN QUAN</span>"
 
 #. module: fur_theme
-msgid "Restrict to a specific website."
-msgstr "Giới hạn cho một website cụ thể."
+#: model:ir.model.fields,help:fur_theme.field_fur_project__website_id
+msgid "Restrict publishing to this website."
+msgstr "Giới hạn xuất bản cho trang web này."
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_lamp_glass
 msgid "Ribbed Glass Table Lamp"
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,name:fur_theme.project_apartment
 msgid "Riverside Apartment"
 msgstr ""
 
 #. module: fur_theme
-msgid "Round Garden Dining Set"
-msgstr ""
-
-#. module: fur_theme
-msgid "Round table with a stone-look top and four woven armchairs, at home indoors or on the terrace."
-msgstr ""
-
-#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__is_seo_optimized
 msgid "SEO optimized"
 msgstr "Đã tối ưu SEO"
 
 #. module: fur_theme
+#: model:ir.model,name:fur_theme.model_sale_order
 msgid "Sales Order"
 msgstr "Đơn bán hàng"
 
 #. module: fur_theme
-msgid "Scandinavian lounge sofa with an exposed oak frame and removable beige cushions."
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Search"
 msgstr "Tìm kiếm"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Search furniture"
 msgstr "Tìm sản phẩm nội thất"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Search furniture..."
 msgstr "Tìm sản phẩm nội thất..."
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
 msgid "Seat"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
 msgid "Seat height"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Seats"
 msgstr ""
 
 #. module: fur_theme
-msgid "Second line of the title on the homepage card, e.g. 'Tech startup, Austin'."
-msgstr "Dòng thứ hai của tiêu đề trên thẻ ở trang chủ, ví dụ 'Công ty công nghệ tại TP.HCM'."
+#: model:ir.model.fields,help:fur_theme.field_fur_project__subtitle
+msgid ""
+"Second line of the title on the homepage card, e.g. 'Tech startup, Austin'."
+msgstr ""
+"Dòng thứ hai của tiêu đề trên thẻ ở trang chủ, ví dụ 'Công ty công nghệ tại "
+"TP.HCM'."
 
 #. module: fur_theme
-msgid "Second tab of the product page. Can also be edited on the page with the website builder."
-msgstr "Tab thứ hai của trang sản phẩm. Có thể sửa trực tiếp trên trang bằng trình dựng website."
+#: model:ir.model.fields,help:fur_theme.field_website__fur_buy_guide
+msgid ""
+"Second tab of the product page. Can also be edited on the page with the "
+"website builder."
+msgstr ""
+"Tab thứ hai của trang sản phẩm. Có thể sửa trực tiếp trên trang bằng trình "
+"dựng website."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "See all"
 msgstr "Xem tất cả"
 
 #. module: fur_theme
 #. odoo-python
-#: code:addons/fur_theme/controllers/shop.py
+#: code:addons/fur_theme/controllers/shop.py:0
 #, python-format
 msgid "See all %(count)s results"
 msgstr "Xem tất cả %(count)s kết quả"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__seo_name
 msgid "Seo name"
 msgstr "Tên SEO"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__sequence
 msgid "Sequence"
 msgstr "Trình tự"
 
 #. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_coworking
 msgid "Shared offices, Berlin"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
 msgid "Shell"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_dining_chair_teal
 msgid "Shell Dining Chair, Teal"
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,summary:fur_theme.project_cafe
+msgid ""
+"Shell chairs, trestle tables and warm lighting for a busy neighbourhood "
+"café."
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
 msgid "Shop"
 msgstr "Cửa hàng"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__fur_show_on_home
 msgid "Show on Homepage"
 msgstr "Hiển thị trên trang chủ"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Show sub-categories"
 msgstr "Xem danh mục con"
 
 #. module: fur_theme
-msgid "Show this category in the 'Product categories' grid of the Fur homepage."
+#: model:ir.model.fields,help:fur_theme.field_product_public_category__fur_show_on_home
+msgid ""
+"Show this category in the 'Product categories' grid of the Fur homepage."
 msgstr "Hiển thị danh mục này trong lưới 'Danh mục sản phẩm' ở trang chủ Fur."
 
 #. module: fur_theme
-msgid "Show this product in the 'Featured products' section of the Fur homepage."
+#: model:ir.model.fields,help:fur_theme.field_product_product__fur_featured
+#: model:ir.model.fields,help:fur_theme.field_product_template__fur_featured
+msgid ""
+"Show this product in the 'Featured products' section of the Fur homepage."
 msgstr "Hiển thị sản phẩm này trong mục 'Sản phẩm nổi bật' ở trang chủ Fur."
 
 #. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_fur_project__is_featured
 msgid "Show this project in the 'Featured projects' section of the homepage."
 msgstr "Hiển thị dự án này trong mục 'Dự án tiêu biểu' ở trang chủ."
 
 #. module: fur_theme
+#: model_terms:ir.actions.act_window,help:fur_theme.fur_project_action
 msgid "Showcase your first interior project"
 msgstr "Giới thiệu dự án nội thất đầu tiên của bạn"
 
 #. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_opening_hours
 msgid "Shown in the footer."
 msgstr "Hiển thị ở chân trang."
 
 #. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_website__fur_hotline
 msgid "Shown in the header menu and footer."
 msgstr "Hiển thị trên đầu trang và chân trang."
 
 #. module: fur_theme
-msgid "Shown next to the logo when the website has none, in the homepage slides and on the thank-you page. Empty: the website name."
-msgstr "Hiển thị thay logo khi website chưa có logo, trên slide trang chủ và trang cảm ơn. Để trống: dùng tên website."
+#: model:ir.model.fields,help:fur_theme.field_website__fur_brand_name
+msgid ""
+"Shown next to the logo when the website has none, in the homepage slides and"
+" on the thank-you page. Empty: the website name."
+msgstr ""
+"Hiển thị thay logo khi website chưa có logo, trên slide trang chủ và trang "
+"cảm ơn. Để trống: dùng tên website."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Sign in"
 msgstr "Đăng nhập"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.title_signup
 msgid "Sign up"
 msgstr "Đăng ký"
 
 #. module: fur_theme
-msgid "Simple, versatile cabinet in natural wood for living rooms, entrances or offices."
+#: model:product.template,description_sale:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+msgid ""
+"Simple, versatile cabinet in natural wood for living rooms, entrances or "
+"offices."
 msgstr ""
 
 #. module: fur_theme
-msgid "Sixty hot desks, four acoustic booths and a lounge with sofas make this space work for both focus and community."
+#: model_terms:fur.project,description:fur_theme.project_coworking
+msgid ""
+"Sixty hot desks, four acoustic booths and a lounge with sofas make this "
+"space work for both focus and community."
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Slide 1"
 msgstr "Ảnh 1"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Slide 2"
 msgstr "Ảnh 2"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Slide 3"
 msgstr "Ảnh 3"
 
 #. module: fur_theme
+#: model:product.public.category,name:fur_theme.categ_sofas
 msgid "Sofas"
 msgstr ""
 
 #. module: fur_theme
-msgid "Soft aniline leather in a warm camel tone on a slim metal base: a sofa that ages beautifully."
-msgstr ""
-
-#. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_basket
 msgid "Soft felt basket for blankets, magazines or toys."
 msgstr ""
 
 #. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_tech_office
 msgid "Software company, Austin"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 msgid "Solid beech"
 msgstr ""
 
 #. module: fur_theme
-msgid "Solid beech, woven paper cord seat"
-msgstr ""
-
-#. module: fur_theme
-msgid "Solid oak"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Solid oak, brass-finish feet"
 msgstr ""
 
 #. module: fur_theme
-msgid "Solid oak, oiled"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_basket
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+#: model_terms:product.template,website_description:fur_theme.product_booth
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak_writing
+#: model_terms:product.template,website_description:fur_theme.product_desk_standing
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+#: model_terms:product.template,website_description:fur_theme.product_divider
+#: model_terms:product.template,website_description:fur_theme.product_flipchart
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_glass
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
+#: model_terms:product.template,website_description:fur_theme.product_storage_box
 msgid "Specifications"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_task
 msgid "Steel, 5 castors"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bin_pedal
+msgid "Steel, anthracite"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+msgid "Steel, black"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+msgid "Steel, white"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_black
+#: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
+#: model_terms:product.template,website_description:fur_theme.product_chest_oak
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_black
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
 msgid "Storage"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_storage_box
+msgid "Storage Box, Blue"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__subtitle
 msgid "Subtitle"
 msgstr "Dòng phụ"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__summary
 msgid "Summary"
 msgstr "Tóm tắt"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.checkout_layout
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
 msgid "Support"
 msgstr "Hỗ trợ"
 
 #. module: fur_theme
-msgid "Synchro tilt"
-msgstr ""
-
-#. module: fur_theme
-msgid "Table"
-msgstr ""
-
-#. module: fur_theme
+#: model:product.template,name:fur_theme.product_chair_task
 msgid "Task Chair, Mustard"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_cafe
+msgid ""
+"Teal shell chairs and white trestle tables give the café a relaxed, timeless"
+" feel; ribbed glass lamps finish the look."
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,name:fur_theme.project_tech_office
 msgid "Tech Startup Headquarters"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
 msgid "Terms"
 msgstr "Điều khoản"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.confirmation
 msgid "Thank you for shopping at"
 msgstr "Cảm ơn bạn đã mua sắm tại"
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_lamp_desk
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
 msgid "The adjustable architect lamp in matte black, with a weighted base."
 msgstr ""
 
 #. module: fur_theme
-msgid "The bistro classic: a cross-back chair in solid beech with a woven seat."
+#: model:ir.model.fields,help:fur_theme.field_fur_project__website_url
+msgid "The full URL to access the document through the website."
+msgstr "URL đầy đủ để truy cập tài liệu qua trang web."
+
+#. module: fur_theme
+#: model_terms:fur.project,description:fur_theme.project_meeting_room
+msgid ""
+"The new boardroom seats twelve around a dark oak table with power and video "
+"connections in the top."
 msgstr ""
 
 #. module: fur_theme
-msgid "The full absolute URL to access the document through the website."
-msgstr "URL tuyệt đối để truy cập tài liệu qua website."
-
-#. module: fur_theme
-msgid "The full relative URL to access the document through the website."
-msgstr "URL tương đối để truy cập tài liệu qua website."
-
-#. module: fur_theme
-msgid "The new boardroom seats twelve around a dark oak table with power and video connections in the top."
+#: model:product.template,description_sale:fur_theme.product_dining_table_white
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+msgid ""
+"The same trestle table with a warm white top and light steel legs, bright "
+"and easy to clean."
 msgstr ""
 
 #. module: fur_theme
-msgid "The same tailored silhouette in rich cognac leather, for a classic library look."
-msgstr ""
+#: model:ir.model.fields,help:fur_theme.field_product_public_category__website_url
+msgid "Shop page of the category."
+msgstr "Trang cửa hàng của danh mục."
 
 #. module: fur_theme
+#: model:fur.project,subtitle:fur_theme.project_apartment
 msgid "Three-bedroom flat, Lisbon"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,description_sale:fur_theme.product_pedestal_wood
+#: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
 msgid "Three-drawer pedestal on castors that slides under any desk."
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+#: model_terms:product.template,website_description:fur_theme.product_desk_frame
+#: model_terms:product.template,website_description:fur_theme.product_desk_oak
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_black
+#: model_terms:product.template,website_description:fur_theme.product_dining_table_white
+msgid "Top"
+msgstr ""
+
+#. module: fur_theme
+#: model:fur.project,location:fur_theme.project_cafe
 msgid "Toronto, Canada"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__fur_project__project_type__house
 msgid "Townhouse & Villa"
 msgstr "Nhà phố & biệt thự"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.footer
 msgid "Track my order"
 msgstr "Tra cứu đơn hàng"
 
 #. module: fur_theme
-msgid "Transfer the order amount to our bank account: the account details and the payment reference are shown as soon as the order is placed."
-msgstr "Quý khách chuyển khoản số tiền của đơn hàng vào tài khoản ngân hàng của công ty: thông tin tài khoản và nội dung chuyển khoản hiển thị ngay sau khi đặt hàng."
+#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_wire_transfer
+msgid ""
+"Transfer the order amount to our bank account: the account details and the "
+"payment reference are shown as soon as the order is placed."
+msgstr ""
+"Quý khách chuyển khoản số tiền của đơn hàng vào tài khoản ngân hàng của công"
+" ty: thông tin tài khoản và nội dung chuyển khoản hiển thị ngay sau khi đặt "
+"hàng."
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_dining_table_black
+msgid "Trestle Dining Table, Black"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_dining_table_white
+msgid "Trestle Dining Table, White"
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,name:fur_theme.product_chest_oak
 msgid "Two-Drawer Oak Chest"
 msgstr ""
 
 #. module: fur_theme
-msgid "Two-door cabinet with a herringbone oak front and splayed legs: storage that doubles as a statement piece."
+#: model:product.template,description_sale:fur_theme.product_sideboard_oak
+#: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
+msgid ""
+"Two-door cabinet with a herringbone oak front and splayed legs: storage that"
+" doubles as a statement piece."
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__project_type
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Type"
 msgstr "Loại hình"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_lamp_desk
 msgid "Up to 65 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
+#: model_terms:product.template,website_description:fur_theme.product_sofa_navy
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Upholstery"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_enabled
 msgid "Use Fur Theme"
 msgstr "Dùng giao diện Fur"
 
 #. module: fur_theme
-msgid "Use the Fur header, footer, homepage and shop layout on this website. Untick it to give this website back Odoo's own layout."
-msgstr "Dùng đầu trang, chân trang, trang chủ và bố cục cửa hàng Fur cho website này. Bỏ chọn để trả lại bố cục gốc của Odoo."
-
-#. module: fur_theme
-msgid "Vegan leather"
+#: model:ir.model.fields,help:fur_theme.field_website__fur_enabled
+msgid ""
+"Use the Fur header, footer, homepage and shop layout on this website. Untick"
+" it to give this website back Odoo's own layout."
 msgstr ""
+"Dùng đầu trang, chân trang, trang chủ và bố cục cửa hàng Fur cho website "
+"này. Bỏ chọn để trả lại bố cục gốc của Odoo."
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_sofa_teal
 msgid "Velvet Two-Seat Sofa"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Velvet, teal"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_card
 msgid "View product"
 msgstr "Xem sản phẩm"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "View products"
 msgstr "Xem sản phẩm"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_published
 msgid "Visible on current website"
 msgstr "Hiển thị trên website hiện tại"
 
 #. module: fur_theme
-msgid "Walnut"
-msgstr ""
-
-#. module: fur_theme
-msgid "Walnut Monitor Stand"
-msgstr ""
-
-#. module: fur_theme
-msgid "Walnut Writing Desk"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_corner
 msgid "Walnut melamine, black steel frame"
 msgstr ""
 
 #. module: fur_theme
-msgid "Walnut veneer"
-msgstr ""
-
-#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Warm and<br/>refined <span class=\"o_fur_accent\">bedrooms</span>"
 msgstr "Phòng ngủ<br/>ấm áp <span class=\"o_fur_accent\">tinh tế</span>"
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_chair_executive
 msgid "Warranty"
 msgstr ""
 
 #. module: fur_theme
-msgid "We designed and fitted out 680 m² in six weeks: bench desks in white and steel, acoustic booths for calls and a ten-seat boardroom in dark oak."
+#: model_terms:fur.project,description:fur_theme.project_tech_office
+msgid ""
+"We designed and fitted out 680 m² in six weeks: bench desks in white and "
+"steel, acoustic booths for calls and a ten-seat boardroom in dark oak."
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model,name:fur_theme.model_website
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_id
 msgid "Website"
 msgstr "Trang web"
 
 #. module: fur_theme
-msgid "Website Absolute URL"
-msgstr "URL tuyệt đối của website"
-
-#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_product_public_category
 msgid "Website Product Category"
 msgstr "Danh mục sản phẩm trên trang web"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_url
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__website_url
 msgid "Website URL"
 msgstr "URL website"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_meta_description
 msgid "Website meta description"
 msgstr "Mô tả meta website"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_meta_keywords
 msgid "Website meta keywords"
 msgstr "Từ khóa meta website"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_meta_title
 msgid "Website meta title"
 msgstr "Tiêu đề meta website"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
 msgid "Website name"
 msgstr "Tên website"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_meta_og_img
 msgid "Website opengraph image"
 msgstr "Ảnh opengraph website"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_whatsapp
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_white
 msgid "White Desk with Drawer"
 msgstr ""
 
 #. module: fur_theme
+#: model:product.template,name:fur_theme.product_desk_frame
+msgid "White Frame Desk"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_desk_white
 msgid "White lacquered MDF, steel frame"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_bench_desk
 msgid "White melamine, steel frame"
 msgstr ""
 
 #. module: fur_theme
-msgid "Woven fabric, beige (removable covers)"
+#: model_terms:product.template,website_description:fur_theme.product_bench_black
+msgid "Workstations"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_sale_order__fur_customer_note
 msgid "Written by the customer on the Fur cart page."
 msgstr "Khách hàng ghi ở trang giỏ hàng Fur."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.cart
 msgid "Your cart"
 msgstr "Giỏ hàng của bạn"
 
 #. module: fur_theme
-msgid "Your order has been received. Please pay the delivery staff when you receive the goods; we will call you to confirm the delivery time."
-msgstr "Đơn hàng của quý khách đã được tiếp nhận. Quý khách thanh toán cho nhân viên giao hàng khi nhận hàng; chúng tôi sẽ gọi điện xác nhận thời gian giao hàng."
+#: model_terms:payment.provider,pending_msg:fur_theme.payment_provider_cash_on_delivery
+msgid ""
+"Your order has been received. Please pay the delivery staff when you receive"
+" the goods; we will call you to confirm the delivery time."
+msgstr ""
+"Đơn hàng của quý khách đã được tiếp nhận. Quý khách thanh toán cho nhân viên"
+" giao hàng khi nhận hàng; chúng tôi sẽ gọi điện xác nhận thời gian giao "
+"hàng."
 
 #. module: fur_theme
+#: model_terms:payment.provider,auth_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.provider,auth_msg:fur_theme.payment_provider_wire_transfer
 msgid "Your payment has been authorized."
 msgstr "Thanh toán của quý khách đã được ủy quyền."
 
 #. module: fur_theme
+#: model_terms:payment.provider,cancel_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.provider,cancel_msg:fur_theme.payment_provider_wire_transfer
 msgid "Your payment has been cancelled."
 msgstr "Thanh toán của quý khách đã bị hủy."
 
 #. module: fur_theme
-msgid "Your payment has been processed."
-msgstr "Thanh toán của quý khách đã được xử lý."
+#: model_terms:payment.provider,done_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.provider,done_msg:fur_theme.payment_provider_wire_transfer
+msgid "Your payment has been successfully processed."
+msgstr "Thanh toán của bạn đã được xử lý thành công."
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_zalo
+#: model_terms:ir.ui.view,arch_db:fur_theme.contact_float
 msgid "Zalo"
 msgstr "Zalo"
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_website__fur_zalo_2
 msgid "Zalo (2nd)"
 msgstr "Zalo (số 2)"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.page_banner
 msgid "breadcrumb"
 msgstr "breadcrumb"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
 msgid "e.g. Công nghệ tại TP.HCM"
 msgstr "VD: Công nghệ tại TP.HCM"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_form
 msgid "e.g. Văn phòng công ty"
 msgstr "VD: Văn phòng công ty"
 
 #. module: fur_theme
-msgid "has been received. We will call you to confirm it and deliver as soon as possible."
-msgstr "đã được ghi nhận. Chúng tôi sẽ liên hệ xác nhận và giao hàng sớm nhất."
+#: model_terms:ir.ui.view,arch_db:fur_theme.confirmation
+msgid ""
+"has been received. We will call you to confirm it and deliver as soon as "
+"possible."
+msgstr ""
+"đã được ghi nhận. Chúng tôi sẽ liên hệ xác nhận và giao hàng sớm nhất."
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
 msgid "https://m.me/yourpage"
 msgstr "https://m.me/yourpage"
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "m²"
 msgstr "m²"
 
 #. module: fur_theme
-msgid "Ø 10 x 12 cm"
+#: model_terms:product.template,website_description:fur_theme.product_bin_steel
+msgid "Ø 30 x 34 cm"
 msgstr ""
-
-#. module: fur_theme
-msgid "Ø 120 x 75 cm"
-msgstr ""
-

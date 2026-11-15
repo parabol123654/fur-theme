@@ -1,6 +1,8 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
 from odoo import api, fields, models
 
+from odoo.addons.http_routing.models.ir_http import slug
+
 
 class ProductPublicCategory(models.Model):
     _inherit = "product.public.category"
@@ -18,6 +20,17 @@ class ProductPublicCategory(models.Model):
         ondelete="set null",
         copy=False,
     )
+
+    website_url = fields.Char(
+        string="Website URL",
+        compute="_compute_website_url",
+        help="Shop page of the category.",
+    )
+
+    @api.depends("name")
+    def _compute_website_url(self):
+        for category in self:
+            category.website_url = f"/shop/category/{slug(category)}" if category.id else False
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -37,6 +50,10 @@ class ProductPublicCategory(models.Model):
         ProductCategory = self.env["product.category"].sudo()
         categories = self.sudo() or self.sudo().search([])
         languages = [code for code, _name in self.env["res.lang"].get_installed()]
+        # Odoo 16 does not translate product category names: they take the
+        # name in the main language of the (first) website
+        translated = bool(ProductCategory._fields["name"].translate)
+        main_lang = self.env["website"].sudo().search([], limit=1).default_lang_id.code or "en_US"
         # parents first
         for categ in categories.sorted(lambda c: (len(c.parent_path or ""), c.sequence, c.id)):
             parent = categ.parent_id.fur_product_categ_id
@@ -48,6 +65,11 @@ class ProductPublicCategory(models.Model):
                 categ.with_context(lang="en_US").fur_product_categ_id = target
             elif target.parent_id != parent:
                 target.parent_id = parent
+            if not translated:
+                name = categ.with_context(lang=main_lang).name
+                if target.name != name:
+                    target.name = name
+                continue
             names = {lang: categ.with_context(lang=lang).name for lang in languages}
             if any(target.with_context(lang=lang).name != name for lang, name in names.items()):
                 target.update_field_translations("name", names)

@@ -1,5 +1,6 @@
-import { Interaction } from "@web/public/interaction";
-import { registry } from "@web/core/registry";
+/** @odoo-module **/
+
+import publicWidget from "web.public.widget";
 
 /**
  * Sticky buy box of the Fur product page (template fur_theme.product_sticky_buy).
@@ -8,40 +9,56 @@ import { registry } from "@web/core/registry";
  * product form, and its buttons click the main "Add to cart" / "Buy now", so
  * website_sale keeps doing the combination, price and cart work.
  */
-export class FurStickyBuy extends Interaction {
-    static selector = ".o_fur_sticky_buy";
-    dynamicContent = {
-        ".o_fur_sticky_swatch": { "t-on-click": this.onSwatchClick },
-        "[data-fur-action]": { "t-on-click": this.onActionClick },
-        _document: { "t-on-change": this.onMainFormChange },
-    };
+publicWidget.registry.FurStickyBuy = publicWidget.Widget.extend({
+    selector: ".o_fur_sticky_buy",
+    events: {
+        "click .o_fur_sticky_swatch": "_onSwatchClick",
+        "click [data-fur-action]": "_onActionClick",
+    },
+
+    /**
+     * @override
+     */
+    start() {
+        this._onMainFormChange = this._onMainFormChange.bind(this);
+        document.addEventListener("change", this._onMainFormChange);
+        return this._super(...arguments);
+    },
+    /**
+     * @override
+     */
+    destroy() {
+        document.removeEventListener("change", this._onMainFormChange);
+        this._super(...arguments);
+    },
 
     get mainForm() {
         return document.querySelector("#product_details");
-    }
+    },
 
-    onSwatchClick(ev) {
+    _onSwatchClick(ev) {
         const valueId = ev.currentTarget.dataset.valueId;
         const input = this.mainForm?.querySelector(`input.js_variant_change[value="${valueId}"]`);
         if (input && !input.checked) {
             input.click(); // fires the change website_sale listens to
         }
-        this.syncFromMainForm();
-    }
+        this._syncFromMainForm();
+    },
 
-    onActionClick(ev) {
+    _onActionClick(ev) {
         const action = ev.currentTarget.dataset.furAction;
-        this.mainForm?.querySelector(`button[name="add_to_cart"][data-action="${action}"]`)?.click();
-    }
+        const selector = action === "buy_now" ? ".o_we_buy_now" : "#add_to_cart";
+        this.mainForm?.querySelector(selector)?.click();
+    },
 
-    onMainFormChange(ev) {
+    _onMainFormChange(ev) {
         if (ev.target.matches?.("#product_details input.js_variant_change")) {
-            this.syncFromMainForm();
+            this._syncFromMainForm();
         }
-    }
+    },
 
     /** Highlight the swatches of the values checked in the main form. */
-    syncFromMainForm() {
+    _syncFromMainForm() {
         const checked = new Set(
             [...(this.mainForm?.querySelectorAll("input.js_variant_change:checked") || [])].map((i) => i.value)
         );
@@ -59,7 +76,7 @@ export class FurStickyBuy extends Interaction {
                 label.textContent = names.join(", ");
             }
         }
-    }
-}
+    },
+});
 
-registry.category("public.interactions").add("fur_theme.sticky_buy", FurStickyBuy);
+export default publicWidget.registry.FurStickyBuy;

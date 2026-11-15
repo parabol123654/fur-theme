@@ -3,8 +3,8 @@
 
 <template id="product_perks" name="Fur Product Perks">
     <ul class="o_fur_perks list-unstyled">
-        <li><t t-call="fur_theme.icon" icon="'shield'"/><span><b>Long-term warranty</b>Up to 24 months</span></li>
-        <li><a href="/delivery-installation"><t t-call="fur_theme.icon" icon="'gear'"/><span><b>On-site assembly</b>By our professional team</span></a></li>
+        <li><t t-call="fur_theme.icon"><t t-set="icon" t-value="'shield'"/></t><span><b>Long-term warranty</b>Up to 24 months</span></li>
+        <li><a href="/delivery-installation"><t t-call="fur_theme.icon"><t t-set="icon" t-value="'gear'"/></t><span><b>On-site assembly</b>By our professional team</span></a></li>
     </ul>
     <t t-call="fur_theme.product_contact"/>
 </template>
@@ -15,8 +15,8 @@
     <t t-set="fur_zalo_url" t-value="website._fur_zalo_url()"/>
     <t t-set="fur_whatsapp_url" t-value="website._fur_whatsapp_url()"/>
     <div t-if="fur_tel_url or fur_zalo_url or fur_whatsapp_url" t-attf-class="o_fur_pdp_contact #{_contact_class or ''}">
-        <a t-if="fur_tel_url" t-att-href="fur_tel_url" class="o_fur_hotline_cta">
-            <span class="o_fur_service_icon"><t t-call="fur_theme.icon" icon="'headset'"/></span>
+        <a t-if="fur_tel_url" t-att-href="fur_tel_url" data-no-post-process="1" class="o_fur_hotline_cta">
+            <span class="o_fur_service_icon"><t t-call="fur_theme.icon"><t t-set="icon" t-value="'headset'"/></t></span>
             <span>Free consultation<b t-out="website._fur_hotline()"/></span>
         </a>
         <a t-if="fur_whatsapp_url" t-att-href="fur_whatsapp_url" target="_blank" rel="noopener" class="o_fur_whatsapp_cta">
@@ -33,10 +33,10 @@
 </template>
 
 <!-- Title block: short name, reference + category line, short description in a box -->
-<template id="product_title" inherit_id="website_sale.product_title" name="Fur Product Title">
+<template id="product_title" inherit_id="website_sale.product" name="Fur Product Title">
     <xpath expr="//h1[@t-field='product.name']" position="replace">
         <t t-if="website.fur_enabled">
-            <h1 class="h3 o_fur_pdp_title" t-out="product._fur_short_name()"/>
+            <h1 itemprop="name" class="o_fur_pdp_title" t-out="product._fur_short_name()"/>
             <ul class="o_fur_pdp_meta list-unstyled">
                 <li t-if="product.default_code">Code: <b t-out="product.default_code"/></li>
                 <t t-set="fur_categ" t-value="product.public_categ_ids.sorted(lambda c: len(c.parent_path or ''), reverse=True)[:1]"/>
@@ -46,12 +46,11 @@
                 </li>
             </ul>
         </t>
-        <h1 t-else=""
-            t-attf-class="h3 {{'mb-3' if not product.description_ecommerce and not is_view_active('website_sale.product_comment') else ''}}"
-            t-field="product.name">Product Name</h1>
+        <t t-else="">$0</t>
     </xpath>
-    <xpath expr="//div[@t-field='product.description_ecommerce']" position="attributes">
-        <attribute name="t-attf-class" add="{{'o_fur_pdp_short' if website.fur_enabled and not is_html_empty(product.description_ecommerce) else ''}}" separator=" "/>
+    <!-- Odoo 16's short description of the product page is the sales description -->
+    <xpath expr="//p[@t-field='product.description_sale']" position="attributes">
+        <attribute name="t-attf-class" add="{{'o_fur_pdp_short' if website.fur_enabled and product.description_sale else ''}}" separator=" "/>
     </xpath>
 </template>
 
@@ -67,52 +66,52 @@
                 <div t-if="product.default_code" class="o_fur_product_code">Code: <t t-out="product.default_code"/></div>
             </div>
         </div>
-        <div t-if="not combination_info['hide_price']" class="o_fur_sticky_price">
+        <div t-if="not combination_info['prevent_zero_price_sale']" class="o_fur_sticky_price">
             <span class="o_fur_sticky_price_new" t-out="combination_info['price']"
                   t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
             <del t-if="combination_info.get('compare_list_price') and combination_info['compare_list_price'] &gt; combination_info['price']"
                  t-out="combination_info['compare_list_price']"
                  t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
         </div>
-        <t t-foreach="product.valid_product_template_attribute_line_ids.filtered(lambda l: l.attribute_id.display_type in ('image', 'color'))" t-as="ptal">
+        <t t-foreach="product.valid_product_template_attribute_line_ids.filtered(lambda l: l.attribute_id.display_type == 'color')" t-as="ptal">
             <t t-set="ptavs" t-value="ptal.product_template_value_ids._only_active()"/>
             <div t-if="len(ptavs) &gt; 1" class="o_fur_sticky_attr">
                 <div class="o_fur_sticky_attr_name">
                     <span t-field="ptal.attribute_id.name"/>:
-                    <b class="o_fur_sticky_attr_value" t-out="', '.join(ptavs.filtered(lambda v: v in combination_info['combination']).mapped('name'))"/>
+                    <b class="o_fur_sticky_attr_value" t-out="', '.join(ptavs.filtered(lambda v: v in combination).mapped('name'))"/>
                 </div>
                 <div class="o_fur_sticky_swatches">
                     <button t-foreach="ptavs" t-as="ptav" type="button"
-                            t-attf-class="o_fur_sticky_swatch #{'active' if ptav in combination_info['combination'] else ''}"
+                            t-attf-class="o_fur_sticky_swatch #{'active' if ptav in combination else ''}"
                             t-att-data-value-id="ptav.id" t-att-data-value-name="ptav.name"
                             t-att-title="ptav.name" t-att-aria-label="ptav.name"
-                            t-attf-style="#{'background-image: url(/web/image/product.template.attribute.value/%s/image)' % ptav.id if ptav.image else ('background-color: %s' % ptav.html_color if ptav.html_color else '')}"/>
+                            t-attf-style="#{'background-color: %s' % ptav.html_color if ptav.html_color else ''}"/>
                 </div>
             </div>
         </t>
         <div class="o_fur_sticky_actions">
             <button type="button" class="btn o_fur_btn_primary" data-fur-action="add_to_cart">
-                <t t-call="fur_theme.icon" icon="'cart'" icon_class="'o_fur_icon_sm'"/>
+                <t t-call="fur_theme.icon"><t t-set="icon" t-value="'cart'"/><t t-set="icon_class" t-value="'o_fur_icon_sm'"/></t>
                 <span>Add to cart</span>
             </button>
             <button type="button" class="btn o_fur_btn_navy" data-fur-action="buy_now">Buy now</button>
         </div>
-        <t t-call="fur_theme.product_contact" _contact_class="'o_fur_pdp_contact_compact'"/>
+        <t t-call="fur_theme.product_contact"><t t-set="_contact_class" t-value="'o_fur_pdp_contact_compact'"/></t>
     </div>
 </template>
 
 <template id="product" inherit_id="website_sale.product" name="Fur Product Page">
-    <xpath expr="//div[hasclass('o_wsale_product_details_content_section_price')]/t[@t-call='website_sale.product_price']" position="before">
+    <xpath expr="//div[hasclass('js_main_product')]//t[@t-call='website_sale.product_price']" position="before">
         <span t-if="website.fur_enabled" class="o_fur_price_label">Price:</span>
     </xpath>
-    <xpath expr="//div[@id='o_wsale_product_cta_section']" position="after">
-        <div t-if="website.fur_enabled" class="o_wsale_product_details_content_section o_fur_perks_section mb-4">
+    <xpath expr="//div[@id='product_attributes_simple']" position="before">
+        <div t-if="website.fur_enabled" class="o_fur_perks_section mb-4">
             <t t-call="fur_theme.product_perks"/>
         </div>
     </xpath>
     <!-- Long description (left) + sticky buy box (right) -->
     <xpath expr="//div[@id='product_full_description']" position="before">
-        <t t-set="fur_pdp_lower" t-value="website.fur_enabled and product._has_ecommerce_sellable_variants()"/>
+        <t t-set="fur_pdp_lower" t-value="website.fur_enabled and product._is_add_to_cart_possible()"/>
         <div t-attf-class="#{'container o_fur_pdp_lower' if website.fur_enabled else ''}">
             <div t-attf-class="#{'row g-4' if fur_pdp_lower else ''}">
                 <div id="o_fur_pdp_desc_col" t-attf-class="#{'col-lg-9 o_fur_pdp_desc_col' if fur_pdp_lower else ''}">
@@ -154,12 +153,11 @@
         <t t-set="fur_related" t-value="website._fur_related_products(product) if website.fur_enabled else []"/>
         <section t-if="fur_related" class="o_fur_section o_fur_related oe_website_sale o_not_editable" t-ignore="true">
             <div class="container">
-                <t t-call="fur_theme.section_title" see_all_url="product.public_categ_ids[:1].website_url or '/shop'">Related <span class="o_fur_accent">products</span></t>
+                <t t-call="fur_theme.section_title"><t t-set="see_all_url" t-value="product.public_categ_ids[:1].website_url or '/shop'"/>Related <span class="o_fur_accent">products</span></t>
                 <t t-set="prices" t-value="website._fur_product_prices(fur_related)"/>
-                <t t-set="fur_wishlist_ids" t-value="website._fur_wishlist_variant_ids()"/>
                 <div class="o_fur_product_grid">
                     <t t-foreach="fur_related" t-as="rel_product">
-                        <t t-call="fur_theme.product_card" product="rel_product"/>
+                        <t t-call="fur_theme.product_card"><t t-set="product" t-value="rel_product"/></t>
                     </t>
                 </div>
             </div>
@@ -167,10 +165,8 @@
     </xpath>
 </template>
 
-<!-- Odoo's "Specifications" table repeats the colour list of the swatches -->
-<record id="website_sale.product_attributes_body" model="ir.ui.view">
-    <field name="active" eval="False"/>
-</record>
+<!-- Odoo's "Specifications" table (website_sale_comparison in Odoo 16) repeats
+     the colour list of the swatches: see website._fur_setup_product_page. -->
 
 <!-- Buy now next to Add to cart, and the tax note under the price -->
 <record id="website_sale.product_buy_now" model="ir.ui.view">
