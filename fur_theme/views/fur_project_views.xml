@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="fur_project_view_list" model="ir.ui.view">
-        <field name="name">fur.project.list</field>
+        <field name="name">fur.project.tree</field>
         <field name="model">fur.project</field>
         <field name="arch" type="xml">
-            <list string="Projects">
+            <tree string="Projects">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="project_type"/>
@@ -13,7 +13,7 @@
                 <field name="website_id" groups="website.group_multi_website" optional="show"/>
                 <field name="is_featured" widget="boolean_toggle"/>
                 <field name="is_published" widget="boolean_toggle"/>
-            </list>
+            </tree>
         </field>
     </record>
 
@@ -22,16 +22,23 @@
         <field name="model">fur.project</field>
         <field name="arch" type="xml">
             <kanban>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="location"/>
+                <field name="project_type"/>
                 <templates>
-                    <t t-name="card" class="flex-row">
-                        <aside class="o_kanban_aside_full">
-                            <field name="image_128" widget="image" options="{'img_class': 'object-fit-cover'}"/>
-                        </aside>
-                        <main class="ms-2">
-                            <field name="name" class="fw-bold fs-5"/>
-                            <field name="location" class="text-muted"/>
-                            <field name="project_type" class="badge text-bg-light mt-1"/>
-                        </main>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click d-flex">
+                            <div class="o_kanban_image me-2">
+                                <img t-att-src="kanban_image('fur.project', 'image_128', record.id.raw_value)"
+                                     t-att-alt="record.name.value" class="o_image_64_cover"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title"><field name="name"/></strong>
+                                <div class="text-muted"><field name="location"/></div>
+                                <span class="badge text-bg-light mt-1"><field name="project_type"/></span>
+                            </div>
+                        </div>
                     </t>
                 </templates>
             </kanban>
@@ -93,7 +100,7 @@
                 <filter string="Featured" name="featured" domain="[('is_featured', '=', True)]"/>
                 <separator/>
                 <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
-                <group>
+                <group expand="0" string="Group By">
                     <filter string="Type" name="group_type" context="{'group_by': 'project_type'}"/>
                 </group>
             </search>
@@ -103,7 +110,7 @@
     <record id="fur_project_action" model="ir.actions.act_window">
         <field name="name">Projects</field>
         <field name="res_model">fur.project</field>
-        <field name="view_mode">kanban,list,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Showcase your first interior project</p>
             <p>Projects appear on the /projects page and on the homepage of the Fur theme.</p>

@@ -7,34 +7,43 @@ set to pending, then /payment/status -> /shop/payment/validate ->
 """
 import re
 
+from odoo import SUPERUSER_ID, _
 from odoo.fields import Command
 from odoo.http import request, route
 
 from odoo.addons.fur_theme.models.payment_provider import FUR_PAYMENT_MODES
-from odoo.addons.website_sale.controllers.cart import Cart
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 _EMAIL = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 _FORM_FIELDS = ("name", "phone", "email", "street", "note")
 
 
-class FurCart(Cart):
+class FurCart(WebsiteSale):
 
     def _cart_values(self, **post):
         values = super()._cart_values(**post)
-        order_sudo = request.cart
-        if self.env.website.fur_enabled and order_sudo and order_sudo.website_order_line:
+        order_sudo = request.website.sale_get_order()
+        if request.website.fur_enabled and order_sudo and order_sudo.website_order_line:
             values["fur_checkout"] = self._fur_checkout_values(order_sudo)
         return values
+
+    def _get_shop_payment_errors(self, order):
+        # An order of the one-step checkout has no delivery step: the shop
+        # calls the customer to arrange the delivery.
+        if request.website.fur_enabled and order and order.id == request.session.get("fur_checkout_order_id"):
+            return []
+        return super()._get_shop_payment_errors(order)
 
     # === HELPERS === #
 
     def _fur_payment_providers(self, order_sudo):
-        providers = self.env["payment.provider"].sudo().search([
+        providers = request.env["payment.provider"].sudo().search([
             ("code", "=", "custom"),
             ("custom_mode", "in", FUR_PAYMENT_MODES),
+            ("state", "=", "enabled"),
             ("is_published", "=", True),
             ("company_id", "=", order_sudo.company_id.id),
-            ("website_id", "in", [False, self.env.website.id]),
+            ("website_id", "in", [False, request.website.id]),
         ], order="sequence, id")
         return providers.filtered(lambda provider: provider._fur_checkout_payment_method())
 
@@ -46,7 +55,7 @@ class FurCart(Cart):
         providers = self._fur_payment_providers(order_sudo)
         if form is None:
             form = dict.fromkeys(_FORM_FIELDS, "")
-            if not order_sudo._is_anonymous_cart():
+            if not order_sudo._is_public_order():
                 shipping = order_sudo.partner_shipping_id
                 form.update({
                     "name": shipping.name or "",
@@ -68,30 +77,30 @@ class FurCart(Cart):
     def _fur_checkout_errors(self, form, provider):
         errors = {}
         if not form["name"]:
-            errors["name"] = self.env._("Please enter your full name.")
+            errors["name"] = _("Please enter your full name.")
         if not 9 <= len(re.sub(r"\D", "", form["phone"])) <= 15 or re.search(r"[^\d\s().+-]", form["phone"]):
-            errors["phone"] = self.env._("Please enter a valid phone number.")
+            errors["phone"] = _("Please enter a valid phone number.")
         if form["email"] and not _EMAIL.match(form["email"]):
-            errors["email"] = self.env._("Please enter a valid email address.")
+            errors["email"] = _("Please enter a valid email address.")
         if not form["street"]:
-            errors["street"] = self.env._("Please enter your delivery address.")
+            errors["street"] = _("Please enter your delivery address.")
         if not provider:
-            errors["provider_id"] = self.env._("Please choose a payment method.")
+            errors["provider_id"] = _("Please choose a payment method.")
         return errors
 
     def _fur_checkout_partner(self, order_sudo, form):
         """Set the customer of the cart from the form: a new contact for a
         visitor; for a signed-in customer, their own address when it matches
         (or is still empty), otherwise a new delivery address."""
-        website = self.env.website
-        PartnerSudo = self.env["res.partner"].sudo()
+        website = request.website
+        PartnerSudo = request.env["res.partner"].sudo().with_context(tracking_disable=True)
         address = {
             "name": form["name"],
             "phone": form["phone"],
             "street": form["street"],
-            "country_id": (website.company_id.country_id or self.env.ref("base.vn")).id,
+            "country_id": (website.company_id.country_id or request.env.ref("base.vn")).id,
         }
-        if order_sudo._is_anonymous_cart():
+        if order_sudo._is_public_order():
             values = {
                 **address,
                 "email": form["email"] or False,
@@ -104,10 +113,15 @@ class FurCart(Cart):
             if website.specific_user_account:
                 values["website_id"] = website.id
             partner_sudo = PartnerSudo.create(values)
-            order_sudo._update_address(
-                partner_sudo.id, {"partner_id", "partner_invoice_id", "partner_shipping_id"}
-            )
-            order_sudo.message_unsubscribe(website.partner_id.ids)
+            order_sudo.write({
+                "partner_id": partner_sudo.id,
+                "partner_invoice_id": partner_sudo.id,
+                "partner_shipping_id": partner_sudo.id,
+            })
+            # as Odoo's own address step does
+            order_sudo.message_partner_ids = [
+                Command.link(partner_sudo.id), Command.unlink(website.partner_id.id),
+            ]
             return partner_sudo
 
         customer = order_sudo.partner_id
@@ -120,22 +134,52 @@ class FurCart(Cart):
             return shipping
         if not customer.street and customer.name == form["name"]:
             customer.write({"phone": form["phone"], "street": form["street"], "country_id": address["country_id"]})
-            order_sudo._update_address(customer.id, {"partner_shipping_id"})
+            order_sudo.partner_shipping_id = customer
             return customer
         delivery = PartnerSudo.create({**address, "type": "delivery", "parent_id": customer.id})
-        order_sudo._update_address(delivery.id, {"partner_shipping_id"})
+        order_sudo.partner_shipping_id = delivery
         return delivery
 
     # === ROUTES === #
 
+    @route()
+    def checkout(self, **post):
+        # "Buy now" (Odoo 17 sends it to /shop/checkout?express=1): the cart
+        # page is the whole checkout
+        if request.website.fur_enabled and post.get("express"):
+            return request.redirect("/shop/cart")
+        return super().checkout(**post)
+
+    @route()
+    def shop_payment_validate(self, sale_order_id=None, **post):
+        # A free order of the one-step checkout (nothing to pay, no transaction):
+        # confirmed as Odoo does, which then shows the order in the portal.
+        # Odoo 17 would first raise "No shipping method is selected": the
+        # one-step checkout has no delivery step.
+        order_sudo = request.website.sale_get_order()
+        if (
+            sale_order_id is None
+            and request.website.fur_enabled
+            and order_sudo
+            and order_sudo.id == request.session.get("fur_checkout_order_id")
+            and order_sudo.state == "draft"
+            and order_sudo.order_line
+            and not order_sudo.amount_total
+            and not order_sudo.get_portal_last_transaction()
+        ):
+            order_sudo.with_context(send_email=True).with_user(SUPERUSER_ID).action_confirm()
+            request.website.sale_reset()
+            return request.redirect(order_sudo.get_portal_url())
+        return super().shop_payment_validate(sale_order_id=sale_order_id, **post)
+
     @route("/shop/fur/checkout", type="http", methods=["POST"], auth="public", website=True, sitemap=False)
     def fur_checkout(self, **post):
-        order_sudo = request.cart
-        if not self.env.website.fur_enabled or not order_sudo or not order_sudo.website_order_line:
+        order_sudo = request.website.sale_get_order()
+        if not request.website.fur_enabled or not order_sudo or not order_sudo.website_order_line:
             return request.redirect("/shop/cart")
-        # The cart step (public checkout allowed, cart ready) is the only one left.
-        if redirect := self.env["website.checkout.step"].validate_checkout_progress("/shop/address", order_sudo):
-            return request.redirect(redirect)
+        # The cart step (public checkout allowed, draft cart) is the only one left.
+        if redirection := self.checkout_redirection(order_sudo):
+            return redirection
 
         form = {fname: (post.get(fname) or "").strip() for fname in _FORM_FIELDS}
         form["provider_id"] = post.get("provider_id") or ""
@@ -143,15 +187,20 @@ class FurCart(Cart):
             lambda provider: str(provider.id) == form["provider_id"]
         )
         errors = self._fur_checkout_errors(form, provider_sudo)
-        if errors or order_sudo._has_blocking_alerts():
+        if errors or not order_sudo._is_cart_ready():
             response = self.cart()
             response.qcontext["fur_checkout"] = self._fur_checkout_values(order_sudo, form, errors)
             return response
 
+        fiscal_position = order_sudo.fiscal_position_id
         self._fur_checkout_partner(order_sudo, form)
         order_sudo.fur_customer_note = form["note"] or False
-        order_sudo._update_cart_taxes_and_prices()
+        # taxes and prices of the customer, as Odoo's address step does
+        if order_sudo.fiscal_position_id != fiscal_position:
+            order_sudo._recompute_taxes()
+        request.website.sale_get_order(update_pricelist=True)
         request.session["sale_last_order_id"] = order_sudo.id
+        request.session["fur_checkout_order_id"] = order_sudo.id
         if not order_sudo.amount_total:  # nothing to pay: /shop/payment/validate confirms it
             return request.redirect("/shop/payment/validate")
 
@@ -168,5 +217,6 @@ class FurCart(Cart):
             custom_create_values={"sale_order_ids": [Command.set([order_sudo.id])]},
         )
         request.session["__website_sale_last_tx_id"] = tx_sudo.id
-        tx_sudo._record({"reference": tx_sudo.reference})  # custom providers: set to pending
+        # custom providers: set to pending
+        tx_sudo._handle_notification_data("custom", {"reference": tx_sudo.reference})
         return request.redirect("/payment/status")

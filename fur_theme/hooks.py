@@ -3,9 +3,10 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
-# The Fur shop grid is designed for 4 cards per row (see fur_shop.scss).
+# The Fur shop grid is designed for 4 cards per row (see fur_shop.scss); it is
+# also Odoo 17's default grid, so the two hooks below change nothing there.
 FUR_SHOP_LAYOUT = {"shop_ppr": 4, "shop_ppg": 20}
-ODOO_SHOP_LAYOUT = {"shop_ppr": 3, "shop_ppg": 21}
+ODOO_SHOP_LAYOUT = {"shop_ppr": 4, "shop_ppg": 20}
 
 
 def enable_unaccent(cr):
@@ -30,13 +31,13 @@ def post_init_hook(env):
     )
     websites.write(FUR_SHOP_LAYOUT)
     enable_unaccent(env.cr)
-    env["website"].search([])._fur_setup_shop_cards()
+    env["website"]._fur_setup_product_page()
     env["payment.provider"]._fur_setup_checkout_providers()
     # inventory categories for the shop categories that already exist
     env["product.public.category"]._fur_sync_product_categories()
     env["product.template"].search([])._fur_set_product_category()
-    # products without a price show "Contact" instead of an add-to-cart button
-    env["website"].search([]).write({"prevent_sale": True, "prevent_sale_for": "zero_price"})
+    # products without a price show a "Contact Us" button instead of add-to-cart
+    env["website"].search([]).write({"prevent_zero_price_sale": True})
 
 
 def uninstall_hook(env):

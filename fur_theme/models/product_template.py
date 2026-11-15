@@ -2,9 +2,8 @@
 import re
 
 from odoo import api, fields, models
-from odoo.fields import Domain
-from odoo.tools import remove_accents
-from odoo.tools.sql import escape_like_value
+from odoo.osv import expression
+from odoo.tools import escape_psql, remove_accents
 
 
 class ProductTemplate(models.Model):
@@ -16,30 +15,40 @@ class ProductTemplate(models.Model):
     )
 
     # ------------------------------------------------------------ search
+    @api.model
     def _get_website_sale_search_fields(self, search_in_description=True):
         """The shop search looks in the product name and code only: every
         word must be in them. Odoo also looks in
-        the descriptions, categories and attribute values, which made a full
+        the descriptions, which made a full
         product name match dozens of products, and slowly."""
-        return ["name", "variants_default_code"]
+        return ["name", "default_code", "product_variant_ids.default_code"]
+
+    @api.model
+    def _search_get_detail(self, website, order, options):
+        detail = super()._search_get_detail(website, order, options)
+        detail["search_fields"] = self._get_website_sale_search_fields(options.get("displayDescription", True))
+        return detail
 
     @api.model
     def _search_build_domain(self, domain_list, search, fields, extra=None):
-        """Every word of a search must match (Odoo 20 accepts products that
-        match only part of the words of a 3+ word search); Odoo's partial
-        match is kept for a search no product fully matches (a typo)."""
+        """Every word of a search must match (as Odoo 17 does); a partial
+        match (all the words but one, but two from 5 words) is used for a 3+
+        word search no product fully matches (a typo), which Odoo 17 answers
+        with no result."""
+        domain = super()._search_build_domain(domain_list, search, fields, extra)
         words = self._fur_search_words(search)
-        if len(words) <= 2:
-            return super()._search_build_domain(domain_list, search, fields, extra)
-        domain = Domain.AND([Domain(d) for d in domain_list])
+        if len(words) <= 2 or self.search_count(domain, limit=1):
+            return domain
+        base_domain = expression.AND(domain_list)
+        matches = {}
         for word in words:
-            subdomains = [self._search_get_field_domain(field, escape_like_value(word)) for field in fields]
+            subdomains = [[(field, "ilike", escape_psql(word))] for field in fields]
             if extra:
                 subdomains.append(extra(self.env, word))
-            domain &= Domain.OR(subdomains)
-        if self.search_count(domain, limit=1):
-            return domain
-        return super()._search_build_domain(domain_list, search, fields, extra)
+            for product_id in self._search(expression.AND([base_domain, expression.OR(subdomains)])):
+                matches[product_id] = matches.get(product_id, 0) + 1
+        threshold = len(words) - (1 if len(words) < 5 else 2)
+        return [("id", "in", [product_id for product_id, count in matches.items() if count >= threshold])]
 
     @api.model
     def _fur_search_words(self, text):
@@ -47,10 +56,13 @@ class ProductTemplate(models.Model):
 
     @api.model
     def _fur_search_domain(self, text, website):
-        domain = Domain(website.sale_product_domain())
+        domains = [website.sale_product_domain()]
         for word in self._fur_search_words(text):
-            domain &= Domain("name", "ilike", word) | Domain("variants_default_code", "ilike", word)
-        return domain
+            word = escape_psql(word)
+            domains.append(expression.OR([
+                [(field, "ilike", word)] for field in self._get_website_sale_search_fields()
+            ]))
+        return expression.AND(domains)
 
     @api.model
     def _fur_search_rank(self, text):

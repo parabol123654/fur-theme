@@ -119,15 +119,23 @@
         background: var(--fur-surface);
         table, td { background: transparent; }
         // delivery is arranged by phone after the order
-        tr[name="o_order_delivery"] { display: none; }
+        #order_delivery { display: none; }
     }
     @include media-breakpoint-up(lg) {
-        .o_wsale_shorter_cart_summary:has(.o_fur_quick_checkout) {
+        #o_cart_summary:has(.o_fur_quick_checkout) {
             flex: 0 0 45%;
+            width: 45%;
             max-width: 45%;
             margin-left: 0;
             padding-left: 1.75rem;
             border-left: 1px solid var(--fur-line);
+            // Odoo 17: the cart column is a fixed col-lg-7
+            ~ .oe_cart {
+                flex: 0 0 55%;
+                width: 55%;
+                max-width: 55%;
+                padding-right: 1.75rem;
+            }
         }
     }
 }

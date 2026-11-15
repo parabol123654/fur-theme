@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <function model="website" name="_fur_setup_demo" eval="[[ref('base.default_website')]]"/>
+    <function model="website" name="_fur_setup_demo" eval="[[ref('website.default_website')]]"/>
 </odoo>

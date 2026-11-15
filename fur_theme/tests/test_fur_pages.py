@@ -151,7 +151,7 @@ class TestFurPages(HttpCase, FurCommon):
 
     def test_product_page_layout(self):
         attribute = self.env["product.attribute"].sudo().create({
-            "name": "Fur Test Colour", "display_type": "image", "create_variant": "no_variant",
+            "name": "Fur Test Colour", "display_type": "color", "create_variant": "no_variant",
             "value_ids": [Command.create({"name": "Oak"}), Command.create({"name": "Walnut"})],
         })
         product = self.env["product.template"].sudo().create({
@@ -165,9 +165,9 @@ class TestFurPages(HttpCase, FurCommon):
         meta = html.xpath("string(//ul[hasclass('o_fur_pdp_meta')])")
         self.assertIn("BT01", meta)
         self.assertIn(self.categ_chair.name, meta, "Deepest category")
-        self.assertEqual(len(html.xpath("//label[hasclass('css_attribute_image')]")), 2)
+        self.assertEqual(len(html.xpath("//label[hasclass('css_attribute_color')]")), 2)
         self.assertEqual(len(html.xpath("//div[hasclass('o_fur_sticky_buy')]//button[hasclass('o_fur_sticky_swatch')]")), 2)
-        self.assertTrue(html.xpath("//button[@name='add_to_cart'][@data-action='buy_now']"), "Buy now button")
+        self.assertTrue(html.xpath("//div[@id='product_details']//a[hasclass('o_we_buy_now')]"), "Buy now button")
         self.assertEqual(len(product.product_variant_ids), 1, "Colours do not create variants")
         self.assertTrue(html.xpath("//ul[hasclass('o_fur_pdp_tabs')]"), "Description / buying guide tabs")
         self.assertTrue(html.xpath("//div[@id='o_fur_tab_info']//div[@id='product_full_description']"),
@@ -225,7 +225,8 @@ class TestFurPages(HttpCase, FurCommon):
         self.assertTrue(actions.xpath(".//a[@href='/web/login']"))
         html = self._get_html("/contactus")
         self.assertTrue(html.xpath("//form[@id='contactus_form']"))
-        for sample in ("s_title", "s_faq_list", "s_accordion_image", "s_map"):
+        # Odoo 17's contact page is the title and the form only
+        for sample in ("s_faq_list", "s_accordion_image", "s_map"):
             self.assertFalse(html.xpath(f"//div[@id='wrap']//section[hasclass('{sample}')]"), sample)
 
     def test_menu_home_icon_and_flyout(self):
@@ -273,10 +274,9 @@ class TestFurCheckout(HttpCase, FurCommon):
         )
 
     def _add_chair_and_open_cart(self):
-        self.make_jsonrpc_request("/shop/cart/add", {
-            "product_template_id": self.chair.id,
+        self.make_jsonrpc_request("/shop/cart/update_json", {
             "product_id": self.chair.product_variant_id.id,
-            "quantity": 1,
+            "add_qty": 1,
         })
         response = self.url_open("/shop/cart")
         self.assertEqual(response.status_code, 200)
@@ -342,6 +342,28 @@ class TestFurCheckout(HttpCase, FurCommon):
         self.assertEqual(order.transaction_ids.provider_id, cod)
         self.assertEqual(order.transaction_ids.payment_method_code, "cash_on_delivery")
 
+    def test_free_order_is_confirmed(self):
+        # nothing to pay: /shop/payment/validate confirms the order (Odoo 17
+        # alone would raise "No shipping method is selected")
+        self.website.sudo().prevent_zero_price_sale = False
+        self.chair.sudo().list_price = 0
+        html = self._add_chair_and_open_cart()
+        csrf = html.xpath("//form[hasclass('o_fur_quick_checkout')]//input[@name='csrf_token']/@value")[0]
+        response = self.url_open("/shop/fur/checkout", data={
+            "csrf_token": csrf, "provider_id": str(self.providers["wire_transfer"].id),
+            "name": "Lê Văn Fur", "phone": "0909 000 222", "email": "", "street": "34 Hai Bà Trưng, Hà Nội",
+        }, allow_redirects=False)
+        self.assertEqual(response.status_code, 303)
+        self.assertTrue(response.headers["Location"].endswith("/shop/payment/validate"))
+        response = self.url_open("/shop/payment/validate")
+        self.assertEqual(response.status_code, 200)
+        order = self._last_order()
+        self.assertEqual(order.partner_id.name, "Lê Văn Fur")
+        self.assertEqual(order.amount_total, 0)
+        self.assertEqual(order.state, "sale", "A free order is confirmed")
+        self.assertFalse(order.transaction_ids)
+        self.assertIn(order.get_portal_url().split("?")[0], response.url, "Odoo 17 shows a free order in the portal")
+
     def test_checkout_tour(self):
         self.start_tour("/", "fur_theme.checkout_tour", login=None)
         order = self._last_order()
@@ -395,10 +417,16 @@ class TestFurSearch(HttpCase, FurCommon):
         self.assertEqual(self.make_jsonrpc_request("/fur/search/suggest", {"term": "x"})["items"], [])
 
     def test_shop_cards_show_cart_button(self):
-        self.website.sudo().shop_opt_products_design_classes = "o_wsale_products_opt_has_cta o_wsale_products_opt_actions_onhover"
-        self.website.sudo()._fur_setup_shop_cards()
-        self.assertIn("o_wsale_products_opt_actions_inline", self.website.shop_opt_products_design_classes)
-        self.assertNotIn("actions_onhover", self.website.shop_opt_products_design_classes)
+        # Odoo 17: the cart button of the shop tiles is an option left off by
+        # default; Fur tiles have one anyway, and only one when the option is on
+        option = self.env.ref("website_sale.products_add_to_cart").sudo()
+        buttons = "//div[@id='products_grid']//form[.//*[hasclass('o_fur_tile_name')]]//div[hasclass('o_wsale_product_btn')]//a[hasclass('a-submit')]"
+        for active in (False, True):
+            option.active = active
+            html = self._get_html("/shop?search=Furtest")
+            self.assertEqual(len(html.xpath(buttons)), 2, f"One cart button per tile (Odoo's option: {active})")
+        option.active = False
+        self.assertTrue(html.xpath("//div[@id='products_grid']//input[@name='product_id']"))
 
 
 @tagged("post_install", "-at_install")
@@ -417,10 +445,10 @@ class TestFurTermsAndAssets(HttpCase, FurCommon):
 
     def test_terms_link_only_when_the_page_exists(self):
         ICP = self.env["ir.config_parameter"].sudo()
-        ICP.set_bool("account.use_invoice_terms", False)
+        ICP.set_param("account.use_invoice_terms", False)
         html = self._get_html("/")
         self.assertNotIn("/terms", html.xpath("//div[hasclass('o_fur_footer')]//a/@href"))
-        ICP.set_bool("account.use_invoice_terms", True)
+        ICP.set_param("account.use_invoice_terms", True)
         self.website.company_id.sudo().terms_type = "html"
         html = self._get_html("/")
         self.assertIn("/terms", html.xpath("//div[hasclass('o_fur_footer')]//a/@href"))
