@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 20.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-10 19:20+0000\n"
 "PO-Revision-Date: 2026-10-10 19:20+0000\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: fur_theme
 msgid ""
 "\n"
-"Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.\n"
+"Furniture eCommerce theme for Odoo 19.0 Community and Enterprise.\n"
 "\n"
 "* Header with logo, instant product search, hotline, cart, account and flag language switcher\n"
 "* Homepage: hero slider, service strip, category grid, one product block per category,\n"
@@ -730,6 +730,10 @@ msgstr ""
 #: code:addons/fur_theme/controllers/shop.py
 msgid "Contact"
 msgstr "Liên hệ"
+
+#. module: fur_theme
+msgid "Contact us"
+msgstr "Liên hệ với chúng tôi"
 
 #. module: fur_theme
 msgid "Coordinated furniture from the living room to the bedrooms, chosen to last for a young family."

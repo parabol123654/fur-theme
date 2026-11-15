@@ -31,7 +31,7 @@ export class FurStickyBuy extends Interaction {
 
     onActionClick(ev) {
         const action = ev.currentTarget.dataset.furAction;
-        this.mainForm?.querySelector(`button[name="add_to_cart"][data-action="${action}"]`)?.click();
+        this.mainForm?.querySelector(action === "buy_now" ? ".o_we_buy_now" : "#add_to_cart")?.click();
     }
 
     onMainFormChange(ev) {

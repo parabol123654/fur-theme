@@ -3,6 +3,7 @@ from odoo.fields import Command
 from odoo.tests import tagged
 
 from odoo.addons.fur_theme.hooks import FUR_SHOP_LAYOUT, ODOO_SHOP_LAYOUT, post_init_hook, uninstall_hook
+from odoo.addons.website_sale.tests.common import MockRequest
 
 from .common import FurCommon
 
@@ -32,10 +33,12 @@ class TestFurModels(FurCommon):
         self.env.ref("base.group_user").sudo().implied_ids |= self.env.ref(
             "website_sale.group_product_price_comparison"
         )
-        prices = self.website._fur_product_prices(self.chair)
-        self.assertEqual(prices[self.chair.id]["price_reduce"], 2750000)
-        self.assertEqual(prices[self.chair.id]["base_price"], 3800000)
-        self.assertEqual(self.website._fur_product_prices(self.env["product.template"]), {})
+        # the prices are those of the pricelist of a frontend request
+        with MockRequest(self.env, website=self.website):
+            prices = self.website._fur_product_prices(self.chair)
+            self.assertEqual(prices[self.chair.id]["price_reduce"], 2750000)
+            self.assertEqual(prices[self.chair.id]["base_price"], 3800000)
+            self.assertEqual(self.website._fur_product_prices(self.env["product.template"]), {})
 
     def test_related_products(self):
         related = self.website.with_user(self.public_user)._fur_related_products(self.chair)

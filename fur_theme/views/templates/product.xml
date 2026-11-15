@@ -67,7 +67,7 @@
                 <div t-if="product.default_code" class="o_fur_product_code">Code: <t t-out="product.default_code"/></div>
             </div>
         </div>
-        <div t-if="not combination_info['hide_price']" class="o_fur_sticky_price">
+        <div t-if="not combination_info['prevent_zero_price_sale']" class="o_fur_sticky_price">
             <span class="o_fur_sticky_price_new" t-out="combination_info['price']"
                   t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
             <del t-if="combination_info.get('compare_list_price') and combination_info['compare_list_price'] &gt; combination_info['price']"
@@ -105,14 +105,14 @@
     <xpath expr="//div[hasclass('o_wsale_product_details_content_section_price')]/t[@t-call='website_sale.product_price']" position="before">
         <span t-if="website.fur_enabled" class="o_fur_price_label">Price:</span>
     </xpath>
-    <xpath expr="//div[@id='o_wsale_product_cta_section']" position="after">
+    <xpath expr="//div[hasclass('o_wsale_product_details_content_section_cta')]" position="after">
         <div t-if="website.fur_enabled" class="o_wsale_product_details_content_section o_fur_perks_section mb-4">
             <t t-call="fur_theme.product_perks"/>
         </div>
     </xpath>
     <!-- Long description (left) + sticky buy box (right) -->
     <xpath expr="//div[@id='product_full_description']" position="before">
-        <t t-set="fur_pdp_lower" t-value="website.fur_enabled and product._has_ecommerce_sellable_variants()"/>
+        <t t-set="fur_pdp_lower" t-value="website.fur_enabled and product._is_add_to_cart_possible()"/>
         <div t-attf-class="#{'container o_fur_pdp_lower' if website.fur_enabled else ''}">
             <div t-attf-class="#{'row g-4' if fur_pdp_lower else ''}">
                 <div id="o_fur_pdp_desc_col" t-attf-class="#{'col-lg-9 o_fur_pdp_desc_col' if fur_pdp_lower else ''}">
@@ -168,7 +168,7 @@
 </template>
 
 <!-- Odoo's "Specifications" table repeats the colour list of the swatches -->
-<record id="website_sale.product_attributes_body" model="ir.ui.view">
+<record id="website_sale_comparison.product_attributes_body" model="ir.ui.view">
     <field name="active" eval="False"/>
 </record>
 

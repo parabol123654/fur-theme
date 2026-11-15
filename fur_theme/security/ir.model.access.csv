@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+fur_project_public,fur.project public,model_fur_project,base.group_public,1,0,0,0
+fur_project_portal,fur.project portal,model_fur_project,base.group_portal,1,0,0,0
+fur_project_employee,fur.project,model_fur_project,base.group_user,1,0,0,0
+fur_project_designer,fur.project designer,model_fur_project,website.group_website_designer,1,1,1,1

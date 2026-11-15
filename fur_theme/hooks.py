@@ -36,7 +36,7 @@ def post_init_hook(env):
     env["product.public.category"]._fur_sync_product_categories()
     env["product.template"].search([])._fur_set_product_category()
     # products without a price show "Contact" instead of an add-to-cart button
-    env["website"].search([]).write({"prevent_sale": True, "prevent_sale_for": "zero_price"})
+    env["website"].search([]).prevent_zero_price_sale = True
 
 
 def uninstall_hook(env):

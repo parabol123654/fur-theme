@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 20.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-10 19:20+0000\n"
 "PO-Revision-Date: 2026-10-10 19:20+0000\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_fur_theme
 msgid ""
 "\n"
-"Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.\n"
+"Furniture eCommerce theme for Odoo 19.0 Community and Enterprise.\n"
 "\n"
 "* Header with logo, instant product search, hotline, cart, account and flag language switcher\n"
 "* Homepage: hero slider, service strip, category grid, one product block per category,\n"
@@ -974,6 +974,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fur_theme.footer
 #: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Contact"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contactus
+msgid "Contact us"
 msgstr ""
 
 #. module: fur_theme
@@ -2737,6 +2742,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_url
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__website_url
 msgid "Website URL"
 msgstr ""
 

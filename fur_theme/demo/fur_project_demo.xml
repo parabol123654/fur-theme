@@ -15,7 +15,7 @@
         <field name="summary">An open office for 120 people with bench workstations, ergonomic chairs and flexible meeting corners.</field>
         <field name="description" type="html"><p>We designed and fitted out 680 m² in six weeks: bench desks in white and steel, acoustic booths for calls and a ten-seat boardroom in dark oak.</p><p>Cable management is built into every desk, so the floor stays clear and the team can rearrange the space as it grows.</p></field>
         <field name="product_tmpl_ids" eval="[Command.set([ref('product_bench_desk'), ref('product_chair_executive'), ref('product_booth'), ref('product_meeting_table')])]"/>
-        <field name="image_1920" type="bytes" file="product/static/img/office_combo.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/office_combo.jpg"/>
     </record>
     <record id="project_apartment" model="fur.project">
         <field name="name">Riverside Apartment</field>
@@ -30,7 +30,7 @@
         <field name="summary">A warm, modern three-bedroom apartment with natural oak, linen and plenty of hidden storage.</field>
         <field name="description" type="html"><p>A palette of oak, sand and teal ties the living room, dining area and bedrooms together.</p><p>Low sideboards and built-in cabinets keep surfaces clear, while a velvet sofa adds a touch of colour.</p></field>
         <field name="product_tmpl_ids" eval="[Command.set([ref('product_sofa_beige'), ref('product_sideboard_low'), ref('product_dining_table_oak'), ref('product_lamp_glass')])]"/>
-        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/s_banner_categories_default_image_1.webp"/>
+        <field name="image_1920" type="base64" file="website/static/src/img/snippets_demo/s_banner_categories_default_image_1.webp"/>
     </record>
     <record id="project_townhouse" model="fur.project">
         <field name="name">Garden Townhouse</field>
@@ -45,7 +45,7 @@
         <field name="summary">Coordinated furniture from the living room to the bedrooms, chosen to last for a young family.</field>
         <field name="description" type="html"><p>Durable fabrics, rounded corners and solid wood were the brief. Every room got storage at child height.</p></field>
         <field name="product_tmpl_ids" eval="[Command.set([ref('product_sofa_navy'), ref('product_cabinet_wood'), ref('product_dining_table_round'), ref('product_dining_chair_cross')])]"/>
-        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/s_parallax.jpg"/>
+        <field name="image_1920" type="base64" file="website/static/src/img/snippets_demo/s_parallax.jpg"/>
     </record>
     <record id="project_meeting_room" model="fur.project">
         <field name="name">Boardroom Renovation</field>
@@ -61,7 +61,7 @@
         <field name="summary">A boardroom for twelve with a conference table, executive chairs and integrated screens.</field>
         <field name="description" type="html"><p>The new boardroom seats twelve around a dark oak table with power and video connections in the top.</p></field>
         <field name="product_tmpl_ids" eval="[Command.set([ref('product_meeting_table'), ref('product_chair_executive')])]"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_46-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="website_sale/static/src/img/products_demo/product_product_46-image_02.jpg"/>
     </record>
     <record id="project_coworking" model="fur.project">
         <field name="name">Coworking Space</field>
@@ -77,7 +77,7 @@
         <field name="summary">Hot desks, focus booths and a lounge for a coworking space open seven days a week.</field>
         <field name="description" type="html"><p>Sixty hot desks, four acoustic booths and a lounge with sofas make this space work for both focus and community.</p></field>
         <field name="product_tmpl_ids" eval="[Command.set([ref('product_desk_white'), ref('product_chair_mesh'), ref('product_booth'), ref('product_sofa_teal')])]"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_d01_image_02.jpg"/>
+        <field name="image_1920" type="base64" file="website_sale/static/src/img/products_demo/product_product_d01_image_02.jpg"/>
     </record>
     <record id="project_cafe" model="fur.project">
         <field name="name">Neighbourhood Café</field>
@@ -93,6 +93,6 @@
         <field name="summary">Bistro chairs, oak tables and warm lighting for a busy neighbourhood café.</field>
         <field name="description" type="html"><p>Cross-back chairs and oval oak tables give the café a relaxed, timeless feel; ribbed glass lamps finish the look.</p></field>
         <field name="product_tmpl_ids" eval="[Command.set([ref('product_dining_chair_cross'), ref('product_dining_table_oak'), ref('product_lamp_glass')])]"/>
-        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/s_images_mosaic_default_image_3.jpg"/>
+        <field name="image_1920" type="base64" file="website/static/src/img/snippets_demo/s_images_mosaic_default_image_3.jpg"/>
     </record>
 </odoo>

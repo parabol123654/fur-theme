@@ -8,7 +8,7 @@ class FurProjectController(http.Controller):
     _projects_per_page = 9
 
     def _project_domain(self, project_type=None):
-        domain = request.env.website.website_domain() & Domain("is_published", "=", True)
+        domain = request.website.website_domain() & Domain("is_published", "=", True)
         if project_type:
             domain &= Domain("project_type", "=", project_type)
         return domain
@@ -18,7 +18,7 @@ class FurProjectController(http.Controller):
             yield {"loc": "/projects"}
         slug = env["ir.http"]._slug
         projects = env["fur.project"].search(
-            env.website.website_domain() & Domain("is_published", "=", True)
+            env["website"].get_current_website().website_domain() & Domain("is_published", "=", True)
         )
         for project in projects:
             loc = f"/projects/{slug(project)}"
@@ -39,7 +39,7 @@ class FurProjectController(http.Controller):
             project_type = None
         domain = self._project_domain(project_type)
         total = Project.search_count(domain)
-        pager = request.env.website.pager(
+        pager = request.website.pager(
             url="/projects",
             url_args={"project_type": project_type} if project_type else None,
             total=total,
@@ -65,7 +65,7 @@ class FurProjectController(http.Controller):
         sitemap=False,  # covered by sitemap_projects
     )
     def project_detail(self, project, **kwargs):
-        website = request.env.website
+        website = request.website
         if project.website_id and project.website_id != website:
             raise request.not_found()
         is_designer = request.env.user.has_group("website.group_website_designer")

@@ -27,7 +27,7 @@ class FurSearch(http.Controller):
     @http.route("/fur/search/suggest", type="jsonrpc", auth="public", website=True, readonly=True)
     def suggest(self, term="", limit=8):
         """Products of the header search dropdown."""
-        website = request.env.website
+        website = request.website
         Product = request.env["product.template"]
         products, count = Product._fur_search_suggest(term, website, limit=min(int(limit or 8), 20))
         prices = website._fur_product_prices(products)

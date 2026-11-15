@@ -1,4 +1,4 @@
-# Fur - Furniture eCommerce Theme (`fur_theme`) — Odoo 20.0
+# Fur - Furniture eCommerce Theme (`fur_theme`) — Odoo 19.0
 
 Yellow and navy eCommerce theme for furniture and interior design shops:
 homepage, mega menu, shop and category pages, product page, one-step checkout
@@ -12,7 +12,8 @@ odoo -d <db> -i fur_theme              # theme only
 odoo -d <db> -i fur_theme --with-demo  # + sample furniture shop
 ```
 
-Dependencies: `website_sale`, `payment_custom`, `auth_signup`, `account`.
+Dependencies: `website_sale`, `website_sale_wishlist`, `website_sale_comparison`,
+`payment_custom`, `auth_signup`, `account`.
 
 ## Configure
 
@@ -25,7 +26,8 @@ Dependencies: `website_sale`, `payment_custom`, `auth_signup`, `account`.
 - eCommerce category: **Show on Homepage**; product and project: **Featured on Homepage**.
 - **Website › Site › Content › Projects**: interior projects.
 - Bank transfer / cash on delivery providers are created and published on
-  install; set the bank account on the bank transfer provider.
+  install; add your bank account to the pending message of the bank transfer
+  provider.
 
 ## Demo data
 
@@ -41,4 +43,4 @@ odoo -d <testdb> --db-filter='^<testdb>$' -i fur_theme --test-tags /fur_theme --
 
 The checkout tour needs Chrome and the `websocket-client` Python package.
 
-License: OPL-1 (see LICENSE). Author: Sanxus Lab.
+License: LGPL-3 (see LICENSE). Author: Manh Nguyen.

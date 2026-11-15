@@ -1,10 +1,11 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
 import re
+from collections import Counter
 
 from odoo import api, fields, models
 from odoo.fields import Domain
 from odoo.tools import remove_accents
-from odoo.tools.sql import escape_like_value
+from odoo.tools.sql import escape_psql
 
 
 class ProductTemplate(models.Model):
@@ -25,21 +26,23 @@ class ProductTemplate(models.Model):
 
     @api.model
     def _search_build_domain(self, domain_list, search, fields, extra=None):
-        """Every word of a search must match (Odoo 20 accepts products that
-        match only part of the words of a 3+ word search); Odoo's partial
-        match is kept for a search no product fully matches (a typo)."""
+        """Every word of a search must match, as Odoo 19 does; a partial
+        match (all the words but one, but two from 5 words: what Odoo 20
+        accepts) is kept for a 3+ word search no product fully matches (a
+        typo)."""
+        domain = super()._search_build_domain(domain_list, search, fields, extra)
         words = self._fur_search_words(search)
-        if len(words) <= 2:
-            return super()._search_build_domain(domain_list, search, fields, extra)
+        if len(words) <= 2 or self.search_count(domain, limit=1):
+            return domain
         domain = Domain.AND([Domain(d) for d in domain_list])
+        matches = Counter()
         for word in words:
-            subdomains = [self._search_get_field_domain(field, escape_like_value(word)) for field in fields]
+            subdomains = [Domain(field, "ilike", escape_psql(word)) for field in fields]
             if extra:
                 subdomains.append(extra(self.env, word))
-            domain &= Domain.OR(subdomains)
-        if self.search_count(domain, limit=1):
-            return domain
-        return super()._search_build_domain(domain_list, search, fields, extra)
+            matches.update(self.search(domain & Domain.OR(subdomains)).ids)
+        threshold = len(words) - (1 if len(words) < 5 else 2)
+        return domain & Domain("id", "in", [id_ for id_, count in matches.items() if count >= threshold])
 
     @api.model
     def _fur_search_words(self, text):

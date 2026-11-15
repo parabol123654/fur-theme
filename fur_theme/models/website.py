@@ -1,11 +1,12 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
+import base64
 import logging
 import re
 
 from odoo import fields, models
 from odoo.fields import Command, Domain
 from odoo.http import request
-from odoo.tools import BinaryBytes, file_open
+from odoo.tools import file_open
 
 _logger = logging.getLogger(__name__)
 
@@ -149,15 +150,11 @@ class Website(models.Model):
         """Price values (``price_reduce``, optional ``base_price``) per template id,
         computed like the /shop grid does."""
         self.ensure_one()
-        if not products:
+        # _get_sales_prices reads the pricelist and the fiscal position that
+        # website_sale sets on frontend requests (_frontend_pre_dispatch)
+        if not products or not request or not hasattr(request, "pricelist"):
             return {}
-        # website_sale sets both on frontend requests (_frontend_pre_dispatch)
-        pricelist = getattr(request, "pricelist", None) if request else None
-        fiscal_position = getattr(request, "fiscal_position", None) if request else None
-        if pricelist is None or fiscal_position is None:
-            pricelist = self.pricelist_id.sudo()
-            fiscal_position = self.env["account.fiscal.position"].sudo()
-        return products._get_sales_prices(pricelist, fiscal_position, self)
+        return products._get_sales_prices(self)
 
     def _fur_wishlist_variant_ids(self):
         """Variant ids in the visitor's wishlist, fetched once per page."""
@@ -223,7 +220,7 @@ class Website(models.Model):
         shown as a web page)."""
         self.ensure_one()
         return (
-            self.env["ir.config_parameter"].sudo().get_bool("account.use_invoice_terms")
+            self.env["ir.config_parameter"].sudo().get_param("account.use_invoice_terms")
             and self.company_id.sudo().terms_type == "html"
         )
 
@@ -313,7 +310,7 @@ class Website(models.Model):
     def _fur_setup_demo(self):
         """Turn the default website into the demo furniture shop: Fur menu,
         sample contacts, "compare to" prices, cart page payment modes."""
-        website = self[:1] or self.env.ref("base.default_website")
+        website = self[:1] or self.env.ref("website.default_website")
         company = website.company_id
 
         # Show the "compare to" (crossed-out) prices of the sample catalogue.
@@ -341,7 +338,7 @@ class Website(models.Model):
             ("favicon", "fur_theme/static/src/img/favicon.png"),
         ):
             with file_open(path, "rb") as image:
-                website[field] = BinaryBytes(image.read(), filename=path.rsplit("/", 1)[-1])
+                website[field] = base64.b64encode(image.read())
         demo_categories = self.env["product.public.category"].browse(
             self.env["ir.model.data"].search([
                 ("model", "=", "product.public.category"), ("module", "=", "fur_theme"),
@@ -388,7 +385,7 @@ class Website(models.Model):
                     menu.write({"sequence": sequence})
                 else:
                     menu = Menu.with_context(lang="en_US").create({
-                        "name": names["en_US"], "url": url, "parent_id": root.id,
+                        "name": names.get("en_US") or next(iter(names.values())), "url": url, "parent_id": root.id,
                         "website_id": website.id, "sequence": sequence,
                     })
                 menu.update_field_translations("name", names)

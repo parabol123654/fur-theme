@@ -1,6 +1,9 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
+import base64
+
 from odoo import api, models
-from odoo.tools import BinaryBytes, file_open
+from odoo.fields import Command
+from odoo.tools import file_open
 
 # Payment modes offered by the Fur one-step checkout (cart page), in display order.
 FUR_PAYMENT_MODES = ("wire_transfer", "cash_on_delivery")
@@ -77,24 +80,35 @@ class PaymentProvider(models.Model):
         for company in websites.company_id:
             for sequence, mode in enumerate(FUR_PAYMENT_MODES, start=1):
                 texts = _FUR_PROVIDER_TEXTS[mode]
-                provider = self.with_context(active_test=False).search([
+                provider = self.search([
                     ("code", "=", "custom"), ("custom_mode", "=", mode), ("company_id", "=", company.id),
-                ], order="is_published desc, active desc, id", limit=1)
+                ], order="is_published desc, id", limit=1)
                 if not provider:
                     provider = self.create({
                         "name": texts["name"][0],
                         "code": "custom",
                         "custom_mode": mode,
                         "company_id": company.id,
-                        "redirect_form_view_id": self.env.ref("payment.generic_redirect_form").id,
-                        # the company's bank account is set by hand: never publish a guess
-                        "partner_bank_id": False,
+                        "redirect_form_view_id": self.env.ref("payment_custom.redirect_form").id,
                     })
+                # the company's bank account is added to the pending message by
+                # hand: never publish a guess
+                provider.with_context(lang="en_US").write({
+                    "state": "enabled",
+                    "is_published": True,
+                    "sequence": sequence,
+                    "name": texts["name"][0],
+                    "pre_msg": texts["pre_msg"][0],
+                    "pending_msg": texts["pending_msg"][0],
+                })
                 if not provider._fur_checkout_payment_method():
+                    # payment methods are shared between providers, and only
+                    # activated once one of their providers is enabled
                     method = self.env["payment.method"].with_context(active_test=False).search([
-                        ("provider_id", "=", provider.id), ("code", "=", mode),
+                        ("code", "=", mode), ("primary_payment_method_id", "=", False),
                     ], limit=1)
                     if method:
+                        provider.payment_method_ids = [Command.link(method.id)]
                         method.active = True
                     else:
                         with file_open(texts["image"], "rb") as image:
@@ -102,23 +116,14 @@ class PaymentProvider(models.Model):
                         self.env["payment.method"].create({
                             "name": texts["name"][0],
                             "code": mode,
-                            "provider_id": provider.id,
-                            "image": BinaryBytes(image, filename=texts["image"].rsplit("/", 1)[-1]),
+                            "provider_ids": [Command.link(provider.id)],
+                            "image": base64.b64encode(image),
                             "active": True,
                             "support_tokenization": False,
                             "support_express_checkout": False,
                             "support_manual_capture": "none",
                             "support_refund": "none",
                         })
-                provider.with_context(lang="en_US").write({
-                    "active": True,
-                    "is_live": True,
-                    "is_published": True,
-                    "sequence": sequence,
-                    "name": texts["name"][0],
-                    "pre_msg": texts["pre_msg"][0],
-                    "pending_msg": texts["pending_msg"][0],
-                })
                 if vietnamese:
                     for fname in ("name", "pre_msg", "pending_msg"):
                         english, translation = texts[fname]

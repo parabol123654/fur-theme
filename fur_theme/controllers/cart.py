@@ -12,6 +12,7 @@ from odoo.http import request, route
 
 from odoo.addons.fur_theme.models.payment_provider import FUR_PAYMENT_MODES
 from odoo.addons.website_sale.controllers.cart import Cart
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 _EMAIL = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 _FORM_FIELDS = ("name", "phone", "email", "street", "note")
@@ -22,7 +23,7 @@ class FurCart(Cart):
     def _cart_values(self, **post):
         values = super()._cart_values(**post)
         order_sudo = request.cart
-        if self.env.website.fur_enabled and order_sudo and order_sudo.website_order_line:
+        if request.website.fur_enabled and order_sudo and order_sudo.website_order_line:
             values["fur_checkout"] = self._fur_checkout_values(order_sudo)
         return values
 
@@ -34,7 +35,7 @@ class FurCart(Cart):
             ("custom_mode", "in", FUR_PAYMENT_MODES),
             ("is_published", "=", True),
             ("company_id", "=", order_sudo.company_id.id),
-            ("website_id", "in", [False, self.env.website.id]),
+            ("website_id", "in", [False, request.website.id]),
         ], order="sequence, id")
         return providers.filtered(lambda provider: provider._fur_checkout_payment_method())
 
@@ -83,7 +84,7 @@ class FurCart(Cart):
         """Set the customer of the cart from the form: a new contact for a
         visitor; for a signed-in customer, their own address when it matches
         (or is still empty), otherwise a new delivery address."""
-        website = self.env.website
+        website = request.website
         PartnerSudo = self.env["res.partner"].sudo()
         address = {
             "name": form["name"],
@@ -131,11 +132,11 @@ class FurCart(Cart):
     @route("/shop/fur/checkout", type="http", methods=["POST"], auth="public", website=True, sitemap=False)
     def fur_checkout(self, **post):
         order_sudo = request.cart
-        if not self.env.website.fur_enabled or not order_sudo or not order_sudo.website_order_line:
+        if not request.website.fur_enabled or not order_sudo or not order_sudo.website_order_line:
             return request.redirect("/shop/cart")
         # The cart step (public checkout allowed, cart ready) is the only one left.
-        if redirect := self.env["website.checkout.step"].validate_checkout_progress("/shop/address", order_sudo):
-            return request.redirect(redirect)
+        if redirection := WebsiteSale._check_cart(self, order_sudo):
+            return redirection
 
         form = {fname: (post.get(fname) or "").strip() for fname in _FORM_FIELDS}
         form["provider_id"] = post.get("provider_id") or ""
@@ -143,17 +144,21 @@ class FurCart(Cart):
             lambda provider: str(provider.id) == form["provider_id"]
         )
         errors = self._fur_checkout_errors(form, provider_sudo)
-        if errors or order_sudo._has_blocking_alerts():
+        if errors:
             response = self.cart()
             response.qcontext["fur_checkout"] = self._fur_checkout_values(order_sudo, form, errors)
             return response
 
         self._fur_checkout_partner(order_sudo, form)
         order_sudo.fur_customer_note = form["note"] or False
-        order_sudo._update_cart_taxes_and_prices()
+        order_sudo._recompute_cart()
         request.session["sale_last_order_id"] = order_sudo.id
-        if not order_sudo.amount_total:  # nothing to pay: /shop/payment/validate confirms it
-            return request.redirect("/shop/payment/validate")
+        if not order_sudo.amount_total:
+            # nothing to pay: confirmed as /shop/payment/validate does, without
+            # its address and delivery checks (steps this checkout does not have)
+            order_sudo._validate_order()
+            request.website.sale_reset()
+            return request.redirect("/shop/confirmation")
 
         tx_sudo = self._create_transaction(
             provider_id=provider_sudo.id,
@@ -168,5 +173,5 @@ class FurCart(Cart):
             custom_create_values={"sale_order_ids": [Command.set([order_sudo.id])]},
         )
         request.session["__website_sale_last_tx_id"] = tx_sudo.id
-        tx_sudo._record({"reference": tx_sudo.reference})  # custom providers: set to pending
+        tx_sudo._process("custom", {"reference": tx_sudo.reference})  # custom providers: set to pending
         return request.redirect("/payment/status")

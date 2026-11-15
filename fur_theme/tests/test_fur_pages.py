@@ -167,7 +167,7 @@ class TestFurPages(HttpCase, FurCommon):
         self.assertIn(self.categ_chair.name, meta, "Deepest category")
         self.assertEqual(len(html.xpath("//label[hasclass('css_attribute_image')]")), 2)
         self.assertEqual(len(html.xpath("//div[hasclass('o_fur_sticky_buy')]//button[hasclass('o_fur_sticky_swatch')]")), 2)
-        self.assertTrue(html.xpath("//button[@name='add_to_cart'][@data-action='buy_now']"), "Buy now button")
+        self.assertTrue(html.xpath("//a[hasclass('o_we_buy_now')]"), "Buy now button")
         self.assertEqual(len(product.product_variant_ids), 1, "Colours do not create variants")
         self.assertTrue(html.xpath("//ul[hasclass('o_fur_pdp_tabs')]"), "Description / buying guide tabs")
         self.assertTrue(html.xpath("//div[@id='o_fur_tab_info']//div[@id='product_full_description']"),
@@ -227,6 +227,14 @@ class TestFurPages(HttpCase, FurCommon):
         self.assertTrue(html.xpath("//form[@id='contactus_form']"))
         for sample in ("s_title", "s_faq_list", "s_accordion_image", "s_map"):
             self.assertFalse(html.xpath(f"//div[@id='wrap']//section[hasclass('{sample}')]"), sample)
+
+    def test_signed_in_account_pill(self):
+        new_test_user(self.env, login="fur_portal", groups="base.group_portal")
+        self.authenticate("fur_portal", "fur_portal")
+        html = self._get_html("/")
+        self.assertTrue(html.xpath("//li[hasclass('o_fur_user')]/a[hasclass('o_fur_pill')]/img"),
+                        "Avatar in the account pill of a signed-in user")
+        self.assertFalse(html.xpath("//ul[hasclass('o_fur_actions')]//a[@href='/web/login']"))
 
     def test_menu_home_icon_and_flyout(self):
         self.website.sudo()._fur_setup_menu()
@@ -342,6 +350,24 @@ class TestFurCheckout(HttpCase, FurCommon):
         self.assertEqual(order.transaction_ids.provider_id, cod)
         self.assertEqual(order.transaction_ids.payment_method_code, "cash_on_delivery")
 
+    def test_free_order_is_confirmed(self):
+        # nothing to pay: the order is confirmed without a payment transaction
+        self.website.sudo().prevent_zero_price_sale = False
+        self.chair.sudo().list_price = 0
+        html = self._add_chair_and_open_cart()
+        csrf = html.xpath("//form[hasclass('o_fur_quick_checkout')]//input[@name='csrf_token']/@value")[0]
+        response = self.url_open("/shop/fur/checkout", data={
+            "csrf_token": csrf, "provider_id": str(self.providers["wire_transfer"].id),
+            "name": "Lê Văn Fur", "phone": "0909 000 222", "email": "", "street": "34 Hai Bà Trưng, Hà Nội",
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.url.endswith("/shop/confirmation"), response.url)
+        order = self._last_order()
+        self.assertEqual(order.partner_id.name, "Lê Văn Fur")
+        self.assertEqual(order.amount_total, 0)
+        self.assertEqual(order.state, "sale", "A free order is confirmed")
+        self.assertFalse(order.transaction_ids)
+
     def test_checkout_tour(self):
         self.start_tour("/", "fur_theme.checkout_tour", login=None)
         order = self._last_order()
@@ -417,10 +443,10 @@ class TestFurTermsAndAssets(HttpCase, FurCommon):
 
     def test_terms_link_only_when_the_page_exists(self):
         ICP = self.env["ir.config_parameter"].sudo()
-        ICP.set_bool("account.use_invoice_terms", False)
+        ICP.set_param("account.use_invoice_terms", False)
         html = self._get_html("/")
         self.assertNotIn("/terms", html.xpath("//div[hasclass('o_fur_footer')]//a/@href"))
-        ICP.set_bool("account.use_invoice_terms", True)
+        ICP.set_param("account.use_invoice_terms", True)
         self.website.company_id.sudo().terms_type = "html"
         html = self._get_html("/")
         self.assertIn("/terms", html.xpath("//div[hasclass('o_fur_footer')]//a/@href"))
