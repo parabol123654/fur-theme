@@ -9,28 +9,26 @@ $o-theme-font-configs: map-merge($o-theme-font-configs, (
     ),
 ));
 
-$o-color-palettes: map-merge($o-color-palettes, (
-    'fur': (
-        'o-color-1': #F8CB0C, // Fur yellow (primary)
-        'o-color-2': #13254E, // Fur navy (secondary)
-        'o-color-3': #F5F6F8, // light surface
-        'o-color-4': #FFFFFF, // page
-        'o-color-5': #1F2B49, // text
-        // links in navy: yellow text on white is not readable
-        'o-cc1-link': 'o-color-2',
-        'o-cc2-link': 'o-color-2',
-        'o-cc3-link': 'o-color-2',
-        'menu': 1,
-        'footer': 5,
-        'copyright': 5,
-    ),
+// Odoo 14 numbers its colour palettes: Fur's is added after Odoo's own and
+// made the default one (a palette chosen in the website builder still wins).
+$o-color-palettes: append($o-color-palettes, (
+    'o-color-1': #F8CB0C, // Fur yellow (primary)
+    'o-color-2': #13254E, // Fur navy (secondary)
+    'o-color-3': #F5F6F8, // light surface
+    'o-color-4': #FFFFFF, // page
+    'o-color-5': #1F2B49, // text
+    // links in navy: yellow text on white is not readable
+    'o-cc1-link': 'o-color-2',
+    'o-cc2-link': 'o-color-2',
+    'o-cc3-link': 'o-color-2',
+    'menu': 1,
+    'footer': 5,
+    'copyright': 5,
 ));
-
-$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'fur');
+$o-color-palette-number: length($o-color-palettes);
 
 $o-website-values-palettes: (
     (
-        'color-palettes-name': 'fur',
         'font': 'Be Vietnam Pro',
         'headings-font': 'Be Vietnam Pro',
         'navbar-font': 'Be Vietnam Pro',

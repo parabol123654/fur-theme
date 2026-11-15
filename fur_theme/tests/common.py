@@ -1,21 +1,33 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
-from odoo.fields import Command
+import base64
+import io
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
+from PIL import Image
+
+from odoo.tests import SavepointCase
 
 
-class FurCommon(WebsiteSaleCommon):
+class FurCommon(SavepointCase):
     """Self-contained Fur catalogue: tests never rely on the demo data."""
+
+    @classmethod
+    def _create_image(cls, color):
+        stream = io.BytesIO()
+        Image.new("RGB", (64, 64), color).save(stream, "PNG")
+        return base64.b64encode(stream.getvalue())
 
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        # Unprefixed URLs whatever the database default language (the demo
-        # makes Vietnamese the website default).
+        cls.website = cls.env["website"].get_current_website()
+        cls.public_user = cls.website.user_id
+        # Prices in the company currency, as website_sale's own tests do
+        cls.website.get_current_pricelist().write({"currency_id": cls.env.company.currency_id.id})
+        # Unprefixed URLs whatever the database default language.
         # _activate_lang: English is inactive on a database created in Vietnamese.
         english = cls.env["res.lang"]._activate_lang("en_US")
         cls.website.sudo().write({
-            "language_ids": [Command.link(english.id)],
+            "language_ids": [(4, english.id)],
             "default_lang_id": english.id,
             "fur_brand_name": "Fur",
             # the demo sets these: tests start from a website without them
@@ -38,24 +50,24 @@ class FurCommon(WebsiteSaleCommon):
             "compare_list_price": 3800000,
             # No default sales tax: a Vietnamese company adds 10% VAT and shows
             # prices tax included, which would shift every asserted price.
-            "taxes_id": [Command.clear()],
+            "taxes_id": [(5, 0, 0)],
             "website_published": True,
             "fur_featured": True,
-            "public_categ_ids": [Command.set((cls.categ_office | cls.categ_chair).ids)],
+            "public_categ_ids": [(6, 0, (cls.categ_office | cls.categ_chair).ids)],
             "image_1920": cls._create_image("#F8CB0C"),
         })
         cls.desk = cls.env["product.template"].create({
             "name": "Fur Test Desk BG00",
             "list_price": 1250000,
             "website_published": True,
-            "public_categ_ids": [Command.set(cls.categ_office.ids)],
+            "public_categ_ids": [(6, 0, cls.categ_office.ids)],
         })
         cls.unpublished = cls.env["product.template"].create({
             "name": "Fur Test Hidden Cabinet",
             "list_price": 5000000,
             "website_published": False,
             "fur_featured": True,
-            "public_categ_ids": [Command.set(cls.categ_office.ids)],
+            "public_categ_ids": [(6, 0, cls.categ_office.ids)],
         })
         Project = cls.env["fur.project"]
         cls.project = Project.create({
@@ -66,7 +78,7 @@ class FurCommon(WebsiteSaleCommon):
             "summary": "A test project.",
             "is_featured": True,
             "is_published": True,
-            "product_tmpl_ids": [Command.set(cls.chair.ids)],
+            "product_tmpl_ids": [(6, 0, cls.chair.ids)],
             "image_1920": cls._create_image("#13254E"),
         })
         cls.project_draft = Project.create({

@@ -13,18 +13,57 @@
             color: var(--fur-navy);
         }
     }
-    #o_wsale_products_header h1,
-    #o_wsale_products_header .h1 {
-        display: none; // title lives in the Fur banner
+    // the Fur header has the search box
+    .products_pager .o_wsale_products_searchbar_form {
+        display: none !important;
+    }
+    .products_pager:first-child { margin-bottom: 1rem; }
+    .products_pager .pagination { margin-bottom: 0; }
+
+    // Odoo 14 lays the tiles out in a table of fixed-ratio cells: Fur makes
+    // it a grid of cards as tall as their content (grid view only).
+    #products_grid:not(.o_wsale_layout_list) .o_wsale_products_grid_table_wrapper {
+        margin: 0;
+        > table {
+            display: block;
+            > colgroup { display: none; }
+            > tbody {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: .75rem;
+                @include media-breakpoint-up(md) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+                @include media-breakpoint-up(lg) { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+                > tr { display: contents; }
+                > tr > td {
+                    display: block;
+                    width: auto;
+                    margin: 0;
+                    padding: 0;
+                    &:empty { display: none; }
+                }
+            }
+        }
+        .o_wsale_product_grid_wrapper {
+            height: 100%;
+            padding-top: 0 !important;
+            > * {
+                position: relative;
+                top: auto;
+                right: auto;
+                bottom: auto;
+                left: auto;
+                height: 100%;
+            }
+        }
     }
 }
 
 // Tiles: same look as the homepage cards.
-.o_fur .oe_website_sale .oe_product_cart:not(.o_fur_product_card) {
+.o_fur .o_fur_shop #products_grid:not(.o_wsale_layout_list) .oe_product_cart {
     position: relative;
     overflow: hidden;
     flex-direction: column;
-    border: 1px solid var(--fur-line);
+    border: 1px solid var(--fur-line) !important;
     border-radius: var(--fur-radius-sm);
     background: #fff;
     box-shadow: 0 2px 10px rgba(19, 37, 78, .04);
@@ -35,22 +74,120 @@
     }
     // square frame, whole product visible (the pictures are mostly square)
     .oe_product_image {
+        flex: 0 0 auto;
+        height: auto;
         aspect-ratio: 1;
+        padding: 0 !important;
         border-radius: 0;
         background: #fff;
+        position: relative;
+        > a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
         img { width: 100%; height: 100%; object-fit: contain; }
     }
     .o_wsale_product_information {
+        position: static;
         display: flex;
-        flex-direction: column;
-        padding: .6rem .7rem .75rem;
+        flex: 1 1 auto;
+        flex-direction: row;
+        align-items: flex-end;
+        padding: .6rem .7rem .75rem !important;
+        background: transparent !important;
+        text-align: left !important;
     }
+    .o_wsale_product_information_text {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        align-self: stretch;
+        min-width: 0;
+        padding: 0 !important;
+    }
+    .oe_subdescription { display: none; }
+    .product_price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0 .4rem;
+        margin: auto 0 0 !important;
+        font-size: 1.02rem;
+        color: var(--fur-price);
+        font-weight: 700;
+        .h5 { margin: 0; font-size: inherit; font-weight: 700; color: inherit; }
+        del {
+            order: 2; // Odoo 14 puts the crossed-out price first
+            margin: 0 !important;
+            font-size: .8rem;
+            font-weight: 400;
+            color: #9CA3AF !important;
+        }
+    }
+    // cart button always shown, bottom right next to the price (as on the
+    // homepage cards), not Odoo's round button shown on hover over the picture
+    .o_wsale_product_btn {
+        position: static;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        z-index: 2;
+        flex: 0 0 auto;
+        margin-left: auto;
+        padding: 0 0 0 .5rem !important;
+        &:empty { display: none; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 0;
+            border: 0;
+            border-radius: .6rem;
+            background: var(--fur-yellow);
+            color: var(--fur-navy-2);
+            line-height: 1;
+            opacity: 1;
+            transform: none;
+            .o_fur_icon { width: 1.3rem; height: 1.3rem; }
+            &:hover { background: var(--fur-yellow-hover); }
+            @include media-breakpoint-down(xs) {
+                width: 2.1rem;
+                height: 2.1rem;
+                .o_fur_icon { width: 1.1rem; height: 1.1rem; }
+            }
+        }
+        // optional modules: the wishlist heart of website_sale_wishlist goes
+        // to the top right corner of the card, as on the homepage cards
+        .o_add_compare { display: none; }
+        .o_add_wishlist {
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: #fff !important;
+            color: var(--fur-navy-2);
+            font-size: .85rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+            &:hover, &:disabled { background: #fff; color: #E5484D; opacity: 1; }
+        }
+    }
+}
+// tile texts, grid and list views
+.o_fur .o_fur_shop .oe_product_cart {
     .o_wsale_products_item_title {
-        margin-bottom: .25rem;
+        margin-bottom: .25rem !important;
         font-size: .85rem;
         font-weight: 500;
         line-height: 1.35;
-        a { color: var(--fur-navy-2); }
+        a { color: var(--fur-navy-2) !important; }
         .o_fur_tile_name {
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -63,81 +200,5 @@
         font-size: .72rem;
         color: var(--fur-muted);
     }
-    .oe_subdescription { display: none; }
-    .o_wsale_product_sub {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: flex-end;
-        justify-content: space-between;
-        margin-top: auto;
-        > .product_price { flex: 1 1 auto; min-width: 0; }
-    }
-    .product_price {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        font-size: 1.02rem;
-        color: var(--fur-price);
-        .fw-bold, span { font-weight: 700; }
-        del { order: 2; font-size: .8rem; }
-    }
-    // cart button always shown, bottom right next to the price (as on the
-    // homepage cards), not Odoo's floating "on hover" buttons
-    .o_wsale_product_btn {
-        position: static;
-        inset: auto;
-        // Odoo's "inline" buttons take the whole row
-        flex: 0 0 auto !important;
-        width: auto !important;
-        margin-left: auto;
-        visibility: visible;
-        opacity: 1;
-        transform: none;
-    }
-    .o_wsale_product_action_row { display: flex; }
-    @include media-breakpoint-down(sm) {
-        .product_price { font-size: .9rem; }
-        .o_wsale_product_btn .o_wsale_product_btn_primary {
-            width: 2.1rem;
-            height: 2.1rem;
-            .o_fur_icon { width: 1.1rem; height: 1.1rem; }
-        }
-    }
-    .o_wsale_product_btn .o_wsale_product_btn_primary {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.5rem;
-        height: 2.5rem;
-        padding: 0;
-        border: 0;
-        border-radius: .6rem;
-        background: var(--fur-yellow);
-        color: var(--fur-navy-2);
-        .o_label { display: none; }
-        .o_fur_icon { width: 1.3rem; height: 1.3rem; }
-        &:hover { background: var(--fur-yellow-hover); }
-    }
-    .o_add_wishlist {
-        position: absolute;
-        top: .5rem;
-        right: .5rem;
-        z-index: 2;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2rem;
-        height: 2rem;
-        padding: 0;
-        border: 0;
-        border-radius: 50%;
-        background: #fff;
-        color: var(--fur-navy-2);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
-        &:hover, &.o_in_wishlist { color: #E5484D; }
-    }
-    .o_add_compare, .o_add_compare_placeholder {
-        display: none;
-    }
+    .o_fur_price_contact { color: var(--fur-price); }
 }

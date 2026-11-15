@@ -1,15 +1,17 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
-from odoo import api, models
-from odoo.tools import BinaryBytes, file_open
+import base64
+
+from odoo import api, fields, models
+from odoo.tools import file_open
 
 # Payment modes offered by the Fur one-step checkout (cart page), in display order.
 FUR_PAYMENT_MODES = ("wire_transfer", "cash_on_delivery")
 
 # name, help message (shown under the selected option) and pending message
-# (confirmation page) of each mode, in English then Vietnamese.
+# (confirmation page, cash on delivery only) of each mode, in English then Vietnamese.
 _FUR_PROVIDER_TEXTS = {
     "wire_transfer": {
-        "image": "payment_custom/static/img/wire_transfer.png",
+        "image": "payment_transfer/static/src/img/transfer_icon.png",
         "name": ("Bank transfer", "Thanh toán bằng chuyển khoản"),
         "pre_msg": (
             "<p>Transfer the order amount to our bank account: the account details and the"
@@ -21,15 +23,10 @@ _FUR_PROVIDER_TEXTS = {
             "<p>Nhân viên sẽ gọi điện xác nhận đơn hàng và sắp xếp giao hàng ngay khi nhận được"
             " thanh toán.</p>",
         ),
-        "pending_msg": (
-            "<p>Please transfer the order amount using the details below. We will call you to"
-            " confirm the order as soon as the payment is received.</p>",
-            "<p>Quý khách vui lòng chuyển khoản theo thông tin bên dưới. Nhân viên sẽ gọi điện xác"
-            " nhận đơn hàng ngay khi nhận được thanh toán.</p>",
-        ),
+        # pending message: Odoo 14's own for wire transfers (the bank account to pay to)
     },
     "cash_on_delivery": {
-        "image": "delivery/static/src/img/payment_method_cash_on_delivery.png",
+        "image": "payment_transfer/static/src/img/transfer_icon.png",
         "name": ("Cash on delivery", "Thanh toán tại điểm giao hàng"),
         "pre_msg": (
             "<p>Pay in cash to the delivery staff when you receive the goods.</p>"
@@ -47,92 +44,73 @@ _FUR_PROVIDER_TEXTS = {
 }
 
 
-def _terms(field, value):
-    """The translatable terms of an html value, in document order."""
-    terms = []
-    field.translate(lambda term: terms.append(term) or term, value)
-    return terms
+class PaymentAcquirer(models.Model):
+    """Odoo 14 has a single manual payment acquirer type, "Wire Transfer"
+    (payment_transfer): the Fur checkout uses one such acquirer per payment
+    mode, told apart by ``custom_mode`` (the name of the equivalent field of the
+    custom payment providers of later Odoo versions)."""
 
+    _inherit = "payment.acquirer"
 
-class PaymentProvider(models.Model):
-    _inherit = "payment.provider"
-
-    def _fur_checkout_payment_method(self):
-        """The payment method the Fur checkout records transactions with."""
-        self.ensure_one()
-        return self.payment_method_ids.filtered(lambda pm: pm.active and pm.is_primary)[:1]
+    custom_mode = fields.Selection(
+        [("wire_transfer", "Wire Transfer"), ("cash_on_delivery", "Cash on Delivery")],
+        string="Fur Checkout Mode",
+        help="Payment mode of the Fur one-step checkout (cart page) this wire transfer acquirer is "
+        "offered as. Empty: not offered on the cart page.",
+        copy=False,
+    )
 
     @api.model
     def _fur_setup_checkout_providers(self):
-        """Publish one custom provider per Fur payment mode for each website
-        company, reusing an existing provider of that mode when there is one.
+        """Publish one wire transfer acquirer per Fur payment mode for each
+        website company, reusing an existing acquirer of that mode when there
+        is one (Odoo's own "Wire Transfer" acquirer for the bank transfer).
 
         Names and messages are (re)written: this runs once, on install or on
         the upgrade that introduced the one-step checkout.
         """
         vietnamese = "vi_VN" in dict(self.env["res.lang"].get_installed())
-        websites = self.env["website"].search([], order="sequence, id")
+        websites = self.env["website"].search([], order="id")
         # xmlids (fur_theme.payment_provider_<mode>) for the main website's company
         main_company = websites[:1].company_id
-        for company in websites.company_id:
+        Acquirer = self.with_context(active_test=False)
+        for company in websites.mapped("company_id"):
             for sequence, mode in enumerate(FUR_PAYMENT_MODES, start=1):
                 texts = _FUR_PROVIDER_TEXTS[mode]
-                provider = self.with_context(active_test=False).search([
-                    ("code", "=", "custom"), ("custom_mode", "=", mode), ("company_id", "=", company.id),
-                ], order="is_published desc, active desc, id", limit=1)
-                if not provider:
-                    provider = self.create({
+                acquirer = Acquirer.search([
+                    ("provider", "=", "transfer"), ("custom_mode", "=", mode), ("company_id", "=", company.id),
+                ], order="id", limit=1)
+                if not acquirer and mode == "wire_transfer":
+                    acquirer = Acquirer.search([
+                        ("provider", "=", "transfer"), ("custom_mode", "=", False), ("company_id", "=", company.id),
+                    ], order="id", limit=1)
+                if not acquirer:
+                    with file_open(texts["image"], "rb") as image:
+                        image = base64.b64encode(image.read())
+                    acquirer = self.create({
                         "name": texts["name"][0],
-                        "code": "custom",
-                        "custom_mode": mode,
+                        "provider": "transfer",
                         "company_id": company.id,
-                        "redirect_form_view_id": self.env.ref("payment.generic_redirect_form").id,
-                        # the company's bank account is set by hand: never publish a guess
-                        "partner_bank_id": False,
+                        "view_template_id": self.env.ref("payment_transfer.transfer_form").id,
+                        "image_128": image,
                     })
-                if not provider._fur_checkout_payment_method():
-                    method = self.env["payment.method"].with_context(active_test=False).search([
-                        ("provider_id", "=", provider.id), ("code", "=", mode),
-                    ], limit=1)
-                    if method:
-                        method.active = True
-                    else:
-                        with file_open(texts["image"], "rb") as image:
-                            image = image.read()
-                        self.env["payment.method"].create({
-                            "name": texts["name"][0],
-                            "code": mode,
-                            "provider_id": provider.id,
-                            "image": BinaryBytes(image, filename=texts["image"].rsplit("/", 1)[-1]),
-                            "active": True,
-                            "support_tokenization": False,
-                            "support_express_checkout": False,
-                            "support_manual_capture": "none",
-                            "support_refund": "none",
-                        })
-                provider.with_context(lang="en_US").write({
-                    "active": True,
-                    "is_live": True,
-                    "is_published": True,
-                    "sequence": sequence,
-                    "name": texts["name"][0],
-                    "pre_msg": texts["pre_msg"][0],
-                    "pending_msg": texts["pending_msg"][0],
-                })
-                if vietnamese:
-                    for fname in ("name", "pre_msg", "pending_msg"):
-                        english, translation = texts[fname]
-                        field = self._fields[fname]
-                        if callable(field.translate):  # html: translated term by term
-                            translation = dict(zip(
-                                _terms(field, provider.with_context(lang="en_US")[fname]),
-                                _terms(field, translation),
-                                strict=True,
-                            ))
-                        provider.update_field_translations(fname, {"vi_VN": translation})
+                acquirer.write({"custom_mode": mode, "state": "enabled", "sequence": sequence, "display_as": False})
+                if not acquirer.journal_id:
+                    # as payment_transfer does: the payments go to the bank journal
+                    acquirer.journal_id = self.env["account.journal"].search(
+                        [("type", "=", "bank"), ("company_id", "=", company.id)], limit=1
+                    )
+                # English (the source terms) last: on a database with a single
+                # language Odoo 14 writes a translation to the source term too
+                for lang, index in (("vi_VN", 1), ("en_US", 0)):
+                    if lang == "vi_VN" and not vietnamese:
+                        continue
+                    acquirer.with_context(lang=lang).write({
+                        fname: texts[fname][index] for fname in ("name", "pre_msg", "pending_msg") if fname in texts
+                    })
                 if company == main_company:
                     self.env["ir.model.data"]._update_xmlids([{
-                        "xml_id": f"fur_theme.payment_provider_{mode}",
-                        "record": provider,
+                        "xml_id": "fur_theme.payment_provider_%s" % mode,
+                        "record": acquirer,
                         "noupdate": True,
                     }])

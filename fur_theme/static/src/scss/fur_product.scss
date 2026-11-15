@@ -1,41 +1,61 @@
-// Product page (/shop/<product>).
+// Product page (/shop/<product>). Odoo 14 markup: #product_detail holds the
+// breadcrumb row, the picture carousel and #product_details (title, price,
+// options, cart buttons); "o_wsale_product_page" is set on #wrap by
+// fur_theme.product (Odoo 14 has no page class of its own).
 .o_fur .o_wsale_product_page {
     #product_detail {
-        .o_wsale_breadcrumb {
+        .breadcrumb {
+            padding: 0;
+            background: none;
             font-size: .82rem;
             a { color: var(--fur-muted); text-decoration: none; }
         }
+        // the Fur header has the search box
+        .o_wsale_products_searchbar_form { display: none !important; }
     }
-    .o_wsale_product_images {
+    #o-carousel-product {
         img { border-radius: var(--fur-radius-sm); }
     }
-    #o_wsale_product_details_content {
+    #product_details {
         h1 {
             font-weight: 700;
             line-height: 1.3;
             color: var(--fur-navy);
         }
     }
-    .product_price .oe_price,
-    .product_price .oe_price_h4,
-    .o_wsale_product_details_content_section_price .oe_price {
+    .product_price {
+        margin: 0 !important;
+        h4, .h4 { margin: 0; }
+        .oe_price_h4 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0 .6rem;
+            // Odoo 14 puts the crossed-out price first
+            .oe_default_price { order: 2; font-size: 1.1rem; }
+        }
+    }
+    .product_price .oe_price {
         font-size: 1.85rem;
         font-weight: 800;
         color: var(--fur-price);
     }
-    .product_price .oe_default_price,
-    .o_wsale_product_details_content_section_price del {
-        color: #9CA3AF;
+    .product_price .oe_default_price {
+        font-weight: 400;
+        color: #9CA3AF !important;
     }
     #add_to_cart,
-    .o_we_buy_now,
-    #o_wsale_cta_wrapper .btn-primary {
-        border-radius: 2rem;
-        font-weight: 700;
+    #buy_now {
         min-height: 3rem;
+        padding-right: 1.75rem !important;
+        padding-left: 1.75rem !important;
+        border-radius: 2rem;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 2rem;
     }
-    #o_wsale_cta_wrapper .btn-outline-primary,
-    .o_we_buy_now {
+    #add_to_cart { color: var(--fur-navy-2); }
+    #buy_now {
         border: 1.5px solid var(--fur-navy-2);
         background: #fff;
         color: var(--fur-navy-2);
@@ -44,6 +64,19 @@
     .css_quantity {
         border-radius: 2rem;
         overflow: hidden;
+    }
+    // a product without a price: "Contact" + quote button
+    .o_fur_price_request {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .5rem .75rem;
+        .o_fur_price_contact {
+            margin-right: .5rem;
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--fur-price);
+        }
     }
 }
 
@@ -144,21 +177,23 @@
         line-height: 1.6;
         p:last-child { margin-bottom: 0; }
     }
-    .o_wsale_product_details_content_section_price {
+    // "Price:" label on the line of the price
+    .js_main_product > div:first-child {
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
         gap: .35rem .6rem;
+        margin-bottom: 1rem;
     }
     .o_fur_price_label {
         font-weight: 600;
         color: var(--fur-navy-2);
     }
 
-    // colour swatches (attribute display type "image")
-    .css_attribute_image {
-        width: 3rem;
-        height: 3rem;
+    // colour swatches (attribute display type "color")
+    .css_attribute_color {
+        width: 2.5rem;
+        height: 2.5rem;
         border: 2px solid var(--fur-line);
         border-radius: .5rem !important;
         transition: border-color .15s, transform .15s;

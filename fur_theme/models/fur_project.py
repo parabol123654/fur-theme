@@ -2,6 +2,8 @@
 from odoo import api, fields, models
 from odoo.tools.translate import html_translate
 
+from odoo.addons.http_routing.models.ir_http import slug
+
 
 class FurProject(models.Model):
     """A completed interior project shown on the /projects pages."""
@@ -38,7 +40,7 @@ class FurProject(models.Model):
         help="Second line of the title on the homepage card, e.g. 'Tech startup, Austin'.",
     )
     summary = fields.Text(translate=True)
-    description = fields.Html(translate=html_translate, sanitize_overridable=True)
+    description = fields.Html(translate=html_translate)
     is_featured = fields.Boolean(
         string="Featured on Homepage",
         help="Show this project in the 'Featured projects' section of the homepage.",
@@ -52,10 +54,9 @@ class FurProject(models.Model):
     @api.depends("name")
     def _compute_website_url(self):
         super()._compute_website_url()
-        slug = self.env["ir.http"]._slug
         for project in self:
             if project.id:
-                project.website_url = f"/projects/{slug(project)}"
+                project.website_url = "/projects/%s" % slug(project)
 
     def _default_website_meta(self):
         res = super()._default_website_meta()

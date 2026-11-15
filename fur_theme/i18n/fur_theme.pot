@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 20.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 19:20+0000\n"
-"PO-Revision-Date: 2026-10-10 19:20+0000\n"
+"POT-Creation-Date: 2026-11-14 19:32+0000\n"
+"PO-Revision-Date: 2026-11-14 19:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,30 +16,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: fur_theme
-#: model:ir.module.module,description:base.module_fur_theme
-msgid ""
-"\n"
-"Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.\n"
-"\n"
-"* Header with logo, instant product search, hotline, cart, account and flag language switcher\n"
-"* Homepage: hero slider, service strip, category grid, one product block per category,\n"
-"  featured projects\n"
-"* Shop and category pages with banner, sub-category pills and product cards\n"
-"* Product page with sticky buy box, perks, hotline card, description and buying guide tabs\n"
-"* One-step checkout on the cart page (bank transfer, cash on delivery)\n"
-"* Projects showcase (/projects) with list, filters and detail pages\n"
-"* Floating call, Zalo and Messenger buttons\n"
-"* English and Vietnamese\n"
-msgstr ""
-
-#. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.view_website_form_fur
 msgid "+1 555 0100 200 or https://wa.me/..."
-msgstr ""
-
-#. module: fur_theme
-#: model:website.page,url:fur_theme.policy_delivery_page
-msgid "/delivery-installation"
 msgstr ""
 
 #. module: fur_theme
@@ -59,7 +37,13 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "1. Delivery times"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:product.template,website_description:fur_theme.product_meeting_table
+msgid "10"
 msgstr ""
 
 #. module: fur_theme
@@ -147,6 +131,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "2. Installation"
 msgstr ""
 
@@ -167,6 +152,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "3. Receiving your order"
 msgstr ""
 
@@ -267,6 +253,13 @@ msgid "90 x 45 x 85 cm"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
+msgid ""
+"<span class=\"o_fur_price_label\">Price:</span>\n"
+"            <span class=\"o_fur_price_contact\">Contact</span>"
+msgstr ""
+
+#. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.services_strip
 msgid "<span class=\"o_fur_service_text\">Free<br/>consultation</span>"
 msgstr ""
@@ -335,16 +328,19 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "<strong>Contents</strong>"
 msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "<strong>Thank you for choosing us!</strong>"
 msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "<strong>We deliver from Monday to Saturday, 8:00 to 18:00.</strong>"
 msgstr ""
 
@@ -357,21 +353,18 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_chair_task
-#: model_terms:product.template,description_ecommerce:fur_theme.product_chair_task
 #: model_terms:product.template,website_description:fur_theme.product_chair_task
 msgid "A cheerful swivel task chair with a mustard shell and padded seat."
 msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_desk_white
-#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_white
 #: model_terms:product.template,website_description:fur_theme.product_desk_white
 msgid "A clean white desk with a slim drawer and a black steel frame."
 msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_dining_chair_teal
-#: model_terms:product.template,description_ecommerce:fur_theme.product_dining_chair_teal
 #: model_terms:product.template,website_description:fur_theme.product_dining_chair_teal
 msgid ""
 "A comfortable moulded shell chair on slim black legs, stackable for small "
@@ -380,7 +373,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_sofa_teal
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_teal
 #: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid ""
 "A compact two-seater upholstered in deep teal velvet, with a solid oak base "
@@ -389,7 +381,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_desk_pad
-#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_pad
 #: model_terms:product.template,website_description:fur_theme.product_desk_pad
 msgid ""
 "A large black desk pad that protects the top and keeps the mouse precise."
@@ -397,14 +388,12 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_chest_oak
-#: model_terms:product.template,description_ecommerce:fur_theme.product_chest_oak
 #: model_terms:product.template,website_description:fur_theme.product_chest_oak
 msgid "A light oak chest with two deep drawers."
 msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_desk_glass
-#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_glass
 #: model_terms:product.template,website_description:fur_theme.product_desk_glass
 msgid ""
 "A light, airy desk in tempered glass that keeps small rooms feeling open."
@@ -412,7 +401,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_meeting_table
-#: model_terms:product.template,description_ecommerce:fur_theme.product_meeting_table
 #: model_terms:product.template,website_description:fur_theme.product_meeting_table
 msgid ""
 "A long conference table for ten with cable management built into the frame."
@@ -420,7 +408,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_sideboard_low
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sideboard_low
 #: model_terms:product.template,website_description:fur_theme.product_sideboard_low
 msgid ""
 "A long, low sideboard with sliding doors, perfect under a TV or along a "
@@ -429,7 +416,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_desk_walnut
-#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_walnut
 #: model_terms:product.template,website_description:fur_theme.product_desk_walnut
 msgid ""
 "A minimalist desk with a walnut top and waterfall sides for a clean home "
@@ -445,7 +431,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_sofa_navy
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_navy
 #: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 msgid ""
 "A relaxed loveseat in a durable navy linen blend with tapered wooden legs."
@@ -453,14 +438,12 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_booth
-#: model_terms:product.template,description_ecommerce:fur_theme.product_booth
 #: model_terms:product.template,website_description:fur_theme.product_booth
 msgid "A semi-enclosed booth for focused work or calls in open offices."
 msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_dining_table_oak
-#: model_terms:product.template,description_ecommerce:fur_theme.product_dining_table_oak
 #: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
 msgid ""
 "A soft oval table in solid oak that seats six comfortably and has no corners"
@@ -469,7 +452,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_pedestal_black
-#: model_terms:product.template,description_ecommerce:fur_theme.product_pedestal_black
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 msgid ""
 "A tall pedestal with a wooden top: personal storage that doubles as a side "
@@ -654,6 +636,16 @@ msgid "About the White Desk with Drawer"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:payment.acquirer,pending_msg:fur_theme.payment_provider_wire_transfer
+msgid "Account Holder:"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.acquirer,pending_msg:fur_theme.payment_provider_wire_transfer
+msgid "Account Number:"
+msgstr ""
+
+#. module: fur_theme
 #: model:product.template,name:fur_theme.product_booth
 msgid "Acoustic Work Booth"
 msgstr ""
@@ -753,23 +745,18 @@ msgid "Austin, Texas"
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.model.fields,field_description:fur_theme.field_fur_project__publish_on
-msgid "Auto publish on"
-msgstr ""
-
-#. module: fur_theme
-#: model:ir.model.fields,help:fur_theme.field_fur_project__publish_on
-msgid "Automatically publish the page on the chosen date and time."
-msgstr ""
-
-#. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_chair_mesh
 msgid "Back"
 msgstr ""
 
 #. module: fur_theme
-#: model:payment.provider,name:fur_theme.payment_provider_wire_transfer
+#: model:payment.acquirer,name:fur_theme.payment_provider_wire_transfer
 msgid "Bank transfer"
+msgstr ""
+
+#. module: fur_theme
+#: model_terms:payment.acquirer,pending_msg:fur_theme.payment_provider_wire_transfer
+msgid "Bank:"
 msgstr ""
 
 #. module: fur_theme
@@ -801,7 +788,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_organizer
-#: model_terms:product.template,description_ecommerce:fur_theme.product_organizer
 #: model_terms:product.template,website_description:fur_theme.product_organizer
 msgid "Black steel mesh pot for pens, scissors and the rest."
 msgstr ""
@@ -828,7 +814,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_chair_mesh
-#: model_terms:product.template,description_ecommerce:fur_theme.product_chair_mesh
 #: model_terms:product.template,website_description:fur_theme.product_chair_mesh
 msgid ""
 "Breathable mesh back, synchro tilt and adjustable arms for long working "
@@ -895,7 +880,12 @@ msgid "Cart"
 msgstr ""
 
 #. module: fur_theme
-#: model:payment.provider,name:fur_theme.payment_provider_cash_on_delivery
+#: model:ir.model.fields.selection,name:fur_theme.selection__payment_acquirer__custom_mode__cash_on_delivery
+msgid "Cash on Delivery"
+msgstr ""
+
+#. module: fur_theme
+#: model:payment.acquirer,name:fur_theme.payment_provider_cash_on_delivery
 msgid "Cash on delivery"
 msgstr ""
 
@@ -949,6 +939,12 @@ msgid "Code:"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_product_product__compare_list_price
+#: model:ir.model.fields,field_description:fur_theme.field_product_template__compare_list_price
+msgid "Compare to Price"
+msgstr ""
+
+#. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Completed"
 msgstr ""
@@ -969,10 +965,12 @@ msgid "Consulting firm, London"
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
 #: code:addons/fur_theme/controllers/shop.py:0
 #: model_terms:ir.ui.view,arch_db:fur_theme.footer
 #: model_terms:ir.ui.view,arch_db:fur_theme.header
+#: model_terms:ir.ui.view,arch_db:fur_theme.product_card
+#: model_terms:ir.ui.view,arch_db:fur_theme.products_item
+#, python-format
 msgid "Contact"
 msgstr ""
 
@@ -1076,17 +1074,14 @@ msgid ""
 msgstr ""
 
 #. module: fur_theme
-#: model:website.page,name:fur_theme.policy_delivery_page
-msgid "Delivery & Installation"
-msgstr ""
-
-#. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "Delivery &amp; Installation"
 msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "Delivery &amp; installation"
 msgstr ""
 
@@ -1102,6 +1097,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "Delivery times"
 msgstr ""
 
@@ -1174,9 +1170,8 @@ msgstr ""
 
 #. module: fur_theme
 #: model:ir.model.fields,field_description:fur_theme.field_fur_project__display_name
-#: model:ir.model.fields,field_description:fur_theme.field_ir_http__display_name
 #: model:ir.model.fields,field_description:fur_theme.field_ir_module_module__display_name
-#: model:ir.model.fields,field_description:fur_theme.field_payment_provider__display_name
+#: model:ir.model.fields,field_description:fur_theme.field_payment_acquirer__display_name
 #: model:ir.model.fields,field_description:fur_theme.field_product_public_category__display_name
 #: model:ir.model.fields,field_description:fur_theme.field_product_template__display_name
 #: model:ir.model.fields,field_description:fur_theme.field_sale_order__display_name
@@ -1191,7 +1186,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_desk_standing
-#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_standing
 #: model_terms:product.template,website_description:fur_theme.product_desk_standing
 msgid ""
 "Dual-motor sit-stand frame with memory presets; pair it with any desktop."
@@ -1306,7 +1300,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_divider
-#: model_terms:product.template,description_ecommerce:fur_theme.product_divider
 #: model_terms:product.template,website_description:fur_theme.product_divider
 msgid "Free-standing folding screen that absorbs sound and zones open spaces."
 msgstr ""
@@ -1322,8 +1315,8 @@ msgid "Full story of the project…"
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.module.module,shortdesc:base.module_fur_theme
-msgid "Fur - Furniture eCommerce Theme"
+#: model:ir.model.fields,field_description:fur_theme.field_payment_acquirer__custom_mode
+msgid "Fur Checkout Mode"
 msgstr ""
 
 #. module: fur_theme
@@ -1337,19 +1330,13 @@ msgid "Fur Theme"
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.module.module,summary:base.module_fur_theme
-msgid ""
-"Furniture & interior design eCommerce theme: homepage, shop, product page, "
-"one-step checkout, projects showcase, instant search"
-msgstr ""
-
-#. module: fur_theme
 #: model:fur.project,name:fur_theme.project_townhouse
 msgid "Garden Townhouse"
 msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.homepage
+#: model_terms:ir.ui.view,arch_db:fur_theme.product
 msgid "Get a quote"
 msgstr ""
 
@@ -1370,14 +1357,8 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_lamp_glass
-#: model_terms:product.template,description_ecommerce:fur_theme.product_lamp_glass
 #: model_terms:product.template,website_description:fur_theme.product_lamp_glass
 msgid "Green ribbed glass shade on a black base for a soft, warm light."
-msgstr ""
-
-#. module: fur_theme
-#: model:ir.model,name:fur_theme.model_ir_http
-msgid "HTTP Routing"
 msgstr ""
 
 #. module: fur_theme
@@ -1394,7 +1375,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_chair_executive
-#: model_terms:product.template,description_ecommerce:fur_theme.product_chair_executive
 #: model_terms:product.template,website_description:fur_theme.product_chair_executive
 msgid ""
 "High-back ergonomic chair with adjustable headrest, armrests and lumbar "
@@ -1430,9 +1410,8 @@ msgstr ""
 
 #. module: fur_theme
 #: model:ir.model.fields,field_description:fur_theme.field_fur_project__id
-#: model:ir.model.fields,field_description:fur_theme.field_ir_http__id
 #: model:ir.model.fields,field_description:fur_theme.field_ir_module_module__id
-#: model:ir.model.fields,field_description:fur_theme.field_payment_provider__id
+#: model:ir.model.fields,field_description:fur_theme.field_payment_acquirer__id
 #: model:ir.model.fields,field_description:fur_theme.field_product_public_category__id
 #: model:ir.model.fields,field_description:fur_theme.field_product_template__id
 #: model:ir.model.fields,field_description:fur_theme.field_sale_order__id
@@ -1442,6 +1421,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid ""
 "If you cancel an order after it has been delivered, the delivery costs are "
 "charged."
@@ -1479,6 +1459,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "Installation"
 msgstr ""
 
@@ -1510,7 +1491,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_desk_corner
-#: model_terms:product.template,description_ecommerce:fur_theme.product_desk_corner
 #: model_terms:product.template,website_description:fur_theme.product_desk_corner
 msgid ""
 "L-shaped desk with a walnut top, steel frame and an integrated storage "
@@ -1520,6 +1500,17 @@ msgstr ""
 #. module: fur_theme
 #: model:product.public.category,name:fur_theme.categ_lamps
 msgid "Lamps"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_fur_project____last_update
+#: model:ir.model.fields,field_description:fur_theme.field_ir_module_module____last_update
+#: model:ir.model.fields,field_description:fur_theme.field_payment_acquirer____last_update
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category____last_update
+#: model:ir.model.fields,field_description:fur_theme.field_product_template____last_update
+#: model:ir.model.fields,field_description:fur_theme.field_sale_order____last_update
+#: model:ir.model.fields,field_description:fur_theme.field_website____last_update
+msgid "Last Modified on"
 msgstr ""
 
 #. module: fur_theme
@@ -1613,7 +1604,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_cabinet_black
-#: model_terms:product.template,description_ecommerce:fur_theme.product_cabinet_black
 #: model_terms:product.template,website_description:fur_theme.product_cabinet_black
 msgid "Low chest of four wide drawers for files, samples or supplies."
 msgstr ""
@@ -1627,6 +1617,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid ""
 "Made-to-order products: delivered within 2 to 4 weeks; the exact date is "
 "confirmed with your order."
@@ -1757,8 +1748,8 @@ msgid "Neighbourhood Café"
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
 #: code:addons/fur_theme/controllers/shop.py:0
+#, python-format
 msgid "No product found"
 msgstr ""
 
@@ -1822,7 +1813,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_bench_desk
-#: model_terms:product.template,description_ecommerce:fur_theme.product_bench_desk
 #: model_terms:product.template,website_description:fur_theme.product_bench_desk
 msgid "Open-plan bench desk for four people with acoustic dividers."
 msgstr ""
@@ -1849,6 +1839,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid ""
 "Orders are delivered once the payment is confirmed. We call you the day "
 "before to agree on a time slot."
@@ -1865,13 +1856,13 @@ msgid "Other requests"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.acquirer,pre_msg:fur_theme.payment_provider_cash_on_delivery
 msgid ""
 "Our sales staff will call you to confirm the order and the delivery time."
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_wire_transfer
+#: model_terms:payment.acquirer,pre_msg:fur_theme.payment_provider_wire_transfer
 msgid ""
 "Our staff will call you to confirm the order and arrange the delivery once "
 "the payment is received."
@@ -1879,6 +1870,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid ""
 "Our team assembles and installs the furniture on site, free of charge in our"
 " delivery area."
@@ -1891,6 +1883,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "Packaging is taken away after the installation."
 msgstr ""
 
@@ -1905,18 +1898,25 @@ msgid "Panels"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.acquirer,pre_msg:fur_theme.payment_provider_cash_on_delivery
 msgid "Pay in cash to the delivery staff when you receive the goods."
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.model,name:fur_theme.model_payment_provider
-msgid "Payment Provider"
+#: model:ir.model,name:fur_theme.model_payment_acquirer
+msgid "Payment Acquirer"
 msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Payment method"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_payment_acquirer__custom_mode
+msgid ""
+"Payment mode of the Fur one-step checkout (cart page) this wire transfer "
+"acquirer is offered as. Empty: not offered on the cart page."
 msgstr ""
 
 #. module: fur_theme
@@ -1952,53 +1952,53 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid ""
 "Please check the goods before signing the delivery note, and tell us "
 "straight away about any damage so that we can replace the item."
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
 #: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please choose a payment method."
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
 #: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please enter a valid email address."
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
 #: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please enter a valid phone number."
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
 #: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please enter your delivery address."
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
 #: code:addons/fur_theme/controllers/cart.py:0
+#, python-format
 msgid "Please enter your full name."
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
-msgid ""
-"Please make sure the room is accessible and the furniture can go through "
-"doors and stairways."
+#: model_terms:payment.acquirer,pending_msg:fur_theme.payment_provider_wire_transfer
+msgid "Please make a payment to:"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:payment.provider,pending_msg:fur_theme.payment_provider_wire_transfer
+#: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid ""
-"Please transfer the order amount using the details below. We will call you "
-"to confirm the order as soon as the payment is received."
+"Please make sure the room is accessible and the furniture can go through "
+"doors and stairways."
 msgstr ""
 
 #. module: fur_theme
@@ -2033,11 +2033,6 @@ msgid "Price:"
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.model,name:fur_theme.model_product_template
-msgid "Product"
-msgstr ""
-
-#. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.homepage
 msgid "Product <span class=\"o_fur_accent\">categories</span>"
 msgstr ""
@@ -2045,6 +2040,11 @@ msgstr ""
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.product_title
 msgid "Product Name"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model,name:fur_theme.model_product_template
+msgid "Product Template"
 msgstr ""
 
 #. module: fur_theme
@@ -2083,6 +2083,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "Products in stock: delivered within 1 to 3 working days."
 msgstr ""
 
@@ -2119,19 +2120,14 @@ msgid "Published"
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.model.fields,field_description:fur_theme.field_fur_project__published_date
-msgid "Published date"
-msgstr ""
-
-#. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_monitor_stand
-#: model_terms:product.template,description_ecommerce:fur_theme.product_monitor_stand
 #: model_terms:product.template,website_description:fur_theme.product_monitor_stand
 msgid "Raises your screen to eye level and frees space for the keyboard."
 msgstr ""
 
 #. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.policy_delivery_view
+#: model_terms:website.page,arch_db:fur_theme.policy_delivery_page
 msgid "Receiving your order"
 msgstr ""
 
@@ -2142,7 +2138,7 @@ msgstr ""
 
 #. module: fur_theme
 #: model:ir.model.fields,help:fur_theme.field_fur_project__website_id
-msgid "Restrict to a specific website."
+msgid "Restrict publishing to this website."
 msgstr ""
 
 #. module: fur_theme
@@ -2162,7 +2158,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_dining_table_round
-#: model_terms:product.template,description_ecommerce:fur_theme.product_dining_table_round
 #: model_terms:product.template,website_description:fur_theme.product_dining_table_round
 msgid ""
 "Round table with a stone-look top and four woven armchairs, at home indoors "
@@ -2181,7 +2176,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_sofa_beige
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_beige
 #: model_terms:product.template,website_description:fur_theme.product_sofa_beige
 msgid ""
 "Scandinavian lounge sofa with an exposed oak frame and removable beige "
@@ -2245,8 +2239,8 @@ msgid "See all"
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
 #: code:addons/fur_theme/controllers/shop.py:0
+#, python-format
 msgid "See all %(count)s results"
 msgstr ""
 
@@ -2314,6 +2308,13 @@ msgid "Showcase your first interior project"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_product_product__compare_list_price
+#: model:ir.model.fields,help:fur_theme.field_product_template__compare_list_price
+msgid ""
+"Shown crossed out next to the sales price on the website when it is higher."
+msgstr ""
+
+#. module: fur_theme
 #: model:ir.model.fields,help:fur_theme.field_website__fur_opening_hours
 msgid "Shown in the footer."
 msgstr ""
@@ -2342,7 +2343,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_cabinet_wood
-#: model_terms:product.template,description_ecommerce:fur_theme.product_cabinet_wood
 #: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
 msgid ""
 "Simple, versatile cabinet in natural wood for living rooms, entrances or "
@@ -2378,7 +2378,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_sofa_camel
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_camel
 #: model_terms:product.template,website_description:fur_theme.product_sofa_camel
 msgid ""
 "Soft aniline leather in a warm camel tone on a slim metal base: a sofa that "
@@ -2387,7 +2386,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_basket
-#: model_terms:product.template,description_ecommerce:fur_theme.product_basket
 #: model_terms:product.template,website_description:fur_theme.product_basket
 msgid "Soft felt basket for blankets, magazines or toys."
 msgstr ""
@@ -2526,27 +2524,20 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_lamp_desk
-#: model_terms:product.template,description_ecommerce:fur_theme.product_lamp_desk
 #: model_terms:product.template,website_description:fur_theme.product_lamp_desk
 msgid "The adjustable architect lamp in matte black, with a weighted base."
 msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_dining_chair_cross
-#: model_terms:product.template,description_ecommerce:fur_theme.product_dining_chair_cross
 #: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
 msgid ""
 "The bistro classic: a cross-back chair in solid beech with a woven seat."
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.model.fields,help:fur_theme.field_fur_project__website_absolute_url
-msgid "The full absolute URL to access the document through the website."
-msgstr ""
-
-#. module: fur_theme
 #: model:ir.model.fields,help:fur_theme.field_fur_project__website_url
-msgid "The full relative URL to access the document through the website."
+msgid "The full URL to access the document through the website."
 msgstr ""
 
 #. module: fur_theme
@@ -2558,7 +2549,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_sofa_cognac
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_cognac
 #: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
 msgid ""
 "The same tailored silhouette in rich cognac leather, for a classic library "
@@ -2572,7 +2562,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_pedestal_wood
-#: model_terms:product.template,description_ecommerce:fur_theme.product_pedestal_wood
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
 msgid "Three-drawer pedestal on castors that slides under any desk."
 msgstr ""
@@ -2593,7 +2582,7 @@ msgid "Track my order"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:payment.provider,pre_msg:fur_theme.payment_provider_wire_transfer
+#: model_terms:payment.acquirer,pre_msg:fur_theme.payment_provider_wire_transfer
 msgid ""
 "Transfer the order amount to our bank account: the account details and the "
 "payment reference are shown as soon as the order is placed."
@@ -2606,7 +2595,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_sideboard_oak
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sideboard_oak
 #: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
 msgid ""
 "Two-door cabinet with a herringbone oak front and splayed legs: storage that"
@@ -2618,6 +2606,49 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fur_theme.fur_project_view_search
 #: model_terms:ir.ui.view,arch_db:fur_theme.project_detail_page
 msgid "Type"
+msgstr ""
+
+#. module: fur_theme
+#: model:ir.model.fields,help:fur_theme.field_product_public_category__website_url
+msgid "URL of the category page of the shop."
+msgstr ""
+
+#. module: fur_theme
+#: model:product.template,uom_name:fur_theme.product_basket
+#: model:product.template,uom_name:fur_theme.product_bench_desk
+#: model:product.template,uom_name:fur_theme.product_booth
+#: model:product.template,uom_name:fur_theme.product_cabinet_black
+#: model:product.template,uom_name:fur_theme.product_cabinet_wood
+#: model:product.template,uom_name:fur_theme.product_chair_executive
+#: model:product.template,uom_name:fur_theme.product_chair_mesh
+#: model:product.template,uom_name:fur_theme.product_chair_task
+#: model:product.template,uom_name:fur_theme.product_chest_oak
+#: model:product.template,uom_name:fur_theme.product_desk_corner
+#: model:product.template,uom_name:fur_theme.product_desk_glass
+#: model:product.template,uom_name:fur_theme.product_desk_pad
+#: model:product.template,uom_name:fur_theme.product_desk_standing
+#: model:product.template,uom_name:fur_theme.product_desk_walnut
+#: model:product.template,uom_name:fur_theme.product_desk_white
+#: model:product.template,uom_name:fur_theme.product_dining_chair_cross
+#: model:product.template,uom_name:fur_theme.product_dining_chair_teal
+#: model:product.template,uom_name:fur_theme.product_dining_table_oak
+#: model:product.template,uom_name:fur_theme.product_dining_table_round
+#: model:product.template,uom_name:fur_theme.product_divider
+#: model:product.template,uom_name:fur_theme.product_lamp_desk
+#: model:product.template,uom_name:fur_theme.product_lamp_glass
+#: model:product.template,uom_name:fur_theme.product_meeting_table
+#: model:product.template,uom_name:fur_theme.product_monitor_stand
+#: model:product.template,uom_name:fur_theme.product_organizer
+#: model:product.template,uom_name:fur_theme.product_pedestal_black
+#: model:product.template,uom_name:fur_theme.product_pedestal_wood
+#: model:product.template,uom_name:fur_theme.product_sideboard_low
+#: model:product.template,uom_name:fur_theme.product_sideboard_oak
+#: model:product.template,uom_name:fur_theme.product_sofa_beige
+#: model:product.template,uom_name:fur_theme.product_sofa_camel
+#: model:product.template,uom_name:fur_theme.product_sofa_cognac
+#: model:product.template,uom_name:fur_theme.product_sofa_navy
+#: model:product.template,uom_name:fur_theme.product_sofa_teal
+msgid "Units"
 msgstr ""
 
 #. module: fur_theme
@@ -2726,17 +2757,13 @@ msgid "Website"
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_absolute_url
-msgid "Website Absolute URL"
-msgstr ""
-
-#. module: fur_theme
 #: model:ir.model,name:fur_theme.model_product_public_category
 msgid "Website Product Category"
 msgstr ""
 
 #. module: fur_theme
 #: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_url
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__website_url
 msgid "Website URL"
 msgstr ""
 
@@ -2786,6 +2813,11 @@ msgid "White melamine, steel frame"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__payment_acquirer__custom_mode__wire_transfer
+msgid "Wire Transfer"
+msgstr ""
+
+#. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_sofa_beige
 msgid "Woven fabric, beige (removable covers)"
 msgstr ""
@@ -2801,28 +2833,28 @@ msgid "Your cart"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:payment.provider,pending_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.acquirer,pending_msg:fur_theme.payment_provider_cash_on_delivery
 msgid ""
 "Your order has been received. Please pay the delivery staff when you receive"
 " the goods; we will call you to confirm the delivery time."
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:payment.provider,auth_msg:fur_theme.payment_provider_cash_on_delivery
-#: model_terms:payment.provider,auth_msg:fur_theme.payment_provider_wire_transfer
+#: model_terms:payment.acquirer,auth_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.acquirer,auth_msg:fur_theme.payment_provider_wire_transfer
 msgid "Your payment has been authorized."
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:payment.provider,cancel_msg:fur_theme.payment_provider_cash_on_delivery
-#: model_terms:payment.provider,cancel_msg:fur_theme.payment_provider_wire_transfer
+#: model_terms:payment.acquirer,cancel_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.acquirer,cancel_msg:fur_theme.payment_provider_wire_transfer
 msgid "Your payment has been cancelled."
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:payment.provider,done_msg:fur_theme.payment_provider_cash_on_delivery
-#: model_terms:payment.provider,done_msg:fur_theme.payment_provider_wire_transfer
-msgid "Your payment has been processed."
+#: model_terms:payment.acquirer,done_msg:fur_theme.payment_provider_cash_on_delivery
+#: model_terms:payment.acquirer,done_msg:fur_theme.payment_provider_wire_transfer
+msgid "Your payment has been successfully processed. Thank you!"
 msgstr ""
 
 #. module: fur_theme

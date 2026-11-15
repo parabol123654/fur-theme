@@ -4,7 +4,7 @@
     "summary": "Furniture & interior design eCommerce theme: homepage, shop, product page, "
     "one-step checkout, projects showcase, instant search",
     "description": """
-Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.
+Furniture eCommerce theme for Odoo 14.0 Community and Enterprise.
 
 * Header with logo, instant product search, hotline, cart, account and flag language switcher
 * Homepage: hero slider, service strip, category grid, one product block per category,
@@ -16,21 +16,23 @@ Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.
 * Floating call, WhatsApp, Zalo and Messenger buttons
 * English and Vietnamese
 """,
-    "version": "20.0.1.0.0",
+    "version": "14.0.1.0.0",
     "category": "Website/Theme",
     "author": "Manh Nguyen",
-    "license": "AGPL-3",
+    "license": "LGPL-3",
     "website": "https://github.com/parabol123654/fur-theme",
     "support": "parabol123654@gmail.com",
     "depends": [
         "website_sale",
-        "payment_custom",
+        "payment_transfer",
         "auth_signup",
         "account",
     ],
     "data": [
-        "security/ir.access.csv",
+        "security/ir.model.access.csv",
+        "security/fur_security.xml",
         "data/fur_policy_page.xml",
+        "views/assets.xml",
         "views/fur_project_views.xml",
         "views/product_views.xml",
         "views/fur_menus.xml",
@@ -49,31 +51,6 @@ Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.
         "demo/fur_project_demo.xml",
         "demo/fur_website_demo.xml",
     ],
-    "assets": {
-        "web._assets_primary_variables": [
-            (
-                "after",
-                "website/static/src/scss/primary_variables.scss",
-                "fur_theme/static/src/scss/primary_variables.scss",
-            ),
-        ],
-        "web.assets_frontend": [
-            "fur_theme/static/src/scss/fonts.scss",
-            "fur_theme/static/src/scss/fur_common.scss",
-            "fur_theme/static/src/scss/fur_header.scss",
-            "fur_theme/static/src/scss/fur_footer.scss",
-            "fur_theme/static/src/scss/fur_home.scss",
-            "fur_theme/static/src/scss/fur_shop.scss",
-            "fur_theme/static/src/scss/fur_product.scss",
-            "fur_theme/static/src/scss/fur_checkout.scss",
-            "fur_theme/static/src/scss/fur_projects.scss",
-            "fur_theme/static/src/js/product_sticky_buy.js",
-            "fur_theme/static/src/js/search_suggest.js",
-        ],
-        "web.assets_tests": [
-            "fur_theme/static/tests/tours/**/*",
-        ],
-    },
     "images": [
         "static/description/banner.png",
     ],

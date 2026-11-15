@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <field name="public_categ_ids" position="after">
                 <field name="fur_featured"/>
+                <field name="compare_list_price" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/>
             </field>
         </field>
     </record>
@@ -45,6 +46,19 @@
                     <field name="fur_buy_guide" nolabel="1"/>
                 </page>
             </xpath>
+        </field>
+    </record>
+
+    <!-- Wire transfer acquirers offered by the Fur cart page checkout (their
+         help message is on the Messages tab) -->
+    <record id="payment_acquirer_form_fur" model="ir.ui.view">
+        <field name="name">payment.acquirer.form.fur</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment.acquirer_form"/>
+        <field name="arch" type="xml">
+            <field name="display_as" position="after">
+                <field name="custom_mode" attrs="{'invisible': [('provider', '!=', 'transfer')]}"/>
+            </field>
         </field>
     </record>
 </odoo>

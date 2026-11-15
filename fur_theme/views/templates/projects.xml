@@ -9,12 +9,12 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <t t-foreach="banner_crumbs or []" t-as="crumb">
-                        <li t-if="crumb[1]" class="breadcrumb-item"><a t-att-href="crumb[1]" t-out="crumb[0]"/></li>
-                        <li t-else="" class="breadcrumb-item active" aria-current="page" t-out="crumb[0]"/>
+                        <li t-if="crumb[1]" class="breadcrumb-item"><a t-att-href="crumb[1]" t-esc="crumb[0]"/></li>
+                        <li t-else="" class="breadcrumb-item active" aria-current="page" t-esc="crumb[0]"/>
                     </t>
                 </ol>
             </nav>
-            <h1 class="o_fur_page_title" t-out="banner_title"/>
+            <h1 class="o_fur_page_title" t-esc="banner_title"/>
         </div>
     </section>
 </template>
@@ -25,7 +25,7 @@
         <div id="wrap" class="o_fur_projects_page">
             <t t-set="fur_banner_title">Featured projects</t>
             <t t-set="fur_banner_crumb">Projects</t>
-            <t t-call="fur_theme.page_banner" banner_title="fur_banner_title" banner_crumbs="[(fur_banner_crumb, None)]"/>
+            <t t-call="fur_theme.page_banner"><t t-set="banner_title" t-value="fur_banner_title"/><t t-set="banner_crumbs" t-value="[(fur_banner_crumb, None)]"/></t>
             <div class="oe_structure" id="oe_structure_fur_projects_top"/>
             <section class="o_fur_section">
                 <div class="container">
@@ -34,7 +34,7 @@
                         <t t-foreach="project_types.items()" t-as="ptype">
                             <a t-attf-href="/projects?project_type=#{ptype[0]}"
                                t-attf-class="o_fur_pill_filter #{'active' if current_type == ptype[0] else ''}"
-                               t-out="ptype[1]"/>
+                               t-esc="ptype[1]"/>
                         </t>
                     </div>
                     <div t-if="projects" class="o_fur_project_grid o_fur_project_grid_page">
@@ -43,7 +43,7 @@
                                 <t t-call="fur_theme.project_card"/>
                                 <p t-if="project.summary" class="o_fur_project_summary" t-field="project.summary"/>
                                 <p class="o_fur_project_meta">
-                                    <t t-call="fur_theme.icon" icon="'pin'" icon_class="'o_fur_icon_sm'"/>
+                                    <t t-call="fur_theme.icon"><t t-set="icon" t-value="'pin'"/><t t-set="icon_class" t-value="'o_fur_icon_sm'"/></t>
                                     <span t-field="project.location"/>
                                 </p>
                             </div>
@@ -66,10 +66,10 @@
     <t t-call="website.layout">
         <div id="wrap" class="o_fur_project_page">
             <t t-set="fur_banner_crumb">Projects</t>
-            <t t-call="fur_theme.page_banner" banner_title="project.name" banner_crumbs="[(fur_banner_crumb, '/projects'), (project.name, None)]"/>
+            <t t-call="fur_theme.page_banner"><t t-set="banner_title" t-value="project.name"/><t t-set="banner_crumbs" t-value="[(fur_banner_crumb, '/projects'), (project.name, None)]"/></t>
             <section class="o_fur_section">
                 <div class="container">
-                    <div class="row g-4">
+                    <div class="row o_fur_row_g4">
                         <div class="col-lg-8">
                             <div class="o_fur_project_cover">
                                 <img t-att-src="website.image_url(project, 'image_1920')" t-att-alt="project.name"/>
@@ -84,7 +84,7 @@
                                     <t t-if="project.client_name"><dt>Client</dt><dd><span t-field="project.client_name"/></dd></t>
                                     <dt>Type</dt><dd><span t-field="project.project_type"/></dd>
                                     <t t-if="project.location"><dt>Location</dt><dd><span t-field="project.location"/></dd></t>
-                                    <t t-if="project.area"><dt>Area</dt><dd><t t-out="'%g' % project.area"/> m²</dd></t>
+                                    <t t-if="project.area"><dt>Area</dt><dd><t t-esc="'%g' % project.area"/> m²</dd></t>
                                     <t t-if="project.completion_date"><dt>Completed</dt><dd><span t-field="project.completion_date" t-options="{'widget': 'date', 'format': 'MM/yyyy'}"/></dd></t>
                                 </dl>
                                 <a href="/contactus" class="btn o_fur_btn_primary w-100">Get free advice</a>
@@ -100,15 +100,15 @@
                     <t t-set="prices" t-value="website._fur_product_prices(used_products)"/>
                     <t t-set="fur_wishlist_ids" t-value="website._fur_wishlist_variant_ids()"/>
                     <div class="o_fur_product_grid">
-                        <t t-foreach="used_products" t-as="used_product"><t t-call="fur_theme.product_card" product="used_product"/></t>
+                        <t t-foreach="used_products" t-as="used_product"><t t-call="fur_theme.product_card"><t t-set="product" t-value="used_product"/></t></t>
                     </div>
                 </div>
             </section>
             <section t-if="other_projects" class="o_fur_section">
                 <div class="container">
-                    <t t-call="fur_theme.section_title" see_all_url="'/projects'">Other <span class="o_fur_accent">projects</span></t>
+                    <t t-call="fur_theme.section_title"><t t-set="see_all_url" t-value="'/projects'"/>Other <span class="o_fur_accent">projects</span></t>
                     <div class="o_fur_project_grid">
-                        <t t-foreach="other_projects" t-as="other_project"><t t-call="fur_theme.project_card" project="other_project"/></t>
+                        <t t-foreach="other_projects" t-as="other_project"><t t-call="fur_theme.project_card"><t t-set="project" t-value="other_project"/></t></t>
                     </div>
                 </div>
             </section>

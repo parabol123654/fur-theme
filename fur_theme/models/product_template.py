@@ -2,9 +2,8 @@
 import re
 
 from odoo import api, fields, models
-from odoo.fields import Domain
+from odoo.osv import expression
 from odoo.tools import remove_accents
-from odoo.tools.sql import escape_like_value
 
 
 class ProductTemplate(models.Model):
@@ -14,42 +13,76 @@ class ProductTemplate(models.Model):
         string="Featured on Homepage",
         help="Show this product in the 'Featured products' section of the Fur homepage.",
     )
+    # Odoo 14 has no "compare to" price (website_sale adds this field in 16.0)
+    compare_list_price = fields.Float(
+        string="Compare to Price",
+        digits="Product Price",
+        help="Shown crossed out next to the sales price on the website when it is higher.",
+    )
+
+    # ------------------------------------------------------------ prices
+    def _get_combination_info(self, combination=False, product_id=False, add_qty=1, pricelist=False,
+                              parent_combination=False, only_template=False):
+        """The "compare to" price is shown the way Odoo 14 shows a pricelist
+        discount: it becomes the crossed-out ``list_price`` of the combination
+        when it is higher than the price and the pricelist shows no discount
+        of its own."""
+        info = super()._get_combination_info(
+            combination=combination, product_id=product_id, add_qty=add_qty, pricelist=pricelist,
+            parent_combination=parent_combination, only_template=only_template,
+        )
+        if not self.compare_list_price or info.get("has_discounted_price"):
+            return info
+        website = self.env["website"].get_current_website() if self.env.context.get("website_id") else False
+        pricelist = pricelist or (website and website.get_current_pricelist())
+        currency = pricelist.currency_id if pricelist else self.currency_id
+        compare = self.compare_list_price
+        if currency != self.currency_id:
+            company = (website and website.company_id) or self.env.company
+            compare = self.currency_id._convert(compare, currency, company, fields.Date.today())
+        if website:
+            # same tax display (B2B / B2C) as the price, see website_sale
+            product = self.env["product.product"].browse(info["product_id"]) or self
+            partner = self.env.user.partner_id
+            tax_display = (
+                self.user_has_groups("account.group_show_line_subtotals_tax_excluded")
+                and "total_excluded" or "total_included"
+            )
+            fpos = self.env["account.fiscal.position"].sudo().get_fiscal_position(partner.id)
+            product_taxes = product.sudo().taxes_id.filtered(lambda tax: tax.company_id == website.company_id)
+            taxes = fpos.map_tax(product_taxes, product, partner)
+            compare = self.env["account.tax"]._fix_tax_included_price_company(
+                compare, product_taxes, taxes, website.company_id
+            )
+            compare = taxes.compute_all(compare, currency, 1, product, partner)[tax_display]
+        if currency.compare_amounts(compare, info["price"]) == 1:
+            info.update(list_price=compare, has_discounted_price=True)
+        return info
+
+    def _website_show_quick_add(self):
+        """A product can be added to the cart from a card: products without a
+        price show "Contact" instead (Odoo 14 has no such website option)."""
+        self.ensure_one()
+        return bool(self.sale_ok and self.list_price and self._is_add_to_cart_possible())
+
+    def _fur_price_on_request(self):
+        """No price: the product page shows a contact button instead of the
+        price and the cart button."""
+        self.ensure_one()
+        return not self.list_price
 
     # ------------------------------------------------------------ search
-    def _get_website_sale_search_fields(self, search_in_description=True):
-        """The shop search looks in the product name and code only: every
-        word must be in them. Odoo also looks in
-        the descriptions, categories and attribute values, which made a full
-        product name match dozens of products, and slowly."""
-        return ["name", "variants_default_code"]
-
-    @api.model
-    def _search_build_domain(self, domain_list, search, fields, extra=None):
-        """Every word of a search must match (Odoo 20 accepts products that
-        match only part of the words of a 3+ word search); Odoo's partial
-        match is kept for a search no product fully matches (a typo)."""
-        words = self._fur_search_words(search)
-        if len(words) <= 2:
-            return super()._search_build_domain(domain_list, search, fields, extra)
-        domain = Domain.AND([Domain(d) for d in domain_list])
-        for word in words:
-            subdomains = [self._search_get_field_domain(field, escape_like_value(word)) for field in fields]
-            if extra:
-                subdomains.append(extra(self.env, word))
-            domain &= Domain.OR(subdomains)
-        if self.search_count(domain, limit=1):
-            return domain
-        return super()._search_build_domain(domain_list, search, fields, extra)
-
     @api.model
     def _fur_search_words(self, text):
         return [word for word in (text or "").split() if word]
 
     @api.model
     def _fur_search_domain(self, text, website):
-        domain = Domain(website.sale_product_domain())
+        domain = website.sale_product_domain()
         for word in self._fur_search_words(text):
-            domain &= Domain("name", "ilike", word) | Domain("variants_default_code", "ilike", word)
+            domain = expression.AND([domain, [
+                "|", ("name", "ilike", word), ("product_variant_ids.default_code", "ilike", word),
+            ]])
         return domain
 
     @api.model
@@ -95,7 +128,7 @@ class ProductTemplate(models.Model):
         name = self.name or ""
         code = (self.default_code or "").strip()
         if code:
-            name = re.sub(rf"\s*[-–]\s*{re.escape(code)}\s*$", "", name, flags=re.IGNORECASE)
+            name = re.sub(r"\s*[-–]\s*%s\s*$" % re.escape(code), "", name, flags=re.IGNORECASE)
         return name or self.name
 
     @api.model_create_multi
@@ -114,8 +147,8 @@ class ProductTemplate(models.Model):
         """Give each product the inventory copy of its deepest website category,
         unless it already has the copy of one of its website categories."""
         for template in self.sudo().filtered("public_categ_ids"):
-            copies = template.public_categ_ids.fur_product_categ_id
+            copies = template.public_categ_ids.mapped("fur_product_categ_id")
             deepest = template.public_categ_ids.sorted(lambda c: len(c.parent_path or ""), reverse=True)
-            target = deepest.fur_product_categ_id[:1]
+            target = deepest.mapped("fur_product_categ_id")[:1]
             if target and template.categ_id not in copies:
                 template.categ_id = target
