@@ -29,9 +29,6 @@ class TestFurModels(FurCommon):
         self.assertNotIn(self.unpublished, products)
 
     def test_product_prices_include_compare_price(self):
-        self.env.ref("base.group_user").sudo().implied_ids |= self.env.ref(
-            "website_sale.group_product_price_comparison"
-        )
         prices = self.website._fur_product_prices(self.chair)
         self.assertEqual(prices[self.chair.id]["price_reduce"], 2750000)
         self.assertEqual(prices[self.chair.id]["base_price"], 3800000)
@@ -55,13 +52,19 @@ class TestFurModels(FurCommon):
         self.assertEqual(self.website._fur_category_images(empty)[empty.id], empty)
 
     def test_flag_urls_and_languages(self):
-        vi = type("Lang", (), {"code": "vi_VN", "flag_image_url": "/vn.png"})
-        en = type("Lang", (), {"code": "en_GB", "flag_image_url": "/gb.png"})
-        fr = type("Lang", (), {"code": "fr_FR", "flag_image_url": "/fr.png"})
+        # (code, url_code, name, active, flag_image_url), see res.lang.get_available
+        vi = ("vi_VN", "vi", "Tiếng Việt", True, "/vn.png")
+        en = ("en_GB", "en_GB", "English (UK)", True, "/gb.png")
+        fr = ("fr_FR", "fr", "Français", True, "/fr.png")
         self.assertTrue(self.website._fur_flag_url(vi).endswith("flag_vn.svg"))
         self.assertTrue(self.website._fur_flag_url(en).endswith("flag_gb.svg"))
         self.assertEqual(self.website._fur_flag_url(fr), "/fr.png")
-        self.assertEqual(self.website._fur_header_languages({"vi_VN": vi}), [], "No pills for one language")
+        self.assertEqual(self.website._fur_header_languages([vi]), [], "No pills for one language")
+        self.website.sudo().default_lang_id = self.env["res.lang"]._activate_lang("en_US")
+        self.assertEqual(
+            self.website._fur_header_languages([vi, ("en_US", "en", "English (US)", True, "/us.png"), fr])[0][0],
+            "en_US", "Default language first",
+        )
 
     def test_project_url_and_access(self):
         self.assertTrue(self.project.website_url.startswith("/projects/"))
@@ -77,10 +80,10 @@ class TestFurModels(FurCommon):
         Website = self.env["website"].sudo()
         custom = Website.create({"name": "Custom grid", "shop_ppr": 2, "shop_ppg": 8})
         default = Website.create({"name": "Default grid", **ODOO_SHOP_LAYOUT})
-        post_init_hook(Website.env)
+        post_init_hook(self.env.cr, self.registry)
         self.assertEqual((default.shop_ppr, default.shop_ppg), tuple(FUR_SHOP_LAYOUT.values()))
         self.assertEqual((custom.shop_ppr, custom.shop_ppg), (2, 8))
-        uninstall_hook(Website.env)
+        uninstall_hook(self.env.cr, self.registry)
         self.assertEqual((default.shop_ppr, default.shop_ppg), tuple(ODOO_SHOP_LAYOUT.values()))
         self.assertEqual((custom.shop_ppr, custom.shop_ppg), (2, 8))
 
@@ -120,15 +123,32 @@ class TestFurViewCopies(FurCommon):
     def test_unchanged_website_copy_gets_translations(self):
         self.env["res.lang"].sudo()._activate_lang("vi_VN")
         View = self.env["ir.ui.view"].sudo()
+        Translation = self.env["ir.translation"].sudo()
+
+        def translate(view, value):
+            term = Translation.search([
+                ("type", "=", "model_terms"), ("name", "=", "ir.ui.view,arch_db"),
+                ("res_id", "=", view.id), ("lang", "=", "vi_VN"), ("src", "=", "See all"),
+            ])
+            if term:
+                term.write({"value": value, "state": "translated"})
+            else:
+                Translation.create({
+                    "type": "model_terms", "name": "ir.ui.view,arch_db", "res_id": view.id,
+                    "lang": "vi_VN", "src": "See all", "value": value, "state": "translated",
+                })
+
         generic = View.create({
             "name": "Fur Test Page", "type": "qweb", "key": "fur_theme.test_copy_page",
             "arch": '<t t-name="fur_theme.test_copy_page"><p>See all</p></t>',
         })
-        generic.update_field_translations("arch_db", {"vi_VN": {"See all": "Xem tất cả"}})
+        translate(generic, "Xem tất cả")
         copy = generic.copy({"website_id": self.website.id, "key": generic.key})
         edited = generic.copy({"website_id": self.website.id, "key": "fur_theme.test_copy_page_2",
                                "arch": '<t t-name="x"><p>Edited</p></t>'})
-        copy.update_field_translations("arch_db", {"vi_VN": {"See all": "Cũ"}})
+        translate(copy, "Cũ")
+        View.invalidate_cache()
+        self.assertIn("Cũ", copy.with_context(lang="vi_VN").arch_db)
         self.env["website"]._fur_sync_view_copies()
         self.assertIn("Xem tất cả", copy.with_context(lang="vi_VN").arch_db)
         self.assertIn("Edited", edited.arch_db, "Edited copies are left alone")

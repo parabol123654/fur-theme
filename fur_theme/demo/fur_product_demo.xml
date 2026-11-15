@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Sample furniture catalogue of the demo shop. Pictures are Odoo's own demo
-     pictures (product, website_sale and website modules, LGPL-3), loaded from
-     those modules: none is shipped with this theme. -->
+     pictures (product and website modules, LGPL-3), loaded from those modules:
+     none is shipped with this theme. Odoo 15 ships few furniture pictures, so
+     some products share one. -->
 <odoo>
 
     <record id="categ_living" model="product.public.category">
@@ -9,7 +10,7 @@
         <field name="sequence" eval="10"/>
         <field name="parent_id" eval="False"/>
         <field name="fur_show_on_home" eval="True"/>
-        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/shop_category_3_4x3.webp"/>
+        <field name="image_1920" type="base64" file="website/static/src/img/snippets_demo/furniture.jpg"/>
     </record>
     <record id="categ_sofas" model="product.public.category">
         <field name="name">Sofas</field>
@@ -28,7 +29,7 @@
         <field name="sequence" eval="20"/>
         <field name="parent_id" eval="False"/>
         <field name="fur_show_on_home" eval="True"/>
-        <field name="image_1920" type="bytes" file="product/static/img/dining_table.png"/>
+        <field name="image_1920" type="base64" file="product/static/img/table03.png"/>
     </record>
     <record id="categ_dining_tables" model="product.public.category">
         <field name="name">Dining Tables</field>
@@ -47,7 +48,7 @@
         <field name="sequence" eval="30"/>
         <field name="parent_id" eval="False"/>
         <field name="fur_show_on_home" eval="True"/>
-        <field name="image_1920" type="bytes" file="product/static/img/office_combo.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_d03-image.png"/>
     </record>
     <record id="categ_desks" model="product.public.category">
         <field name="name">Desks</field>
@@ -78,7 +79,7 @@
         <field name="sequence" eval="40"/>
         <field name="parent_id" eval="False"/>
         <field name="fur_show_on_home" eval="True"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/categories/lamps.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_lamp.png"/>
     </record>
     <record id="categ_lamps" model="product.public.category">
         <field name="name">Lamps</field>
@@ -103,15 +104,14 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="1"/>
         <field name="description_sale">A compact two-seater upholstered in deep teal velvet, with a solid oak base and generous foam cushions.</field>
-        <field name="description_ecommerce" type="html"><p>A compact two-seater upholstered in deep teal velvet, with a solid oak base and generous foam cushions.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Velvet Two-Seat Sofa</h2><p>A compact two-seater upholstered in deep teal velvet, with a solid oak base and generous foam cushions.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>160 x 82 x 78 cm</td></tr><tr><td>Upholstery</td><td>Velvet, teal</td></tr><tr><td>Frame</td><td>Solid oak, brass-finish feet</td></tr><tr><td>Seats</td><td>2</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_d01-image.jpg"/>
+        <field name="image_1920" type="base64" file="website/static/src/img/snippets_demo/furniture.jpg"/>
     </record>
     <record id="product_sofa_teal_image_1" model="product.image">
         <field name="name">Velvet Two-Seat Sofa</field>
         <field name="product_tmpl_id" ref="product_sofa_teal"/>
         <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_d01_image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_d01-image.png"/>
     </record>
     <record id="product_sofa_camel" model="product.template">
         <field name="name">Leather Two-Seat Sofa, Camel</field>
@@ -124,9 +124,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="2"/>
         <field name="description_sale">Soft aniline leather in a warm camel tone on a slim metal base: a sofa that ages beautifully.</field>
-        <field name="description_ecommerce" type="html"><p>Soft aniline leather in a warm camel tone on a slim metal base: a sofa that ages beautifully.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Leather Two-Seat Sofa, Camel</h2><p>Soft aniline leather in a warm camel tone on a slim metal base: a sofa that ages beautifully.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>160 x 82 x 78 cm</td></tr><tr><td>Upholstery</td><td>Aniline leather, camel</td></tr><tr><td>Frame</td><td>Kiln-dried hardwood</td></tr><tr><td>Seats</td><td>2</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_d01b-image.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_d01-image.png"/>
     </record>
     <record id="product_sofa_cognac" model="product.template">
         <field name="name">Leather Two-Seat Sofa, Cognac</field>
@@ -138,9 +137,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="3"/>
         <field name="description_sale">The same tailored silhouette in rich cognac leather, for a classic library look.</field>
-        <field name="description_ecommerce" type="html"><p>The same tailored silhouette in rich cognac leather, for a classic library look.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Leather Two-Seat Sofa, Cognac</h2><p>The same tailored silhouette in rich cognac leather, for a classic library look.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>160 x 82 x 78 cm</td></tr><tr><td>Upholstery</td><td>Aniline leather, cognac</td></tr><tr><td>Frame</td><td>Kiln-dried hardwood</td></tr><tr><td>Seats</td><td>2</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_d01c-image.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_d01-image.png"/>
     </record>
     <record id="product_sofa_navy" model="product.template">
         <field name="name">Linen Loveseat, Navy</field>
@@ -153,9 +151,8 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="4"/>
         <field name="description_sale">A relaxed loveseat in a durable navy linen blend with tapered wooden legs.</field>
-        <field name="description_ecommerce" type="html"><p>A relaxed loveseat in a durable navy linen blend with tapered wooden legs.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Linen Loveseat, Navy</h2><p>A relaxed loveseat in a durable navy linen blend with tapered wooden legs.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>148 x 85 x 80 cm</td></tr><tr><td>Upholstery</td><td>Linen blend, navy</td></tr><tr><td>Legs</td><td>Solid beech</td></tr><tr><td>Seats</td><td>2</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/categories/furnitures.jpg"/>
+        <field name="image_1920" type="base64" file="website/static/src/img/snippets_demo/furniture.jpg"/>
     </record>
     <record id="product_sofa_beige" model="product.template">
         <field name="name">Oak Frame Lounge Sofa</field>
@@ -168,15 +165,8 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="5"/>
         <field name="description_sale">Scandinavian lounge sofa with an exposed oak frame and removable beige cushions.</field>
-        <field name="description_ecommerce" type="html"><p>Scandinavian lounge sofa with an exposed oak frame and removable beige cushions.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Oak Frame Lounge Sofa</h2><p>Scandinavian lounge sofa with an exposed oak frame and removable beige cushions.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>190 x 88 x 76 cm</td></tr><tr><td>Upholstery</td><td>Woven fabric, beige (removable covers)</td></tr><tr><td>Frame</td><td>Solid oak</td></tr><tr><td>Seats</td><td>3</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/shop_category_1_1x1.webp"/>
-    </record>
-    <record id="product_sofa_beige_image_1" model="product.image">
-        <field name="name">Oak Frame Lounge Sofa</field>
-        <field name="product_tmpl_id" ref="product_sofa_beige"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/shop_category_3_4x3.webp"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_d01-image.png"/>
     </record>
     <record id="product_sideboard_oak" model="product.template">
         <field name="name">Herringbone Oak Cabinet</field>
@@ -189,15 +179,8 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="6"/>
         <field name="description_sale">Two-door cabinet with a herringbone oak front and splayed legs: storage that doubles as a statement piece.</field>
-        <field name="description_ecommerce" type="html"><p>Two-door cabinet with a herringbone oak front and splayed legs: storage that doubles as a statement piece.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Herringbone Oak Cabinet</h2><p>Two-door cabinet with a herringbone oak front and splayed legs: storage that doubles as a statement piece.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>80 x 40 x 110 cm</td></tr><tr><td>Material</td><td>Oak veneer, solid oak legs</td></tr><tr><td>Storage</td><td>2 doors, 2 adjustable shelves</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_10-image.jpg"/>
-    </record>
-    <record id="product_sideboard_oak_image_1" model="product.image">
-        <field name="name">Herringbone Oak Cabinet</field>
-        <field name="product_tmpl_id" ref="product_sideboard_oak"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_10-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_10-image.png"/>
     </record>
     <record id="product_sideboard_low" model="product.template">
         <field name="name">Low Oak Sideboard</field>
@@ -209,9 +192,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="7"/>
         <field name="description_sale">A long, low sideboard with sliding doors, perfect under a TV or along a dining room wall.</field>
-        <field name="description_ecommerce" type="html"><p>A long, low sideboard with sliding doors, perfect under a TV or along a dining room wall.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Low Oak Sideboard</h2><p>A long, low sideboard with sliding doors, perfect under a TV or along a dining room wall.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>160 x 45 x 70 cm</td></tr><tr><td>Material</td><td>Oak veneer</td></tr><tr><td>Storage</td><td>2 sliding doors, 4 compartments</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/shop_category_3_1x1.webp"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_6-image.png"/>
     </record>
     <record id="product_cabinet_wood" model="product.template">
         <field name="name">Natural Wood Storage Cabinet</field>
@@ -224,15 +206,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="8"/>
         <field name="description_sale">Simple, versatile cabinet in natural wood for living rooms, entrances or offices.</field>
-        <field name="description_ecommerce" type="html"><p>Simple, versatile cabinet in natural wood for living rooms, entrances or offices.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Natural Wood Storage Cabinet</h2><p>Simple, versatile cabinet in natural wood for living rooms, entrances or offices.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>90 x 45 x 85 cm</td></tr><tr><td>Material</td><td>Oak veneer</td></tr><tr><td>Storage</td><td>2 doors, 1 shelf</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_6-image.jpg"/>
-    </record>
-    <record id="product_cabinet_wood_image_1" model="product.image">
-        <field name="name">Natural Wood Storage Cabinet</field>
-        <field name="product_tmpl_id" ref="product_cabinet_wood"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_6-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_6-image.png"/>
     </record>
     <record id="product_dining_table_round" model="product.template">
         <field name="name">Round Garden Dining Set</field>
@@ -245,9 +220,8 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="9"/>
         <field name="description_sale">Round table with a stone-look top and four woven armchairs, at home indoors or on the terrace.</field>
-        <field name="description_ecommerce" type="html"><p>Round table with a stone-look top and four woven armchairs, at home indoors or on the terrace.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Round Garden Dining Set</h2><p>Round table with a stone-look top and four woven armchairs, at home indoors or on the terrace.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Table</td><td>Ø 120 x 75 cm</td></tr><tr><td>Chairs</td><td>4 woven armchairs</td></tr><tr><td>Material</td><td>Powder-coated steel, sintered stone top</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/dining_table.png"/>
+        <field name="image_1920" type="base64" file="product/static/img/table01.png"/>
     </record>
     <record id="product_dining_table_oak" model="product.template">
         <field name="name">Oval Oak Dining Table</field>
@@ -259,9 +233,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="10"/>
         <field name="description_sale">A soft oval table in solid oak that seats six comfortably and has no corners to bump into.</field>
-        <field name="description_ecommerce" type="html"><p>A soft oval table in solid oak that seats six comfortably and has no corners to bump into.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Oval Oak Dining Table</h2><p>A soft oval table in solid oak that seats six comfortably and has no corners to bump into.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>200 x 100 x 75 cm</td></tr><tr><td>Material</td><td>Solid oak, oiled</td></tr><tr><td>Seats</td><td>6</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/s_bento_grid_default_image_2.webp"/>
+        <field name="image_1920" type="base64" file="product/static/img/table03.png"/>
     </record>
     <record id="product_dining_chair_teal" model="product.template">
         <field name="name">Shell Dining Chair, Teal</field>
@@ -274,15 +247,8 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="11"/>
         <field name="description_sale">A comfortable moulded shell chair on slim black legs, stackable for small spaces.</field>
-        <field name="description_ecommerce" type="html"><p>A comfortable moulded shell chair on slim black legs, stackable for small spaces.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Shell Dining Chair, Teal</h2><p>A comfortable moulded shell chair on slim black legs, stackable for small spaces.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>47 x 52 x 82 cm</td></tr><tr><td>Seat</td><td>Polypropylene shell, teal</td></tr><tr><td>Legs</td><td>Powder-coated steel</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_11-image.jpg"/>
-    </record>
-    <record id="product_dining_chair_teal_image_1" model="product.image">
-        <field name="name">Shell Dining Chair, Teal</field>
-        <field name="product_tmpl_id" ref="product_dining_chair_teal"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_11b-image.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_11-image.png"/>
     </record>
     <record id="product_dining_chair_cross" model="product.template">
         <field name="name">Cross-Back Wooden Chair</field>
@@ -294,9 +260,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="12"/>
         <field name="description_sale">The bistro classic: a cross-back chair in solid beech with a woven seat.</field>
-        <field name="description_ecommerce" type="html"><p>The bistro classic: a cross-back chair in solid beech with a woven seat.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Cross-Back Wooden Chair</h2><p>The bistro classic: a cross-back chair in solid beech with a woven seat.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>45 x 50 x 88 cm</td></tr><tr><td>Material</td><td>Solid beech, woven paper cord seat</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website/static/src/img/snippets_demo/s_bento_grid_default_image_1.webp"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_11-image.png"/>
     </record>
     <record id="product_desk_walnut" model="product.template">
         <field name="name">Walnut Writing Desk</field>
@@ -309,9 +274,8 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="13"/>
         <field name="description_sale">A minimalist desk with a walnut top and waterfall sides for a clean home office.</field>
-        <field name="description_ecommerce" type="html"><p>A minimalist desk with a walnut top and waterfall sides for a clean home office.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Walnut Writing Desk</h2><p>A minimalist desk with a walnut top and waterfall sides for a clean home office.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>140 x 70 x 75 cm</td></tr><tr><td>Material</td><td>Walnut veneer</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_8-image.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_8-image.png"/>
     </record>
     <record id="product_desk_glass" model="product.template">
         <field name="name">Glass Desk</field>
@@ -323,9 +287,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="14"/>
         <field name="description_sale">A light, airy desk in tempered glass that keeps small rooms feeling open.</field>
-        <field name="description_ecommerce" type="html"><p>A light, airy desk in tempered glass that keeps small rooms feeling open.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Glass Desk</h2><p>A light, airy desk in tempered glass that keeps small rooms feeling open.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>140 x 70 x 75 cm</td></tr><tr><td>Material</td><td>12 mm tempered glass</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_8_glass-image.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/table04.png"/>
     </record>
     <record id="product_desk_corner" model="product.template">
         <field name="name">Corner Desk with Pedestal</field>
@@ -338,15 +301,14 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="15"/>
         <field name="description_sale">L-shaped desk with a walnut top, steel frame and an integrated storage pedestal.</field>
-        <field name="description_ecommerce" type="html"><p>L-shaped desk with a walnut top, steel frame and an integrated storage pedestal.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Corner Desk with Pedestal</h2><p>L-shaped desk with a walnut top, steel frame and an integrated storage pedestal.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>160 x 140 x 75 cm</td></tr><tr><td>Material</td><td>Walnut melamine, black steel frame</td></tr><tr><td>Storage</td><td>Integrated pedestal</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_5-image.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_5-image.png"/>
     </record>
     <record id="product_desk_corner_image_1" model="product.image">
         <field name="name">Corner Desk with Pedestal</field>
         <field name="product_tmpl_id" ref="product_desk_corner"/>
         <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_5-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_3-image.jpg"/>
     </record>
     <record id="product_desk_white" model="product.template">
         <field name="name">White Desk with Drawer</field>
@@ -359,15 +321,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="16"/>
         <field name="description_sale">A clean white desk with a slim drawer and a black steel frame.</field>
-        <field name="description_ecommerce" type="html"><p>A clean white desk with a slim drawer and a black steel frame.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the White Desk with Drawer</h2><p>A clean white desk with a slim drawer and a black steel frame.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>120 x 60 x 75 cm</td></tr><tr><td>Material</td><td>White lacquered MDF, steel frame</td></tr><tr><td>Storage</td><td>1 drawer</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/table02.jpg"/>
-    </record>
-    <record id="product_desk_white_image_1" model="product.image">
-        <field name="name">White Desk with Drawer</field>
-        <field name="product_tmpl_id" ref="product_desk_white"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/table02_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/table02.png"/>
     </record>
     <record id="product_desk_standing" model="product.template">
         <field name="name">Electric Standing Desk Frame</field>
@@ -379,9 +334,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="17"/>
         <field name="description_sale">Dual-motor sit-stand frame with memory presets; pair it with any desktop.</field>
-        <field name="description_ecommerce" type="html"><p>Dual-motor sit-stand frame with memory presets; pair it with any desktop.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Electric Standing Desk Frame</h2><p>Dual-motor sit-stand frame with memory presets; pair it with any desktop.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Height</td><td>62 - 127 cm</td></tr><tr><td>Motors</td><td>2, quiet operation</td></tr><tr><td>Load</td><td>120 kg</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/categories/desk_components.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_13-image.png"/>
     </record>
     <record id="product_chair_executive" model="product.template">
         <field name="name">Executive Ergonomic Chair</field>
@@ -394,15 +348,8 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="18"/>
         <field name="description_sale">High-back ergonomic chair with adjustable headrest, armrests and lumbar support.</field>
-        <field name="description_ecommerce" type="html"><p>High-back ergonomic chair with adjustable headrest, armrests and lumbar support.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Executive Ergonomic Chair</h2><p>High-back ergonomic chair with adjustable headrest, armrests and lumbar support.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Seat height</td><td>45 - 55 cm</td></tr><tr><td>Upholstery</td><td>Breathable fabric, black</td></tr><tr><td>Base</td><td>Aluminium, 5 castors</td></tr><tr><td>Warranty</td><td>5 years</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_12-image.jpg"/>
-    </record>
-    <record id="product_chair_executive_image_1" model="product.image">
-        <field name="name">Executive Ergonomic Chair</field>
-        <field name="product_tmpl_id" ref="product_chair_executive"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_12-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_12-image.png"/>
     </record>
     <record id="product_chair_task" model="product.template">
         <field name="name">Task Chair, Mustard</field>
@@ -415,9 +362,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="19"/>
         <field name="description_sale">A cheerful swivel task chair with a mustard shell and padded seat.</field>
-        <field name="description_ecommerce" type="html"><p>A cheerful swivel task chair with a mustard shell and padded seat.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Task Chair, Mustard</h2><p>A cheerful swivel task chair with a mustard shell and padded seat.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Seat height</td><td>43 - 53 cm</td></tr><tr><td>Shell</td><td>Polypropylene, mustard</td></tr><tr><td>Base</td><td>Steel, 5 castors</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_chair.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_chair.png"/>
     </record>
     <record id="product_chair_mesh" model="product.template">
         <field name="name">Mesh Office Chair</field>
@@ -429,9 +375,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="20"/>
         <field name="description_sale">Breathable mesh back, synchro tilt and adjustable arms for long working days.</field>
-        <field name="description_ecommerce" type="html"><p>Breathable mesh back, synchro tilt and adjustable arms for long working days.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Mesh Office Chair</h2><p>Breathable mesh back, synchro tilt and adjustable arms for long working days.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Seat height</td><td>44 - 54 cm</td></tr><tr><td>Back</td><td>Mesh, black</td></tr><tr><td>Mechanism</td><td>Synchro tilt</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/floor_protection-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_12-image.png"/>
     </record>
     <record id="product_pedestal_wood" model="product.template">
         <field name="name">Mobile Pedestal, Oak &amp; Black</field>
@@ -443,15 +388,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="21"/>
         <field name="description_sale">Three-drawer pedestal on castors that slides under any desk.</field>
-        <field name="description_ecommerce" type="html"><p>Three-drawer pedestal on castors that slides under any desk.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Mobile Pedestal, Oak &amp; Black</h2><p>Three-drawer pedestal on castors that slides under any desk.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>40 x 50 x 60 cm</td></tr><tr><td>Material</td><td>Oak front, black steel body</td></tr><tr><td>Storage</td><td>3 lockable drawers</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_27-image.jpg"/>
-    </record>
-    <record id="product_pedestal_wood_image_1" model="product.image">
-        <field name="name">Mobile Pedestal, Oak &amp; Black</field>
-        <field name="product_tmpl_id" ref="product_pedestal_wood"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_27-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_27-image.png"/>
     </record>
     <record id="product_pedestal_black" model="product.template">
         <field name="name">Locker Pedestal</field>
@@ -464,15 +402,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="22"/>
         <field name="description_sale">A tall pedestal with a wooden top: personal storage that doubles as a side table.</field>
-        <field name="description_ecommerce" type="html"><p>A tall pedestal with a wooden top: personal storage that doubles as a side table.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Locker Pedestal</h2><p>A tall pedestal with a wooden top: personal storage that doubles as a side table.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>40 x 55 x 70 cm</td></tr><tr><td>Material</td><td>Black steel, oak top</td></tr><tr><td>Storage</td><td>1 door, lock</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_16-image.jpg"/>
-    </record>
-    <record id="product_pedestal_black_image_1" model="product.image">
-        <field name="name">Locker Pedestal</field>
-        <field name="product_tmpl_id" ref="product_pedestal_black"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_16-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_16-image.png"/>
     </record>
     <record id="product_cabinet_black" model="product.template">
         <field name="name">Four-Drawer Chest</field>
@@ -484,9 +415,8 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="23"/>
         <field name="description_sale">Low chest of four wide drawers for files, samples or supplies.</field>
-        <field name="description_ecommerce" type="html"><p>Low chest of four wide drawers for files, samples or supplies.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Four-Drawer Chest</h2><p>Low chest of four wide drawers for files, samples or supplies.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>90 x 45 x 85 cm</td></tr><tr><td>Material</td><td>Black lacquered MDF</td></tr><tr><td>Storage</td><td>4 drawers</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/categories/cabinets.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_16-image.png"/>
     </record>
     <record id="product_chest_oak" model="product.template">
         <field name="name">Two-Drawer Oak Chest</field>
@@ -499,9 +429,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="24"/>
         <field name="description_sale">A light oak chest with two deep drawers.</field>
-        <field name="description_ecommerce" type="html"><p>A light oak chest with two deep drawers.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Two-Drawer Oak Chest</h2><p>A light oak chest with two deep drawers.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>80 x 45 x 75 cm</td></tr><tr><td>Material</td><td>Oak veneer</td></tr><tr><td>Storage</td><td>2 drawers</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/categories/drawers.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_27-image.png"/>
     </record>
     <record id="product_meeting_table" model="product.template">
         <field name="name">Conference Table, 10 Seats</field>
@@ -514,15 +443,14 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="25"/>
         <field name="description_sale">A long conference table for ten with cable management built into the frame.</field>
-        <field name="description_ecommerce" type="html"><p>A long conference table for ten with cable management built into the frame.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Conference Table, 10 Seats</h2><p>A long conference table for ten with cable management built into the frame.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>360 x 120 x 75 cm</td></tr><tr><td>Material</td><td>Dark oak melamine, black steel</td></tr><tr><td>Seats</td><td>10</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_46-image.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_46-image.png"/>
     </record>
     <record id="product_meeting_table_image_1" model="product.image">
         <field name="name">Conference Table, 10 Seats</field>
         <field name="product_tmpl_id" ref="product_meeting_table"/>
         <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_46-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="website/static/src/img/library/business_conference.jpg"/>
     </record>
     <record id="product_bench_desk" model="product.template">
         <field name="name">Bench Workstation for Four</field>
@@ -534,15 +462,14 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="26"/>
         <field name="description_sale">Open-plan bench desk for four people with acoustic dividers.</field>
-        <field name="description_ecommerce" type="html"><p>Open-plan bench desk for four people with acoustic dividers.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Bench Workstation for Four</h2><p>Open-plan bench desk for four people with acoustic dividers.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>280 x 140 x 75 cm</td></tr><tr><td>Material</td><td>White melamine, steel frame</td></tr><tr><td>Dividers</td><td>Acoustic felt, olive</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_22-image.png"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_22-image.png"/>
     </record>
     <record id="product_bench_desk_image_1" model="product.image">
         <field name="name">Bench Workstation for Four</field>
         <field name="product_tmpl_id" ref="product_bench_desk"/>
         <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_d03_image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_d03-image.png"/>
     </record>
     <record id="product_booth" model="product.template">
         <field name="name">Acoustic Work Booth</field>
@@ -555,15 +482,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="27"/>
         <field name="description_sale">A semi-enclosed booth for focused work or calls in open offices.</field>
-        <field name="description_ecommerce" type="html"><p>A semi-enclosed booth for focused work or calls in open offices.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Acoustic Work Booth</h2><p>A semi-enclosed booth for focused work or calls in open offices.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>150 x 150 x 140 cm</td></tr><tr><td>Panels</td><td>Acoustic fabric, teal</td></tr><tr><td>Includes</td><td>Desk, chair and lamp</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_24-image.jpg"/>
-    </record>
-    <record id="product_booth_image_1" model="product.image">
-        <field name="name">Acoustic Work Booth</field>
-        <field name="product_tmpl_id" ref="product_booth"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_product_24-image_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_24-image.png"/>
     </record>
     <record id="product_divider" model="product.template">
         <field name="name">Folding Acoustic Divider</field>
@@ -575,15 +495,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="28"/>
         <field name="description_sale">Free-standing folding screen that absorbs sound and zones open spaces.</field>
-        <field name="description_ecommerce" type="html"><p>Free-standing folding screen that absorbs sound and zones open spaces.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Folding Acoustic Divider</h2><p>Free-standing folding screen that absorbs sound and zones open spaces.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>180 x 160 cm</td></tr><tr><td>Material</td><td>Acoustic felt panels</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_25-image.jpg"/>
-    </record>
-    <record id="product_divider_image_1" model="product.image">
-        <field name="name">Folding Acoustic Divider</field>
-        <field name="product_tmpl_id" ref="product_divider"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="product/static/img/product_product_25_black-image.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_25-image.png"/>
     </record>
     <record id="product_lamp_desk" model="product.template">
         <field name="name">Architect Desk Lamp</field>
@@ -596,15 +509,8 @@
         <field name="fur_featured" eval="True"/>
         <field name="website_sequence" eval="29"/>
         <field name="description_sale">The adjustable architect lamp in matte black, with a weighted base.</field>
-        <field name="description_ecommerce" type="html"><p>The adjustable architect lamp in matte black, with a weighted base.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Architect Desk Lamp</h2><p>The adjustable architect lamp in matte black, with a weighted base.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Height</td><td>Up to 65 cm</td></tr><tr><td>Bulb</td><td>E27 LED, included</td></tr><tr><td>Finish</td><td>Matte black</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/product_lamp.png"/>
-    </record>
-    <record id="product_lamp_desk_image_1" model="product.image">
-        <field name="name">Architect Desk Lamp</field>
-        <field name="product_tmpl_id" ref="product_lamp_desk"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/product_lamp_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_lamp.png"/>
     </record>
     <record id="product_lamp_glass" model="product.template">
         <field name="name">Ribbed Glass Table Lamp</field>
@@ -616,9 +522,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="30"/>
         <field name="description_sale">Green ribbed glass shade on a black base for a soft, warm light.</field>
-        <field name="description_ecommerce" type="html"><p>Green ribbed glass shade on a black base for a soft, warm light.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Ribbed Glass Table Lamp</h2><p>Green ribbed glass shade on a black base for a soft, warm light.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Height</td><td>32 cm</td></tr><tr><td>Bulb</td><td>E14 LED, included</td></tr><tr><td>Material</td><td>Glass, steel</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/categories/lamps.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_lamp.png"/>
     </record>
     <record id="product_monitor_stand" model="product.template">
         <field name="name">Walnut Monitor Stand</field>
@@ -630,9 +535,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="31"/>
         <field name="description_sale">Raises your screen to eye level and frees space for the keyboard.</field>
-        <field name="description_ecommerce" type="html"><p>Raises your screen to eye level and frees space for the keyboard.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Walnut Monitor Stand</h2><p>Raises your screen to eye level and frees space for the keyboard.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>55 x 22 x 10 cm</td></tr><tr><td>Material</td><td>Walnut</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/monitor_stand.jpg"/>
+        <field name="image_1920" type="base64" file="website/static/src/img/snippets_demo/s_text_image.jpg"/>
     </record>
     <record id="product_desk_pad" model="product.template">
         <field name="name">Leather Desk Pad</field>
@@ -645,9 +549,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="32"/>
         <field name="description_sale">A large black desk pad that protects the top and keeps the mouse precise.</field>
-        <field name="description_ecommerce" type="html"><p>A large black desk pad that protects the top and keeps the mouse precise.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Leather Desk Pad</h2><p>A large black desk pad that protects the top and keeps the mouse precise.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>80 x 40 cm</td></tr><tr><td>Material</td><td>Vegan leather</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/desk_pad.jpg"/>
+        <field name="image_1920" type="base64" file="website/static/src/img/snippets_demo/s_picture.jpg"/>
     </record>
     <record id="product_organizer" model="product.template">
         <field name="name">Mesh Desk Organizer</field>
@@ -659,15 +562,8 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="33"/>
         <field name="description_sale">Black steel mesh pot for pens, scissors and the rest.</field>
-        <field name="description_ecommerce" type="html"><p>Black steel mesh pot for pens, scissors and the rest.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Mesh Desk Organizer</h2><p>Black steel mesh pot for pens, scissors and the rest.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>Ø 10 x 12 cm</td></tr><tr><td>Material</td><td>Powder-coated steel</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="product/static/img/desk_organizer.jpg"/>
-    </record>
-    <record id="product_organizer_image_1" model="product.image">
-        <field name="name">Mesh Desk Organizer</field>
-        <field name="product_tmpl_id" ref="product_organizer"/>
-        <field name="sequence" eval="1"/>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/products_demo/desk_organizer_02.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_9-image.png"/>
     </record>
     <record id="product_basket" model="product.template">
         <field name="name">Felt Storage Basket</field>
@@ -679,8 +575,7 @@
         <field name="fur_featured" eval="False"/>
         <field name="website_sequence" eval="34"/>
         <field name="description_sale">Soft felt basket for blankets, magazines or toys.</field>
-        <field name="description_ecommerce" type="html"><p>Soft felt basket for blankets, magazines or toys.</p></field>
         <field name="website_description" type="html"><section class="s_text_block o_fur_product_description pt32 pb32" data-snippet="s_text_block"><div class="container"><h2>About the Felt Storage Basket</h2><p>Soft felt basket for blankets, magazines or toys.</p><p>Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes.</p><h3>Specifications</h3><table class="table o_fur_spec_table"><tbody><tr><td>Dimensions</td><td>33 x 33 x 33 cm</td></tr><tr><td>Material</td><td>Polyester felt</td></tr></tbody></table></div></section></field>
-        <field name="image_1920" type="bytes" file="website_sale/static/src/img/categories/boxes.jpg"/>
+        <field name="image_1920" type="base64" file="product/static/img/product_product_7-image.png"/>
     </record>
 </odoo>

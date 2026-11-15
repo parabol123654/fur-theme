@@ -1,32 +1,56 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
+import json
+
 import lxml.html
 
 from odoo.fields import Command
 from odoo.tests import HttpCase, new_test_user, tagged
 
+from odoo.addons.base.models.assetsbundle import AssetsBundle
+
 from .common import FurCommon
+
+
+# The first page of a run compiles the frontend assets, which can take more
+# than the 10 seconds url_open waits by default.
+TIMEOUT = 120
+
+
+def _get_html(self, url, expected_status=200):
+    response = self.url_open(url, timeout=TIMEOUT)
+    self.assertEqual(response.status_code, expected_status, url)
+    return lxml.html.fromstring(response.content)
+
+
+def _jsonrpc(self, url, params):
+    """Call a type="json" route with the session of ``url_open``."""
+    response = self.url_open(
+        url, data=json.dumps({"jsonrpc": "2.0", "method": "call", "params": params}),
+        headers={"Content-Type": "application/json"}, timeout=TIMEOUT,
+    )
+    self.assertEqual(response.status_code, 200, url)
+    result = response.json()
+    self.assertNotIn("error", result, url)
+    return result.get("result")
 
 
 @tagged("post_install", "-at_install")
 class TestFurPages(HttpCase, FurCommon):
 
-    def _get_html(self, url, expected_status=200):
-        response = self.url_open(url)
-        self.assertEqual(response.status_code, expected_status, url)
-        return lxml.html.fromstring(response.content)
+    _get_html = _get_html
 
     def test_homepage_sections(self):
         html = self._get_html("/")
         self.assertTrue(html.xpath("//header[hasclass('o_fur_header')]"), "Fur header")
         self.assertTrue(html.xpath("//form[hasclass('o_fur_search')][@action='/shop']"), "Search bar")
         self.assertTrue(html.xpath("//div[@id='o_fur_hero']"), "Hero carousel")
-        # website's CarouselSlider flips aria-selected on every slide and
-        # crashes when no indicator carries aria-selected='true'.
-        dots = html.xpath("//div[@id='o_fur_hero']//div[hasclass('carousel-indicators')]/button")
+        # Bootstrap 4 carousel: one indicator per slide, the first one active
+        dots = html.xpath("//div[@id='o_fur_hero']//ol[hasclass('carousel-indicators')]/li")
         self.assertEqual(
-            [d.get("aria-selected") for d in dots], ["true", "false", "false"],
-            "Hero indicators need aria-selected for the carousel interaction",
+            [(d.get("data-slide-to"), d.get("class")) for d in dots], [("0", "active"), ("1", None), ("2", None)],
+            "One hero indicator per slide",
         )
+        self.assertEqual(len(html.xpath("//div[@id='o_fur_hero']//div[hasclass('carousel-item')]")), 3)
         self.assertEqual(len(html.xpath("//div[hasclass('o_fur_service')]")), 4, "Service strip")
         categ_links = html.xpath("//a[hasclass('o_fur_category_card')]/@href")
         self.assertIn(self.categ_office.website_url, categ_links)
@@ -151,8 +175,9 @@ class TestFurPages(HttpCase, FurCommon):
 
     def test_product_page_layout(self):
         attribute = self.env["product.attribute"].sudo().create({
-            "name": "Fur Test Colour", "display_type": "image", "create_variant": "no_variant",
-            "value_ids": [Command.create({"name": "Oak"}), Command.create({"name": "Walnut"})],
+            "name": "Fur Test Colour", "display_type": "color", "create_variant": "no_variant",
+            "value_ids": [Command.create({"name": "Oak", "html_color": "#C8A165"}),
+                          Command.create({"name": "Walnut", "html_color": "#5C4033"})],
         })
         product = self.env["product.template"].sudo().create({
             "name": "Fur Test Table - BT01", "default_code": "BT01", "list_price": 900000,
@@ -165,16 +190,16 @@ class TestFurPages(HttpCase, FurCommon):
         meta = html.xpath("string(//ul[hasclass('o_fur_pdp_meta')])")
         self.assertIn("BT01", meta)
         self.assertIn(self.categ_chair.name, meta, "Deepest category")
-        self.assertEqual(len(html.xpath("//label[hasclass('css_attribute_image')]")), 2)
+        self.assertEqual(len(html.xpath("//label[hasclass('css_attribute_color')]")), 2)
         self.assertEqual(len(html.xpath("//div[hasclass('o_fur_sticky_buy')]//button[hasclass('o_fur_sticky_swatch')]")), 2)
-        self.assertTrue(html.xpath("//button[@name='add_to_cart'][@data-action='buy_now']"), "Buy now button")
+        self.assertTrue(html.xpath("//div[@id='product_details']//a[hasclass('o_we_buy_now')]"), "Buy now button")
         self.assertEqual(len(product.product_variant_ids), 1, "Colours do not create variants")
         self.assertTrue(html.xpath("//ul[hasclass('o_fur_pdp_tabs')]"), "Description / buying guide tabs")
         self.assertTrue(html.xpath("//div[@id='o_fur_tab_info']//div[@id='product_full_description']"),
                         "Description inside the first tab")
         self.assertTrue(html.xpath("//div[@id='o_fur_tab_guide']//div[hasclass('o_fur_buy_guide')]//li"),
                         "Default buying guide")
-        self.assertFalse(html.xpath("//section[@id='product_full_spec']"), "No 'Specifications' table")
+        self.assertFalse(html.xpath("//div[@id='o_product_terms_and_share']/p"), "No sample terms text")
 
     def test_projects_pages(self):
         html = self._get_html("/projects")
@@ -199,7 +224,7 @@ class TestFurPages(HttpCase, FurCommon):
         self._get_html(self.project_draft.website_url)
 
     def test_projects_sitemap(self):
-        response = self.url_open("/sitemap.xml")
+        response = self.url_open("/sitemap.xml", timeout=TIMEOUT)
         self.assertEqual(response.status_code, 200)
         self.assertIn(self.project.website_url.encode(), response.content)
         self.assertNotIn(self.project_draft.website_url.encode(), response.content)
@@ -225,7 +250,7 @@ class TestFurPages(HttpCase, FurCommon):
         self.assertTrue(actions.xpath(".//a[@href='/web/login']"))
         html = self._get_html("/contactus")
         self.assertTrue(html.xpath("//form[@id='contactus_form']"))
-        for sample in ("s_title", "s_faq_list", "s_accordion_image", "s_map"):
+        for sample in ("s_title", "s_faq_list", "s_map"):
             self.assertFalse(html.xpath(f"//div[@id='wrap']//section[hasclass('{sample}')]"), sample)
 
     def test_menu_home_icon_and_flyout(self):
@@ -261,37 +286,45 @@ class TestFurCheckout(HttpCase, FurCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.env["payment.provider"].sudo()._fur_setup_checkout_providers()
+        cls.env["payment.acquirer"].sudo()._fur_setup_checkout_providers()
+        # Odoo 15 computes the payment reference of a wire transfer with the
+        # sales journal: a database without a chart of accounts has none
+        company = cls.website.company_id
+        Journal = cls.env["account.journal"].sudo()
+        if not Journal.search([("type", "=", "sale"), ("company_id", "=", company.id)], limit=1):
+            Journal.create({"name": "Fur Test Sales", "code": "FURS", "type": "sale", "company_id": company.id})
         cls.providers = {
-            mode: cls.env.ref(f"fur_theme.payment_provider_{mode}")
+            mode: cls.env.ref("fur_theme.payment_provider_%s" % mode)
             for mode in ("wire_transfer", "cash_on_delivery")
         }
 
+    _jsonrpc = _jsonrpc
+
     def _last_order(self):
         return self.env["sale.order"].sudo().search(
-            [("order_line.product_template_id", "=", self.chair.id)], order="id desc", limit=1
+            [("order_line.product_id", "in", self.chair.product_variant_ids.ids)], order="id desc", limit=1
         )
 
     def _add_chair_and_open_cart(self):
-        self.make_jsonrpc_request("/shop/cart/add", {
-            "product_template_id": self.chair.id,
+        self._jsonrpc("/shop/cart/update_json", {
             "product_id": self.chair.product_variant_id.id,
-            "quantity": 1,
+            "add_qty": 1,
         })
-        response = self.url_open("/shop/cart")
+        response = self.url_open("/shop/cart", timeout=TIMEOUT)
         self.assertEqual(response.status_code, 200)
         return lxml.html.fromstring(response.content)
 
     def test_setup_is_idempotent(self):
-        Provider = self.env["payment.provider"].sudo()
+        Provider = self.env["payment.acquirer"].sudo()
         Provider._fur_setup_checkout_providers()
         for mode, provider in self.providers.items():
             same_mode = Provider.search([
-                ("code", "=", "custom"), ("custom_mode", "=", mode), ("company_id", "=", provider.company_id.id),
-                ("is_published", "=", True),
+                ("provider", "=", "transfer"), ("custom_mode", "=", mode),
+                ("company_id", "=", provider.company_id.id), ("state", "=", "enabled"),
             ])
             self.assertEqual(same_mode, provider, mode)
-            self.assertTrue(provider._fur_checkout_payment_method(), mode)
+            self.assertTrue(provider.pre_msg, mode)
+            self.assertTrue(provider.pending_msg, mode)
 
     def test_cart_page_form(self):
         html = self._add_chair_and_open_cart()
@@ -306,8 +339,10 @@ class TestFurCheckout(HttpCase, FurCommon):
         modes = form.xpath(".//input[@name='provider_id']/@data-mode")
         self.assertEqual(modes, ["wire_transfer", "cash_on_delivery"])
         self.assertEqual(form.xpath(".//input[@name='provider_id'][@checked]/@data-mode"), ["wire_transfer"])
-        self.assertFalse(html.xpath("//div[hasclass('o_wizard')]"), "No checkout steps")
-        self.assertTrue(html.xpath("//div[@id='shop_cart']//div[hasclass('o_fur_cart_total')]"), "Total under the lines")
+        self.assertFalse(html.xpath("//div[hasclass('wizard')]"), "No checkout steps")
+        self.assertFalse(html.xpath("//a[contains(@href, '/shop/checkout')]"), "No link to Odoo's checkout steps")
+        self.assertTrue(html.xpath("//div[hasclass('oe_cart')]//div[hasclass('o_fur_cart_total')]//div[@id='cart_total']"),
+                        "Total under the lines")
 
     def test_invalid_form_is_rendered_again(self):
         html = self._add_chair_and_open_cart()
@@ -315,7 +350,7 @@ class TestFurCheckout(HttpCase, FurCommon):
         response = self.url_open("/shop/fur/checkout", data={
             "csrf_token": csrf, "provider_id": str(self.providers["wire_transfer"].id),
             "name": "Nguyễn Văn Fur", "phone": "12ab", "email": "not-an-email", "street": "",
-        })
+        }, timeout=TIMEOUT)
         self.assertEqual(response.status_code, 200)
         html = lxml.html.fromstring(response.content)
         invalid = html.xpath("//form[hasclass('o_fur_quick_checkout')]//*[hasclass('is-invalid')]/@name")
@@ -331,7 +366,7 @@ class TestFurCheckout(HttpCase, FurCommon):
             "csrf_token": csrf, "provider_id": str(cod.id),
             "name": "Trần Thị Fur", "phone": "0909 000 111", "email": "",
             "street": "12 Lê Lợi, Quận 1, TP. Hồ Chí Minh", "note": "Gọi trước khi giao",
-        }, allow_redirects=False)
+        }, allow_redirects=False, timeout=TIMEOUT)
         self.assertEqual(response.status_code, 303)
         self.assertTrue(response.headers["Location"].endswith("/payment/status"))
         order = self._last_order()
@@ -339,8 +374,21 @@ class TestFurCheckout(HttpCase, FurCommon):
         self.assertEqual(order.partner_id.phone, "0909 000 111")
         self.assertEqual(order.partner_shipping_id.street, "12 Lê Lợi, Quận 1, TP. Hồ Chí Minh")
         self.assertEqual(order.fur_customer_note, "Gọi trước khi giao")
-        self.assertEqual(order.transaction_ids.provider_id, cod)
-        self.assertEqual(order.transaction_ids.payment_method_code, "cash_on_delivery")
+        self.assertEqual(order.transaction_ids.acquirer_id, cod)
+        self.assertEqual(order.transaction_ids.acquirer_id.custom_mode, "cash_on_delivery")
+        self.assertEqual(order.transaction_ids.state, "pending")
+        self.assertEqual(order.state, "sent", "Quotation sent, as for any pending payment")
+        # Odoo's own end of the checkout: the landing route, then the confirmation page
+        self.assertEqual(order.transaction_ids.landing_route, "/shop/payment/validate")
+        response = self.url_open("/shop/payment/validate", timeout=TIMEOUT)
+        self.assertTrue(response.url.endswith("/shop/confirmation"), response.url)
+        html = lxml.html.fromstring(response.content)
+        thanks = html.xpath("string(//section[hasclass('o_fur_thanks')])")
+        self.assertIn("Fur", thanks)
+        self.assertIn(order.name, thanks)
+        self.assertIn("pay the delivery staff", html.xpath("string(//div[hasclass('oe_website_sale_tx_status')])"),
+                      "Pending message of the payment mode")
+        self.assertFalse(self.url_open("/shop/cart", timeout=TIMEOUT).text.count("o_fur_quick_checkout"), "The cart is empty again")
 
     def test_checkout_tour(self):
         self.start_tour("/", "fur_theme.checkout_tour", login=None)
@@ -350,14 +398,14 @@ class TestFurCheckout(HttpCase, FurCommon):
         self.assertEqual(order.partner_id.phone, "0909 123 456")
         self.assertEqual(order.fur_customer_note, "Giao giờ hành chính")
         tx = order.transaction_ids[:1]
-        self.assertEqual(tx.provider_id, self.providers["wire_transfer"])
+        self.assertEqual(tx.acquirer_id, self.providers["wire_transfer"])
         self.assertEqual(tx.state, "pending")
 
 
 @tagged("post_install", "-at_install")
 class TestFurSearch(HttpCase, FurCommon):
 
-    _get_html = TestFurPages._get_html
+    _get_html = _get_html
 
     @classmethod
     def setUpClass(cls):
@@ -374,8 +422,10 @@ class TestFurSearch(HttpCase, FurCommon):
             "description_sale": "Lưng chỉ ngang",
         })
 
+    _jsonrpc = _jsonrpc
+
     def _shop_names(self, search):
-        html = self._get_html(f"/shop?search={search}")
+        html = self._get_html("/shop?search=%s" % search)
         return [" ".join(t.split()) for t in html.xpath("//*[hasclass('o_fur_tile_name')]//text()")]
 
     def test_every_word_in_name_or_code(self):
@@ -386,29 +436,54 @@ class TestFurSearch(HttpCase, FurCommon):
         self.assertEqual(names[0], "Ghế Xoay Furtest Lưng Chỉ Ngang Hiện Đại")
 
     def test_suggest_route(self):
-        result = self.make_jsonrpc_request("/fur/search/suggest", {"term": "furtest lưng"})
+        result = self._jsonrpc("/fur/search/suggest", {"term": "furtest lưng"})
         self.assertEqual(result["count"], 2)
         self.assertEqual({item["code"] for item in result["items"]}, {"LGT68", "LGT60"})
         self.assertIn("/shop?search=", result["more_url"])
-        first = self.make_jsonrpc_request("/fur/search/suggest", {"term": "LGT6"})["items"]
+        first = self._jsonrpc("/fur/search/suggest", {"term": "LGT6"})["items"]
         self.assertEqual(len(first), 2)
-        self.assertEqual(self.make_jsonrpc_request("/fur/search/suggest", {"term": "x"})["items"], [])
+        self.assertEqual(self._jsonrpc("/fur/search/suggest", {"term": "x"})["items"], [])
 
     def test_shop_cards_show_cart_button(self):
-        self.website.sudo().shop_opt_products_design_classes = "o_wsale_products_opt_has_cta o_wsale_products_opt_actions_onhover"
+        view = self.env.ref("website_sale.products_add_to_cart").sudo()
+        view.active = False
+        html = self._get_html("/shop?search=LGT68")
+        self.assertFalse(html.xpath("//div[hasclass('o_wsale_product_btn')]//a[hasclass('a-submit')]"))
         self.website.sudo()._fur_setup_shop_cards()
-        self.assertIn("o_wsale_products_opt_actions_inline", self.website.shop_opt_products_design_classes)
-        self.assertNotIn("actions_onhover", self.website.shop_opt_products_design_classes)
+        self.assertTrue(view.active)
+        html = self._get_html("/shop?search=LGT68")
+        self.assertTrue(html.xpath("//div[hasclass('o_wsale_product_btn')]//a[hasclass('a-submit')]/*[local-name()='svg']"),
+                        "Cart button with the Fur icon on the shop cards")
+
+    def test_compare_price_and_price_on_request(self):
+        self.stripes.sudo().compare_list_price = 990000
+        self.mesh.sudo().list_price = 0
+        html = self._get_html("/shop?search=LGT6")
+        tiles = {
+            tile.xpath("string(.//*[hasclass('o_fur_product_code')])").split()[-1]: tile
+            for tile in html.xpath("//form[hasclass('oe_product_cart')]")
+        }
+        crossed = tiles["LGT68"].xpath(".//del[not(hasclass('d-none'))]//span[hasclass('oe_currency_value')]/text()")
+        self.assertEqual([c.replace(",", "").replace(".00", "") for c in crossed], ["990000"], "Compare price crossed out")
+        self.assertFalse(tiles["LGT60"].xpath(".//a[hasclass('a-submit')]"), "No price: no cart button")
+        self.assertTrue(tiles["LGT60"].xpath(".//span[hasclass('o_fur_price_contact')]"), "No price: 'Contact'")
+        html = self._get_html(self.mesh.website_url)
+        self.assertFalse(html.xpath("//a[@id='add_to_cart']"))
+        self.assertTrue(html.xpath("//div[hasclass('o_fur_price_request')]//a[@href='/contactus']"))
+        items = {item["code"]: item for item in self._jsonrpc("/fur/search/suggest", {"term": "LGT6"})["items"]}
+        self.assertTrue(items["LGT68"]["base_price"])
+        self.assertEqual(items["LGT60"]["price"], "Contact")
 
 
 @tagged("post_install", "-at_install")
 class TestFurTermsAndAssets(HttpCase, FurCommon):
 
-    _get_html = TestFurPages._get_html
+    _get_html = _get_html
 
     def test_frontend_styles_compile(self):
-        bundle = self.env["ir.qweb"]._get_asset_bundle("web.assets_frontend", js=False)
-        css = bundle.css().raw.decode()
+        files, _remains = self.env["ir.qweb"]._get_asset_content("web.assets_frontend")
+        bundle = AssetsBundle("web.assets_frontend", files, env=self.env)
+        css = b"".join(attachment.raw for attachment in bundle.css()).decode()
         self.assertFalse(bundle.css_errors, "Fur SCSS must compile (else Odoo serves an old style)")
         # a style file cut short by mistake goes unnoticed otherwise
         for selector in (".o_fur_footer h6", ".o_fur_footer_contact", ".o_fur_copyright_row",
@@ -417,10 +492,10 @@ class TestFurTermsAndAssets(HttpCase, FurCommon):
 
     def test_terms_link_only_when_the_page_exists(self):
         ICP = self.env["ir.config_parameter"].sudo()
-        ICP.set_bool("account.use_invoice_terms", False)
+        ICP.set_param("account.use_invoice_terms", False)
         html = self._get_html("/")
         self.assertNotIn("/terms", html.xpath("//div[hasclass('o_fur_footer')]//a/@href"))
-        ICP.set_bool("account.use_invoice_terms", True)
+        ICP.set_param("account.use_invoice_terms", True)
         self.website.company_id.sudo().terms_type = "html"
         html = self._get_html("/")
         self.assertIn("/terms", html.xpath("//div[hasclass('o_fur_footer')]//a/@href"))
@@ -429,7 +504,7 @@ class TestFurTermsAndAssets(HttpCase, FurCommon):
 @tagged("post_install", "-at_install")
 class TestFurCopyrightBar(HttpCase, FurCommon):
 
-    _get_html = TestFurPages._get_html
+    _get_html = _get_html
 
     def test_copyright_bar(self):
         html = self._get_html("/")

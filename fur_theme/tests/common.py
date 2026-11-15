@@ -1,17 +1,30 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
+import base64
+import io
+
+from PIL import Image
+
 from odoo.fields import Command
+from odoo.tests import TransactionCase
 
-from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
 
-
-class FurCommon(WebsiteSaleCommon):
+class FurCommon(TransactionCase):
     """Self-contained Fur catalogue: tests never rely on the demo data."""
+
+    @classmethod
+    def _create_image(cls, color):
+        stream = io.BytesIO()
+        Image.new("RGB", (64, 64), color).save(stream, "PNG")
+        return base64.b64encode(stream.getvalue())
 
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        # Unprefixed URLs whatever the database default language (the demo
-        # makes Vietnamese the website default).
+        cls.website = cls.env["website"].get_current_website()
+        cls.public_user = cls.website.user_id
+        # Prices in the company currency, as website_sale's own tests do
+        cls.website.get_current_pricelist().write({"currency_id": cls.env.company.currency_id.id})
+        # Unprefixed URLs whatever the database default language.
         # _activate_lang: English is inactive on a database created in Vietnamese.
         english = cls.env["res.lang"]._activate_lang("en_US")
         cls.website.sudo().write({

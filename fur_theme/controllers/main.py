@@ -1,27 +1,26 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
 from odoo import http
-from odoo.fields import Domain
 from odoo.http import request
+
+from odoo.addons.http_routing.models.ir_http import slug, unslug
 
 
 class FurProjectController(http.Controller):
     _projects_per_page = 9
 
     def _project_domain(self, project_type=None):
-        domain = request.env.website.website_domain() & Domain("is_published", "=", True)
+        domain = request.website.website_domain() + [("is_published", "=", True)]
         if project_type:
-            domain &= Domain("project_type", "=", project_type)
+            domain = domain + [("project_type", "=", project_type)]
         return domain
 
     def sitemap_projects(env, rule, qs):
         if not qs or qs.lower() in "/projects":
             yield {"loc": "/projects"}
-        slug = env["ir.http"]._slug
-        projects = env["fur.project"].search(
-            env.website.website_domain() & Domain("is_published", "=", True)
-        )
+        website = env["website"].get_current_website()
+        projects = env["fur.project"].search(website.website_domain() + [("is_published", "=", True)])
         for project in projects:
-            loc = f"/projects/{slug(project)}"
+            loc = "/projects/%s" % slug(project)
             if not qs or qs.lower() in loc:
                 yield {"loc": loc}
 
@@ -39,7 +38,7 @@ class FurProjectController(http.Controller):
             project_type = None
         domain = self._project_domain(project_type)
         total = Project.search_count(domain)
-        pager = request.env.website.pager(
+        pager = request.website.pager(
             url="/projects",
             url_args={"project_type": project_type} if project_type else None,
             total=total,
@@ -58,21 +57,27 @@ class FurProjectController(http.Controller):
         )
 
     @http.route(
-        ['/projects/<model("fur.project"):project>'],
+        ["/projects/<string:project_slug>"],
         type="http",
         auth="public",
         website=True,
         sitemap=False,  # covered by sitemap_projects
     )
-    def project_detail(self, project, **kwargs):
-        website = request.env.website
-        if project.website_id and project.website_id != website:
+    def project_detail(self, project_slug, **kwargs):
+        # not a model("fur.project") converter: Odoo 15 answers 403 for a
+        # record the visitor may not read, an unpublished project is a 404
+        website = request.website
+        project = request.env["fur.project"].sudo().with_context(active_test=False).browse(
+            unslug(project_slug)[1] or 0
+        ).exists()
+        if not project or (project.website_id and project.website_id != website):
             raise request.not_found()
         is_designer = request.env.user.has_group("website.group_website_designer")
         if not (project.active and project.website_published) and not is_designer:
             raise request.not_found()
+        project = project.with_user(request.env.user).with_context(request.env.context)
         others = request.env["fur.project"].search(
-            self._project_domain() & Domain("id", "!=", project.id), limit=3
+            self._project_domain() + [("id", "!=", project.id)], limit=3
         )
         return request.render(
             "fur_theme.project_detail_page",

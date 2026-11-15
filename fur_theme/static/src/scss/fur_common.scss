@@ -128,6 +128,8 @@
         background: linear-gradient(180deg, var(--fur-cream), #fff);
         .breadcrumb {
             margin-bottom: .35rem;
+            padding: 0; // Bootstrap 4 breadcrumbs are a grey box
+            background: none;
             font-size: .8rem;
             a { color: var(--fur-muted); text-decoration: none; }
             .active { color: var(--fur-navy-2); }
@@ -433,7 +435,7 @@
         }
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(xs) {
         right: .85rem;
         bottom: 1rem;
         gap: .75rem;
@@ -489,9 +491,19 @@
         font-size: 1.75rem;
         font-weight: 800;
         color: var(--fur-navy);
-        @include media-breakpoint-down(md) { font-size: 1.35rem; }
+        @include media-breakpoint-down(sm) { font-size: 1.35rem; }
     }
     ol { padding-left: 1.25rem; }
     li { margin-bottom: .75rem; line-height: 1.65; }
     li p { margin: 0; }
+}
+
+// Bootstrap 4 (Odoo 15) rows have a single gutter width: the Fur gutters.
+.o_fur .o_fur_row_g4 {
+    margin: -.75rem;
+    > * { padding: .75rem; }
+}
+.o_fur .o_fur_row_g2 {
+    margin: -.25rem;
+    > * { padding: .25rem; }
 }

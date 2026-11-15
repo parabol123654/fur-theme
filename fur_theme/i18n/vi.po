@@ -4,42 +4,22 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 20.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-10 19:20+0000\n"
 "PO-Revision-Date: 2026-10-10 19:20+0000\n"
 "Last-Translator: \n"
-"Language: vi\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.10.3\n"
-
-#. module: fur_theme
-msgid ""
-"\n"
-"Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.\n"
-"\n"
-"* Header with logo, instant product search, hotline, cart, account and flag language switcher\n"
-"* Homepage: hero slider, service strip, category grid, one product block per category,\n"
-"  featured projects\n"
-"* Shop and category pages with banner, sub-category pills and product cards\n"
-"* Product page with sticky buy box, perks, hotline card, description and buying guide tabs\n"
-"* One-step checkout on the cart page (bank transfer, cash on delivery)\n"
-"* Projects showcase (/projects) with list, filters and detail pages\n"
-"* Floating call, Zalo and Messenger buttons\n"
-"* English and Vietnamese\n"
-msgstr ""
 
 #. module: fur_theme
 msgid "+1 555 0100 200 or https://wa.me/..."
 msgstr "+84 909 123 456 hoặc https://wa.me/..."
-
-#. module: fur_theme
-msgid "/delivery-installation"
-msgstr "/delivery-installation"
 
 #. module: fur_theme
 msgid "0901234567 or https://zalo.me/..."
@@ -56,6 +36,10 @@ msgstr ""
 #. module: fur_theme
 msgid "1. Delivery times"
 msgstr "1. Thời gian giao hàng"
+
+#. module: fur_theme
+msgid "10"
+msgstr "10"
 
 #. module: fur_theme
 msgid "12 mm tempered glass"
@@ -218,6 +202,14 @@ msgid "90 x 45 x 85 cm"
 msgstr ""
 
 #. module: fur_theme
+msgid ""
+"<span class=\"o_fur_price_label\">Price:</span>\n"
+"            <span class=\"o_fur_price_contact\">Contact</span>"
+msgstr ""
+"<span class=\"o_fur_price_label\">Giá:</span>\n"
+"            <span class=\"o_fur_price_contact\">Liên hệ</span>"
+
+#. module: fur_theme
 msgid "<span class=\"o_fur_service_text\">Free<br/>consultation</span>"
 msgstr "<span class=\"o_fur_service_text\">Tư vấn<br/>miễn phí</span>"
 
@@ -283,10 +275,13 @@ msgstr "<strong>Cảm ơn quý khách đã tin chọn chúng tôi!</strong>"
 
 #. module: fur_theme
 msgid "<strong>We deliver from Monday to Saturday, 8:00 to 18:00.</strong>"
-msgstr "<strong>Chúng tôi giao hàng từ thứ 2 đến thứ 7, 8h00 đến 18h00.</strong>"
+msgstr ""
+"<strong>Chúng tôi giao hàng từ thứ 2 đến thứ 7, 8h00 đến 18h00.</strong>"
 
 #. module: fur_theme
-msgid "A boardroom for twelve with a conference table, executive chairs and integrated screens."
+msgid ""
+"A boardroom for twelve with a conference table, executive chairs and "
+"integrated screens."
 msgstr ""
 
 #. module: fur_theme
@@ -298,15 +293,20 @@ msgid "A clean white desk with a slim drawer and a black steel frame."
 msgstr ""
 
 #. module: fur_theme
-msgid "A comfortable moulded shell chair on slim black legs, stackable for small spaces."
+msgid ""
+"A comfortable moulded shell chair on slim black legs, stackable for small "
+"spaces."
 msgstr ""
 
 #. module: fur_theme
-msgid "A compact two-seater upholstered in deep teal velvet, with a solid oak base and generous foam cushions."
+msgid ""
+"A compact two-seater upholstered in deep teal velvet, with a solid oak base "
+"and generous foam cushions."
 msgstr ""
 
 #. module: fur_theme
-msgid "A large black desk pad that protects the top and keeps the mouse precise."
+msgid ""
+"A large black desk pad that protects the top and keeps the mouse precise."
 msgstr ""
 
 #. module: fur_theme
@@ -314,27 +314,36 @@ msgid "A light oak chest with two deep drawers."
 msgstr ""
 
 #. module: fur_theme
-msgid "A light, airy desk in tempered glass that keeps small rooms feeling open."
+msgid ""
+"A light, airy desk in tempered glass that keeps small rooms feeling open."
 msgstr ""
 
 #. module: fur_theme
-msgid "A long conference table for ten with cable management built into the frame."
+msgid ""
+"A long conference table for ten with cable management built into the frame."
 msgstr ""
 
 #. module: fur_theme
-msgid "A long, low sideboard with sliding doors, perfect under a TV or along a dining room wall."
+msgid ""
+"A long, low sideboard with sliding doors, perfect under a TV or along a "
+"dining room wall."
 msgstr ""
 
 #. module: fur_theme
-msgid "A minimalist desk with a walnut top and waterfall sides for a clean home office."
+msgid ""
+"A minimalist desk with a walnut top and waterfall sides for a clean home "
+"office."
 msgstr ""
 
 #. module: fur_theme
-msgid "A palette of oak, sand and teal ties the living room, dining area and bedrooms together."
+msgid ""
+"A palette of oak, sand and teal ties the living room, dining area and "
+"bedrooms together."
 msgstr ""
 
 #. module: fur_theme
-msgid "A relaxed loveseat in a durable navy linen blend with tapered wooden legs."
+msgid ""
+"A relaxed loveseat in a durable navy linen blend with tapered wooden legs."
 msgstr ""
 
 #. module: fur_theme
@@ -342,15 +351,21 @@ msgid "A semi-enclosed booth for focused work or calls in open offices."
 msgstr ""
 
 #. module: fur_theme
-msgid "A soft oval table in solid oak that seats six comfortably and has no corners to bump into."
+msgid ""
+"A soft oval table in solid oak that seats six comfortably and has no corners"
+" to bump into."
 msgstr ""
 
 #. module: fur_theme
-msgid "A tall pedestal with a wooden top: personal storage that doubles as a side table."
+msgid ""
+"A tall pedestal with a wooden top: personal storage that doubles as a side "
+"table."
 msgstr ""
 
 #. module: fur_theme
-msgid "A warm, modern three-bedroom apartment with natural oak, linen and plenty of hidden storage."
+msgid ""
+"A warm, modern three-bedroom apartment with natural oak, linen and plenty of"
+" hidden storage."
 msgstr ""
 
 #. module: fur_theme
@@ -530,7 +545,9 @@ msgid "Aluminium, 5 castors"
 msgstr ""
 
 #. module: fur_theme
-msgid "An open office for 120 people with bench workstations, ergonomic chairs and flexible meeting corners."
+msgid ""
+"An open office for 120 people with bench workstations, ergonomic chairs and "
+"flexible meeting corners."
 msgstr ""
 
 #. module: fur_theme
@@ -566,16 +583,12 @@ msgid "Austin, Texas"
 msgstr ""
 
 #. module: fur_theme
-msgid "Auto publish on"
-msgstr "Tự động đăng vào"
-
-#. module: fur_theme
-msgid "Automatically publish the page on the chosen date and time."
-msgstr "Tự động đăng trang vào ngày giờ đã chọn."
-
-#. module: fur_theme
 msgid "Back"
 msgstr ""
+
+#. module: fur_theme
+msgid "Bank Accounts"
+msgstr "Tài khoản ngân hàng"
 
 #. module: fur_theme
 msgid "Bank transfer"
@@ -594,7 +607,8 @@ msgid "Berlin, Germany"
 msgstr ""
 
 #. module: fur_theme
-msgid "Bistro chairs, oak tables and warm lighting for a busy neighbourhood café."
+msgid ""
+"Bistro chairs, oak tables and warm lighting for a busy neighbourhood café."
 msgstr ""
 
 #. module: fur_theme
@@ -622,7 +636,9 @@ msgid "Breathable fabric, black"
 msgstr ""
 
 #. module: fur_theme
-msgid "Breathable mesh back, synchro tilt and adjustable arms for long working days."
+msgid ""
+"Breathable mesh back, synchro tilt and adjustable arms for long working "
+"days."
 msgstr ""
 
 #. module: fur_theme
@@ -646,7 +662,9 @@ msgid "Cabinets & Sideboards"
 msgstr ""
 
 #. module: fur_theme
-msgid "Cable management is built into every desk, so the floor stays clear and the team can rearrange the space as it grows."
+msgid ""
+"Cable management is built into every desk, so the floor stays clear and the "
+"team can rearrange the space as it grows."
 msgstr ""
 
 #. module: fur_theme
@@ -668,6 +686,10 @@ msgstr "Có thể đăng"
 #. module: fur_theme
 msgid "Cart"
 msgstr "Giỏ hàng"
+
+#. module: fur_theme
+msgid "Cash on Delivery"
+msgstr "Thanh toán khi nhận hàng"
 
 #. module: fur_theme
 msgid "Cash on delivery"
@@ -710,6 +732,14 @@ msgid "Code:"
 msgstr "Mã SP:"
 
 #. module: fur_theme
+msgid "Communication"
+msgstr "Nội dung chuyển khoản"
+
+#. module: fur_theme
+msgid "Compare to Price"
+msgstr "Giá so sánh"
+
+#. module: fur_theme
 msgid "Completed"
 msgstr "Hoàn thành"
 
@@ -726,13 +756,14 @@ msgid "Consulting firm, London"
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
-#: code:addons/fur_theme/controllers/shop.py
+#: code:addons/fur_theme/controllers/shop.py:0
 msgid "Contact"
 msgstr "Liên hệ"
 
 #. module: fur_theme
-msgid "Coordinated furniture from the living room to the bedrooms, chosen to last for a young family."
+msgid ""
+"Coordinated furniture from the living room to the bedrooms, chosen to last "
+"for a young family."
 msgstr ""
 
 #. module: fur_theme
@@ -764,7 +795,9 @@ msgid "Cross-Back Wooden Chair"
 msgstr ""
 
 #. module: fur_theme
-msgid "Cross-back chairs and oval oak tables give the café a relaxed, timeless feel; ribbed glass lamps finish the look."
+msgid ""
+"Cross-back chairs and oval oak tables give the café a relaxed, timeless "
+"feel; ribbed glass lamps finish the look."
 msgstr ""
 
 #. module: fur_theme
@@ -776,12 +809,10 @@ msgid "Dark oak melamine, black steel"
 msgstr ""
 
 #. module: fur_theme
-msgid "Delivered assembled or assembled on site by our team. Contact us for other sizes, colours or finishes."
+msgid ""
+"Delivered assembled or assembled on site by our team. Contact us for other "
+"sizes, colours or finishes."
 msgstr ""
-
-#. module: fur_theme
-msgid "Delivery & Installation"
-msgstr "Giao hàng & lắp đặt"
 
 #. module: fur_theme
 msgid "Delivery &amp; Installation"
@@ -844,11 +875,14 @@ msgid "Dividers"
 msgstr ""
 
 #. module: fur_theme
-msgid "Dual-motor sit-stand frame with memory presets; pair it with any desktop."
+msgid ""
+"Dual-motor sit-stand frame with memory presets; pair it with any desktop."
 msgstr ""
 
 #. module: fur_theme
-msgid "Durable fabrics, rounded corners and solid wood were the brief. Every room got storage at child height."
+msgid ""
+"Durable fabrics, rounded corners and solid wood were the brief. Every room "
+"got storage at child height."
 msgstr ""
 
 #. module: fur_theme
@@ -940,8 +974,12 @@ msgid "Full story of the project…"
 msgstr "Câu chuyện đầy đủ của dự án…"
 
 #. module: fur_theme
-msgid "Fur - Furniture eCommerce Theme"
-msgstr ""
+msgid "Fur Checkout Help Message"
+msgstr "Hướng dẫn thanh toán (giỏ hàng Fur)"
+
+#. module: fur_theme
+msgid "Fur Checkout Mode"
+msgstr "Hình thức thanh toán Fur"
 
 #. module: fur_theme
 msgid "Fur Interior Project"
@@ -950,10 +988,6 @@ msgstr "Dự án nội thất Fur"
 #. module: fur_theme
 msgid "Fur Theme"
 msgstr "Giao diện Fur"
-
-#. module: fur_theme
-msgid "Furniture & interior design eCommerce theme: homepage, shop, product page, one-step checkout, projects showcase, instant search"
-msgstr ""
 
 #. module: fur_theme
 msgid "Garden Townhouse"
@@ -980,10 +1014,6 @@ msgid "Green ribbed glass shade on a black base for a soft, warm light."
 msgstr ""
 
 #. module: fur_theme
-msgid "HTTP Routing"
-msgstr "Định tuyến HTTP"
-
-#. module: fur_theme
 msgid "Height"
 msgstr ""
 
@@ -992,7 +1022,9 @@ msgid "Herringbone Oak Cabinet"
 msgstr ""
 
 #. module: fur_theme
-msgid "High-back ergonomic chair with adjustable headrest, armrests and lumbar support."
+msgid ""
+"High-back ergonomic chair with adjustable headrest, armrests and lumbar "
+"support."
 msgstr ""
 
 #. module: fur_theme
@@ -1000,7 +1032,9 @@ msgid "Home"
 msgstr "Trang chủ"
 
 #. module: fur_theme
-msgid "Hot desks, focus booths and a lounge for a coworking space open seven days a week."
+msgid ""
+"Hot desks, focus booths and a lounge for a coworking space open seven days a"
+" week."
 msgstr ""
 
 #. module: fur_theme
@@ -1020,8 +1054,12 @@ msgid "ID"
 msgstr "ID"
 
 #. module: fur_theme
-msgid "If you cancel an order after it has been delivered, the delivery costs are charged."
-msgstr "Nếu quý khách hủy đơn sau khi hàng đã được giao tới, phí vận chuyển sẽ được tính."
+msgid ""
+"If you cancel an order after it has been delivered, the delivery costs are "
+"charged."
+msgstr ""
+"Nếu quý khách hủy đơn sau khi hàng đã được giao tới, phí vận chuyển sẽ được "
+"tính."
 
 #. module: fur_theme
 msgid "Image"
@@ -1072,12 +1110,18 @@ msgid "Kiln-dried hardwood"
 msgstr ""
 
 #. module: fur_theme
-msgid "L-shaped desk with a walnut top, steel frame and an integrated storage pedestal."
+msgid ""
+"L-shaped desk with a walnut top, steel frame and an integrated storage "
+"pedestal."
 msgstr ""
 
 #. module: fur_theme
 msgid "Lamps"
 msgstr ""
+
+#. module: fur_theme
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
 
 #. module: fur_theme
 msgid "Last Updated by"
@@ -1136,8 +1180,12 @@ msgid "Locker Pedestal"
 msgstr ""
 
 #. module: fur_theme
-msgid "Logo version for the dark footer (light text). Empty: the website logo on a white card."
-msgstr "Phiên bản logo cho chân trang nền tối (chữ sáng). Để trống: dùng logo website trên nền thẻ trắng."
+msgid ""
+"Logo version for the dark footer (light text). Empty: the website logo on a "
+"white card."
+msgstr ""
+"Phiên bản logo cho chân trang nền tối (chữ sáng). Để trống: dùng logo "
+"website trên nền thẻ trắng."
 
 #. module: fur_theme
 msgid "London, United Kingdom"
@@ -1152,19 +1200,26 @@ msgid "Low chest of four wide drawers for files, samples or supplies."
 msgstr ""
 
 #. module: fur_theme
-msgid "Low sideboards and built-in cabinets keep surfaces clear, while a velvet sofa adds a touch of colour."
+msgid ""
+"Low sideboards and built-in cabinets keep surfaces clear, while a velvet "
+"sofa adds a touch of colour."
 msgstr ""
 
 #. module: fur_theme
-msgid "Made-to-order products: delivered within 2 to 4 weeks; the exact date is confirmed with your order."
-msgstr "Sản phẩm đặt sản xuất: giao trong 2 đến 4 tuần; ngày giao cụ thể được xác nhận cùng đơn hàng."
+msgid ""
+"Made-to-order products: delivered within 2 to 4 weeks; the exact date is "
+"confirmed with your order."
+msgstr ""
+"Sản phẩm đặt sản xuất: giao trong 2 đến 4 tuần; ngày giao cụ thể được xác "
+"nhận cùng đơn hàng."
 
 #. module: fur_theme
 msgid "Main"
 msgstr "Chính"
 
 #. module: fur_theme
-msgid "Matching beds, wardrobes and accessories<br/>for a perfect night’s sleep."
+msgid ""
+"Matching beds, wardrobes and accessories<br/>for a perfect night’s sleep."
 msgstr "Giường, tủ và phụ kiện đồng bộ<br/>cho giấc ngủ trọn vẹn."
 
 #. module: fur_theme
@@ -1244,8 +1299,7 @@ msgid "Neighbourhood Café"
 msgstr ""
 
 #. module: fur_theme
-#. odoo-python
-#: code:addons/fur_theme/controllers/shop.py
+#: code:addons/fur_theme/controllers/shop.py:0
 msgid "No product found"
 msgstr "Không tìm thấy sản phẩm"
 
@@ -1291,7 +1345,8 @@ msgstr "Một hai câu hiển thị trên thẻ dự án…"
 
 #. module: fur_theme
 msgid "Online ordering is not available yet, please call us to order."
-msgstr "Hiện chưa thể đặt hàng trực tuyến, quý khách vui lòng gọi điện để đặt hàng."
+msgstr ""
+"Hiện chưa thể đặt hàng trực tuyến, quý khách vui lòng gọi điện để đặt hàng."
 
 #. module: fur_theme
 msgid "Open-plan bench desk for four people with acoustic dividers."
@@ -1314,8 +1369,12 @@ msgid "Order information"
 msgstr "Thông tin đặt hàng"
 
 #. module: fur_theme
-msgid "Orders are delivered once the payment is confirmed. We call you the day before to agree on a time slot."
-msgstr "Đơn hàng được giao sau khi thanh toán được xác nhận. Chúng tôi sẽ gọi trước một ngày để hẹn giờ giao."
+msgid ""
+"Orders are delivered once the payment is confirmed. We call you the day "
+"before to agree on a time slot."
+msgstr ""
+"Đơn hàng được giao sau khi thanh toán được xác nhận. Chúng tôi sẽ gọi trước "
+"một ngày để hẹn giờ giao."
 
 #. module: fur_theme
 msgid "Other <span class=\"o_fur_accent\">projects</span>"
@@ -1326,16 +1385,26 @@ msgid "Other requests"
 msgstr "Yêu cầu khác"
 
 #. module: fur_theme
-msgid "Our sales staff will call you to confirm the order and the delivery time."
-msgstr "Nhân viên kinh doanh sẽ gọi điện xác nhận đơn hàng và thời gian giao hàng."
+msgid ""
+"Our sales staff will call you to confirm the order and the delivery time."
+msgstr ""
+"Nhân viên kinh doanh sẽ gọi điện xác nhận đơn hàng và thời gian giao hàng."
 
 #. module: fur_theme
-msgid "Our staff will call you to confirm the order and arrange the delivery once the payment is received."
-msgstr "Nhân viên sẽ gọi điện xác nhận đơn hàng và sắp xếp giao hàng ngay khi nhận được thanh toán."
+msgid ""
+"Our staff will call you to confirm the order and arrange the delivery once "
+"the payment is received."
+msgstr ""
+"Nhân viên sẽ gọi điện xác nhận đơn hàng và sắp xếp giao hàng ngay khi nhận "
+"được thanh toán."
 
 #. module: fur_theme
-msgid "Our team assembles and installs the furniture on site, free of charge in our delivery area."
-msgstr "Đội ngũ của chúng tôi lắp ráp và lắp đặt tận nơi, miễn phí trong khu vực giao hàng."
+msgid ""
+"Our team assembles and installs the furniture on site, free of charge in our"
+" delivery area."
+msgstr ""
+"Đội ngũ của chúng tôi lắp ráp và lắp đặt tận nơi, miễn phí trong khu vực "
+"giao hàng."
 
 #. module: fur_theme
 msgid "Oval Oak Dining Table"
@@ -1355,77 +1424,105 @@ msgstr ""
 
 #. module: fur_theme
 msgid "Pay in cash to the delivery staff when you receive the goods."
-msgstr "Quý khách thanh toán bằng tiền mặt cho nhân viên giao hàng khi nhận hàng."
+msgstr ""
+"Quý khách thanh toán bằng tiền mặt cho nhân viên giao hàng khi nhận hàng."
 
 #. module: fur_theme
-msgid "Payment Provider"
-msgstr "Nhà cung cấp dịch vụ thanh toán"
+msgid "Payment Acquirer"
+msgstr "Cổng thanh toán"
 
 #. module: fur_theme
 msgid "Payment method"
 msgstr "Hình thức thanh toán"
 
 #. module: fur_theme
+msgid ""
+"Payment mode of the Fur one-step checkout (cart page) this wire transfer "
+"acquirer is offered as. Empty: not offered on the cart page."
+msgstr ""
+"Hình thức thanh toán của trang giỏ hàng Fur mà cổng chuyển khoản này đại "
+"diện. Để trống: không hiển thị trên trang giỏ hàng."
+
+#. module: fur_theme
 msgid "Phone"
 msgstr "Điện thoại"
 
 #. module: fur_theme
-msgid "Phone number in international format (e.g. +1 555 0100 200) or wa.me link of the floating WhatsApp button. Empty: no WhatsApp button."
-msgstr "Số điện thoại theo định dạng quốc tế (ví dụ +84 909 123 456) hoặc link wa.me của nút WhatsApp nổi. Để trống: không hiện nút WhatsApp."
+msgid ""
+"Phone number in international format (e.g. +1 555 0100 200) or wa.me link of"
+" the floating WhatsApp button. Empty: no WhatsApp button."
+msgstr ""
+"Số điện thoại theo định dạng quốc tế (ví dụ +84 909 123 456) hoặc link wa.me"
+" của nút WhatsApp nổi. Để trống: không hiện nút WhatsApp."
 
 #. module: fur_theme
-msgid "Phone number or zalo.me link of a second floating Zalo button (the number itself is not shown)."
-msgstr "Số điện thoại hoặc link zalo.me của nút Zalo nổi thứ hai (không hiển thị số)."
+msgid ""
+"Phone number or zalo.me link of a second floating Zalo button (the number "
+"itself is not shown)."
+msgstr ""
+"Số điện thoại hoặc link zalo.me của nút Zalo nổi thứ hai (không hiển thị "
+"số)."
 
 #. module: fur_theme
-msgid "Phone number or zalo.me link of the floating Zalo button. Empty: no Zalo button."
-msgstr "Số điện thoại hoặc link zalo.me của nút Zalo nổi. Để trống: không hiện nút Zalo."
+msgid ""
+"Phone number or zalo.me link of the floating Zalo button. Empty: no Zalo "
+"button."
+msgstr ""
+"Số điện thoại hoặc link zalo.me của nút Zalo nổi. Để trống: không hiện nút "
+"Zalo."
 
 #. module: fur_theme
 msgid "Place order"
 msgstr "Thanh toán"
 
 #. module: fur_theme
-msgid "Please check the goods before signing the delivery note, and tell us straight away about any damage so that we can replace the item."
-msgstr "Quý khách vui lòng kiểm tra hàng trước khi ký nhận và báo ngay cho chúng tôi nếu có hư hỏng để được đổi sản phẩm."
+msgid ""
+"Please check the goods before signing the delivery note, and tell us "
+"straight away about any damage so that we can replace the item."
+msgstr ""
+"Quý khách vui lòng kiểm tra hàng trước khi ký nhận và báo ngay cho chúng tôi"
+" nếu có hư hỏng để được đổi sản phẩm."
 
 #. module: fur_theme
-#. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
 msgid "Please choose a payment method."
 msgstr "Vui lòng chọn hình thức thanh toán."
 
 #. module: fur_theme
-#. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
 msgid "Please enter a valid email address."
 msgstr "Email không hợp lệ."
 
 #. module: fur_theme
-#. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
 msgid "Please enter a valid phone number."
 msgstr "Số điện thoại không hợp lệ."
 
 #. module: fur_theme
-#. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
 msgid "Please enter your delivery address."
 msgstr "Vui lòng nhập địa chỉ giao hàng."
 
 #. module: fur_theme
-#. odoo-python
-#: code:addons/fur_theme/controllers/cart.py
+#: code:addons/fur_theme/controllers/cart.py:0
 msgid "Please enter your full name."
 msgstr "Vui lòng nhập họ tên."
 
 #. module: fur_theme
-msgid "Please make sure the room is accessible and the furniture can go through doors and stairways."
-msgstr "Quý khách vui lòng đảm bảo lối vào phòng thông thoáng và đồ nội thất đi qua được cửa, cầu thang."
+msgid ""
+"Please make sure the room is accessible and the furniture can go through "
+"doors and stairways."
+msgstr ""
+"Quý khách vui lòng đảm bảo lối vào phòng thông thoáng và đồ nội thất đi qua "
+"được cửa, cầu thang."
 
 #. module: fur_theme
-msgid "Please transfer the order amount using the details below. We will call you to confirm the order as soon as the payment is received."
-msgstr "Quý khách vui lòng chuyển khoản theo thông tin bên dưới. Nhân viên sẽ gọi điện xác nhận đơn hàng ngay khi nhận được thanh toán."
+msgid "Please use the following transfer details"
+msgstr "Quý khách vui lòng chuyển khoản theo thông tin sau"
+
+#. module: fur_theme
+msgid "Please use the order name as communication reference."
+msgstr "Quý khách vui lòng ghi mã đơn hàng trong nội dung chuyển khoản."
 
 #. module: fur_theme
 msgid "Polyester felt"
@@ -1452,10 +1549,6 @@ msgid "Price:"
 msgstr "Giá:"
 
 #. module: fur_theme
-msgid "Product"
-msgstr "Sản phẩm"
-
-#. module: fur_theme
 msgid "Product <span class=\"o_fur_accent\">categories</span>"
 msgstr "DANH MỤC <span class=\"o_fur_accent\">SẢN PHẨM</span>"
 
@@ -1464,12 +1557,20 @@ msgid "Product Name"
 msgstr "Tên sản phẩm"
 
 #. module: fur_theme
+msgid "Product Template"
+msgstr "Mẫu sản phẩm"
+
+#. module: fur_theme
 msgid "Product categories"
 msgstr "Danh mục sản phẩm"
 
 #. module: fur_theme
-msgid "Product category (inventory, accounting) copied from this website category and given to its products."
-msgstr "Danh mục sản phẩm (kho, kế toán) sao chép từ danh mục website này và gán cho các sản phẩm của nó."
+msgid ""
+"Product category (inventory, accounting) copied from this website category "
+"and given to its products."
+msgstr ""
+"Danh mục sản phẩm (kho, kế toán) sao chép từ danh mục website này và gán cho"
+" các sản phẩm của nó."
 
 #. module: fur_theme
 msgid "Product information"
@@ -1504,16 +1605,13 @@ msgid "Projects"
 msgstr "Dự án"
 
 #. module: fur_theme
-msgid "Projects appear on the /projects page and on the homepage of the Fur theme."
+msgid ""
+"Projects appear on the /projects page and on the homepage of the Fur theme."
 msgstr "Dự án hiển thị trên trang /projects và trang chủ của theme Fur."
 
 #. module: fur_theme
 msgid "Published"
 msgstr "Đã công bố"
-
-#. module: fur_theme
-msgid "Published date"
-msgstr "Ngày đăng"
 
 #. module: fur_theme
 msgid "Raises your screen to eye level and frees space for the keyboard."
@@ -1528,8 +1626,8 @@ msgid "Related <span class=\"o_fur_accent\">products</span>"
 msgstr "SẢN PHẨM <span class=\"o_fur_accent\">LIÊN QUAN</span>"
 
 #. module: fur_theme
-msgid "Restrict to a specific website."
-msgstr "Giới hạn cho một website cụ thể."
+msgid "Restrict publishing to this website."
+msgstr "Chỉ hiển thị trên trang web này."
 
 #. module: fur_theme
 msgid "Ribbed Glass Table Lamp"
@@ -1544,7 +1642,9 @@ msgid "Round Garden Dining Set"
 msgstr ""
 
 #. module: fur_theme
-msgid "Round table with a stone-look top and four woven armchairs, at home indoors or on the terrace."
+msgid ""
+"Round table with a stone-look top and four woven armchairs, at home indoors "
+"or on the terrace."
 msgstr ""
 
 #. module: fur_theme
@@ -1556,7 +1656,9 @@ msgid "Sales Order"
 msgstr "Đơn bán hàng"
 
 #. module: fur_theme
-msgid "Scandinavian lounge sofa with an exposed oak frame and removable beige cushions."
+msgid ""
+"Scandinavian lounge sofa with an exposed oak frame and removable beige "
+"cushions."
 msgstr ""
 
 #. module: fur_theme
@@ -1584,21 +1686,26 @@ msgid "Seats"
 msgstr ""
 
 #. module: fur_theme
-msgid "Second line of the title on the homepage card, e.g. 'Tech startup, Austin'."
-msgstr "Dòng thứ hai của tiêu đề trên thẻ ở trang chủ, ví dụ 'Công ty công nghệ tại TP.HCM'."
+msgid ""
+"Second line of the title on the homepage card, e.g. 'Tech startup, Austin'."
+msgstr ""
+"Dòng thứ hai của tiêu đề trên thẻ ở trang chủ, ví dụ 'Công ty công nghệ tại "
+"TP.HCM'."
 
 #. module: fur_theme
-msgid "Second tab of the product page. Can also be edited on the page with the website builder."
-msgstr "Tab thứ hai của trang sản phẩm. Có thể sửa trực tiếp trên trang bằng trình dựng website."
+msgid ""
+"Second tab of the product page. Can also be edited on the page with the "
+"website builder."
+msgstr ""
+"Tab thứ hai của trang sản phẩm. Có thể sửa trực tiếp trên trang bằng trình "
+"dựng website."
 
 #. module: fur_theme
 msgid "See all"
 msgstr "Xem tất cả"
 
 #. module: fur_theme
-#. odoo-python
-#: code:addons/fur_theme/controllers/shop.py
-#, python-format
+#: code:addons/fur_theme/controllers/shop.py:0
 msgid "See all %(count)s results"
 msgstr "Xem tất cả %(count)s kết quả"
 
@@ -1635,11 +1742,13 @@ msgid "Show sub-categories"
 msgstr "Xem danh mục con"
 
 #. module: fur_theme
-msgid "Show this category in the 'Product categories' grid of the Fur homepage."
+msgid ""
+"Show this category in the 'Product categories' grid of the Fur homepage."
 msgstr "Hiển thị danh mục này trong lưới 'Danh mục sản phẩm' ở trang chủ Fur."
 
 #. module: fur_theme
-msgid "Show this product in the 'Featured products' section of the Fur homepage."
+msgid ""
+"Show this product in the 'Featured products' section of the Fur homepage."
 msgstr "Hiển thị sản phẩm này trong mục 'Sản phẩm nổi bật' ở trang chủ Fur."
 
 #. module: fur_theme
@@ -1651,6 +1760,12 @@ msgid "Showcase your first interior project"
 msgstr "Giới thiệu dự án nội thất đầu tiên của bạn"
 
 #. module: fur_theme
+msgid ""
+"Shown crossed out next to the sales price on the website when it is higher."
+msgstr ""
+"Hiển thị gạch ngang bên cạnh giá bán trên trang web khi cao hơn giá bán."
+
+#. module: fur_theme
 msgid "Shown in the footer."
 msgstr "Hiển thị ở chân trang."
 
@@ -1659,8 +1774,12 @@ msgid "Shown in the header menu and footer."
 msgstr "Hiển thị trên đầu trang và chân trang."
 
 #. module: fur_theme
-msgid "Shown next to the logo when the website has none, in the homepage slides and on the thank-you page. Empty: the website name."
-msgstr "Hiển thị thay logo khi website chưa có logo, trên slide trang chủ và trang cảm ơn. Để trống: dùng tên website."
+msgid ""
+"Shown next to the logo when the website has none, in the homepage slides and"
+" on the thank-you page. Empty: the website name."
+msgstr ""
+"Hiển thị thay logo khi website chưa có logo, trên slide trang chủ và trang "
+"cảm ơn. Để trống: dùng tên website."
 
 #. module: fur_theme
 msgid "Sign in"
@@ -1671,11 +1790,15 @@ msgid "Sign up"
 msgstr "Đăng ký"
 
 #. module: fur_theme
-msgid "Simple, versatile cabinet in natural wood for living rooms, entrances or offices."
+msgid ""
+"Simple, versatile cabinet in natural wood for living rooms, entrances or "
+"offices."
 msgstr ""
 
 #. module: fur_theme
-msgid "Sixty hot desks, four acoustic booths and a lounge with sofas make this space work for both focus and community."
+msgid ""
+"Sixty hot desks, four acoustic booths and a lounge with sofas make this "
+"space work for both focus and community."
 msgstr ""
 
 #. module: fur_theme
@@ -1695,7 +1818,9 @@ msgid "Sofas"
 msgstr ""
 
 #. module: fur_theme
-msgid "Soft aniline leather in a warm camel tone on a slim metal base: a sofa that ages beautifully."
+msgid ""
+"Soft aniline leather in a warm camel tone on a slim metal base: a sofa that "
+"ages beautifully."
 msgstr ""
 
 #. module: fur_theme
@@ -1779,23 +1904,24 @@ msgid "The adjustable architect lamp in matte black, with a weighted base."
 msgstr ""
 
 #. module: fur_theme
-msgid "The bistro classic: a cross-back chair in solid beech with a woven seat."
+msgid ""
+"The bistro classic: a cross-back chair in solid beech with a woven seat."
 msgstr ""
 
 #. module: fur_theme
-msgid "The full absolute URL to access the document through the website."
-msgstr "URL tuyệt đối để truy cập tài liệu qua website."
+msgid "The full URL to access the document through the website."
+msgstr "URL đầy đủ để truy cập tài liệu qua trang web."
 
 #. module: fur_theme
-msgid "The full relative URL to access the document through the website."
-msgstr "URL tương đối để truy cập tài liệu qua website."
-
-#. module: fur_theme
-msgid "The new boardroom seats twelve around a dark oak table with power and video connections in the top."
+msgid ""
+"The new boardroom seats twelve around a dark oak table with power and video "
+"connections in the top."
 msgstr ""
 
 #. module: fur_theme
-msgid "The same tailored silhouette in rich cognac leather, for a classic library look."
+msgid ""
+"The same tailored silhouette in rich cognac leather, for a classic library "
+"look."
 msgstr ""
 
 #. module: fur_theme
@@ -1819,20 +1945,35 @@ msgid "Track my order"
 msgstr "Tra cứu đơn hàng"
 
 #. module: fur_theme
-msgid "Transfer the order amount to our bank account: the account details and the payment reference are shown as soon as the order is placed."
-msgstr "Quý khách chuyển khoản số tiền của đơn hàng vào tài khoản ngân hàng của công ty: thông tin tài khoản và nội dung chuyển khoản hiển thị ngay sau khi đặt hàng."
+msgid ""
+"Transfer the order amount to our bank account: the account details and the "
+"payment reference are shown as soon as the order is placed."
+msgstr ""
+"Quý khách chuyển khoản số tiền của đơn hàng vào tài khoản ngân hàng của công"
+" ty: thông tin tài khoản và nội dung chuyển khoản hiển thị ngay sau khi đặt "
+"hàng."
 
 #. module: fur_theme
 msgid "Two-Drawer Oak Chest"
 msgstr ""
 
 #. module: fur_theme
-msgid "Two-door cabinet with a herringbone oak front and splayed legs: storage that doubles as a statement piece."
+msgid ""
+"Two-door cabinet with a herringbone oak front and splayed legs: storage that"
+" doubles as a statement piece."
 msgstr ""
 
 #. module: fur_theme
 msgid "Type"
 msgstr "Loại hình"
+
+#. module: fur_theme
+msgid "URL of the category page of the shop."
+msgstr "URL trang danh mục của cửa hàng."
+
+#. module: fur_theme
+msgid "Units"
+msgstr "Đơn vị"
 
 #. module: fur_theme
 msgid "Up to 65 cm"
@@ -1847,8 +1988,12 @@ msgid "Use Fur Theme"
 msgstr "Dùng giao diện Fur"
 
 #. module: fur_theme
-msgid "Use the Fur header, footer, homepage and shop layout on this website. Untick it to give this website back Odoo's own layout."
-msgstr "Dùng đầu trang, chân trang, trang chủ và bố cục cửa hàng Fur cho website này. Bỏ chọn để trả lại bố cục gốc của Odoo."
+msgid ""
+"Use the Fur header, footer, homepage and shop layout on this website. Untick"
+" it to give this website back Odoo's own layout."
+msgstr ""
+"Dùng đầu trang, chân trang, trang chủ và bố cục cửa hàng Fur cho website "
+"này. Bỏ chọn để trả lại bố cục gốc của Odoo."
 
 #. module: fur_theme
 msgid "Vegan leather"
@@ -1903,16 +2048,14 @@ msgid "Warranty"
 msgstr ""
 
 #. module: fur_theme
-msgid "We designed and fitted out 680 m² in six weeks: bench desks in white and steel, acoustic booths for calls and a ten-seat boardroom in dark oak."
+msgid ""
+"We designed and fitted out 680 m² in six weeks: bench desks in white and "
+"steel, acoustic booths for calls and a ten-seat boardroom in dark oak."
 msgstr ""
 
 #. module: fur_theme
 msgid "Website"
 msgstr "Trang web"
-
-#. module: fur_theme
-msgid "Website Absolute URL"
-msgstr "URL tuyệt đối của website"
 
 #. module: fur_theme
 msgid "Website Product Category"
@@ -1959,6 +2102,10 @@ msgid "White melamine, steel frame"
 msgstr ""
 
 #. module: fur_theme
+msgid "Wire Transfer"
+msgstr "Chuyển khoản"
+
+#. module: fur_theme
 msgid "Woven fabric, beige (removable covers)"
 msgstr ""
 
@@ -1971,8 +2118,13 @@ msgid "Your cart"
 msgstr "Giỏ hàng của bạn"
 
 #. module: fur_theme
-msgid "Your order has been received. Please pay the delivery staff when you receive the goods; we will call you to confirm the delivery time."
-msgstr "Đơn hàng của quý khách đã được tiếp nhận. Quý khách thanh toán cho nhân viên giao hàng khi nhận hàng; chúng tôi sẽ gọi điện xác nhận thời gian giao hàng."
+msgid ""
+"Your order has been received. Please pay the delivery staff when you receive"
+" the goods; we will call you to confirm the delivery time."
+msgstr ""
+"Đơn hàng của quý khách đã được tiếp nhận. Quý khách thanh toán cho nhân viên"
+" giao hàng khi nhận hàng; chúng tôi sẽ gọi điện xác nhận thời gian giao "
+"hàng."
 
 #. module: fur_theme
 msgid "Your payment has been authorized."
@@ -1983,8 +2135,8 @@ msgid "Your payment has been cancelled."
 msgstr "Thanh toán của quý khách đã bị hủy."
 
 #. module: fur_theme
-msgid "Your payment has been processed."
-msgstr "Thanh toán của quý khách đã được xử lý."
+msgid "Your payment has been successfully processed. Thank you!"
+msgstr "Thanh toán của quý khách đã được xử lý thành công. Xin cảm ơn!"
 
 #. module: fur_theme
 msgid "Zalo"
@@ -2007,8 +2159,11 @@ msgid "e.g. Văn phòng công ty"
 msgstr "VD: Văn phòng công ty"
 
 #. module: fur_theme
-msgid "has been received. We will call you to confirm it and deliver as soon as possible."
-msgstr "đã được ghi nhận. Chúng tôi sẽ liên hệ xác nhận và giao hàng sớm nhất."
+msgid ""
+"has been received. We will call you to confirm it and deliver as soon as "
+"possible."
+msgstr ""
+"đã được ghi nhận. Chúng tôi sẽ liên hệ xác nhận và giao hàng sớm nhất."
 
 #. module: fur_theme
 msgid "https://m.me/yourpage"
@@ -2025,4 +2180,3 @@ msgstr ""
 #. module: fur_theme
 msgid "Ø 120 x 75 cm"
 msgstr ""
-

@@ -371,7 +371,7 @@
 }
 .o_fur_user .dropdown-toggle::after { display: none; }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(xs) {
     .o_fur_topbar_inner { column-gap: .4rem; }
     .o_fur_brand .o_fur_logo { height: 2.7rem; }
     .o_fur_actions { gap: .35rem; }
@@ -400,7 +400,7 @@
     overflow-x: auto;
     scrollbar-width: none;
     &::-webkit-scrollbar { display: none; }
-    @include media-breakpoint-down(md) { justify-content: flex-start; }
+    @include media-breakpoint-down(sm) { justify-content: flex-start; }
 }
 .o_fur_menu_item {
     flex: 0 0 auto;
@@ -534,13 +534,40 @@
 }
 
 // Off-canvas --------------------------------------------------------------
+// Off-canvas menu: Bootstrap 4 has no off-canvas component, the panel is
+// shown by static/src/js/offcanvas.js (class "show") over a backdrop.
 .o_fur_offcanvas {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-modal;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-width: 86vw;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .2);
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out, visibility .3s;
+    &.show {
+        visibility: visible;
+        transform: none;
+    }
     font-family: var(--fur-font);
-    .offcanvas-header {
+    .o_fur_offcanvas_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
         background: var(--fur-yellow);
     }
     .o_fur_offcanvas_close { color: var(--fur-navy-2); padding: .25rem; }
-    .offcanvas-body {
+    .o_fur_offcanvas_body {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -598,3 +625,14 @@
     border-radius: var(--fur-radius-sm);
     background: var(--fur-cream);
 }
+
+.o_fur_offcanvas_backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-modal-backdrop;
+    background: rgba(0, 0, 0, .5);
+}
+body.o_fur_offcanvas_open { overflow: hidden; }

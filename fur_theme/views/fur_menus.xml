@@ -2,7 +2,7 @@
 <odoo>
     <menuitem id="menu_fur_projects"
         name="Projects"
-        parent="website.menu_content"
+        parent="website.menu_website_configuration"
         action="fur_project_action"
         groups="website.group_website_designer"
         sequence="45"/>
