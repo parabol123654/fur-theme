@@ -41,4 +41,4 @@ odoo -d <testdb> --db-filter='^<testdb>$' -i fur_theme --test-tags /fur_theme --
 
 The checkout tour needs Chrome and the `websocket-client` Python package.
 
-License: OPL-1 (see LICENSE). Author: Sanxus Lab.
+License: LGPL-3 (see LICENSE). Author: Manh Nguyen.

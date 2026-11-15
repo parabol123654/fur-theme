@@ -388,7 +388,7 @@ class Website(models.Model):
                     menu.write({"sequence": sequence})
                 else:
                     menu = Menu.with_context(lang="en_US").create({
-                        "name": names["en_US"], "url": url, "parent_id": root.id,
+                        "name": names.get("en_US") or next(iter(names.values())), "url": url, "parent_id": root.id,
                         "website_id": website.id, "sequence": sequence,
                     })
                 menu.update_field_translations("name", names)

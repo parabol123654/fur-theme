@@ -228,6 +228,14 @@ class TestFurPages(HttpCase, FurCommon):
         for sample in ("s_title", "s_faq_list", "s_accordion_image", "s_map"):
             self.assertFalse(html.xpath(f"//div[@id='wrap']//section[hasclass('{sample}')]"), sample)
 
+    def test_signed_in_account_pill(self):
+        new_test_user(self.env, login="fur_portal", groups="base.group_portal")
+        self.authenticate("fur_portal", "fur_portal")
+        html = self._get_html("/")
+        self.assertTrue(html.xpath("//li[hasclass('o_fur_user')]/a[hasclass('o_fur_pill')]/img"),
+                        "Avatar in the account pill of a signed-in user")
+        self.assertFalse(html.xpath("//ul[hasclass('o_fur_actions')]//a[@href='/web/login']"))
+
     def test_menu_home_icon_and_flyout(self):
         self.website.sudo()._fur_setup_menu()
         sub = self.env["product.public.category"].sudo().create({
@@ -341,6 +349,24 @@ class TestFurCheckout(HttpCase, FurCommon):
         self.assertEqual(order.fur_customer_note, "Gọi trước khi giao")
         self.assertEqual(order.transaction_ids.provider_id, cod)
         self.assertEqual(order.transaction_ids.payment_method_code, "cash_on_delivery")
+
+    def test_free_order_is_confirmed(self):
+        # nothing to pay: the order is confirmed without a payment transaction
+        self.website.sudo().write({"prevent_sale": False})
+        self.chair.sudo().list_price = 0
+        html = self._add_chair_and_open_cart()
+        csrf = html.xpath("//form[hasclass('o_fur_quick_checkout')]//input[@name='csrf_token']/@value")[0]
+        response = self.url_open("/shop/fur/checkout", data={
+            "csrf_token": csrf, "provider_id": str(self.providers["wire_transfer"].id),
+            "name": "Lê Văn Fur", "phone": "0909 000 222", "email": "", "street": "34 Hai Bà Trưng, Hà Nội",
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.url.endswith("/shop/confirmation"), response.url)
+        order = self._last_order()
+        self.assertEqual(order.partner_id.name, "Lê Văn Fur")
+        self.assertEqual(order.amount_total, 0)
+        self.assertEqual(order.state, "sale", "A free order is confirmed")
+        self.assertFalse(order.transaction_ids)
 
     def test_checkout_tour(self):
         self.start_tour("/", "fur_theme.checkout_tour", login=None)

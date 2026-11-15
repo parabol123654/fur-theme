@@ -152,8 +152,12 @@ class FurCart(Cart):
         order_sudo.fur_customer_note = form["note"] or False
         order_sudo._update_cart_taxes_and_prices()
         request.session["sale_last_order_id"] = order_sudo.id
-        if not order_sudo.amount_total:  # nothing to pay: /shop/payment/validate confirms it
-            return request.redirect("/shop/payment/validate")
+        if not order_sudo.amount_total:
+            # nothing to pay: confirmed as /shop/payment/validate does, without
+            # its address and delivery checks (steps this checkout does not have)
+            order_sudo._validate_order()
+            self.env.website.sale_reset()
+            return request.redirect("/shop/confirmation")
 
         tx_sudo = self._create_transaction(
             provider_id=provider_sudo.id,

@@ -19,7 +19,7 @@ Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.
     "version": "20.0.1.0.0",
     "category": "Website/Theme",
     "author": "Manh Nguyen",
-    "license": "AGPL-3",
+    "license": "LGPL-3",
     "website": "https://github.com/parabol123654/fur-theme",
     "support": "parabol123654@gmail.com",
     "depends": [

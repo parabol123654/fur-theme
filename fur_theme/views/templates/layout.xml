@@ -132,6 +132,7 @@
                     <t t-call="portal.user_dropdown"
                         _item_class.f="dropdown o_fur_user"
                         _no_caret="True"
+                        _avatar="True"
                         _link_class.f="o_fur_pill o_fur_pill_round"
                         _dropdown_menu_class.f="dropdown-menu-end">
                     </t>
