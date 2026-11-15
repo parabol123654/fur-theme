@@ -1,11 +1,12 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
+import base64
 import logging
 import re
 
 from odoo import fields, models
-from odoo.fields import Command, Domain
-from odoo.http import request
-from odoo.tools import BinaryBytes, file_open
+from odoo.fields import Command
+from odoo.osv import expression
+from odoo.tools import file_open
 
 _logger = logging.getLogger(__name__)
 
@@ -73,9 +74,9 @@ class Website(models.Model):
         self.ensure_one()
         Category = self.env["product.public.category"]
         domain = self.website_domain()
-        categories = Category.search(domain & Domain("fur_show_on_home", "=", True), limit=limit)
+        categories = Category.search(domain + [("fur_show_on_home", "=", True)], limit=limit)
         if not categories:
-            categories = Category.search(domain & Domain("parent_id", "=", False), limit=limit)
+            categories = Category.search(domain + [("parent_id", "=", False)], limit=limit)
         return categories
 
     def _fur_featured_products(self, limit=8):
@@ -84,10 +85,10 @@ class Website(models.Model):
         Product = self.env["product.template"]
         domain = self.sale_product_domain()
         products = Product.search(
-            domain & Domain("fur_featured", "=", True), order="website_sequence, id", limit=limit
+            domain + [("fur_featured", "=", True)], order="website_sequence, id", limit=limit
         )
         if not products:
-            products = Product.search(domain, order="publish_date desc, id desc", limit=limit)
+            products = Product.search(domain, order="create_date desc, id desc", limit=limit)
         return products
 
     def _fur_home_sections(self, limit=8):
@@ -98,7 +99,7 @@ class Website(models.Model):
         sections = []
         for categ in self._fur_home_categories():
             products = Product.search(
-                self.sale_product_domain() & Domain("public_categ_ids", "child_of", categ.id),
+                self.sale_product_domain() + [("public_categ_ids", "child_of", categ.id)],
                 order="fur_featured desc, website_sequence, id desc", limit=limit,
             )
             if products:
@@ -114,8 +115,8 @@ class Website(models.Model):
     def _fur_featured_projects(self, limit=3):
         self.ensure_one()
         Project = self.env["fur.project"]
-        domain = self.website_domain() & Domain("is_published", "=", True)
-        projects = Project.search(domain & Domain("is_featured", "=", True), limit=limit)
+        domain = self.website_domain() + [("is_published", "=", True)]
+        projects = Project.search(domain + [("is_featured", "=", True)], limit=limit)
         if not projects:
             projects = Project.search(domain, limit=limit)
         return projects
@@ -138,7 +139,7 @@ class Website(models.Model):
                 holders[category.id] = category
                 continue
             product = Product.search(
-                self.sale_product_domain() & Domain("public_categ_ids", "child_of", category.id),
+                self.sale_product_domain() + [("public_categ_ids", "child_of", category.id)],
                 order="website_sequence, id",
                 limit=1,
             )
@@ -151,13 +152,7 @@ class Website(models.Model):
         self.ensure_one()
         if not products:
             return {}
-        # website_sale sets both on frontend requests (_frontend_pre_dispatch)
-        pricelist = getattr(request, "pricelist", None) if request else None
-        fiscal_position = getattr(request, "fiscal_position", None) if request else None
-        if pricelist is None or fiscal_position is None:
-            pricelist = self.pricelist_id.sudo()
-            fiscal_position = self.env["account.fiscal.position"].sudo()
-        return products._get_sales_prices(pricelist, fiscal_position, self)
+        return products._get_sales_prices(self)
 
     def _fur_wishlist_variant_ids(self):
         """Variant ids in the visitor's wishlist, fetched once per page."""
@@ -187,14 +182,13 @@ class Website(models.Model):
 """
 
     def _fur_setup_shop_cards(self):
-        """Shop cards keep their cart button shown (Odoo's default design
-        only shows it on hover)."""
-        for website in self:
-            classes = website.shop_opt_products_design_classes or ""
-            if "o_wsale_products_opt_actions_onhover" in classes:
-                website.shop_opt_products_design_classes = classes.replace(
-                    "o_wsale_products_opt_actions_onhover", "o_wsale_products_opt_actions_inline"
-                )
+        """Shop cards keep their cart button shown (Odoo 18: the "Add to
+        Cart" option of the shop page, off by default)."""
+        views = self.env["ir.ui.view"].with_context(active_test=False).search([
+            ("key", "=", "website_sale.products_add_to_cart"),
+            ("website_id", "in", [False, *self.ids]),
+        ])
+        views.filtered(lambda view: not view.active).active = True
 
     def _fur_sync_view_copies(self):
         """Website copies of Fur pages (made when a page is edited with the
@@ -223,7 +217,7 @@ class Website(models.Model):
         shown as a web page)."""
         self.ensure_one()
         return (
-            self.env["ir.config_parameter"].sudo().get_bool("account.use_invoice_terms")
+            self.env["ir.config_parameter"].sudo().get_param("account.use_invoice_terms")
             and self.company_id.sudo().terms_type == "html"
         )
 
@@ -282,7 +276,7 @@ class Website(models.Model):
         if not match:
             return Category
         return Category.search(
-            self.website_domain() & Domain("parent_id", "=", int(match.group(1))),
+            self.website_domain() + [("parent_id", "=", int(match.group(1)))],
             order="sequence, id",
         )
 
@@ -313,7 +307,7 @@ class Website(models.Model):
     def _fur_setup_demo(self):
         """Turn the default website into the demo furniture shop: Fur menu,
         sample contacts, "compare to" prices, cart page payment modes."""
-        website = self[:1] or self.env.ref("base.default_website")
+        website = self[:1] or self.env.ref("website.default_website")
         company = website.company_id
 
         # Show the "compare to" (crossed-out) prices of the sample catalogue.
@@ -341,7 +335,7 @@ class Website(models.Model):
             ("favicon", "fur_theme/static/src/img/favicon.png"),
         ):
             with file_open(path, "rb") as image:
-                website[field] = BinaryBytes(image.read(), filename=path.rsplit("/", 1)[-1])
+                website[field] = base64.b64encode(image.read())
         demo_categories = self.env["product.public.category"].browse(
             self.env["ir.model.data"].search([
                 ("model", "=", "product.public.category"), ("module", "=", "fur_theme"),
@@ -378,7 +372,7 @@ class Website(models.Model):
             wanted = [({lang: home.get(lang, home["en_US"]) for lang in languages}, "/")] + [
                 ({lang: categ.with_context(lang=lang).name for lang in languages}, categ.website_url)
                 for categ in (categories or self.env["product.public.category"].search(
-                    website.website_domain() & Domain("parent_id", "=", False), order="sequence, id"
+                    website.website_domain() + [("parent_id", "=", False)], order="sequence, id"
                 ))
             ]
             existing = {menu.url: menu for menu in root.child_id}
@@ -388,7 +382,9 @@ class Website(models.Model):
                     menu.write({"sequence": sequence})
                 else:
                     menu = Menu.with_context(lang="en_US").create({
-                        "name": names["en_US"], "url": url, "parent_id": root.id,
+                        # English is inactive on a database created in another language
+                        "name": names.get("en_US") or next(iter(names.values())),
+                        "url": url, "parent_id": root.id,
                         "website_id": website.id, "sequence": sequence,
                     })
                 menu.update_field_translations("name", names)
@@ -398,13 +394,14 @@ class Website(models.Model):
     def _fur_related_products(self, product, limit=4):
         """Alternative products, completed with products of the same category."""
         self.ensure_one()
-        domain = self.sale_product_domain() & Domain("id", "!=", product.id)
+        domain = expression.AND([self.sale_product_domain(), [("id", "!=", product.id)]])
         related = product.alternative_product_ids.filtered_domain(domain)[:limit]
         if len(related) < limit and product.public_categ_ids:
             related |= self.env["product.template"].search(
-                domain
-                & Domain("id", "not in", related.ids)
-                & Domain("public_categ_ids", "in", product.public_categ_ids.ids),
+                domain + [
+                    ("id", "not in", related.ids),
+                    ("public_categ_ids", "in", product.public_categ_ids.ids),
+                ],
                 order="website_sequence, id",
                 limit=limit - len(related),
             )

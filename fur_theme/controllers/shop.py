@@ -10,9 +10,9 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 class FurShop(WebsiteSale):
 
-    def _shop_lookup_products(self, options, post, search, website):
+    def _shop_lookup_products(self, attrib_set, options, post, search, website):
         fuzzy_search_term, product_count, search_result = super()._shop_lookup_products(
-            options, post, search, website
+            attrib_set, options, post, search, website
         )
         # a search without a chosen sort: best matches first
         if search and not post.get("order"):
@@ -24,10 +24,10 @@ class FurShop(WebsiteSale):
 
 class FurSearch(http.Controller):
 
-    @http.route("/fur/search/suggest", type="jsonrpc", auth="public", website=True, readonly=True)
+    @http.route("/fur/search/suggest", type="json", auth="public", website=True, readonly=True)
     def suggest(self, term="", limit=8):
         """Products of the header search dropdown."""
-        website = request.env.website
+        website = request.website
         Product = request.env["product.template"]
         products, count = Product._fur_search_suggest(term, website, limit=min(int(limit or 8), 20))
         prices = website._fur_product_prices(products)

@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 20.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-10 19:20+0000\n"
 "PO-Revision-Date: 2026-10-10 19:20+0000\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_fur_theme
 msgid ""
 "\n"
-"Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.\n"
+"Furniture eCommerce theme for Odoo 18.0 Community and Enterprise.\n"
 "\n"
 "* Header with logo, instant product search, hotline, cart, account and flag language switcher\n"
 "* Homepage: hero slider, service strip, category grid, one product block per category,\n"
@@ -99,13 +99,6 @@ msgid "160 x 140 x 75 cm"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
-msgid "160 x 45 x 70 cm"
-msgstr ""
-
-#. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
 #: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "160 x 82 x 78 cm"
 msgstr ""
@@ -113,11 +106,6 @@ msgstr ""
 #. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_divider
 msgid "180 x 160 cm"
-msgstr ""
-
-#. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-msgid "190 x 88 x 76 cm"
 msgstr ""
 
 #. module: fur_theme
@@ -133,11 +121,6 @@ msgstr ""
 #. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_chest_oak
 msgid "2 drawers"
-msgstr ""
-
-#. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
-msgid "2 sliding doors, 4 compartments"
 msgstr ""
 
 #. module: fur_theme
@@ -419,15 +402,6 @@ msgid ""
 msgstr ""
 
 #. module: fur_theme
-#: model:product.template,description_sale:fur_theme.product_sideboard_low
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sideboard_low
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
-msgid ""
-"A long, low sideboard with sliding doors, perfect under a TV or along a "
-"dining room wall."
-msgstr ""
-
-#. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_desk_walnut
 #: model_terms:product.template,description_ecommerce:fur_theme.product_desk_walnut
 #: model_terms:product.template,website_description:fur_theme.product_desk_walnut
@@ -554,16 +528,6 @@ msgid "About the Leather Desk Pad"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-msgid "About the Leather Two-Seat Sofa, Camel"
-msgstr ""
-
-#. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
-msgid "About the Leather Two-Seat Sofa, Cognac"
-msgstr ""
-
-#. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 msgid "About the Linen Loveseat, Navy"
 msgstr ""
@@ -571,11 +535,6 @@ msgstr ""
 #. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 msgid "About the Locker Pedestal"
-msgstr ""
-
-#. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
-msgid "About the Low Oak Sideboard"
 msgstr ""
 
 #. module: fur_theme
@@ -596,11 +555,6 @@ msgstr ""
 #. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
 msgid "About the Natural Wood Storage Cabinet"
-msgstr ""
-
-#. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-msgid "About the Oak Frame Lounge Sofa"
 msgstr ""
 
 #. module: fur_theme
@@ -712,16 +666,6 @@ msgid ""
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-msgid "Aniline leather, camel"
-msgstr ""
-
-#. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
-msgid "Aniline leather, cognac"
-msgstr ""
-
-#. module: fur_theme
 #: model:ir.model.fields.selection,name:fur_theme.selection__fur_project__project_type__apartment
 msgid "Apartment"
 msgstr ""
@@ -750,16 +694,6 @@ msgstr ""
 #. module: fur_theme
 #: model:fur.project,location:fur_theme.project_tech_office
 msgid "Austin, Texas"
-msgstr ""
-
-#. module: fur_theme
-#: model:ir.model.fields,field_description:fur_theme.field_fur_project__publish_on
-msgid "Auto publish on"
-msgstr ""
-
-#. module: fur_theme
-#: model:ir.model.fields,help:fur_theme.field_fur_project__publish_on
-msgid "Automatically publish the page on the chosen date and time."
 msgstr ""
 
 #. module: fur_theme
@@ -895,6 +829,11 @@ msgid "Cart"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields.selection,name:fur_theme.selection__payment_provider__custom_mode__cash_on_delivery
+msgid "Cash On Delivery"
+msgstr ""
+
+#. module: fur_theme
 #: model:payment.provider,name:fur_theme.payment_provider_cash_on_delivery
 msgid "Cash on delivery"
 msgstr ""
@@ -977,6 +916,11 @@ msgid "Contact"
 msgstr ""
 
 #. module: fur_theme
+#: model_terms:ir.ui.view,arch_db:fur_theme.contactus
+msgid "Contact us"
+msgstr ""
+
+#. module: fur_theme
 #: model:fur.project,summary:fur_theme.project_townhouse
 msgid ""
 "Coordinated furniture from the living room to the bedrooms, chosen to last "
@@ -1026,6 +970,11 @@ msgid ""
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model.fields,field_description:fur_theme.field_payment_provider__custom_mode
+msgid "Custom Mode"
+msgstr ""
+
+#. module: fur_theme
 #: model:ir.model.fields,field_description:fur_theme.field_sale_order__fur_customer_note
 msgid "Customer Request"
 msgstr ""
@@ -1063,11 +1012,7 @@ msgstr ""
 #: model_terms:product.template,website_description:fur_theme.product_organizer
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
 #: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
 #: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 #: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid ""
@@ -1147,11 +1092,7 @@ msgstr ""
 #: model_terms:product.template,website_description:fur_theme.product_organizer
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
 #: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
 #: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 #: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Dimensions"
@@ -1174,13 +1115,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:ir.model.fields,field_description:fur_theme.field_fur_project__display_name
-#: model:ir.model.fields,field_description:fur_theme.field_ir_http__display_name
-#: model:ir.model.fields,field_description:fur_theme.field_ir_module_module__display_name
-#: model:ir.model.fields,field_description:fur_theme.field_payment_provider__display_name
-#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__display_name
-#: model:ir.model.fields,field_description:fur_theme.field_product_template__display_name
-#: model:ir.model.fields,field_description:fur_theme.field_sale_order__display_name
-#: model:ir.model.fields,field_description:fur_theme.field_website__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -1292,9 +1226,6 @@ msgid "Four-Drawer Chest"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
 #: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Frame"
 msgstr ""
@@ -1430,13 +1361,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model:ir.model.fields,field_description:fur_theme.field_fur_project__id
-#: model:ir.model.fields,field_description:fur_theme.field_ir_http__id
-#: model:ir.model.fields,field_description:fur_theme.field_ir_module_module__id
-#: model:ir.model.fields,field_description:fur_theme.field_payment_provider__id
-#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__id
-#: model:ir.model.fields,field_description:fur_theme.field_product_template__id
-#: model:ir.model.fields,field_description:fur_theme.field_sale_order__id
-#: model:ir.model.fields,field_description:fur_theme.field_website__id
 msgid "ID"
 msgstr ""
 
@@ -1503,12 +1427,6 @@ msgid "Is Published"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
-msgid "Kiln-dried hardwood"
-msgstr ""
-
-#. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_desk_corner
 #: model_terms:product.template,description_ecommerce:fur_theme.product_desk_corner
 #: model_terms:product.template,website_description:fur_theme.product_desk_corner
@@ -1535,16 +1453,6 @@ msgstr ""
 #. module: fur_theme
 #: model:product.template,name:fur_theme.product_desk_pad
 msgid "Leather Desk Pad"
-msgstr ""
-
-#. module: fur_theme
-#: model:product.template,name:fur_theme.product_sofa_camel
-msgid "Leather Two-Seat Sofa, Camel"
-msgstr ""
-
-#. module: fur_theme
-#: model:product.template,name:fur_theme.product_sofa_cognac
-msgid "Leather Two-Seat Sofa, Cognac"
 msgstr ""
 
 #. module: fur_theme
@@ -1607,11 +1515,6 @@ msgid "London, United Kingdom"
 msgstr ""
 
 #. module: fur_theme
-#: model:product.template,name:fur_theme.product_sideboard_low
-msgid "Low Oak Sideboard"
-msgstr ""
-
-#. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_cabinet_black
 #: model_terms:product.template,description_ecommerce:fur_theme.product_cabinet_black
 #: model_terms:product.template,website_description:fur_theme.product_cabinet_black
@@ -1664,7 +1567,6 @@ msgstr ""
 #: model_terms:product.template,website_description:fur_theme.product_organizer
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
 #: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
 msgid "Material"
 msgstr ""
@@ -1768,11 +1670,6 @@ msgid "No project published yet."
 msgstr ""
 
 #. module: fur_theme
-#: model:product.template,name:fur_theme.product_sofa_beige
-msgid "Oak Frame Lounge Sofa"
-msgstr ""
-
-#. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
 msgid "Oak front, black steel body"
 msgstr ""
@@ -1780,7 +1677,6 @@ msgstr ""
 #. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_cabinet_wood
 #: model_terms:product.template,website_description:fur_theme.product_chest_oak
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
 msgid "Oak veneer"
 msgstr ""
 
@@ -1915,6 +1811,11 @@ msgid "Payment Provider"
 msgstr ""
 
 #. module: fur_theme
+#: model:ir.model,name:fur_theme.model_payment_transaction
+msgid "Payment Transaction"
+msgstr ""
+
+#. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.cart_checkout_form
 msgid "Payment method"
 msgstr ""
@@ -2043,11 +1944,6 @@ msgid "Product <span class=\"o_fur_accent\">categories</span>"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:ir.ui.view,arch_db:fur_theme.product_title
-msgid "Product Name"
-msgstr ""
-
-#. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Product categories"
 msgstr ""
@@ -2119,11 +2015,6 @@ msgid "Published"
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.model.fields,field_description:fur_theme.field_fur_project__published_date
-msgid "Published date"
-msgstr ""
-
-#. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_monitor_stand
 #: model_terms:product.template,description_ecommerce:fur_theme.product_monitor_stand
 #: model_terms:product.template,website_description:fur_theme.product_monitor_stand
@@ -2180,15 +2071,6 @@ msgid "Sales Order"
 msgstr ""
 
 #. module: fur_theme
-#: model:product.template,description_sale:fur_theme.product_sofa_beige
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_beige
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-msgid ""
-"Scandinavian lounge sofa with an exposed oak frame and removable beige "
-"cushions."
-msgstr ""
-
-#. module: fur_theme
 #: model_terms:ir.ui.view,arch_db:fur_theme.header
 msgid "Search"
 msgstr ""
@@ -2218,9 +2100,6 @@ msgstr ""
 #. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_dining_table_oak
 #: model_terms:product.template,website_description:fur_theme.product_meeting_table
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
 #: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 #: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Seats"
@@ -2377,15 +2256,6 @@ msgid "Sofas"
 msgstr ""
 
 #. module: fur_theme
-#: model:product.template,description_sale:fur_theme.product_sofa_camel
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_camel
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-msgid ""
-"Soft aniline leather in a warm camel tone on a slim metal base: a sofa that "
-"ages beautifully."
-msgstr ""
-
-#. module: fur_theme
 #: model:product.template,description_sale:fur_theme.product_basket
 #: model_terms:product.template,description_ecommerce:fur_theme.product_basket
 #: model_terms:product.template,website_description:fur_theme.product_basket
@@ -2405,11 +2275,6 @@ msgstr ""
 #. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_dining_chair_cross
 msgid "Solid beech, woven paper cord seat"
-msgstr ""
-
-#. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-msgid "Solid oak"
 msgstr ""
 
 #. module: fur_theme
@@ -2450,11 +2315,7 @@ msgstr ""
 #: model_terms:product.template,website_description:fur_theme.product_organizer
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
 #: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
 #: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 #: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Specifications"
@@ -2473,7 +2334,6 @@ msgstr ""
 #: model_terms:product.template,website_description:fur_theme.product_desk_white
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_black
 #: model_terms:product.template,website_description:fur_theme.product_pedestal_wood
-#: model_terms:product.template,website_description:fur_theme.product_sideboard_low
 #: model_terms:product.template,website_description:fur_theme.product_sideboard_oak
 msgid "Storage"
 msgstr ""
@@ -2540,13 +2400,8 @@ msgid ""
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.model.fields,help:fur_theme.field_fur_project__website_absolute_url
-msgid "The full absolute URL to access the document through the website."
-msgstr ""
-
-#. module: fur_theme
 #: model:ir.model.fields,help:fur_theme.field_fur_project__website_url
-msgid "The full relative URL to access the document through the website."
+msgid "The full URL to access the document through the website."
 msgstr ""
 
 #. module: fur_theme
@@ -2554,15 +2409,6 @@ msgstr ""
 msgid ""
 "The new boardroom seats twelve around a dark oak table with power and video "
 "connections in the top."
-msgstr ""
-
-#. module: fur_theme
-#: model:product.template,description_sale:fur_theme.product_sofa_cognac
-#: model_terms:product.template,description_ecommerce:fur_theme.product_sofa_cognac
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
-msgid ""
-"The same tailored silhouette in rich cognac leather, for a classic library "
-"look."
 msgstr ""
 
 #. module: fur_theme
@@ -2627,9 +2473,6 @@ msgstr ""
 
 #. module: fur_theme
 #: model_terms:product.template,website_description:fur_theme.product_chair_executive
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-#: model_terms:product.template,website_description:fur_theme.product_sofa_camel
-#: model_terms:product.template,website_description:fur_theme.product_sofa_cognac
 #: model_terms:product.template,website_description:fur_theme.product_sofa_navy
 #: model_terms:product.template,website_description:fur_theme.product_sofa_teal
 msgid "Upholstery"
@@ -2726,17 +2569,13 @@ msgid "Website"
 msgstr ""
 
 #. module: fur_theme
-#: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_absolute_url
-msgid "Website Absolute URL"
-msgstr ""
-
-#. module: fur_theme
 #: model:ir.model,name:fur_theme.model_product_public_category
 msgid "Website Product Category"
 msgstr ""
 
 #. module: fur_theme
 #: model:ir.model.fields,field_description:fur_theme.field_fur_project__website_url
+#: model:ir.model.fields,field_description:fur_theme.field_product_public_category__website_url
 msgid "Website URL"
 msgstr ""
 
@@ -2786,11 +2625,6 @@ msgid "White melamine, steel frame"
 msgstr ""
 
 #. module: fur_theme
-#: model_terms:product.template,website_description:fur_theme.product_sofa_beige
-msgid "Woven fabric, beige (removable covers)"
-msgstr ""
-
-#. module: fur_theme
 #: model:ir.model.fields,help:fur_theme.field_sale_order__fur_customer_note
 msgid "Written by the customer on the Fur cart page."
 msgstr ""
@@ -2822,7 +2656,7 @@ msgstr ""
 #. module: fur_theme
 #: model_terms:payment.provider,done_msg:fur_theme.payment_provider_cash_on_delivery
 #: model_terms:payment.provider,done_msg:fur_theme.payment_provider_wire_transfer
-msgid "Your payment has been processed."
+msgid "Your payment has been successfully processed."
 msgstr ""
 
 #. module: fur_theme

@@ -119,10 +119,15 @@
         background: var(--fur-surface);
         table, td { background: transparent; }
         // delivery is arranged by phone after the order
-        tr[name="o_order_delivery"] { display: none; }
+        #order_delivery { display: none; }
     }
     @include media-breakpoint-up(lg) {
-        .o_wsale_shorter_cart_summary:has(.o_fur_quick_checkout) {
+        // Odoo 18 gives the cart column a fixed width (col-lg-7)
+        #o_cart_summary:has(.o_fur_quick_checkout) ~ .oe_cart {
+            flex: 1 0 0;
+            width: auto;
+        }
+        #o_cart_summary:has(.o_fur_quick_checkout) {
             flex: 0 0 45%;
             max-width: 45%;
             margin-left: 0;

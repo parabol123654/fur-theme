@@ -1,6 +1,5 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
 from odoo import http
-from odoo.fields import Domain
 from odoo.http import request
 
 
@@ -8,9 +7,9 @@ class FurProjectController(http.Controller):
     _projects_per_page = 9
 
     def _project_domain(self, project_type=None):
-        domain = request.env.website.website_domain() & Domain("is_published", "=", True)
+        domain = request.website.website_domain() + [("is_published", "=", True)]
         if project_type:
-            domain &= Domain("project_type", "=", project_type)
+            domain += [("project_type", "=", project_type)]
         return domain
 
     def sitemap_projects(env, rule, qs):
@@ -18,7 +17,7 @@ class FurProjectController(http.Controller):
             yield {"loc": "/projects"}
         slug = env["ir.http"]._slug
         projects = env["fur.project"].search(
-            env.website.website_domain() & Domain("is_published", "=", True)
+            env["website"].get_current_website().website_domain() + [("is_published", "=", True)]
         )
         for project in projects:
             loc = f"/projects/{slug(project)}"
@@ -39,7 +38,7 @@ class FurProjectController(http.Controller):
             project_type = None
         domain = self._project_domain(project_type)
         total = Project.search_count(domain)
-        pager = request.env.website.pager(
+        pager = request.website.pager(
             url="/projects",
             url_args={"project_type": project_type} if project_type else None,
             total=total,
@@ -65,14 +64,14 @@ class FurProjectController(http.Controller):
         sitemap=False,  # covered by sitemap_projects
     )
     def project_detail(self, project, **kwargs):
-        website = request.env.website
+        website = request.website
         if project.website_id and project.website_id != website:
             raise request.not_found()
         is_designer = request.env.user.has_group("website.group_website_designer")
         if not (project.active and project.website_published) and not is_designer:
             raise request.not_found()
         others = request.env["fur.project"].search(
-            self._project_domain() & Domain("id", "!=", project.id), limit=3
+            self._project_domain() + [("id", "!=", project.id)], limit=3
         )
         return request.render(
             "fur_theme.project_detail_page",

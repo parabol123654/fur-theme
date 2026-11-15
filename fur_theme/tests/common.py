@@ -1,4 +1,9 @@
 # Part of Fur Theme. See LICENSE file for full copyright and licensing details.
+import base64
+import io
+
+from PIL import Image
+
 from odoo.fields import Command
 
 from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
@@ -6,6 +11,12 @@ from odoo.addons.website_sale.tests.common import WebsiteSaleCommon
 
 class FurCommon(WebsiteSaleCommon):
     """Self-contained Fur catalogue: tests never rely on the demo data."""
+
+    @classmethod
+    def _create_image(cls, color):
+        f = io.BytesIO()
+        Image.new("RGB", (1920, 1080), color).save(f, "JPEG")
+        return base64.b64encode(f.getvalue())
 
     @classmethod
     def setUpClass(cls):

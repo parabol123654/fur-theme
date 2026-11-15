@@ -1,7 +1,7 @@
-import { Interaction } from "@web/public/interaction";
-import { registry } from "@web/core/registry";
+import publicWidget from "@web/legacy/js/public/public_widget";
 import { rpc } from "@web/core/network/rpc";
 import { KeepLast } from "@web/core/utils/concurrency";
+import { debounce } from "@web/core/utils/timing";
 
 /**
  * Suggestions under the header search box (template fur_theme.header):
@@ -9,28 +9,45 @@ import { KeepLast } from "@web/core/utils/concurrency";
  * (route /fur/search/suggest). Enter without a highlighted suggestion still
  * submits the form to /shop?search=...
  */
-export class FurSearchSuggest extends Interaction {
-    static selector = ".o_fur_search";
-    dynamicContent = {
-        "input[name='search']": {
-            "t-on-input": this.debounced(this.onInput, 250),
-            "t-on-keydown": this.onKeydown,
-            "t-on-focus": this.onFocus,
-        },
-        _root: { "t-on-focusout": this.debounced(this.onFocusOut, 150) },
-    };
+publicWidget.registry.FurSearchSuggest = publicWidget.Widget.extend({
+    selector: ".o_fur_search",
+    events: {
+        "input input[name='search']": "onInput",
+        "keydown input[name='search']": "onKeydown",
+        "focusin input[name='search']": "onFocus",
+        focusout: "onFocusOut",
+    },
 
-    setup() {
-        this.input = this.el.querySelector("input[name='search']");
-        this.input.setAttribute("autocomplete", "off");
+    /**
+     * @override
+     */
+    init() {
+        this._super(...arguments);
+        this.onInput = debounce(this.onInput, 250);
+        this.onFocusOut = debounce(this.onFocusOut, 150);
         this.keepLast = new KeepLast();
         this.menu = null;
         this.active = -1;
-    }
+    },
 
+    /**
+     * @override
+     */
+    start() {
+        this.input = this.el.querySelector("input[name='search']");
+        this.input.setAttribute("autocomplete", "off");
+        return this._super(...arguments);
+    },
+
+    /**
+     * @override
+     */
     destroy() {
+        this.onInput.cancel();
+        this.onFocusOut.cancel();
         this.close();
-    }
+        this._super(...arguments);
+    },
 
     async onInput() {
         const term = this.input.value.trim();
@@ -39,14 +56,12 @@ export class FurSearchSuggest extends Interaction {
             return;
         }
         this.el.classList.add("o_fur_search_loading");
-        const result = await this.keepLast.add(
-            this.waitFor(rpc("/fur/search/suggest", { term, limit: 8 }))
-        );
+        const result = await this.keepLast.add(rpc("/fur/search/suggest", { term, limit: 8 }));
         this.el.classList.remove("o_fur_search_loading");
         if (this.input.value.trim() === term) {
             this.show(result);
         }
-    }
+    },
 
     onFocus() {
         if (this.menu && this.menu.childElementCount) {
@@ -54,13 +69,13 @@ export class FurSearchSuggest extends Interaction {
         } else if (this.input.value.trim().length >= 2) {
             this.onInput();
         }
-    }
+    },
 
     onFocusOut() {
         if (!this.el.contains(document.activeElement)) {
             this.menu?.classList.add("d-none");
         }
-    }
+    },
 
     onKeydown(ev) {
         const links = this.menu ? [...this.menu.querySelectorAll("a")] : [];
@@ -75,7 +90,7 @@ export class FurSearchSuggest extends Interaction {
             ev.preventDefault();
             window.location.href = links[this.active].href;
         }
-    }
+    },
 
     show(result) {
         if (!this.menu) {
@@ -135,13 +150,13 @@ export class FurSearchSuggest extends Interaction {
             more.textContent = result.more_label;
             this.menu.appendChild(more);
         }
-    }
+    },
 
     close() {
         this.menu?.remove();
         this.menu = null;
         this.active = -1;
-    }
-}
+    },
+});
 
-registry.category("public.interactions").add("fur_theme.search_suggest", FurSearchSuggest);
+export default publicWidget.registry.FurSearchSuggest;

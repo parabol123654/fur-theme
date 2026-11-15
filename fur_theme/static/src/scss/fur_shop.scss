@@ -13,9 +13,19 @@
             color: var(--fur-navy);
         }
     }
-    #o_wsale_products_header h1,
-    #o_wsale_products_header .h1 {
-        display: none; // title lives in the Fur banner
+    // breadcrumb and title live in the Fur banner
+    #products_grid > .breadcrumb,
+    #products_grid > h1 {
+        display: none !important;
+    }
+    // Odoo 18's category strip repeats the Fur sub-category pills
+    &:has(.o_fur_subcategs) .o_wsale_filmstip_container {
+        display: none !important;
+    }
+    // no filter to show (no attribute, no category list): no empty left column
+    .o_wsale_products_main_row:not(:has(#products_grid_before :is(li, input, select))) {
+        #products_grid_before { display: none !important; }
+        #products_grid { flex: 0 0 100%; width: 100%; max-width: 100%; }
     }
 }
 
@@ -41,6 +51,7 @@
         img { width: 100%; height: 100%; object-fit: contain; }
     }
     .o_wsale_product_information {
+        position: static !important; // the wishlist heart goes over the picture
         display: flex;
         flex-direction: column;
         padding: .6rem .7rem .75rem;
@@ -67,7 +78,7 @@
     .o_wsale_product_sub {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: nowrap !important;
         align-items: flex-end;
         justify-content: space-between;
         margin-top: auto;
@@ -80,31 +91,31 @@
         font-size: 1.02rem;
         color: var(--fur-price);
         .fw-bold, span { font-weight: 700; }
-        del { order: 2; font-size: .8rem; }
+        .h6 { font-size: inherit; }
+        del { order: 2; font-size: .8rem; font-weight: 400; }
     }
     // cart button always shown, bottom right next to the price (as on the
-    // homepage cards), not Odoo's floating "on hover" buttons
+    // homepage cards), not Odoo's floating "on hover" buttons over the picture
     .o_wsale_product_btn {
-        position: static;
+        position: static !important;
         inset: auto;
-        // Odoo's "inline" buttons take the whole row
+        order: 2; // Odoo 18 has the buttons before the price
         flex: 0 0 auto !important;
         width: auto !important;
         margin-left: auto;
         visibility: visible;
-        opacity: 1;
+        opacity: 1 !important;
         transform: none;
     }
-    .o_wsale_product_action_row { display: flex; }
     @include media-breakpoint-down(sm) {
         .product_price { font-size: .9rem; }
-        .o_wsale_product_btn .o_wsale_product_btn_primary {
+        .o_wsale_product_btn .a-submit {
             width: 2.1rem;
             height: 2.1rem;
             .o_fur_icon { width: 1.1rem; height: 1.1rem; }
         }
     }
-    .o_wsale_product_btn .o_wsale_product_btn_primary {
+    .o_wsale_product_btn .a-submit {
         display: inline-flex;
         align-items: center;
         justify-content: center;

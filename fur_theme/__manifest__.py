@@ -4,7 +4,7 @@
     "summary": "Furniture & interior design eCommerce theme: homepage, shop, product page, "
     "one-step checkout, projects showcase, instant search",
     "description": """
-Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.
+Furniture eCommerce theme for Odoo 18.0 Community and Enterprise.
 
 * Header with logo, instant product search, hotline, cart, account and flag language switcher
 * Homepage: hero slider, service strip, category grid, one product block per category,
@@ -16,20 +16,23 @@ Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.
 * Floating call, WhatsApp, Zalo and Messenger buttons
 * English and Vietnamese
 """,
-    "version": "20.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Website/Theme",
     "author": "Manh Nguyen",
-    "license": "AGPL-3",
+    "license": "LGPL-3",
     "website": "https://github.com/parabol123654/fur-theme",
     "support": "parabol123654@gmail.com",
     "depends": [
         "website_sale",
+        "website_sale_wishlist",
+        "website_sale_comparison",
         "payment_custom",
         "auth_signup",
         "account",
     ],
     "data": [
-        "security/ir.access.csv",
+        "security/ir.model.access.csv",
+        "security/fur_security.xml",
         "data/fur_policy_page.xml",
         "views/fur_project_views.xml",
         "views/product_views.xml",
@@ -67,6 +70,7 @@ Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.
             "fur_theme/static/src/scss/fur_product.scss",
             "fur_theme/static/src/scss/fur_checkout.scss",
             "fur_theme/static/src/scss/fur_projects.scss",
+            "fur_theme/static/src/js/product_card.js",
             "fur_theme/static/src/js/product_sticky_buy.js",
             "fur_theme/static/src/js/search_suggest.js",
         ],

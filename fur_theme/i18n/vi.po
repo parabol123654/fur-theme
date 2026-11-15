@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 20.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-10 19:20+0000\n"
 "PO-Revision-Date: 2026-10-10 19:20+0000\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: fur_theme
 msgid ""
 "\n"
-"Furniture eCommerce theme for Odoo 20.0 Community and Enterprise.\n"
+"Furniture eCommerce theme for Odoo 18.0 Community and Enterprise.\n"
 "\n"
 "* Header with logo, instant product search, hotline, cart, account and flag language switcher\n"
 "* Homepage: hero slider, service strip, category grid, one product block per category,\n"
@@ -86,19 +86,11 @@ msgid "160 x 140 x 75 cm"
 msgstr ""
 
 #. module: fur_theme
-msgid "160 x 45 x 70 cm"
-msgstr ""
-
-#. module: fur_theme
 msgid "160 x 82 x 78 cm"
 msgstr ""
 
 #. module: fur_theme
 msgid "180 x 160 cm"
-msgstr ""
-
-#. module: fur_theme
-msgid "190 x 88 x 76 cm"
 msgstr ""
 
 #. module: fur_theme
@@ -111,10 +103,6 @@ msgstr ""
 
 #. module: fur_theme
 msgid "2 drawers"
-msgstr ""
-
-#. module: fur_theme
-msgid "2 sliding doors, 4 compartments"
 msgstr ""
 
 #. module: fur_theme
@@ -322,10 +310,6 @@ msgid "A long conference table for ten with cable management built into the fram
 msgstr ""
 
 #. module: fur_theme
-msgid "A long, low sideboard with sliding doors, perfect under a TV or along a dining room wall."
-msgstr ""
-
-#. module: fur_theme
 msgid "A minimalist desk with a walnut top and waterfall sides for a clean home office."
 msgstr ""
 
@@ -410,23 +394,11 @@ msgid "About the Leather Desk Pad"
 msgstr ""
 
 #. module: fur_theme
-msgid "About the Leather Two-Seat Sofa, Camel"
-msgstr ""
-
-#. module: fur_theme
-msgid "About the Leather Two-Seat Sofa, Cognac"
-msgstr ""
-
-#. module: fur_theme
 msgid "About the Linen Loveseat, Navy"
 msgstr ""
 
 #. module: fur_theme
 msgid "About the Locker Pedestal"
-msgstr ""
-
-#. module: fur_theme
-msgid "About the Low Oak Sideboard"
 msgstr ""
 
 #. module: fur_theme
@@ -443,10 +415,6 @@ msgstr ""
 
 #. module: fur_theme
 msgid "About the Natural Wood Storage Cabinet"
-msgstr ""
-
-#. module: fur_theme
-msgid "About the Oak Frame Lounge Sofa"
 msgstr ""
 
 #. module: fur_theme
@@ -534,14 +502,6 @@ msgid "An open office for 120 people with bench workstations, ergonomic chairs a
 msgstr ""
 
 #. module: fur_theme
-msgid "Aniline leather, camel"
-msgstr ""
-
-#. module: fur_theme
-msgid "Aniline leather, cognac"
-msgstr ""
-
-#. module: fur_theme
 msgid "Apartment"
 msgstr "Căn hộ"
 
@@ -564,14 +524,6 @@ msgstr "Diện tích (m²)"
 #. module: fur_theme
 msgid "Austin, Texas"
 msgstr ""
-
-#. module: fur_theme
-msgid "Auto publish on"
-msgstr "Tự động đăng vào"
-
-#. module: fur_theme
-msgid "Automatically publish the page on the chosen date and time."
-msgstr "Tự động đăng trang vào ngày giờ đã chọn."
 
 #. module: fur_theme
 msgid "Back"
@@ -670,6 +622,10 @@ msgid "Cart"
 msgstr "Giỏ hàng"
 
 #. module: fur_theme
+msgid "Cash On Delivery"
+msgstr "Thanh toán khi nhận hàng"
+
+#. module: fur_theme
 msgid "Cash on delivery"
 msgstr "Thanh toán khi nhận hàng"
 
@@ -732,6 +688,10 @@ msgid "Contact"
 msgstr "Liên hệ"
 
 #. module: fur_theme
+msgid "Contact us"
+msgstr "Liên hệ với chúng tôi"
+
+#. module: fur_theme
 msgid "Coordinated furniture from the living room to the bedrooms, chosen to last for a young family."
 msgstr ""
 
@@ -766,6 +726,10 @@ msgstr ""
 #. module: fur_theme
 msgid "Cross-back chairs and oval oak tables give the café a relaxed, timeless feel; ribbed glass lamps finish the look."
 msgstr ""
+
+#. module: fur_theme
+msgid "Custom Mode"
+msgstr "Chế độ tùy chỉnh"
 
 #. module: fur_theme
 msgid "Customer Request"
@@ -1068,10 +1032,6 @@ msgid "Is Published"
 msgstr "Đã đăng"
 
 #. module: fur_theme
-msgid "Kiln-dried hardwood"
-msgstr ""
-
-#. module: fur_theme
 msgid "L-shaped desk with a walnut top, steel frame and an integrated storage pedestal."
 msgstr ""
 
@@ -1089,14 +1049,6 @@ msgstr "Cập nhật lần cuối vào"
 
 #. module: fur_theme
 msgid "Leather Desk Pad"
-msgstr ""
-
-#. module: fur_theme
-msgid "Leather Two-Seat Sofa, Camel"
-msgstr ""
-
-#. module: fur_theme
-msgid "Leather Two-Seat Sofa, Cognac"
 msgstr ""
 
 #. module: fur_theme
@@ -1141,10 +1093,6 @@ msgstr "Phiên bản logo cho chân trang nền tối (chữ sáng). Để trố
 
 #. module: fur_theme
 msgid "London, United Kingdom"
-msgstr ""
-
-#. module: fur_theme
-msgid "Low Oak Sideboard"
 msgstr ""
 
 #. module: fur_theme
@@ -1254,10 +1202,6 @@ msgid "No project published yet."
 msgstr "Chưa có dự án nào được công bố."
 
 #. module: fur_theme
-msgid "Oak Frame Lounge Sofa"
-msgstr ""
-
-#. module: fur_theme
 msgid "Oak front, black steel body"
 msgstr ""
 
@@ -1362,6 +1306,10 @@ msgid "Payment Provider"
 msgstr "Nhà cung cấp dịch vụ thanh toán"
 
 #. module: fur_theme
+msgid "Payment Transaction"
+msgstr "Giao dịch thanh toán"
+
+#. module: fur_theme
 msgid "Payment method"
 msgstr "Hình thức thanh toán"
 
@@ -1460,10 +1408,6 @@ msgid "Product <span class=\"o_fur_accent\">categories</span>"
 msgstr "DANH MỤC <span class=\"o_fur_accent\">SẢN PHẨM</span>"
 
 #. module: fur_theme
-msgid "Product Name"
-msgstr "Tên sản phẩm"
-
-#. module: fur_theme
 msgid "Product categories"
 msgstr "Danh mục sản phẩm"
 
@@ -1512,10 +1456,6 @@ msgid "Published"
 msgstr "Đã công bố"
 
 #. module: fur_theme
-msgid "Published date"
-msgstr "Ngày đăng"
-
-#. module: fur_theme
 msgid "Raises your screen to eye level and frees space for the keyboard."
 msgstr ""
 
@@ -1554,10 +1494,6 @@ msgstr "Đã tối ưu SEO"
 #. module: fur_theme
 msgid "Sales Order"
 msgstr "Đơn bán hàng"
-
-#. module: fur_theme
-msgid "Scandinavian lounge sofa with an exposed oak frame and removable beige cushions."
-msgstr ""
 
 #. module: fur_theme
 msgid "Search"
@@ -1695,10 +1631,6 @@ msgid "Sofas"
 msgstr ""
 
 #. module: fur_theme
-msgid "Soft aniline leather in a warm camel tone on a slim metal base: a sofa that ages beautifully."
-msgstr ""
-
-#. module: fur_theme
 msgid "Soft felt basket for blankets, magazines or toys."
 msgstr ""
 
@@ -1712,10 +1644,6 @@ msgstr ""
 
 #. module: fur_theme
 msgid "Solid beech, woven paper cord seat"
-msgstr ""
-
-#. module: fur_theme
-msgid "Solid oak"
 msgstr ""
 
 #. module: fur_theme
@@ -1783,19 +1711,11 @@ msgid "The bistro classic: a cross-back chair in solid beech with a woven seat."
 msgstr ""
 
 #. module: fur_theme
-msgid "The full absolute URL to access the document through the website."
-msgstr "URL tuyệt đối để truy cập tài liệu qua website."
-
-#. module: fur_theme
-msgid "The full relative URL to access the document through the website."
-msgstr "URL tương đối để truy cập tài liệu qua website."
+msgid "The full URL to access the document through the website."
+msgstr "URL đầy đủ để truy cập tài liệu thông qua trang web."
 
 #. module: fur_theme
 msgid "The new boardroom seats twelve around a dark oak table with power and video connections in the top."
-msgstr ""
-
-#. module: fur_theme
-msgid "The same tailored silhouette in rich cognac leather, for a classic library look."
 msgstr ""
 
 #. module: fur_theme
@@ -1911,10 +1831,6 @@ msgid "Website"
 msgstr "Trang web"
 
 #. module: fur_theme
-msgid "Website Absolute URL"
-msgstr "URL tuyệt đối của website"
-
-#. module: fur_theme
 msgid "Website Product Category"
 msgstr "Danh mục sản phẩm trên trang web"
 
@@ -1959,10 +1875,6 @@ msgid "White melamine, steel frame"
 msgstr ""
 
 #. module: fur_theme
-msgid "Woven fabric, beige (removable covers)"
-msgstr ""
-
-#. module: fur_theme
 msgid "Written by the customer on the Fur cart page."
 msgstr "Khách hàng ghi ở trang giỏ hàng Fur."
 
@@ -1983,7 +1895,7 @@ msgid "Your payment has been cancelled."
 msgstr "Thanh toán của quý khách đã bị hủy."
 
 #. module: fur_theme
-msgid "Your payment has been processed."
+msgid "Your payment has been successfully processed."
 msgstr "Thanh toán của quý khách đã được xử lý."
 
 #. module: fur_theme
@@ -2025,4 +1937,3 @@ msgstr ""
 #. module: fur_theme
 msgid "Ø 120 x 75 cm"
 msgstr ""
-
